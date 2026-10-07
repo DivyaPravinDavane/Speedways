@@ -33,7 +33,6 @@ import {
 } from "lucide-react";
 import SymbolBadge from "@/components/SymbolBadge";
 import LiveTelemetrySimulator from "@/components/LiveTelemetrySimulator";
-import InteractiveFleetVisualizer from "@/components/InteractiveFleetVisualizer";
 import PictographicalComparison from "@/components/PictographicalComparison";
 import SpeedwaysInfoCards from "@/components/SpeedwaysInfoCards";
 import Testimonials from "@/components/ui/testimonials-13";
@@ -385,25 +384,6 @@ export default function HomePage() {
 
       {/* 5B. DYNAMIC ROTATING BORDER INFOCARDS SPOTLIGHT */}
       <SpeedwaysInfoCards />
-
-      {/* 6. INTERACTIVE FLEET VISUALIZER & TARIFF ESTIMATOR */}
-      <section className="py-20 bg-slate-50/70 border-y border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
-              Enterprise Fleet Specifications
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">
-              Interactive Fleet Portfolio & Capacity Visualizer
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Preview passenger seating, luggage volume, in-cabin climate systems, and indicative corporate packages across all vehicle tiers.
-            </p>
-          </div>
-
-          <InteractiveFleetVisualizer />
-        </div>
-      </section>
 
       {/* 7. EXECUTIVE SUMMARY GRID (4 Procurement Questions) */}
       <section className="py-20 bg-[#F4FAF6] border-b border-green-100/70">
