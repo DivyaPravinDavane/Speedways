@@ -24,7 +24,7 @@ export default function Footer() {
               Ready to Upgrade Your Corporate Mobility Operations?
             </h3>
             <p className="text-green-100 text-sm mt-1 max-w-2xl">
-              Consolidate single-city or multi-city accounts with 1,200+ fleet access, Indecab tech integration, and SLA-governed dispatch.
+              Consolidate single-city or multi-city accounts with 1,200+ fleet access, our technology platform integration, and SLA-governed dispatch.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -63,14 +63,22 @@ export default function Footer() {
               </span>
             </Link>
 
-            <p className="text-sm text-slate-600 max-w-sm leading-relaxed">
-              <strong>Driven by Commitment. Defined by Service.</strong> India&apos;s leading corporate mobility platform combining fleet scale, 185+ city coverage, Indecab cloud technology, and centralised 24×7 governance.
-            </p>
+            <div className="text-sm text-slate-600 max-w-sm leading-relaxed space-y-1.5">
+              <p className="font-bold text-slate-900">
+                Speedways. Advancing Enterprise Mobility.
+              </p>
+              <p className="text-xs text-slate-500 italic">
+                Purpose in Every Promise. Excellence in Every Experience. Inspired by Commitment. Delivered with Excellence. Committed to Excellence. Defined by Trust.
+              </p>
+              <p className="text-xs text-slate-600 pt-1">
+                India&apos;s leading corporate mobility platform combining fleet scale, 185+ city coverage, our technology platform, and centralised 24×7 governance.
+              </p>
+            </div>
 
             <div className="pt-2 space-y-2 text-xs text-slate-500">
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>Established 2012 • 108+ Fortune & Enterprise Clients</span>
+                <span>Established 2012 • 156+ Fortune & Enterprise Clients</span>
               </div>
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
@@ -211,7 +219,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/technology" className="hover:text-green-600 transition-colors">
-                  Indecab Platform Integration
+                  Our Technology Platform Integration
                 </Link>
               </li>
               <li>
@@ -236,14 +244,21 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="pt-2">
-                <strong className="text-slate-900 block text-xs">5 Direct Metro Branches:</strong>
-                <p className="text-slate-500 mt-1">
-                  Mumbai (HO) • Bengaluru • Hyderabad • Chennai • Delhi NCR
+              <div className="pt-1.5">
+                <strong className="text-slate-900 block text-xs">Bangalore Branch:</strong>
+                <p className="text-slate-500 mt-0.5">
+                  Serenity, 1176/A, HBR 1st Stage, 4th Block, Bangalore- 560043
                 </p>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-1.5">
+                <strong className="text-slate-900 block text-xs">6 Direct Metro Branches:</strong>
+                <p className="text-slate-500 mt-0.5">
+                  Mumbai (HO) • Bangalore • Hyderabad • Chennai • Delhi NCR • Pune
+                </p>
+              </div>
+
+              <div className="pt-1.5">
                 <strong className="text-slate-900 block text-xs">Tier-2/3 Network:</strong>
                 <p className="text-slate-500">185+ Managed Partner Cities Pan-India</p>
               </div>

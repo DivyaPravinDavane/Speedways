@@ -47,11 +47,11 @@ const PRIMARY: PrimaryMetric[] = [
   },
   {
     icon: Building2,
-    target: 108,
+    target: 156,
     suffix: "+",
     label: "Enterprise Accounts",
     desc: "Fortune 500 & MNCs empanelled",
-    progress: 76,
+    progress: 88,
     tag: "Clients",
   },
   {
@@ -69,11 +69,12 @@ type SecondaryMetric = {
   icon: LucideIcon;
   value: string;
   label: string;
+  sub?: string;
   live?: boolean;
 };
 
 const SECONDARY: SecondaryMetric[] = [
-  { icon: Network, value: "5", label: "Metro Direct Hubs" },
+  { icon: Network, value: "6", label: "Direct Metro Hubs", sub: "Mumbai, BLR, HYD, MAA, DEL, Pune" },
   { icon: Radio, value: "24×7", label: "Command Centre", live: true },
   { icon: Receipt, value: "5%", label: "GST Billing Model" },
   { icon: Leaf, value: "EV Ready", label: "Green Fleet Transition" },

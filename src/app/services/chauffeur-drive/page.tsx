@@ -34,19 +34,18 @@ export const metadata = {
 export default function ChauffeurDrivePage() {
   const packages = [
     {
-      title: "Airport Transfers",
-      badge: "Radar Flight-Tracked",
-      sub: "Terminal Pickups & Drop-offs",
+      title: "Airport Transfer across India",
+      badge: "Flight-Tracked",
+      sub: "Terminal Pickups & Drop-offs Across India",
       icon: Plane,
       features: [
-        "Live flight radar delay monitoring",
-        "Chauffeur reports 30 mins prior",
+        "Live flight delay monitoring",
+        "Chauffeur reports 15 mins prior to touchdown",
         "Terminal meet & greet with placard",
         "Zero wait penalty on flight delay",
         "Automated toll & parking capture",
       ],
       idealFor: "Domestic & international business delegates, leadership travel",
-      rateEstimate: "From ₹ 1,450",
     },
     {
       title: "Local Half-Day",
@@ -61,7 +60,6 @@ export default function ChauffeurDrivePage() {
         "Morning or afternoon schedules",
       ],
       idealFor: "Client visits, vendor inspections, local executive errands",
-      rateEstimate: "From ₹ 1,450",
     },
     {
       title: "Local Full-Day",
@@ -71,16 +69,15 @@ export default function ChauffeurDrivePage() {
       features: [
         "Full working day vehicle allocation",
         "Flexible citywide itinerary",
-        "Indecab GPS digital duty slip",
+        "Digital duty slip via our technology platform",
         "Chauffeur meal allowance included",
         "Seamless extended hour support",
       ],
       idealFor: "Visiting delegations, board committee tours, full-day meetings",
-      rateEstimate: "From ₹ 2,400",
     },
     {
       title: "Intercity Outstation",
-      badge: "Per-KM Tariff",
+      badge: "Standardized Outstation",
       sub: "Cross-City Industrial Travel",
       icon: Navigation,
       features: [
@@ -91,7 +88,6 @@ export default function ChauffeurDrivePage() {
         "24×7 GPS Command Centre tracking",
       ],
       idealFor: "Plant visits, multi-branch factory audits, regional tours",
-      rateEstimate: "From ₹ 12 / km",
     },
   ];
 
@@ -153,7 +149,7 @@ export default function ChauffeurDrivePage() {
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-slate-700">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <Plane className="w-4 h-4 text-green-600" />
-                <span>Radar Flight Delay Tracking</span>
+                <span>Flight Delay Tracking</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <Clock className="w-4 h-4 text-green-600" />
@@ -161,7 +157,7 @@ export default function ChauffeurDrivePage() {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <ShieldCheck className="w-4 h-4 text-green-600" />
-                <span>Police Verified Chauffeurs</span>
+                <span>Verified Chauffeurs</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <CreditCard className="w-4 h-4 text-green-600" />
@@ -199,7 +195,7 @@ export default function ChauffeurDrivePage() {
                 Punctual, Stress-Free Airport Mobility Nationwide
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Never leave your visiting executives waiting at terminal curbs. Our flight radar system syncs with real-time airport schedules, deploying vetted chauffeurs with personalized paging boards.
+                Never leave your visiting executives waiting at terminal curbs. Our automated flight tracking system syncs with real-time airport schedules, deploying vetted chauffeurs with personalized paging boards.
               </p>
 
               <div className="space-y-3 pt-1">
@@ -208,7 +204,7 @@ export default function ChauffeurDrivePage() {
                     01
                   </div>
                   <div className="text-xs font-semibold text-slate-800">
-                    Chauffeur reports 30 minutes prior to scheduled flight touchdown
+                    Chauffeur reports 15 minutes prior to scheduled flight touchdown
                   </div>
                 </div>
 
@@ -284,12 +280,8 @@ export default function ChauffeurDrivePage() {
                   </div>
 
                   <div className="pt-4 mt-6 border-t border-slate-200/60">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Tariff</span>
-                      <span className="text-sm font-extrabold text-slate-900">{pkg.rateEstimate}</span>
-                    </div>
-                    <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-slate-100">
-                      <strong className="text-slate-900 block font-semibold">Ideal for:</strong>
+                    <div className="text-[11px] text-slate-500 bg-white p-3 rounded-xl border border-slate-100">
+                      <strong className="text-slate-900 block font-semibold mb-0.5">Ideal for:</strong>
                       {pkg.idealFor}
                     </div>
                   </div>
@@ -313,7 +305,7 @@ export default function ChauffeurDrivePage() {
                   Long-Term Rentals & Leases (LTR)
                 </h2>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Eliminate capital expenditure and asset depreciation with Speedways Long-Term Lease program. We supply executive vehicles and vetted chauffeurs on 1-year to 3-year enterprise contracts.
+                  Eliminate capital expenditure and asset depreciation with Speedways Long-Term Lease program. We supply executive vehicles and vetted chauffeurs on 1 to Any years enterprise contracts.
                 </p>
                 <div className="pt-2">
                   <Link
@@ -386,7 +378,7 @@ export default function ChauffeurDrivePage() {
                 Digital Duty Slip Verification
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Every kilometer logged is GPS-stamped through Indecab software. Toll receipts and parking tickets are electronically uploaded with no manual alterations or inflated invoices.
+                Every kilometer logged is GPS-stamped through our technology platform. Toll receipts and parking tickets are electronically uploaded with no manual alterations or inflated invoices.
               </p>
             </div>
           </div>

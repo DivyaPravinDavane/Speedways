@@ -36,21 +36,22 @@ export const CLIENT_LOGOS = [
   "Aditya Birla Group",
   "DBS Bank",
   "Merck",
-  "Mu Sigma",
-  "CMS Info Systems",
+  "Newspace",
+  "ATPI",
+  "DABICO Airport",
+  "Kimberly",
   "BCD Travel",
-  "Lux Industries",
-  "Abbott",
-  "Vedic",
-  "Embassy",
+  "CMS Info Systems",
+  "Mu Sigma",
+  "LUX INDUSTRY",
   "Quona India Advisors LLP",
 ];
 
 export const SCALE_METRICS = [
   { value: "1,200+", label: "Vehicles Network", desc: "Owned & Managed Fleet Pan-India" },
   { value: "185+", label: "Cities Covered", desc: "Tier-1, Tier-2 & Tier-3 Coverage" },
-  { value: "108+", label: "Enterprise Accounts", desc: "Fortune 500 & MNCs Empanelled" },
-  { value: "5", label: "Metro Direct Hubs", desc: "Mumbai, BLR, HYD, MAA, DEL" },
+  { value: "156+", label: "Enterprise Accounts", desc: "Fortune 500 & MNCs Empanelled" },
+  { value: "6", label: "Metro Direct Hubs", desc: "Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune" },
   { value: "2012", label: "Established Year", desc: "Over a Decade of Operational Trust" },
   { value: "24×7", label: "Command Centre", desc: "Centralised Telemetry & Escalation" },
   { value: "5%", label: "GST Billing Model", desc: "Direct Corporate Tax Credit Compliance" },
@@ -72,25 +73,25 @@ export const EXECUTIVE_QUESTIONS = [
     question: "Can You Handle Scale?",
     headline: "1,200+ Fleet Across 185+ Pan-India Cities",
     description:
-      "Operational depth supporting high-volume spot rentals, airport movements, daily employee commutes, and outstation corporate travel backed by 5 direct metro hubs and an integrated partner network.",
+      "Operational depth supporting high-volume spot rentals, airport movements, daily employee commutes, and outstation corporate travel backed by 6 direct metro hubs (Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune) and an integrated partner network.",
     iconName: "Network",
     badge: "Scale & Reach",
   },
   {
     id: "safety",
     question: "Safe & Compliant?",
-    headline: "100% Police-Verified Chauffeurs & ISO Systems",
+    headline: "Verified Chauffeurs & ISO Systems",
     description:
-      "Rigorous statutory and safety protocols including driver background verification, commercial vehicle fitness certification, real-time GPS telemetry, and SOS emergency response escalation.",
+      "Rigorous statutory and safety protocols including chauffeur background clearance, commercial vehicle fitness certification, real-time GPS telemetry, and SOS emergency response escalation.",
     iconName: "ShieldCheck",
     badge: "Zero-Compromise Safety",
   },
   {
     id: "tech",
     question: "What is the Technology?",
-    headline: "Indecab-Enabled End-to-End SaaS Automation",
+    headline: "Enterprise Cloud-Enabled SaaS Automation",
     description:
-      "Complete trip lifecycle digitized from self-booking and automated allocation to GPS live tracking, contactless digital duty slips, and reconciliation-ready MIS billing exports.",
+      "Complete trip lifecycle digitized from self-booking and automated allocation to GPS live tracking, contactless digital duty slips, and reconciliation-ready MIS billing exports via our technology platform.",
     iconName: "Cpu",
     badge: "Digital Efficiency",
   },
@@ -110,10 +111,10 @@ export const TESTIMONIALS: ClientTestimonial[] = [
     designation: "Procurement & Facility Management",
   },
   {
-    quote: "Strong operational support with prompt responses and clear communication.",
-    client: "Embassy",
-    category: "Responsiveness",
-    designation: "Enterprise Administration Desk",
+    quote: "Flawless airport transfers, corporate delegations, and dedicated 24×7 account management.",
+    client: "ATPI",
+    category: "Global Travel Logistics",
+    designation: "Corporate Travel Management Desk",
   },
   {
     quote: "Reliable airport transfers and smooth mobility management for leadership and teams.",
@@ -143,10 +144,10 @@ export const SERVICES_CATALOG: ServiceItem[] = [
   },
   {
     id: "airport-transfers",
-    name: "Airport Transfers",
-    shortDesc: "Flight-tracked terminal pickups and drop-offs with dedicated paging service.",
+    name: "Airport Transfer across India",
+    shortDesc: "Flight-tracked terminal pickups and drop-offs with dedicated paging service across India.",
     detailedDesc:
-      "Punctual, stress-free airport mobility with live flight radar tracking, automated chauffeur reporting, and meet-and-greet support.",
+      "Punctual, stress-free airport mobility with live flight tracking, automated chauffeur reporting, and meet-and-greet support.",
     audience: "Domestic & international business travelers, VIP arrivals, delegation flights",
     iconName: "Plane",
     link: "/services/chauffeur-drive",
@@ -418,7 +419,7 @@ export const FLEET_PORTFOLIO: FleetTier[] = [
   },
 ];
 
-export const INDECAB_STAGES = [
+export const PLATFORM_STAGES = [
   {
     step: "01",
     title: "Booking Portal",
@@ -435,7 +436,7 @@ export const INDECAB_STAGES = [
     step: "02",
     title: "Automated Allocation",
     subtitle: "Intelligent chauffeur & vehicle pairing",
-    desc: "Indecab algorithms match the nearest verified driver and compliant vehicle to maximize on-time reliability.",
+    desc: "Our technology platform algorithms match the nearest verified driver and compliant vehicle to maximize on-time reliability.",
     details: [
       "Proximity-based auto dispatch",
       "Vehicle compliance pre-check",
@@ -599,8 +600,8 @@ export const DIRECT_BRANCHES = [
     role: "Corporate Head Office & Central 24×7 Command Centre",
   },
   {
-    city: "Bengaluru",
-    address: "Prestige Meridian, M.G. Road, Bengaluru 560 001",
+    city: "Bangalore",
+    address: "Serenity, 1176/A, HBR 1st Stage, 4th Block, Bangalore- 560043",
     phone: "9820630817",
     email: "blr@speedwaysftm.com",
     role: "South India Operations Hub & IT Corridor Desk",
@@ -625,5 +626,12 @@ export const DIRECT_BRANCHES = [
     phone: "9820630817",
     email: "delhi@speedwaysftm.com",
     role: "North India Regional Hub & Diplomatic Movement",
+  },
+  {
+    city: "Pune",
+    address: "Magarpatta Cybercity / Hinjawadi IT Park, Pune 411 028",
+    phone: "9820630817",
+    email: "pune@speedwaysftm.com",
+    role: "Automotive, Engineering & Tech Hub Operations",
   },
 ];

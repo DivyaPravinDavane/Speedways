@@ -50,8 +50,8 @@ export default function AboutUsPage() {
     },
     {
       year: "2018",
-      title: "Indecab Cloud Telemetry",
-      desc: "Integrated the Indecab enterprise mobility platform nationwide, pioneering 100% digital duty slips, geofenced passenger OTPs, and contactless ERP billing.",
+      title: "Enterprise Cloud Telemetry",
+      desc: "Integrated our proprietary enterprise technology platform nationwide, pioneering 100% digital duty slips, geofenced passenger OTPs, and contactless ERP billing.",
       metric: "Zero Paper",
     },
     {
@@ -132,7 +132,7 @@ export default function AboutUsPage() {
     {
       role: "Finance & Accounts",
       benefit: "100% MIS Traceability & Error-Free Invoicing",
-      desc: "Indecab-generated digital duty slips with geofenced pickup/drop timestamps, automated kilometer auditing, and centralized e-invoicing ready for ERP import.",
+      desc: "Digital duty slips generated via our technology platform with geofenced pickup/drop timestamps, automated kilometer auditing, and centralized e-invoicing ready for ERP import.",
       icon: FileCheck,
       bullets: [
         "Zero manual paper log disputes with GPS geofence timestamps",
@@ -319,7 +319,7 @@ export default function AboutUsPage() {
                 Many corporate mobility providers struggle when expanding beyond a single city because they lack either local ground presence or centralized operational oversight. Speedways solves this dual challenge through our unique hybrid architecture.
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Our central Mumbai Command Centre unifies booking management, safety tracking, and financial reconciliation across all 185+ cities. Meanwhile, our 5 direct metro hubs and vetted ground partners guarantee on-time physical car deployment and personalized guest care.
+                Our central Mumbai Command Centre unifies booking management, safety tracking, and financial reconciliation across all 185+ cities. Meanwhile, our 6 direct metro hubs (Mumbai, Bangalore, Hyderabad, Chennai, Delhi NCR, Pune) and vetted ground partners guarantee on-time physical car deployment and personalized guest care.
               </p>
 
               <div className="pt-2 space-y-3">

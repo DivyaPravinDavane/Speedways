@@ -43,10 +43,28 @@ export const ENTERPRISE_CLIENTS: EnterpriseClient[] = [
     imgClass: "h-11 sm:h-12 max-w-[170px] w-auto",
   },
   {
-    name: "Abbott",
-    logo: "/logos/abbott.svg",
-    alt: "Abbott Laboratories Client",
-    imgClass: "h-10 sm:h-11 max-w-[170px] w-auto scale-105",
+    name: "Newspace",
+    logo: "/logos/newspace.svg",
+    alt: "Newspace India Limited Client",
+    imgClass: "h-11 sm:h-12 max-w-[190px] w-auto",
+  },
+  {
+    name: "ATPI",
+    logo: "/logos/atpi.svg",
+    alt: "ATPI Travel Management Client",
+    imgClass: "h-10 sm:h-11 max-w-[160px] w-auto",
+  },
+  {
+    name: "DABICO Airport",
+    logo: "/logos/dabico-airport.svg",
+    alt: "DABICO Airport Solutions Client",
+    imgClass: "h-11 sm:h-12 max-w-[190px] w-auto",
+  },
+  {
+    name: "Kimberly",
+    logo: "/logos/kimberly.svg",
+    alt: "Kimberly-Clark Enterprise Client",
+    imgClass: "h-11 sm:h-12 max-w-[185px] w-auto",
   },
   {
     name: "BCD Travel",
@@ -67,16 +85,10 @@ export const ENTERPRISE_CLIENTS: EnterpriseClient[] = [
     imgClass: "h-11 sm:h-12 max-w-[170px] w-auto",
   },
   {
-    name: "Embassy Group",
-    logo: "/logos/embassy.png",
-    alt: "Embassy Office Parks Client",
-    imgClass: "h-12 sm:h-13 max-w-[240px] w-auto scale-[2.2]",
-  },
-  {
-    name: "Lux Industries",
-    logo: "/logos/lux.png",
-    alt: "Lux Industries Client",
-    imgClass: "h-11 sm:h-12 max-w-[165px] w-auto",
+    name: "LUX INDUSTRY",
+    logo: "/logos/lux-industry.svg",
+    alt: "LUX INDUSTRY Corporate Client",
+    imgClass: "h-11 sm:h-12 max-w-[175px] w-auto",
   },
   {
     name: "Quona Capital",

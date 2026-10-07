@@ -11,9 +11,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Speedways Fleet & Travel Management | Enterprise Mobility Pan-India",
-  description: "Enterprise mobility platform combining 1,200+ fleet depth, 185+ city coverage, Indecab technology, and centralised 24x7 command centre governance. Established 2012.",
-  keywords: "corporate car rental, employee transport services, ETS, fleet management India, chauffeur drive corporate, Indecab technology, VIP movement, airport transfers, corporate mobility",
+  title: "Speedways. Advancing Enterprise Mobility | Enterprise Mobility Pan-India",
+  description: "Speedways. Advancing Enterprise Mobility. Purpose in Every Promise. Excellence in Every Experience. Inspired by Commitment. Delivered with Excellence. Committed to Excellence. Defined by Trust. 1,200+ fleet depth, 185+ city coverage, our technology platform, and centralised 24x7 command centre governance.",
+  keywords: "corporate car rental, employee transportation, ETS, fleet management India, chauffeur drive corporate, enterprise technology platform, VIP movement, airport transfer across India, corporate mobility",
 };
 
 export default function RootLayout({

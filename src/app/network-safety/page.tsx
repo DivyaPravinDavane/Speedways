@@ -42,13 +42,14 @@ export default function NetworkSafetyPage() {
   const hubCoordinates = [
     { city: "Delhi NCR", top: "28%", left: "35%", role: "North India Regional Hub" },
     { city: "Mumbai (Head Office)", top: "54%", left: "26%", role: "Head Office & Command Centre" },
+    { city: "Pune", top: "58%", left: "30%", role: "Automotive & Engineering Corridor Hub" },
     { city: "Hyderabad", top: "62%", left: "44%", role: "Telangana & AP Operations Desk" },
-    { city: "Bengaluru", top: "76%", left: "38%", role: "South India Hub & Tech Corridor" },
+    { city: "Bangalore", top: "76%", left: "38%", role: "South India Hub & Tech Corridor" },
     { city: "Chennai", top: "77%", left: "48%", role: "Automotive Corridor Hub" },
   ];
 
   const networkCities = [
-    "Mumbai", "Delhi NCR", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune",
+    "Mumbai", "Delhi NCR", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune",
     "Ahmedabad", "Jaipur", "Chandigarh", "Lucknow", "Kochi", "Indore", "Coimbatore",
     "Vadodara", "Bhubaneswar", "Visakhapatnam", "Nagpur", "Surat", "Patna", "Guwahati",
     "Bhopal", "Ludhiana", "Agra", "Varanasi", "Mysuru", "Nashik", "Rajkot", "Dehradun",
@@ -71,7 +72,7 @@ export default function NetworkSafetyPage() {
       code: "ISO 27001",
       name: "Information Security & Data Protection",
       desc: "Corporate passenger contact information, travel itineraries, and billing data encrypted under AES-256 standards.",
-      scope: "Indecab Cloud Infrastructure & Passenger Personal Data Privacy",
+      scope: "Enterprise Cloud Infrastructure & Passenger Personal Data Privacy",
       certifiedSince: "2019",
     },
     {
@@ -98,7 +99,7 @@ export default function NetworkSafetyPage() {
   ];
 
   const escalationMatrix = [
-    { tier: "Level 1: Immediate", eta: "0 - 15 Mins", owner: "24×7 Command Centre Desk", phone: "9820630817", action: "Live route re-routing, vehicle replacement dispatch, radar flight delay update" },
+    { tier: "Level 1: Immediate", eta: "0 - 15 Mins", owner: "24×7 Command Centre Desk", phone: "9820630817", action: "Live route re-routing, vehicle replacement dispatch, flight delay update" },
     { tier: "Level 2: City Supervisor", eta: "Within 30 Mins", owner: "City Regional Operations Lead", phone: "Direct SPOC", action: "Chauffeur escalation, airport curbside intervention, local traffic mitigation" },
     { tier: "Level 3: Strategic Account Head", eta: "Within 60 Mins", owner: "Dedicated Corporate Account SPOC", phone: "Dedicated Lead", action: "SLA compliance audit, contractual billing adjustment, VIP protocol resolution" },
     { tier: "Level 4: Executive Leadership", eta: "Within 2 Hours", owner: "Managing Director & Head of Operations", phone: "Executive Office", action: "Enterprise review, systemic SOP refinement, senior management reporting" },
@@ -131,7 +132,7 @@ export default function NetworkSafetyPage() {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Consolidate single or multi-city corporate accounts under 5 direct metro hubs, 185+ managed partner cities, continuous live telemetry, and ISO-certified quality standards.
+              Consolidate single or multi-city corporate accounts under 6 direct metro hubs (Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune), 185+ managed partner cities, continuous live telemetry, and ISO-certified quality standards.
             </p>
 
             {/* Quick Live Telemetry Chips */}
@@ -142,7 +143,7 @@ export default function NetworkSafetyPage() {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <Building className="w-4 h-4 text-green-600" />
-                <span>5 Direct Metro Hubs</span>
+                <span>6 Direct Metro Hubs</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <ShieldCheck className="w-4 h-4 text-green-600" />
@@ -157,7 +158,7 @@ export default function NetworkSafetyPage() {
         </div>
       </section>
 
-      {/* Interactive India Network & 5 Metro Hubs */}
+      {/* Interactive India Network & 6 Metro Hubs */}
       <section className="py-20 bg-slate-50/70 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -165,10 +166,10 @@ export default function NetworkSafetyPage() {
               Direct Metros & 185+ Managed Cities
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
-              Direct Metro Hubs + National Managed Network
+              6 Direct Metro Hubs + National Managed Network
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Click on any direct hub below or the map beacons to inspect operational capabilities, office coordinates, and branch coverage.
+              Mumbai (Head Office), Bangalore, Hyderabad, Chennai, Delhi NCR, and Pune with direct operational facilities and branch coverage.
             </p>
           </div>
 
@@ -180,7 +181,7 @@ export default function NetworkSafetyPage() {
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-ping"></span>
                     <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
-                      Live Network Radar Map
+                      Live Network Coverage Map
                     </span>
                   </div>
                   <span className="text-xs font-bold text-green-700 bg-green-50 px-2.5 py-1 rounded-full border border-green-200">

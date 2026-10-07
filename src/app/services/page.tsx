@@ -83,7 +83,7 @@ export default function ServicesPage() {
     {
       title: "Digital Duty Slips",
       metric: "Zero Paper",
-      desc: "Indecab GPS timestamps, geofenced passenger OTP start/end, and automated toll capture.",
+      desc: "GPS timestamps via our technology platform, geofenced passenger OTP start/end, and automated toll capture.",
       icon: FileCheck,
     },
     {
@@ -130,7 +130,7 @@ export default function ServicesPage() {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Every vertical is engineered with standardized corporate SLAs, police-verified chauffeurs, automated Indecab telemetry, and compliant 5% GST invoicing across 185+ cities.
+              Every vertical is engineered with standardized corporate SLAs, verified chauffeurs, automated platform telemetry, and compliant 5% GST invoicing across 185+ cities.
             </p>
 
             {/* Quick Live Telemetry Chips */}
@@ -145,7 +145,7 @@ export default function ServicesPage() {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <ShieldCheck className="w-4 h-4 text-green-600" />
-                <span>100% Police Verified</span>
+                <span>100% Background Verified</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <Clock className="w-4 h-4 text-green-600" />

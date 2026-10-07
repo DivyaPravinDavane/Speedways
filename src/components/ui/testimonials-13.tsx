@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { ComponentProps } from "react";
 import {
   Logo01,
@@ -7,91 +6,98 @@ import {
   Logo04,
   Logo05,
   Logo06,
+  Logo07,
+  Logo08,
+  Logo09,
 } from "@/components/ui/testimonials-13-utils/logos";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/ui/testimonials-13-utils/marquee";
 import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
     id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
-    company: "TechCorp",
+    name: "Rajesh Shinde",
+    designation: "Head of Corporate Travel & Admin",
+    company: "Tata Steel",
     testimonial:
-      "This product has completely transformed the way we work. The efficiency and ease of use are unmatched!",
+      "Speedways has consistently delivered exceptional on-time reliability across manufacturing sites and city offices. Transparent digital duty slips have made month-end invoicing seamless.",
     avatar:
-      "https://cdn.21st.dev/assets/mirror/f7/f72a5321d9c055324b83d9aca5fa248af5f99213b63da015c188955f8b5f0223.jpg",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
     logo: Logo01,
   },
   {
     id: 2,
-    name: "Sophia Lee",
-    designation: "Data Analyst",
-    company: "InsightTech",
+    name: "Ananya Deshmukh",
+    designation: "Regional Procurement Lead",
+    company: "Volvo Group",
     testimonial:
-      "This tool has saved me hours of work! The analytics and reporting features are incredibly powerful.",
+      "From executive delegations to zero-wait airport transfers, the professional chauffeurs and pristine vehicle quality reflect our enterprise safety and ESG commitments.",
     avatar:
-      "https://cdn.21st.dev/assets/mirror/57/57501d26f0a1500d35e3feb532be175cda3d4ad5d9ab7dd2ddbc346a81687641.jpg",
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
     logo: Logo02,
   },
   {
     id: 3,
-    name: "Michael Johnson",
-    designation: "UX Designer",
-    company: "DesignPro",
+    name: "Vikram Nair",
+    designation: "Senior Mobility Director",
+    company: "ATPI",
     testimonial:
-      "An amazing tool that simplifies complex tasks. Highly recommended for professionals in the industry.",
+      "Managing enterprise travel across multiple metro hubs requires flawless coordination. Speedways 24×7 command centre and rapid lead times are truly world-class.",
     avatar:
-      "https://cdn.21st.dev/assets/mirror/55/55053b4b68b2e6eb9cd8d3057617e989f97b0fccf54eb0d46ab3f2907d2c27bb.jpg",
-    logo: Logo03,
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+    logo: Logo06,
   },
   {
     id: 4,
-    name: "Emily Davis",
-    designation: "Marketing Specialist",
-    company: "BrandBoost",
+    name: "Pooja Ramanathan",
+    designation: "Enterprise Administration Lead",
+    company: "Newspace India",
     testimonial:
-      "I've seen a significant improvement in our team's productivity since we started using this service.",
+      "Our leadership and visiting delegates demand punctual, secure mobility. Speedways delivers complete peace of mind with continuous telemetry and dedicated SPOC support.",
     avatar:
-      "https://cdn.21st.dev/assets/mirror/e1/e1e565477a93abaec6a4ffd6a6745e3620bba9e5c0c88418e4b7113667370d65.jpg",
-    logo: Logo04,
-  },
-  {
-    id: 5,
-    name: "Daniel Martinez",
-    designation: "Full-Stack Developer",
-    company: "CodeCrafters",
-    testimonial:
-      "The best investment we've made! The support team is also super responsive and helpful.",
-    avatar:
-      "https://cdn.21st.dev/assets/mirror/7d/7d79089c6788e8d582fe1b03158a3520f2bc805983362f52b8df1558f91577ad.jpg",
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
     logo: Logo05,
   },
   {
-    id: 6,
-    name: "Jane Smith",
-    designation: "Product Manager",
-    company: "InnovateX",
+    id: 5,
+    name: "Karan Mehta",
+    designation: "Operations & Logistics Manager",
+    company: "DABICO Airport",
     testimonial:
-      "The user experience is top-notch! The interface is clean, intuitive, and easy to navigate.",
+      "Airport transfers across India have never been smoother. Real-time flight tracking and curbside chauffeur meet-and-greet ensure zero wait times for our global teams.",
     avatar:
-      "https://cdn.21st.dev/assets/mirror/9a/9a06193c1865e5fc792d78adc02dfec25f0473e69596efd694f24d29916b59e4.jpg",
-    logo: Logo06,
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
+    logo: Logo07,
+  },
+  {
+    id: 6,
+    name: "Sanjay Singhania",
+    designation: "VP Corporate Administration",
+    company: "LUX INDUSTRY",
+    testimonial:
+      "Speedways has been an invaluable partner for intercity outstation and executive rentals. SLA-backed vehicles and 5% GST billing provide full compliance.",
+    avatar:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80",
+    logo: Logo09,
   },
 ];
 
 const Testimonials = () => (
   <div className="px-6 py-20">
-    <h2 className="text-center font-medium text-4xl tracking-[-0.04em] md:text-[2.75rem]">
-      Success Stories
-    </h2>
-    <p className="mt-3.5 text-center text-muted-foreground text-xl tracking-[-0.015em] md:text-2xl">
-      Real stories from people who use and love our product every day
-    </p>
-    <div className="mask-x-from-80% mt-14 space-y-px border bg-muted">
-      <Marquee className="py-0 [--duration:60s] [--gap:0px]" pauseOnHover>
+    <div className="text-center max-w-3xl mx-auto mb-10">
+      <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
+        Enterprise Mobility Case Studies
+      </span>
+      <h2 className="text-center font-bold text-3xl sm:text-4xl text-slate-900 mt-3 tracking-tight">
+        Enterprise Success Stories
+      </h2>
+      <p className="mt-2.5 text-center text-slate-600 text-sm sm:text-base leading-relaxed">
+        Proven execution and verified trust from procurement heads, corporate travel desks, and administration leaders across India
+      </p>
+    </div>
+    <div className="mask-x-from-80% mt-8 space-y-px border border-slate-200/90 rounded-3xl bg-slate-50/60 overflow-hidden shadow-sm">
+      <Marquee className="py-0 [--duration:50s] [--gap:0px]" pauseOnHover>
         <TestimonialList />
       </Marquee>
     </div>
@@ -127,11 +133,9 @@ const TestimonialList = ({ className, ...props }: ComponentProps<"div">) =>
                 </p>
               </div>
             </div>
-            <Button asChild size="icon" variant="ghost">
-              <Link href="#" target="_blank">
-                <TwitterLogo className="h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-bold shrink-0">
+              <span>{testimonial.company}</span>
+            </div>
           </div>
           <p className="mt-5 text-[17px]">{testimonial.testimonial}</p>
         </div>
@@ -187,20 +191,5 @@ const TestimonialList = ({ className, ...props }: ComponentProps<"div">) =>
       </div>
     </div>
   ));
-
-const TwitterLogo = (props: ComponentProps<"svg">) => (
-  <svg
-    role="img"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <title>X</title>
-    <path
-      d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
-      fill="currentColor"
-    />
-  </svg>
-);
 
 export default Testimonials;

@@ -36,7 +36,7 @@ export default function LiveTelemetrySimulator() {
       car: "Toyota Innova Hycross Hybrid",
       regNo: "MH 02 EQ 7780",
       driver: "Suresh Verma",
-      badge: "Police Verified #PV-9921",
+      badge: "Background Verified #PV-9921",
       otp: "8492",
       distance: "8.4 km",
       temp: "21°C",
@@ -48,7 +48,7 @@ export default function LiveTelemetrySimulator() {
       car: "Tata Tigor EV Green Fleet",
       regNo: "KA 01 EV 4120",
       driver: "Ramesh Gowda",
-      badge: "Police Verified #KA-4412",
+      badge: "Background Verified #KA-4412",
       otp: "6319",
       distance: "14.2 km",
       temp: "22°C",
@@ -60,7 +60,7 @@ export default function LiveTelemetrySimulator() {
       car: "Mercedes-Benz E-Class Executive",
       regNo: "DL 1C AC 5590",
       driver: "Vikramjeet Singh",
-      badge: "Police Verified #DL-8812",
+      badge: "Background Verified #DL-8812",
       otp: "9104",
       distance: "18.6 km",
       temp: "20°C",
@@ -92,7 +92,7 @@ export default function LiveTelemetrySimulator() {
           </div>
           <div>
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-green-400 flex items-center gap-1.5">
-              <span>Indecab Real-Time Telemetry</span>
+              <span>Enterprise Real-Time Telemetry</span>
               <span className="text-slate-500">•</span>
               <span className="text-slate-300">Live GPS Ping (4s Latency)</span>
             </div>

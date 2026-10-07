@@ -54,22 +54,25 @@ export default function HomePage() {
       link: "/services/chauffeur-drive",
       tag: "Executive Transit",
       stats: "4h & 8h Packages",
+      image: "/images/hero-sedan.jpg",
     },
     {
-      title: "Airport Transfers",
-      desc: "Zero-wait terminal pickups with automated flight radar tracking and meet-and-greet.",
+      title: "Airport Transfer across India",
+      desc: "Zero-wait terminal pickups with automated flight tracking and curbside meet-and-greet.",
       icon: Plane,
       link: "/services/chauffeur-drive",
       tag: "Flight-Tracked",
-      stats: "Radar Paging Desk",
+      stats: "Terminal Paging Desk",
+      image: "/images/airport-chauffeur.jpg",
     },
     {
-      title: "Employee Transport (ETS)",
+      title: "Employee Transportation (ETS)",
       desc: "Turnkey shift commute, algorithmic route clustering, and women safety escorts.",
       icon: Users,
       link: "/services/employee-transport",
       tag: "Turnkey Commute",
       stats: "22-28% Cost Cut",
+      image: "/images/employee-transit.jpg",
     },
     {
       title: "VIP & Luxury Movement",
@@ -78,6 +81,7 @@ export default function HomePage() {
       link: "/services/vip-luxury-events",
       tag: "White-Glove CXO",
       stats: "Strict NDA Guard",
+      image: "/images/vip-fleet-lineup.jpg",
     },
     {
       title: "EV Mobility & ESG",
@@ -86,6 +90,7 @@ export default function HomePage() {
       link: "/sustainability",
       tag: "Zero-Emissions",
       stats: "Scope 1 & 2 ESG",
+      image: "/images/ev-fleet.jpg",
     },
     {
       title: "MICE & Bulk Events",
@@ -94,6 +99,7 @@ export default function HomePage() {
       link: "/services/vip-luxury-events",
       tag: "Mass Coordination",
       stats: "10 to 100+ Cabs",
+      image: "/images/mice-fleet.jpg",
     },
   ];
 
@@ -121,32 +127,35 @@ export default function HomePage() {
                 <span>ESTABLISHED 2012 • PAN-INDIA ENTERPRISE MOBILITY</span>
               </motion.div>
 
-              {/* Main H1 Headline */}
+              {/* Main H1 Headline with New Tag */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12]"
               >
-                Enterprise Mobility.{" "}
+                Speedways.{" "}
                 <motion.span
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
                   className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-500"
                 >
-                  Delivered with Confidence.
+                  Advancing Enterprise Mobility.
                 </motion.span>
               </motion.h1>
 
-              {/* Supporting Copy */}
+              {/* Supporting Copy with New Pillars */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="text-lg text-slate-600 leading-relaxed max-w-2xl"
+                className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl"
               >
-                <strong className="text-slate-800">Driven by Commitment. Defined by Service.</strong> A corporate mobility platform combining 1,200+ fleet depth, 185+ city coverage, Indecab cloud technology, and centralised 24×7 governance.
+                <strong className="text-slate-800 font-bold block mb-1.5 text-sm sm:text-base">
+                  Purpose in Every Promise. Excellence in Every Experience. Inspired by Commitment. Delivered with Excellence. Committed to Excellence. Defined by Trust.
+                </strong>
+                India&apos;s premier corporate mobility platform combining 1,200+ fleet depth, 185+ city coverage, our technology platform, and centralised 24×7 governance.
               </motion.p>
 
               {/* Action Buttons */}
@@ -185,11 +194,11 @@ export default function HomePage() {
               <div className="pt-4 grid grid-cols-3 gap-3 border-t border-slate-100 max-w-lg">
                 <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                  <span>108+ Fortune Clients</span>
+                  <span>156+ Fortune Clients</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                  <span>5 Metro Direct Hubs</span>
+                  <span>6 Direct Metro Hubs</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
@@ -223,13 +232,13 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Floating Badge 1: 100% Police Verified */}
+              {/* Floating Badge 1: 100% Background Verified */}
               <div className="absolute -top-4 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-green-200/90 flex items-center gap-3 hover:scale-105 transition-all duration-300">
                 <div className="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-5 h-5 text-green-700" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-900">100% Police-Verified</div>
+                  <div className="text-xs font-bold text-slate-900">100% Background-Verified</div>
                   <div className="text-[11px] text-slate-500">Chauffeur Background Check</div>
                 </div>
               </div>
@@ -279,7 +288,7 @@ export default function HomePage() {
               Live Trip Telemetry & 24×7 Control Simulation
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Explore how our Indecab cloud engine tracks speed, boarding OTP, geofence adherence, and digital duty slip sign-off in real time.
+              Explore how our technology platform tracks speed, boarding OTP, geofence adherence, and digital duty slip sign-off in real time.
             </p>
           </div>
 
@@ -288,7 +297,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. CORE SERVICES PREVIEW (Symbol-Driven 6 Cards) */}
+      {/* 5. CORE SERVICES PREVIEW (Picture-Rich Cards) */}
       <section className="py-20 bg-[#F4FAF6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -300,7 +309,7 @@ export default function HomePage() {
                 Corporate Mobility Solutions
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mt-1">
-                Custom line and duotone symbols representing every service vertical with strict SLAs.
+                Specialised fleet management and chauffeur transit verticals backed by rigorous SLAs.
               </p>
             </div>
             <Link
@@ -318,40 +327,54 @@ export default function HomePage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white p-7 rounded-2xl border border-green-200/80 hover-border-flow card-premium-shadow group flex flex-col justify-between transition-all duration-300"
+                  className="bg-white rounded-2xl border border-green-200/80 hover-border-flow card-premium-shadow group flex flex-col justify-between overflow-hidden transition-all duration-300"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      {/* Mandated Parrot Green Disc */}
-                      <SymbolBadge icon={IconComp} size="md" />
-                      <span className="text-[11px] font-semibold text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
+                  {/* Service Image Card Header */}
+                  <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute top-3 left-3">
+                      <SymbolBadge icon={IconComp} size="sm" />
+                    </div>
+                    <div className="absolute top-3 right-3">
+                      <span className="text-[11px] font-bold text-slate-900 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-md shadow-xs">
                         {service.tag}
                       </span>
                     </div>
-
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-green-600 transition-colors">
-                      {service.title}
-                    </h3>
-
-                    <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-                      {service.desc}
-                    </p>
-
-                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                      <span className="font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded">
-                        {service.stats}
-                      </span>
-                      <span className="text-slate-400">Police-Verified</span>
+                    <div className="absolute bottom-3 left-3 right-3">
+                      <h3 className="text-lg font-bold text-white drop-shadow-xs">
+                        {service.title}
+                      </h3>
                     </div>
                   </div>
 
-                  <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
-                    <Link
-                      href={service.link}
-                      className="text-xs font-bold text-green-600 hover:text-green-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform"
-                    >
-                      View Specs & Tariff <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        {service.desc}
+                      </p>
+
+                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span className="font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded">
+                          {service.stats}
+                        </span>
+                        <span className="text-slate-500 font-medium">Pan-India SLAs</span>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+                      <Link
+                        href={service.link}
+                        className="text-xs font-bold text-green-600 hover:text-green-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                      >
+                        View Specs & Tariff <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );
@@ -516,7 +539,7 @@ export default function HomePage() {
               Ready to Empanel Speedways for Your Corporate Mobility Needs?
             </h2>
             <p className="text-slate-600 text-base">
-              Submit your corporate RFP or schedule a direct consultation with our enterprise account team. 5 metro direct branches and 185+ managed cities ready for deployment.
+              Submit your corporate RFP or schedule a direct consultation with our enterprise account team. 6 direct branches (Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune) and 185+ managed cities ready for deployment.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 pt-3">
               <Link

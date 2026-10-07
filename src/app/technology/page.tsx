@@ -24,18 +24,18 @@ import {
   PhoneCall,
   Lock,
 } from "lucide-react";
-import { INDECAB_STAGES, SLA_BENCHMARKS } from "@/data/speedwaysData";
+import { PLATFORM_STAGES, SLA_BENCHMARKS } from "@/data/speedwaysData";
 
 export default function TechnologyPage() {
   const [activeStage, setActiveStage] = useState<number>(0);
 
-  const currentStage = INDECAB_STAGES[activeStage];
+  const currentStage = PLATFORM_STAGES[activeStage];
 
   return (
     <div className="bg-[#F4FAF6]">
       {/* Breadcrumb */}
       <div className="bg-slate-50 border-b border-slate-200/80">
-        <Breadcrumbs items={[{ label: "Technology Platform (Indecab)" }]} />
+        <Breadcrumbs items={[{ label: "Technology Platform" }]} />
       </div>
 
       {/* Header Banner */}
@@ -44,7 +44,7 @@ export default function TechnologyPage() {
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-bold uppercase tracking-wider">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span>POWERED BY INDECAB • ENTERPRISE SAAS ENGINE</span>
+              <span>ENTERPRISE MOBILITY CLOUD • PROPRIETARY SAAS ENGINE</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
               Enterprise Mobility Engine: From Booking to Automated MIS
@@ -93,7 +93,7 @@ export default function TechnologyPage() {
 
           {/* Stepper Navigation Buttons */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-8">
-            {INDECAB_STAGES.map((s, idx) => (
+            {PLATFORM_STAGES.map((s, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveStage(idx)}
@@ -170,7 +170,7 @@ export default function TechnologyPage() {
               <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-xs text-slate-400">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-ping"></span>
-                  <span className="text-white font-mono font-bold">Indecab Cloud Hub</span>
+                  <span className="text-white font-mono font-bold">Speedways Cloud Hub</span>
                 </div>
                 <span className="font-mono text-[11px] text-green-400">STATUS: 200 OK</span>
               </div>
@@ -236,7 +236,7 @@ export default function TechnologyPage() {
               SLA Reference Standards Guaranteed by Technology
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Our Indecab infrastructure holds every driver, fleet vehicle, and dispatcher to strict time-bound performance metrics.
+              Our technology platform infrastructure holds every driver, fleet vehicle, and dispatcher to strict time-bound performance metrics.
             </p>
           </div>
 
@@ -275,7 +275,7 @@ export default function TechnologyPage() {
               <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
                 <Image
                   src="/images/command-center.jpg"
-                  alt="Indecab Fleet Telemetry & Operations Console"
+                  alt="Enterprise Fleet Telemetry & Operations Console"
                   width={600}
                   height={400}
                   className="w-full h-auto object-cover"

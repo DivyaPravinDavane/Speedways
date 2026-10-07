@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 50" fill="none">
+  <!-- Red LUX block letter styling with double chevrons -->
+  <text x="6" y="32" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="28" font-weight="900" fill="#E11D48" letter-spacing="1">LUX</text>
+  <!-- Diamond chevron motif -->
+  <rect x="74" y="16" width="14" height="14" transform="rotate(45 81 23)" fill="#0F172A" />
+  <path d="M96 14 L103 23 L96 32" stroke="#E11D48" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M102 14 L109 23 L102 32" stroke="#E11D48" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <!-- INDUSTRY subtitle -->
+  <text x="6" y="44" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="9" font-weight="800" fill="#0F172A" letter-spacing="3">INDUSTRY</text>
+</svg>

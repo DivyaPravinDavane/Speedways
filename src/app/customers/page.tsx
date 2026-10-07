@@ -41,7 +41,7 @@ export default function CustomersPage() {
       category: "mfg",
       scope: "CXO Mobility & Tech Center Commute",
       stat: "99.8% On-Time SLA",
-      quote: "The Indecab digital telemetry and verified chauffeurs align perfectly with our global safety ethos.",
+      quote: "The digital platform telemetry and verified chauffeurs align perfectly with our global safety ethos.",
       author: "Head of Facility Services",
     },
     {
@@ -75,14 +75,44 @@ export default function CustomersPage() {
       author: "Director - Workplace Safety",
     },
     {
-      name: "Abbott Laboratories",
-      logo: "/logos/abbott.svg",
-      sector: "Healthcare & Nutrition",
+      name: "ATPI",
+      logo: "/logos/atpi.svg",
+      sector: "Global Travel Management (TMC)",
+      category: "it",
+      scope: "International Delegations & Enterprise Travel",
+      stat: "24×7 Rapid Dispatch",
+      quote: "Flawless ground transport execution, transparent billing, and exceptional 24×7 command centre coordination.",
+      author: "Head of Corporate Mobility Alliances",
+    },
+    {
+      name: "Newspace India",
+      logo: "/logos/newspace.svg",
+      sector: "Space & Aerospace Technology",
+      category: "it",
+      scope: "Executive Chauffeur & VIP Transit",
+      stat: "100% On-Time SLA",
+      quote: "Speedways delivers complete reliability with continuous telemetry, sanitized executive vehicles, and dedicated SPOC support.",
+      author: "Enterprise Administration Lead",
+    },
+    {
+      name: "DABICO Airport",
+      logo: "/logos/dabico-airport.svg",
+      sector: "Aviation & Airport Infrastructure",
+      category: "mfg",
+      scope: "Airport Transfers & Executive Mobility",
+      stat: "Zero Wait Time",
+      quote: "Live flight tracking and curbside meet-and-greet ensure seamless airport arrivals across all major terminals in India.",
+      author: "Operations & Logistics Manager",
+    },
+    {
+      name: "Kimberly",
+      logo: "/logos/kimberly.svg",
+      sector: "Global Consumer & Healthcare",
       category: "pharma",
-      scope: "Field Force & Executive Travel",
-      stat: "4h Lead Time Guarantee",
-      quote: "Exceptional dispatch responsiveness. Their 24×7 command center resolves high-priority flight delays effortlessly.",
-      author: "Regional Transport Manager",
+      scope: "Corporate Commute & Chauffeur Services",
+      stat: "100% Audit Compliance",
+      quote: "Punctual dispatches, rigorous vehicle maintenance, and transparent monthly consolidated billing have exceeded our expectations.",
+      author: "Corporate Procurement Lead",
     },
     {
       name: "BCD Travel",
@@ -115,23 +145,13 @@ export default function CustomersPage() {
       author: "VP Infrastructure & Operations",
     },
     {
-      name: "Embassy Office Parks",
-      logo: "/logos/embassy.png",
-      sector: "Commercial Real Estate & REIT",
-      category: "it",
-      scope: "Campus Mobility & Executive Chauffeur",
-      stat: "100% Electric EV Shuttles",
-      quote: "Pioneering the corporate EV transition across our business parks with clean zero-tailpipe emission shuttles.",
-      author: "Director of Asset Management",
-    },
-    {
-      name: "Lux Industries",
-      logo: "/logos/lux.png",
-      sector: "FMCG & Consumer Goods",
+      name: "LUX INDUSTRY",
+      logo: "/logos/lux-industry.svg",
+      sector: "Textile & Consumer Goods",
       category: "mfg",
       scope: "Corporate Spot & Factory Logistics",
       stat: "10+ Years Partnership",
-      quote: "Decade-long trust built on transparent billing, well-maintained fleets, and exemplary driver courtesy.",
+      quote: "Decade-long trust built on transparent billing, well-maintained fleets, and exemplary chauffeur courtesy.",
       author: "General Manager - Administration",
     },
     {
@@ -317,11 +337,7 @@ export default function CustomersPage() {
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className={`max-h-12 object-contain transition-transform ${
-                        client.name === "Embassy Office Parks"
-                          ? "max-w-[280px] scale-[2.2] group-hover:scale-[2.4] ml-6"
-                          : "max-w-full filter group-hover:scale-105"
-                      }`}
+                      className="max-h-12 max-w-full object-contain filter group-hover:scale-105 transition-transform"
                     />
                   </div>
                   <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">

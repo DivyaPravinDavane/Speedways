@@ -10,9 +10,9 @@ export default function SpeedwaysInfoCards() {
     {
       image:
         "/images/airport-chauffeur.jpg",
-      title: "Airport VIP Transfers",
+      title: "Airport Transfer across India",
       description:
-        "Radar flight-tracked arrivals, dedicated terminal curbside paging, sanitized Toyota Innova Hycross, and zero wait-time penalties.",
+        "Automated flight-tracked arrivals, dedicated terminal curbside paging, sanitized Toyota Innova Hycross, and zero wait-time penalties.",
       borderColor: "#22C55E", // Parrot Green
       borderBgColor: "#f1f5f9",
       cardBgColor: "#ffffff",

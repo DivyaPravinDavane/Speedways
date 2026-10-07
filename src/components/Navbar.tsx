@@ -155,7 +155,7 @@ export default function Navbar() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-xs font-bold text-slate-900 group-hover:text-green-700 transition-colors flex items-center justify-between">
-                          <span>Indecab Platform Integration</span>
+                          <span>Our Technology Platform</span>
                           <span className="text-[9px] font-semibold text-green-700 bg-green-50 px-1.5 py-0.5 rounded border border-green-200">
                             Core SaaS
                           </span>
@@ -638,7 +638,7 @@ export default function Navbar() {
                       <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
                         Client Testimonials
                       </div>
-                      <div className="text-[11px] text-slate-500">Tata Steel, DBS, Merck, Abbott</div>
+                      <div className="text-[11px] text-slate-500">Tata Steel, DBS, Merck, Kimberly</div>
                     </div>
                   </Link>
                 </div>
