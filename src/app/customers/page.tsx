@@ -154,16 +154,6 @@ export default function CustomersPage() {
       quote: "Decade-long trust built on transparent billing, well-maintained fleets, and exemplary chauffeur courtesy.",
       author: "General Manager - Administration",
     },
-    {
-      name: "Quona Capital",
-      logo: "/logos/quona-dark.png",
-      sector: "Venture Capital & Private Equity",
-      category: "banking",
-      scope: "VIP Board Meetings & Investor Delegations",
-      stat: "Mercedes & Audi Fleet",
-      quote: "Immaculate premium sedans and discreet, English-speaking chauffeurs for global partner delegations.",
-      author: "Executive Assistant to Managing Partner",
-    },
   ];
 
   const filteredClients =
