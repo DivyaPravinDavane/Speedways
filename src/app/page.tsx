@@ -38,8 +38,6 @@ import SpeedwaysInfoCards from "@/components/SpeedwaysInfoCards";
 import Testimonials from "@/components/ui/testimonials-13";
 import ClientLogosMarquee from "@/components/ClientLogosMarquee";
 import AnimatedStatsGrid from "@/components/AnimatedStatsGrid";
-import IndiaNetworkMap from "@/components/IndiaNetworkMap";
-import LeadershipSection from "@/components/LeadershipSection";
 import { AnimatedNumber } from "@/components/AnimatedCounter";
 import {
   CLIENT_LOGOS,
@@ -427,8 +425,32 @@ export default function HomePage() {
       {/* 5B. DYNAMIC ROTATING BORDER INFOCARDS SPOTLIGHT */}
       <SpeedwaysInfoCards />
 
-      {/* 5C. 185+ CITIES INDIA NETWORK MAP */}
-      <IndiaNetworkMap />
+      {/* 5C. 185+ CITIES NETWORK PREVIEW (Short Summary) */}
+      <section className="py-12 bg-white border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-950 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider">
+                <MapPin className="w-3.5 h-3.5" />
+                Pan-India Reach
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                185+ Cities Nationwide • 6 Direct Metro Hubs
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Direct branch hubs in Mumbai, Bengaluru, Hyderabad, Chennai, Delhi NCR, and Pune with verified Tier-2/3 coverage nationwide under 24×7 central command oversight.
+              </p>
+            </div>
+            <Link
+              href="/network-safety"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm shadow-md shadow-green-500/25 transition-all shrink-0 cursor-pointer"
+            >
+              <span>Explore Interactive Network Map</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* 6. SAFETY BUILT INTO EVERY JOURNEY (Safety & Compliance Showcase) */}
       <section className="py-20 bg-white border-b border-slate-200/80 relative overflow-hidden" id="safety">
@@ -575,9 +597,6 @@ export default function HomePage() {
           <PictographicalComparison />
         </div>
       </section>
-
-      {/* 8B. EXECUTIVE LEADERSHIP BENCH */}
-      <LeadershipSection />
 
       {/* 9. VERIFIED TESTIMONIALS (PPT Sourced Exact Quotes) */}
       <section className="py-20 bg-[#F4FAF6]" id="testimonials">

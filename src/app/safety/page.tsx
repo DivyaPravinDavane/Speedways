@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import IndiaNetworkMap from "@/components/IndiaNetworkMap";
 import {
   ShieldCheck,
   UserCheck,
@@ -400,8 +399,31 @@ export default function SafetyAndCompliancePage() {
         </section>
       )}
 
-      {/* 5. INDIA NETWORK MAP EMBED */}
-      <IndiaNetworkMap />
+      {/* 5. PAN-INDIA NETWORK PREVIEW */}
+      <section className="py-12 bg-white border-t border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <span className="text-xs font-bold uppercase tracking-wider text-green-400 bg-green-950 px-2.5 py-1 rounded-md border border-green-800">
+                185+ Cities Network
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black text-white">
+                Nationwide Safety SLAs Across 6 Metro Hubs & 185+ Cities
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300">
+                Identical passenger safety standards, police-verified chauffeurs, and 24×7 command centre oversight guaranteed in every city.
+              </p>
+            </div>
+            <Link
+              href="/network-safety"
+              className="px-6 py-3.5 rounded-xl bg-[#48B83D] hover:bg-[#3ea534] text-white text-xs font-bold uppercase tracking-wider transition-all shrink-0 shadow-md flex items-center gap-2"
+            >
+              <span>View Full Network Map</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* 6. BOTTOM CALL TO ACTION */}
       <section className="py-16 bg-[#F4FAF6] border-t border-green-100/80">
