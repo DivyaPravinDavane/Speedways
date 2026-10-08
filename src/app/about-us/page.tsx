@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SymbolBadge from "@/components/SymbolBadge";
+import LeadershipSection from "@/components/LeadershipSection";
 import {
   ShieldCheck,
   Target,
@@ -98,8 +99,8 @@ export default function AboutUsPage() {
   const stakeholders = [
     {
       role: "Procurement Heads",
-      benefit: "Cost Control & Tax Credit Clarity",
-      desc: "Transparent contractual rate cards, 5% GST model ensuring clean corporate input tax credit, and volume economies of scale across single or multi-city footprints.",
+      benefit: "Cost Control & Statutory Billing Clarity",
+      desc: "Transparent contractual rate cards, compliant 5% GST billing structure, and volume economies of scale across single or multi-city footprints.",
       icon: Briefcase,
       bullets: [
         "100% compliant 5% GST billing without fuel surcharge surprises",
@@ -192,46 +193,85 @@ export default function AboutUsPage() {
         />
       </div>
 
-      {/* Header Banner with Animated Floating Telemetry Badges */}
+      {/* Header Banner with High-Impact Fleet Showcase */}
       <section className="py-14 md:py-20 border-b border-green-100/70 bg-[#F4FAF6] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
-                <Building className="w-3.5 h-3.5 text-green-600" />
-                Corporate Heritage & Governance
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
-                <Radio className="w-3 h-3 text-green-600 animate-pulse" />
-                Established 2012 • 14+ Years Enterprise Trust
-              </span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
+                  <Building className="w-3.5 h-3.5 text-green-600" />
+                  Corporate Heritage & Governance
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+                  <Radio className="w-3 h-3 text-green-600 animate-pulse" />
+                  Established 2012 • 14+ Years Enterprise Trust
+                </span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                A Decade of Enterprise Mobility Leadership
+              </h1>
+
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Established in 2012, Speedways Fleet & Travel Management Pvt. Ltd. was founded on a singular principle: to replace fragmented, unorganized local car rentals with structured, technology-driven enterprise mobility governance.
+              </p>
+
+              {/* Quick Heritage Telemetry Chips */}
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-slate-700">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <Building className="w-4 h-4 text-green-600" />
+                  <span>HQ in Mumbai</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <Car className="w-4 h-4 text-green-600" />
+                  <span>1,200+ Fleet Network</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <MapPin className="w-4 h-4 text-green-600" />
+                  <span>185+ Managed Cities</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <ShieldCheck className="w-4 h-4 text-green-600" />
+                  <span>Zero Compromise SLA</span>
+                </div>
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              A Decade of Enterprise Mobility Leadership
-            </h1>
+            {/* Right Showcase Image Card */}
+            <div className="lg:col-span-5 relative group">
+              <div className="absolute -inset-2 bg-gradient-to-tr from-green-500/20 to-emerald-400/10 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+                <Image
+                  src="/images/vip-fleet-lineup.jpg"
+                  alt="Speedways Corporate Fleet Staging outside Convention Center"
+                  width={720}
+                  height={480}
+                  className="w-full h-[320px] sm:h-[380px] object-cover group-hover:scale-102 transition-transform duration-500"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none"></div>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Established in 2012, Speedways Fleet & Travel Management Pvt. Ltd. was founded on a singular principle: to replace fragmented, unorganized local car rentals with structured, technology-driven enterprise mobility governance.
-            </p>
+                <div className="absolute bottom-4 left-4 right-4 text-white text-xs flex items-center justify-between">
+                  <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 font-semibold">
+                    185+ Cities Managed Network
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-green-500 text-white font-mono font-bold text-[11px] shadow-xs">
+                    Since 2012
+                  </span>
+                </div>
+              </div>
 
-            {/* Quick Heritage Telemetry Chips */}
-            <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-slate-700">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <Building className="w-4 h-4 text-green-600" />
-                <span>HQ in Mumbai</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <Car className="w-4 h-4 text-green-600" />
-                <span>1,200+ Fleet Network</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <MapPin className="w-4 h-4 text-green-600" />
-                <span>185+ Managed Cities</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <ShieldCheck className="w-4 h-4 text-green-600" />
-                <span>Zero Compromise SLA</span>
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -left-3 sm:-left-5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-green-200 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center font-black text-xs">
+                  ISO
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-slate-900">5 ISO Quality Certifications</div>
+                  <div className="text-[10px] text-slate-500">Externally Audited & Certified</div>
+                </div>
               </div>
             </div>
           </div>
@@ -458,6 +498,11 @@ export default function AboutUsPage() {
         </div>
       </section>
 
+      {/* Executive Leadership Team Organization Chart */}
+      <div id="leadership">
+        <LeadershipSection />
+      </div>
+
       {/* Client Governance Hierarchy & Multi-Tier Escalation Model */}
       <section className="py-20 bg-slate-50/70 border-b border-slate-200/80" id="governance">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -501,6 +546,50 @@ export default function AboutUsPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Operations Command Centre Visual Showcase */}
+          <div className="mb-12 bg-white rounded-3xl border border-slate-200/90 p-3 sm:p-4 shadow-xl overflow-hidden group">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-6 relative h-64 sm:h-72 rounded-2xl overflow-hidden bg-slate-900">
+                <Image
+                  src="/images/command-center.jpg"
+                  alt="24x7 Operations Command Centre Telemetry Desk at Speedways Mumbai HQ"
+                  fill
+                  className="object-cover group-hover:scale-102 transition-transform duration-500 opacity-95"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-slate-900 shadow-sm flex items-center gap-1.5">
+                  <Radio className="w-3.5 h-3.5 text-green-600 animate-pulse" />
+                  <span>Tier 2 Nerve Centre: Mumbai HQ</span>
+                </div>
+                <div className="absolute bottom-3 left-3 right-3 text-white text-xs">
+                  <div className="font-bold">24×7 Operations Control Desk</div>
+                  <div className="text-slate-300 text-[11px]">Continuous dispatch, flight tracking & panic SOS telemetry</div>
+                </div>
+              </div>
+              <div className="lg:col-span-6 p-4 sm:p-6 space-y-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
+                  Continuous Real-Time Oversight
+                </span>
+                <h3 className="text-2xl font-black text-slate-900">
+                  Zero Gaps Between Booking, Dispatch & Billing
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Every driver deployment across 185+ cities is actively monitored by our central command team. If a flight is delayed or an itinerary changes, our controllers adjust dispatches proactively before any passenger inconvenience occurs.
+                </p>
+                <div className="pt-2 flex flex-wrap gap-3 text-xs font-semibold text-slate-700">
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-green-600" />
+                    <span>90-min prior driver details</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-green-600" />
+                    <span>0-15 min rapid escalation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Escalation Matrix Table */}

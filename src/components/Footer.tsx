@@ -82,7 +82,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>5% GST Billing Model with Complete Tax Credit Traceability</span>
+                <span>5% GST Corporate Billing Model with Complete Statutory Traceability</span>
               </div>
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
@@ -188,32 +188,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/fleet" className="hover:text-green-600 transition-colors">
+                <Link href="/services/chauffeur-drive" className="hover:text-green-600 transition-colors">
                   Economy Sedan (Dzire, Aura)
                 </Link>
               </li>
               <li>
-                <Link href="/fleet" className="hover:text-green-600 transition-colors">
+                <Link href="/services/chauffeur-drive" className="hover:text-green-600 transition-colors">
                   Executive Sedan (Ciaz, City)
                 </Link>
               </li>
               <li>
-                <Link href="/fleet" className="hover:text-green-600 transition-colors">
+                <Link href="/services/chauffeur-drive" className="hover:text-green-600 transition-colors">
                   MUV (Ertiga, Carens)
                 </Link>
               </li>
               <li>
-                <Link href="/fleet" className="hover:text-green-600 transition-colors">
+                <Link href="/services/chauffeur-drive" className="hover:text-green-600 transition-colors">
                   Premium MUV (Innova Crysta/Hycross)
                 </Link>
               </li>
               <li>
-                <Link href="/fleet" className="hover:text-green-600 transition-colors">
+                <Link href="/services/chauffeur-drive" className="hover:text-green-600 transition-colors">
                   Luxury SUV (Fortuner, Mercedes, BMW)
                 </Link>
               </li>
               <li>
-                <Link href="/fleet" className="hover:text-green-600 transition-colors">
+                <Link href="/services/chauffeur-drive" className="hover:text-green-600 transition-colors">
                   Electric Fleet (Tigor, Nexon EV)
                 </Link>
               </li>

@@ -90,6 +90,12 @@ export const ENTERPRISE_CLIENTS: EnterpriseClient[] = [
     alt: "LUX INDUSTRY Corporate Client",
     imgClass: "h-11 sm:h-12 max-w-[175px] w-auto",
   },
+  {
+    name: "Quona Capital",
+    logo: "/logos/quona.svg",
+    alt: "Quona Capital Enterprise Client",
+    imgClass: "h-8 sm:h-9 max-w-[150px] w-auto",
+  },
 ];
 
 export default function ClientLogosMarquee() {

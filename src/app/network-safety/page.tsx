@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SymbolBadge from "@/components/SymbolBadge";
+import IndiaNetworkMap from "@/components/IndiaNetworkMap";
 import {
   MapPin,
   ShieldCheck,
@@ -112,46 +113,86 @@ export default function NetworkSafetyPage() {
         <Breadcrumbs items={[{ label: "Network, Command Centre & Safety" }]} />
       </div>
 
-      {/* Header Banner with Animated Floating Telemetry Badges */}
+      {/* Header Banner with High-Tech Command Centre Visual */}
       <section className="py-14 md:py-20 border-b border-green-100/70 bg-[#F4FAF6] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
-                <Globe className="w-3.5 h-3.5 text-green-600" />
-                Pan-India Reach & Unified Governance
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
-                <Radio className="w-3 h-3 text-green-600 animate-pulse" />
-                Live 24×7 Command Centre Active
-              </span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
+                  <Globe className="w-3.5 h-3.5 text-green-600" />
+                  Pan-India Reach & Unified Governance
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+                  <Radio className="w-3 h-3 text-green-600 animate-pulse" />
+                  Live 24×7 Command Centre Active
+                </span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                185+ City Network, 24×7 Command Centre & ISO Safety
+              </h1>
+
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Consolidate single or multi-city corporate accounts under 6 direct metro hubs (Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune), 185+ managed partner cities, continuous live telemetry, and ISO-certified quality standards.
+              </p>
+
+              {/* Quick Live Telemetry Chips */}
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-slate-700">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <MapPin className="w-4 h-4 text-green-600" />
+                  <span>185+ Managed Cities</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <Building className="w-4 h-4 text-green-600" />
+                  <span>6 Direct Metro Hubs</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <ShieldCheck className="w-4 h-4 text-green-600" />
+                  <span>5 ISO Standards Compliant</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <Radio className="w-4 h-4 text-green-600 animate-pulse" />
+                  <span>24×7 Centralized Ops</span>
+                </div>
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              185+ City Network, 24×7 Command Centre & ISO Safety
-            </h1>
+            {/* Right Showcase: 24x7 Operations Command Centre */}
+            <div className="lg:col-span-5 relative group">
+              <div className="absolute -inset-2 bg-gradient-to-tr from-green-500/20 to-emerald-400/10 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+                <Image
+                  src="/images/command-center.jpg"
+                  alt="Speedways 24x7 Operations Command Centre and Live Telemetry Desk in Mumbai"
+                  width={720}
+                  height={480}
+                  className="w-full h-[320px] sm:h-[380px] object-cover group-hover:scale-102 transition-transform duration-500"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent pointer-events-none"></div>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Consolidate single or multi-city corporate accounts under 6 direct metro hubs (Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune), 185+ managed partner cities, continuous live telemetry, and ISO-certified quality standards.
-            </p>
+                <div className="absolute bottom-4 left-4 right-4 text-white text-xs flex items-center justify-between">
+                  <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 font-semibold">
+                    Mumbai Operations Command Centre
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-green-500 text-white font-mono font-bold text-[11px] shadow-xs flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                    ACTIVE
+                  </span>
+                </div>
+              </div>
 
-            {/* Quick Live Telemetry Chips */}
-            <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-slate-700">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <MapPin className="w-4 h-4 text-green-600" />
-                <span>185+ Managed Cities</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <Building className="w-4 h-4 text-green-600" />
-                <span>6 Direct Metro Hubs</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <ShieldCheck className="w-4 h-4 text-green-600" />
-                <span>5 ISO Standards Compliant</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <Radio className="w-4 h-4 text-green-600 animate-pulse" />
-                <span>24×7 Centralized Ops</span>
+              {/* Floating Telemetry Badge */}
+              <div className="absolute -bottom-4 -left-3 sm:-left-5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-green-200 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0">
+                  <Radio className="w-5 h-5 text-green-600 animate-pulse" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-slate-900">Live AIS-140 GPS Tracking</div>
+                  <div className="text-[10px] text-slate-500">Continuous 24×7 Network Oversight</div>
+                </div>
               </div>
             </div>
           </div>
@@ -159,143 +200,12 @@ export default function NetworkSafetyPage() {
       </section>
 
       {/* Interactive India Network & 6 Metro Hubs */}
-      <section className="py-20 bg-slate-50/70 border-b border-slate-200/80">
+      <IndiaNetworkMap />
+
+      {/* Searchable 185+ Cities Directory Drawer */}
+      <section className="py-12 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
-              Direct Metros & 185+ Managed Cities
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
-              6 Direct Metro Hubs + National Managed Network
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Mumbai (Head Office), Bangalore, Hyderabad, Chennai, Delhi NCR, and Pune with direct operational facilities and branch coverage.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left: Interactive Map Visual Card */}
-            <div className="lg:col-span-6 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-lg relative min-h-[480px] flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-ping"></span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
-                      Live Network Coverage Map
-                    </span>
-                  </div>
-                  <span className="text-xs font-bold text-green-700 bg-green-50 px-2.5 py-1 rounded-full border border-green-200">
-                    185+ Cities Active
-                  </span>
-                </div>
-                <p className="text-xs text-slate-500 mb-6">
-                  Select any beacon to highlight branch details, direct telephone hotline, and regional jurisdiction.
-                </p>
-              </div>
-
-              {/* Styled India Map Outline Canvas */}
-              <div className="relative w-full h-[320px] bg-slate-50 rounded-2xl border border-slate-200/60 overflow-hidden flex items-center justify-center p-4">
-                {/* SVG India Abstract Contour */}
-                <svg viewBox="0 0 400 450" className="w-full h-full opacity-40 text-slate-400">
-                  <path
-                    d="M180 20 L210 50 L230 40 L260 80 L250 110 L310 140 L350 130 L380 160 L360 200 L320 200 L300 230 L280 250 L250 310 L210 380 L180 430 L160 390 L140 330 L120 280 L100 250 L90 220 L110 190 L130 180 L140 140 L160 110 Z"
-                    fill="#e2e8f0"
-                    stroke="#94a3b8"
-                    strokeWidth="1.5"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-
-                {/* Beacon Pins */}
-                {hubCoordinates.map((hub, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setSelectedHub(idx)}
-                    style={{ top: hub.top, left: hub.left }}
-                    className={`absolute transform -translate-x-1/2 -translate-y-1/2 group transition-transform cursor-pointer ${
-                      selectedHub === idx ? "scale-125 z-20" : "scale-100 z-10"
-                    }`}
-                  >
-                    <span className="relative flex h-5 w-5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span
-                        className={`relative inline-flex rounded-full h-5 w-5 border-2 border-white shadow-md items-center justify-center text-[9px] font-bold text-white ${
-                          selectedHub === idx ? "bg-green-600 scale-110" : "bg-green-500"
-                        }`}
-                      >
-                        •
-                      </span>
-                    </span>
-                    <span
-                      className={`absolute left-1/2 -translate-x-1/2 -bottom-5 whitespace-nowrap text-[10px] font-bold px-1.5 py-0.5 rounded shadow-xs transition-all ${
-                        selectedHub === idx
-                          ? "bg-slate-900 text-white"
-                          : "bg-white text-slate-700 border border-slate-200"
-                      }`}
-                    >
-                      {hub.city.split(" ")[0]}
-                    </span>
-                  </button>
-                ))}
-              </div>
-
-              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                <span>Pulsing Pins = Direct Metro Hubs</span>
-                <span className="font-semibold text-slate-700">Central HO: Mumbai</span>
-              </div>
-            </div>
-
-            {/* Right: Hub Selector & Details */}
-            <div className="lg:col-span-6 space-y-4">
-              <div className="space-y-3">
-                {DIRECT_BRANCHES.map((b, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => setSelectedHub(idx)}
-                    className={`p-5 rounded-2xl border transition-all cursor-pointer ${
-                      selectedHub === idx
-                        ? "bg-white border-green-500 shadow-md ring-2 ring-green-500/20"
-                        : "bg-white/70 hover:bg-white border-slate-200"
-                    }`}
-                  >
-                    <div className="flex items-center justify-between mb-1.5">
-                      <div className="flex items-center gap-2">
-                        <MapPin
-                          className={`w-4 h-4 ${
-                            selectedHub === idx ? "text-green-600" : "text-slate-400"
-                          }`}
-                        />
-                        <h3 className="text-base font-bold text-slate-900">{b.city}</h3>
-                      </div>
-                      <span className="text-[11px] font-bold text-green-700 bg-green-50 px-2 py-0.5 rounded-full border border-green-200">
-                        Direct Hub
-                      </span>
-                    </div>
-
-                    <p className="text-xs text-slate-600 font-medium">{b.role}</p>
-
-                    <div className="mt-2 text-xs text-slate-500 flex items-start gap-1.5">
-                      <span className="text-slate-400">Address:</span>
-                      <span>{b.address}</span>
-                    </div>
-
-                    <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
-                      <a
-                        href={`tel:${b.phone}`}
-                        className="text-green-700 hover:text-green-800 flex items-center gap-1 font-bold"
-                      >
-                        <PhoneCall className="w-3.5 h-3.5 text-green-600" /> Direct: {b.phone}
-                      </a>
-                      <span className="text-slate-400">{b.email}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Searchable 185+ Cities Directory Drawer */}
-          <div className="mt-12 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-sm">
+          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-50 px-2.5 py-1 rounded-full border border-green-200">

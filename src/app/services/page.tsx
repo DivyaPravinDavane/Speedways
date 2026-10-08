@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SymbolBadge from "@/components/SymbolBadge";
 import SpeedwaysInfoCards from "@/components/SpeedwaysInfoCards";
@@ -62,6 +63,20 @@ export default function ServicesPage() {
     HandMetal: HandMetal,
   };
 
+  const serviceImageMap: Record<string, string> = {
+    "chauffeur-driven": "/images/hero-sedan.jpg",
+    "airport-transfers": "/images/airport-chauffeur.jpg",
+    "local-rentals": "/images/hero-sedan.jpg",
+    "outstation-mobility": "/images/sedan-interior.jpg",
+    "long-term-dedicated": "/images/hero-sedan.jpg",
+    "employee-transport": "/images/employee-transit.jpg",
+    "event-transportation": "/images/mice-fleet.jpg",
+    "vip-luxury-movement": "/images/vip-fleet-lineup.jpg",
+    "buses-coaches": "/images/employee-transit.jpg",
+    "ev-mobility-fleet": "/images/ev-fleet.jpg",
+    "self-drive-mobility": "/images/sedan-interior.jpg",
+  };
+
   const filteredServices =
     selectedCategory === "All"
       ? SERVICES_CATALOG
@@ -88,8 +103,8 @@ export default function ServicesPage() {
     },
     {
       title: "5% Corporate GST Model",
-      metric: "Clean ITC",
-      desc: "Full input tax credit eligibility with unified monthly consolidated MIS and e-invoicing.",
+      metric: "100% Compliant",
+      desc: "Standardized 5% corporate GST billing structure with unified monthly consolidated MIS, statutory HSN/SAC codes, and e-invoicing.",
       icon: Building,
     },
   ];
@@ -194,45 +209,61 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.id}
-                  className="bg-white p-7 rounded-3xl border border-green-200/80 card-premium-shadow hover-border-flow flex flex-col justify-between group transition-all duration-300"
+                  className="bg-white rounded-3xl border border-green-200/80 card-premium-shadow hover-border-flow flex flex-col justify-between group overflow-hidden transition-all duration-300"
                 >
                   <div>
-                    {/* Top Symbol & Category Badge */}
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-colors shadow-2xs">
-                        <IconComp className="w-6 h-6" />
-                      </div>
-                      <span className="text-xs font-bold text-green-700 bg-green-50 px-3 py-1 rounded-full border border-green-200">
-                        {service.category}
-                      </span>
-                    </div>
+                    {/* Service Image Header with Category Badge & Symbol */}
+                    <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                      <Image
+                        src={serviceImageMap[service.id] || "/images/hero-sedan.jpg"}
+                        alt={service.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-900/20 to-transparent pointer-events-none" />
 
-                    {/* Service Name */}
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-green-600 transition-colors">
-                      {service.name}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-sm text-slate-600 mt-2.5 leading-relaxed">
-                      {service.detailedDesc}
-                    </p>
-
-                    {/* Target Audience / Use Case */}
-                    <div className="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-700">
-                      <strong className="text-slate-900 block font-semibold mb-0.5">
-                        Enterprise Use Case:
-                      </strong>
-                      {service.audience}
-                    </div>
-
-                    {/* Key Feature Bullets */}
-                    <div className="mt-4 space-y-1.5 pt-3 border-t border-slate-100">
-                      {service.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2 text-xs text-slate-600 font-medium">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" />
-                          <span>{feat}</span>
+                      <div className="absolute top-3.5 left-3.5">
+                        <div className="w-10 h-10 rounded-xl bg-white/95 backdrop-blur-md text-green-700 flex items-center justify-center shadow-xs border border-white/60">
+                          <IconComp className="w-5 h-5 text-green-700" />
                         </div>
-                      ))}
+                      </div>
+
+                      <div className="absolute top-3.5 right-3.5">
+                        <span className="text-[11px] font-bold text-slate-900 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-lg shadow-xs border border-white/60">
+                          {service.category}
+                        </span>
+                      </div>
+
+                      <div className="absolute bottom-3.5 left-4 right-4">
+                        <h3 className="text-lg font-bold text-white drop-shadow-xs">
+                          {service.name}
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div className="p-6">
+                      {/* Description */}
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        {service.detailedDesc}
+                      </p>
+
+                      {/* Target Audience / Use Case */}
+                      <div className="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-700">
+                        <strong className="text-slate-900 block font-semibold mb-0.5">
+                          Enterprise Use Case:
+                        </strong>
+                        {service.audience}
+                      </div>
+
+                      {/* Key Feature Bullets */}
+                      <div className="mt-4 space-y-1.5 pt-3 border-t border-slate-100">
+                        {service.features.map((feat, fIdx) => (
+                          <div key={fIdx} className="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
 

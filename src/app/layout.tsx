@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${plusJakarta.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#F4FAF6] text-slate-900 font-sans flex flex-col selection:bg-green-100 selection:text-green-800">
+      <body className="min-h-screen bg-[#F4FAF6] text-slate-900 font-sans flex flex-col selection:bg-green-100 selection:text-green-800 overflow-x-hidden">
         <Navbar />
         <main className="flex-1 w-full bg-[#F4FAF6]">{children}</main>
         <Footer />

@@ -262,7 +262,7 @@ export default function VipLuxuryEventsPage() {
       {/* MICE & Large Scale Event Fleet Coordination */}
       <section className="py-20 bg-[#F0FDF4] border-b border-[#DCFCE7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
               MICE Summits & Delegations
             </span>
@@ -272,6 +272,32 @@ export default function VipLuxuryEventsPage() {
             <p className="text-slate-600 text-sm sm:text-base mt-2">
               From global summits at Bharat Mandapam / Jio World Convention Centre to private offsites, our specialized event desk manages complex logistics.
             </p>
+          </div>
+
+          {/* MICE Delegation Coach Fleet Visual Showcase */}
+          <div className="mb-12 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 relative group">
+            <Image
+              src="/images/mice-fleet.jpg"
+              alt="Speedways MICE Coach Fleet and Executive Delegation Vans Lineup"
+              width={1200}
+              height={500}
+              className="w-full h-[280px] sm:h-[380px] md:h-[440px] object-cover group-hover:scale-102 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
+                <span className="text-xs font-bold uppercase tracking-wider text-green-400 block">
+                  Large-Scale Event Deployment
+                </span>
+                <span className="text-sm font-semibold text-white">
+                  Luxury Tempo Travellers, Volvo Coaches & VIP Convoy Staging
+                </span>
+              </div>
+              <span className="px-3.5 py-1.5 rounded-xl bg-green-500 text-white font-bold text-xs shadow-md">
+                10 to 100+ Cabs Synchronized
+              </span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

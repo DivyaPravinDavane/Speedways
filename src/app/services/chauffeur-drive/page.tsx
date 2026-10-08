@@ -106,7 +106,7 @@ export default function ChauffeurDrivePage() {
     },
     {
       title: "Consolidated Monthly MIS",
-      desc: "Single monthly invoice with 5% GST tax credit documentation, replacing asset depreciation.",
+      desc: "Single monthly invoice with standardized 5% GST corporate billing, replacing asset depreciation and fleet maintenance hassles.",
     },
   ];
 
@@ -161,7 +161,7 @@ export default function ChauffeurDrivePage() {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <CreditCard className="w-4 h-4 text-green-600" />
-                <span>5% GST Clean ITC</span>
+                <span>100% Compliant 5% GST Billing</span>
               </div>
             </div>
           </div>
@@ -332,6 +332,39 @@ export default function ChauffeurDrivePage() {
                 ))}
               </div>
             </div>
+
+            {/* Executive Cabin Showcase */}
+            <div className="mt-8 pt-8 border-t border-green-200/80 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5 relative h-56 sm:h-64 rounded-2xl overflow-hidden bg-slate-100 group">
+                <Image
+                  src="/images/sedan-interior.jpg"
+                  alt="Executive Sedan Interior for Long-Term Corporate Leases"
+                  fill
+                  className="object-cover group-hover:scale-102 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 text-white">
+                  <span className="text-[11px] font-bold text-green-400 uppercase tracking-wider block">Dedicated Executive Vehicle</span>
+                  <span className="text-xs font-semibold">Premium dual-zone climate, mobile charging & verified chauffeur</span>
+                </div>
+              </div>
+              <div className="lg:col-span-7 space-y-3">
+                <h3 className="text-xl font-bold text-slate-900">
+                  Zero Maintenance Hassles, 100% Tax Deductible OPEX
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Avoid vehicle acquisition capital expenditure, road tax registration, insurance renewals, and driver management. Speedways supplies brand-new or pristine vehicles with comprehensive monthly consolidated billing.
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                  <span className="px-3 py-1 rounded-lg bg-white border border-green-200 text-green-800">
+                    Toyota Hycross, Ciaz, City, Fortuner & Mercedes
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-white border border-green-200 text-green-800">
+                    2-Hour Replacement Vehicle SLA
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -404,10 +437,10 @@ export default function ChauffeurDrivePage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/fleet"
+                href="/services"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm border border-slate-200 transition-colors"
               >
-                <span>Compare Fleet Tiers</span>
+                <span>Explore All Services</span>
               </Link>
             </div>
           </div>

@@ -38,31 +38,45 @@ import SpeedwaysInfoCards from "@/components/SpeedwaysInfoCards";
 import Testimonials from "@/components/ui/testimonials-13";
 import ClientLogosMarquee from "@/components/ClientLogosMarquee";
 import AnimatedStatsGrid from "@/components/AnimatedStatsGrid";
+import IndiaNetworkMap from "@/components/IndiaNetworkMap";
+import LeadershipSection from "@/components/LeadershipSection";
+import { AnimatedNumber } from "@/components/AnimatedCounter";
 import {
   CLIENT_LOGOS,
   EXECUTIVE_QUESTIONS,
   TESTIMONIALS,
+  SAFETY_COMPLIANCE_PILLARS,
+  SUBSCRIPTION_BENEFITS,
 } from "@/data/speedwaysData";
 
 export default function HomePage() {
   const featuredServices = [
     {
-      title: "Corporate Car Rental",
-      desc: "Spot and contract executive travel across 185+ cities with strict lead-time SLAs.",
-      icon: Car,
+      title: "Airport Transfer across India",
+      desc: "Reliable airport mobility with live flight monitoring and proactive chauffeur coordination, with specialized meet-and-greet assistance available for VIP and bulk movements.",
+      icon: Plane,
       link: "/services/chauffeur-drive",
-      tag: "Executive Transit",
+      tag: "Flight-Tracked",
+      stats: "Terminal Meet & Greet",
+      image: "/images/airport-chauffeur.jpg",
+    },
+    {
+      title: "Local / Short Term Rental",
+      desc: "Flexible hourly mobility tailored for multi-stop corporate meetings, site visits, inspections, and seamless citywide business travel.",
+      icon: Clock,
+      link: "/services/chauffeur-drive",
+      tag: "Hourly Disposals",
       stats: "4h & 8h Packages",
       image: "/images/hero-sedan.jpg",
     },
     {
-      title: "Airport Transfer across India",
-      desc: "Zero-wait terminal pickups with automated flight tracking and curbside meet-and-greet.",
-      icon: Plane,
+      title: "Out Station Mobility",
+      desc: "Enterprise-grade outstation mobility built around safety, comfort, and compliance — with trained chauffeurs, well-maintained vehicles, monitored journeys, and 24×7 operational support.",
+      icon: Car,
       link: "/services/chauffeur-drive",
-      tag: "Flight-Tracked",
-      stats: "Terminal Paging Desk",
-      image: "/images/airport-chauffeur.jpg",
+      tag: "Intercity Highway",
+      stats: "Monitored Journeys",
+      image: "/images/sedan-interior.jpg",
     },
     {
       title: "Employee Transportation (ETS)",
@@ -107,13 +121,13 @@ export default function HomePage() {
       {/* 1. HERO SECTION */}
       <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden border-b border-green-100/70 bg-[#F4FAF6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Content Column */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="lg:col-span-7 space-y-6"
+              className="lg:col-span-6 space-y-6"
             >
               {/* Pre-Headline Eyebrow Pill */}
               <motion.div
@@ -123,7 +137,7 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-50 border border-green-200/80 text-green-700 text-xs font-bold uppercase tracking-wider shadow-xs"
               >
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                <span>ESTABLISHED 2012 • PAN-INDIA ENTERPRISE MOBILITY</span>
+                <span>ESTABLISHED <AnimatedNumber value={2012} duration={1200} /> • PAN-INDIA ENTERPRISE MOBILITY</span>
               </motion.div>
 
               {/* Main H1 Headline with New Tag */}
@@ -154,7 +168,15 @@ export default function HomePage() {
                 <strong className="text-slate-800 font-bold block mb-1.5 text-sm sm:text-base">
                   Purpose in Every Promise. Excellence in Every Experience. Inspired by Commitment. Delivered with Excellence. Committed to Excellence. Defined by Trust.
                 </strong>
-                India&apos;s premier corporate mobility platform combining 1,200+ fleet depth, 185+ city coverage, our technology platform, and centralised 24×7 governance.
+                India&apos;s premier corporate mobility platform combining{" "}
+                <span className="font-bold text-slate-900">
+                  <AnimatedNumber value={1200} suffix="+" format={true} />
+                </span>{" "}
+                fleet depth,{" "}
+                <span className="font-bold text-slate-900">
+                  <AnimatedNumber value={185} suffix="+" />
+                </span>{" "}
+                city coverage, our technology platform, and centralised 24×7 governance.
               </motion.p>
 
               {/* Action Buttons */}
@@ -179,90 +201,110 @@ export default function HomePage() {
                 >
                   <span>Explore Services</span>
                 </Link>
-
-                <Link
-                  href="/fleet"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3.5 text-slate-500 hover:text-green-600 text-sm font-semibold transition-colors"
-                >
-                  <span>View Fleet Portfolio</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
               </motion.div>
 
-              {/* Trust Badges Minimal Row */}
+              {/* Trust Badges Minimal Row with Animated Numbers */}
               <div className="pt-4 grid grid-cols-3 gap-3 border-t border-slate-100 max-w-lg">
                 <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                  <span>156+ Fortune Clients</span>
+                  <span>
+                    <AnimatedNumber value={156} suffix="+" className="font-bold text-slate-900" /> Fortune Clients
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                  <span>6 Direct Metro Hubs</span>
+                  <span>
+                    <AnimatedNumber value={6} className="font-bold text-slate-900" /> Direct Metro Hubs
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                  <span>5% GST Billing Model</span>
+                  <span>
+                    <AnimatedNumber value={5} suffix="%" className="font-bold text-slate-900" /> GST Billing Model
+                  </span>
                 </div>
               </div>
             </motion.div>
 
-            {/* Right Hero Image Column with Floating Badges */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden card-premium-shadow border-2 border-green-200/90 bg-white p-1 hover:border-green-400 transition-colors duration-300">
+            {/* Right Hero Image Column with Larger Display & Animated Floating Badges */}
+            <div className="lg:col-span-6 relative mt-6 lg:mt-0 group">
+              {/* Decorative Ambient Backdrop Glow */}
+              <div className="absolute -inset-3 sm:-inset-5 bg-gradient-to-tr from-green-500/20 via-emerald-400/15 to-transparent rounded-[2.5rem] blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-500 -z-10 pointer-events-none"></div>
+
+              {/* Main Image Showcase Container */}
+              <div className="relative rounded-[28px] overflow-hidden card-premium-shadow border-2 border-green-200/90 bg-white p-1.5 hover:border-green-400 transition-colors duration-300">
                 <Image
                   src="/images/hero-sedan.jpg"
                   alt="Speedways Executive Corporate Mobility Fleet with Chauffeur outside modern corporate headquarters"
-                  width={900}
-                  height={500}
-                  className="w-full h-auto object-cover transform hover:scale-102 transition-transform duration-500"
+                  width={1100}
+                  height={650}
+                  className="w-full h-[360px] sm:h-[430px] md:h-[480px] lg:h-[510px] xl:h-[540px] object-cover rounded-[22px] transform group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                   priority
                 />
 
                 {/* Subtle gradient vignette at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/15 to-transparent rounded-[22px] pointer-events-none"></div>
 
                 <div className="absolute bottom-4 left-4 right-4 text-white text-xs font-medium flex items-center justify-between">
-                  <span className="px-2.5 py-1 rounded-md bg-black/40 backdrop-blur-md">
+                  <span className="px-3 py-1.5 rounded-lg bg-black/50 backdrop-blur-md border border-white/10 shadow-sm font-semibold tracking-wide">
                     Speedways Executive Chauffeur & Fleet Operations
                   </span>
-                  <span className="px-2 py-0.5 rounded-full bg-green-500 text-white font-mono font-bold text-[10px]">
+                  <span className="px-2.5 py-1 rounded-full bg-green-500 text-white font-mono font-bold text-[11px] shadow-sm flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
                     LIVE
                   </span>
                 </div>
               </div>
 
-              {/* Floating Badge 1: 100% Background Verified */}
-              <div className="absolute -top-4 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-green-200/90 flex items-center gap-3 hover:scale-105 transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-green-700" />
+              {/* Floating Badge 1: 100% Background Verified with Animated Counter */}
+              <div className="absolute -top-5 -left-3 sm:-left-6 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-xl border border-green-200/90 flex items-center gap-3.5 hover:scale-105 transition-all duration-300 animate-float z-20">
+                <div className="w-11 h-11 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 shadow-inner">
+                  <ShieldCheck className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-900">100% Background-Verified</div>
-                  <div className="text-[11px] text-slate-500">Chauffeur Background Check</div>
+                  <div className="text-sm font-extrabold text-slate-900 tracking-tight flex items-center gap-1">
+                    <span className="text-[#48B83D] font-black text-base">
+                      <AnimatedNumber value={100} suffix="%" duration={1400} />
+                    </span>
+                    <span>Background-Verified</span>
+                  </div>
+                  <div className="text-[11px] font-medium text-slate-500">Chauffeur Background Check</div>
                 </div>
               </div>
 
-              {/* Floating Badge 2: Live GPS Tracking Active */}
-              <div className="absolute -bottom-5 -right-3 sm:-right-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-green-200/90 flex items-center gap-3 hover:scale-105 transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0">
-                  <Radio className="w-5 h-5 text-green-700 animate-pulse" />
+              {/* Floating Badge 2: Live GPS Telemetry with Pulsing Radar and Live Status */}
+              <div className="absolute -bottom-5 -right-3 sm:-right-6 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-xl border border-green-200/90 flex items-center gap-3.5 hover:scale-105 transition-all duration-300 animate-float-delayed z-20">
+                <div className="relative w-11 h-11 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 shadow-inner">
+                  <Radio className="w-6 h-6 text-green-600 animate-pulse" />
+                  <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                    <span className="relative inline-flex h-3 w-3 rounded-full border-2 border-white bg-green-500" />
+                  </span>
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
+                  <div className="text-sm font-extrabold text-slate-900 flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-green-500"></span>
                     Live GPS Telemetry
                   </div>
-                  <div className="text-[11px] text-slate-500">Continuous 24×7 Oversight</div>
+                  <div className="text-[11px] font-medium text-slate-500">
+                    Continuous <span className="font-bold text-slate-700"><AnimatedNumber value={24} duration={1200} />×<AnimatedNumber value={7} duration={1200} /></span> Oversight
+                  </div>
                 </div>
               </div>
 
-              {/* Floating Badge 3: 185+ Cities */}
-              <div className="hidden sm:flex absolute top-1/2 -right-6 transform -translate-y-1/2 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-green-200/90 items-center gap-2.5 hover:scale-105 transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-green-100 text-green-700 flex items-center justify-center">
-                  <MapPin className="w-4 h-4 text-green-700" />
+              {/* Floating Badge 3: 185+ Cities with Animated Counter */}
+              <div className="hidden sm:flex absolute top-1/2 -right-5 sm:-right-7 transform -translate-y-1/2 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-xl border border-green-200/90 items-center gap-3 hover:scale-105 transition-all duration-300 animate-float-slow z-20">
+                <div className="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 shadow-inner">
+                  <MapPin className="w-5 h-5 text-green-600" />
                 </div>
-                <div className="text-xs font-bold text-slate-900">
-                  185+ Cities <span className="block text-[10px] font-normal text-slate-500">Direct & Managed</span>
+                <div>
+                  <div className="text-sm font-extrabold text-slate-900 tracking-tight flex items-center gap-1">
+                    <span className="text-[#48B83D] font-black text-base">
+                      <AnimatedNumber value={185} suffix="+" duration={1600} />
+                    </span>
+                    <span>Cities</span>
+                  </div>
+                  <div className="text-[11px] font-medium text-slate-500">Direct & Managed</div>
                 </div>
               </div>
             </div>
@@ -307,8 +349,8 @@ export default function HomePage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight">
                 Corporate Mobility Solutions
               </h2>
-              <p className="text-slate-600 text-sm sm:text-base mt-1">
-                Specialised fleet management and chauffeur transit verticals backed by rigorous SLAs.
+              <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
+                Seamless mobility across 185+ cities, with standardized spot rentals, hourly disposals, and intercity routes — governed by transparent tariffs, 5% GST billing, and 24×7 command centre oversight.
               </p>
             </div>
             <Link
@@ -385,6 +427,88 @@ export default function HomePage() {
       {/* 5B. DYNAMIC ROTATING BORDER INFOCARDS SPOTLIGHT */}
       <SpeedwaysInfoCards />
 
+      {/* 5C. 185+ CITIES INDIA NETWORK MAP */}
+      <IndiaNetworkMap />
+
+      {/* 6. SAFETY BUILT INTO EVERY JOURNEY (Safety & Compliance Showcase) */}
+      <section className="py-20 bg-white border-b border-slate-200/80 relative overflow-hidden" id="safety">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider mb-3">
+                <ShieldCheck className="w-3.5 h-3.5 text-green-600" />
+                Safety & Compliance Standard
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
+                Safety Built Into{" "}
+                <span className="bg-gradient-to-r from-[#48B83D] to-emerald-600 bg-clip-text text-transparent">
+                  Every Journey
+                </span>
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+                From police-verified chauffeurs and in-vehicle SOS buttons to 24×7 command centre telemetry and women night safety protocols, our operational standard protects every passenger across 185+ cities.
+              </p>
+            </div>
+            <Link
+              href="/safety"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#48B83D] hover:bg-[#3ea534] text-white text-xs font-bold uppercase tracking-wider shadow-sm transition-all shrink-0"
+            >
+              <span>Explore All 12 Safety Pillars & LTR Lease</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Quick Highlight of Top Safety Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {SAFETY_COMPLIANCE_PILLARS.slice(0, 4).map((pillar, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-50 p-6 rounded-2xl border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-green-300 transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center mb-4">
+                    <ShieldCheck className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-slate-200/80">
+                  <span className="text-[10px] font-bold text-green-800 bg-green-100/70 px-2 py-0.5 rounded">
+                    ✓ {pillar.badge}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Corporate Car Subscription Benefits Callout */}
+          <div className="mt-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 to-slate-800 text-white flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl">
+            <div className="max-w-2xl">
+              <span className="text-xs font-bold uppercase tracking-wider text-green-400 bg-green-950 px-2.5 py-1 rounded-md border border-green-800/80">
+                Long-Term Vehicle Leasing
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-white mt-2.5">
+                Speedways — Corporate Car Subscription Benefits (LTR- Lease)
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+                Lower total cost of mobility, flexible 1, 2, or 3-year contract tenures, minimal upfront investment, comprehensive maintenance, modern fleet, and 24×7 command centre support.
+              </p>
+            </div>
+            <Link
+              href="/safety"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100 text-xs font-bold uppercase tracking-wider transition-all shrink-0 shadow-md"
+            >
+              <span>View Subscription Benefits</span>
+              <ArrowRight className="w-4 h-4 text-[#48B83D]" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* 7. EXECUTIVE SUMMARY GRID (4 Procurement Questions) */}
       <section className="py-20 bg-[#F4FAF6] border-b border-green-100/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -451,6 +575,9 @@ export default function HomePage() {
           <PictographicalComparison />
         </div>
       </section>
+
+      {/* 8B. EXECUTIVE LEADERSHIP BENCH */}
+      <LeadershipSection />
 
       {/* 9. VERIFIED TESTIMONIALS (PPT Sourced Exact Quotes) */}
       <section className="py-20 bg-[#F4FAF6]" id="testimonials">

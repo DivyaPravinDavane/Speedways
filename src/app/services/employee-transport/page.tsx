@@ -20,6 +20,8 @@ import {
   Bus,
 } from "lucide-react";
 
+import Image from "next/image";
+
 export const metadata = {
   title: "Employee Transportation Services (ETS) | Speedways",
   description:
@@ -88,46 +90,85 @@ export default function EmployeeTransportPage() {
         />
       </div>
 
-      {/* Header Banner */}
+      {/* Header Banner with High-Res Fleet Showcase */}
       <section className="py-14 md:py-20 border-b border-slate-100 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
-                <Users className="w-3.5 h-3.5 text-green-600" />
-                Campus & Industrial Workforce Transit
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
-                <Radio className="w-3 h-3 text-green-600 animate-pulse" />
-                Real-Time Rostering & Geofencing
-              </span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-5">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
+                  <Users className="w-3.5 h-3.5 text-green-600" />
+                  Campus & Industrial Workforce Transit
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+                  <Radio className="w-3 h-3 text-green-600 animate-pulse" />
+                  Real-Time Rostering & Geofencing
+                </span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                Turnkey Employee Transportation Services (ETS)
+              </h1>
+
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Safe, punctual, and algorithm-optimized daily commute operations for IT/ITES campuses, banking hubs, BPOs, and manufacturing plants across India.
+              </p>
+
+              {/* Quick Live Telemetry Chips */}
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-slate-700">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <ShieldCheck className="w-4 h-4 text-green-600" />
+                  <span>Escort Guard Protocols</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <Clock className="w-4 h-4 text-green-600" />
+                  <span>99.8% Shift On-Time SLA</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <FileCheck className="w-4 h-4 text-green-600" />
+                  <span>Contactless Boarding OTP</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <TrendingDown className="w-4 h-4 text-green-600" />
+                  <span>22-28% Route Optimization</span>
+                </div>
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              Turnkey Employee Transportation Services (ETS)
-            </h1>
+            {/* Right Showcase Image Card */}
+            <div className="lg:col-span-5 relative group">
+              <div className="absolute -inset-2 bg-gradient-to-tr from-green-500/20 to-emerald-400/10 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+                <Image
+                  src="/images/employee-transit.jpg"
+                  alt="Speedways Employee Transportation Services bus transit fleet outside tech park campus"
+                  width={720}
+                  height={480}
+                  className="w-full h-[320px] sm:h-[380px] object-cover group-hover:scale-102 transition-transform duration-500"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none"></div>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Safe, punctual, and algorithm-optimized daily commute operations for IT/ITES campuses, banking hubs, BPOs, and manufacturing plants across India.
-            </p>
+                <div className="absolute bottom-4 left-4 right-4 text-white text-xs flex items-center justify-between">
+                  <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 font-semibold">
+                    Campus Shuttle & Shift Transit Fleet
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-green-500 text-white font-mono font-bold text-[11px] shadow-xs">
+                    99.8% SLA
+                  </span>
+                </div>
+              </div>
 
-            {/* Quick Live Telemetry Chips */}
-            <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-slate-700">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <ShieldCheck className="w-4 h-4 text-green-600" />
-                <span>Escort Guard Protocols</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <Clock className="w-4 h-4 text-green-600" />
-                <span>99.8% Shift On-Time SLA</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <FileCheck className="w-4 h-4 text-green-600" />
-                <span>Contactless Boarding OTP</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <TrendingDown className="w-4 h-4 text-green-600" />
-                <span>22-28% Route Optimization</span>
+              {/* Floating Telemetry Badge */}
+              <div className="absolute -bottom-4 -left-3 sm:-left-5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-green-200 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0">
+                  <Bus className="w-5 h-5 text-green-600" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-slate-900">Dedicated Fleet Lineup</div>
+                  <div className="text-[10px] text-slate-500">Sedans, MUVs & 13-45 Seater Buses</div>
+                </div>
               </div>
             </div>
           </div>
@@ -203,25 +244,54 @@ export default function EmployeeTransportPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {womenSafetyProtocols.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-7 rounded-2xl border border-green-200/80 shadow-2xs hover:shadow-md transition-all flex gap-4 items-start"
-              >
-                <div className="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-green-700" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {womenSafetyProtocols.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white p-6 rounded-2xl border border-green-200/80 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
+                >
+                  <div className="flex gap-3.5 items-start">
+                    <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 mt-0.5">
+                      <ShieldCheck className="w-5 h-5 text-green-700" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-base font-bold text-slate-900 mb-1.5">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {item.desc}
-                  </p>
+              ))}
+            </div>
+
+            {/* Live Command Center Visual Oversight Card */}
+            <div className="lg:col-span-5 bg-white rounded-3xl border-2 border-green-200/90 overflow-hidden shadow-lg p-2 group">
+              <div className="relative rounded-2xl overflow-hidden h-60 sm:h-64 bg-slate-100">
+                <Image
+                  src="/images/command-center.jpg"
+                  alt="24x7 Operations Command Centre Telemetry Desk monitoring female employee night drops"
+                  fill
+                  className="object-cover group-hover:scale-102 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent pointer-events-none" />
+                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-lg border border-slate-200 text-[11px] font-bold text-slate-900 shadow-xs flex items-center gap-1.5">
+                  <Radio className="w-3.5 h-3.5 text-green-600 animate-pulse" />
+                  <span>24×7 Central Ops Monitoring</span>
+                </div>
+                <div className="absolute bottom-3 left-3 right-3 text-white">
+                  <div className="text-xs font-bold">Mandatory Safe Drop Tele-Verification</div>
+                  <div className="text-[11px] text-slate-300">Continuous GPS oversight until employee enters home</div>
                 </div>
               </div>
-            ))}
+              <div className="p-4 bg-green-50/50 rounded-2xl mt-2 flex items-center justify-between text-xs">
+                <span className="font-bold text-green-800">100% Escort Guard Compliance</span>
+                <span className="text-[11px] font-mono font-bold text-slate-600">ZERO TOLERANCE SLA</span>
+              </div>
+            </div>
           </div>
 
           <div className="mt-8 p-5 bg-white rounded-2xl border border-green-200 flex flex-col sm:flex-row items-center justify-between gap-4">

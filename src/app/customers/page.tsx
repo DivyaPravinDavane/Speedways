@@ -2,8 +2,10 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ClientLogosMarquee from "@/components/ClientLogosMarquee";
+import { AnimatedNumber } from "@/components/AnimatedCounter";
 import {
   Building2,
   ShieldCheck,
@@ -18,6 +20,7 @@ import {
   FileCheck,
   Sparkles,
   Quote,
+  Radio,
 } from "lucide-react";
 
 export default function CustomersPage() {
@@ -154,6 +157,16 @@ export default function CustomersPage() {
       quote: "Decade-long trust built on transparent billing, well-maintained fleets, and exemplary chauffeur courtesy.",
       author: "General Manager - Administration",
     },
+    {
+      name: "Quona Capital",
+      logo: "/logos/quona.svg",
+      sector: "Fintech Venture Capital & Advisory",
+      category: "banking",
+      scope: "VIP Board Meetings & Investor Delegations",
+      stat: "Zero-Delay SLA",
+      quote: "Reliable airport transfers, immaculate vehicle standards, and seamless mobility coordination for our investment leadership.",
+      author: "Executive Operations Desk",
+    },
   ];
 
   const filteredClients =
@@ -180,7 +193,7 @@ export default function CustomersPage() {
               Powering Mission-Critical Mobility for <span className="text-[#48B83D]">India’s Industry Leaders</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-              From global technology conglomerates and heavy manufacturing giants to tier-1 investment banks, over 50+ enterprise organizations rely on Speedways for seamless, audit-compliant fleet logistics.
+              From global technology enterprises and manufacturing leaders to leading financial institutions, 50+ organizations rely on Speedways for safe, compliant, and professionally managed corporate mobility.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -199,10 +212,55 @@ export default function CustomersPage() {
             </div>
           </div>
 
+          {/* Visual Showcase: Corporate Fleet Lineup & Pan-India Presence */}
+          <div className="mt-12 max-w-5xl mx-auto relative group">
+            <div className="absolute -inset-3 bg-gradient-to-tr from-green-500/20 via-emerald-400/10 to-transparent rounded-[2.5rem] blur-2xl opacity-75 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+              <Image
+                src="/images/vip-fleet-lineup.jpg"
+                alt="Speedways Corporate Fleet Lineup outside Convention Centre"
+                width={1200}
+                height={550}
+                className="w-full h-[300px] sm:h-[400px] md:h-[460px] object-cover group-hover:scale-102 transition-transform duration-700"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-900/15 to-transparent pointer-events-none"></div>
+
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
+                  <span className="text-xs font-bold uppercase tracking-wider text-green-400 block">
+                    Pan-India Enterprise Deployment
+                  </span>
+                  <span className="text-sm font-semibold text-white">
+                    Premium Sedans, MUVs & Coaches Serving Fortune 500 Enterprises
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md text-slate-900 font-bold text-xs shadow-md">
+                    100% Background-Verified Chauffeurs
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Top Badge */}
+            <div className="hidden sm:flex absolute -top-4 -right-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-xl border border-green-200 items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-green-100 text-green-700 flex items-center justify-center font-black text-xs">
+                50+
+              </div>
+              <div className="text-left">
+                <div className="text-xs font-black text-slate-900">Fortune Clients Empaneled</div>
+                <div className="text-[10px] text-slate-500">Zero SLA Penalties Recorded</div>
+              </div>
+            </div>
+          </div>
+
           {/* Key Metric Highlights */}
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div className="p-6 rounded-3xl bg-white border border-green-200/80 card-premium-shadow hover-border-flow text-center transition-all duration-300">
-              <div className="text-3xl sm:text-4xl font-black text-slate-900">185+</div>
+              <div className="text-3xl sm:text-4xl font-black text-slate-900">
+                <AnimatedNumber value={185} suffix="+" duration={1600} />
+              </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
                 Cities Covered
               </div>
@@ -210,7 +268,9 @@ export default function CustomersPage() {
             </div>
 
             <div className="p-6 rounded-3xl bg-white border border-green-200/80 card-premium-shadow hover-border-flow text-center transition-all duration-300">
-              <div className="text-3xl sm:text-4xl font-black text-[#48B83D]">99.4%</div>
+              <div className="text-3xl sm:text-4xl font-black text-[#48B83D]">
+                <AnimatedNumber value={99.4} decimals={1} suffix="%" duration={1600} />
+              </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
                 On-Time SLA
               </div>
@@ -218,15 +278,19 @@ export default function CustomersPage() {
             </div>
 
             <div className="p-6 rounded-3xl bg-white border border-green-200/80 card-premium-shadow hover-border-flow text-center transition-all duration-300">
-              <div className="text-3xl sm:text-4xl font-black text-slate-900">500+</div>
+              <div className="text-3xl sm:text-4xl font-black text-slate-900">
+                <AnimatedNumber value={1200} format suffix="+" duration={1600} />
+              </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
                 Verified Vehicles
               </div>
-              <p className="text-[11px] text-slate-400 mt-0.5">Sedan, MPV, EV & Limos</p>
+              <p className="text-[11px] text-slate-400 mt-0.5">Bus – Tempo Travellers – Coaches & Sedans</p>
             </div>
 
             <div className="p-6 rounded-3xl bg-white border border-green-200/80 card-premium-shadow hover-border-flow text-center transition-all duration-300">
-              <div className="text-3xl sm:text-4xl font-black text-[#48B83D]">0</div>
+              <div className="text-3xl sm:text-4xl font-black text-[#48B83D]">
+                <AnimatedNumber value={0} from={5} duration={1200} />
+              </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
                 Tolerance Policy
               </div>
@@ -388,27 +452,45 @@ export default function CustomersPage() {
               </div>
             </div>
 
-            <div className="p-8 rounded-3xl bg-slate-800/90 border border-slate-700 text-center lg:text-left flex flex-col justify-between">
-              <div>
-                <h3 className="text-xl font-bold text-white mb-2">Ready to onboard your organization?</h3>
-                <p className="text-xs text-slate-400 mb-6">
-                  Schedule an exploratory review with our enterprise mobility architects to evaluate tariff structures, roster automation, and pilot fleet trial runs.
-                </p>
+            <div className="bg-slate-800/90 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
+              <div className="relative h-48 sm:h-56 w-full bg-slate-900">
+                <Image
+                  src="/images/command-center.jpg"
+                  alt="24x7 Operations Command Centre Telemetry Desk"
+                  fill
+                  className="object-cover group-hover:scale-102 transition-transform duration-500 opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10 text-xs font-bold text-white flex items-center gap-1.5">
+                  <Radio className="w-3.5 h-3.5 text-green-400 animate-pulse" />
+                  <span>24×7 Mumbai Operations Control Room</span>
+                </div>
+                <div className="absolute bottom-3 left-4 right-4">
+                  <span className="text-[11px] font-mono text-green-400 font-bold">LIVE TELEMETRY DESK</span>
+                  <div className="text-xs text-slate-200 font-medium">99.4% Verified On-Time Dispatch SLA</div>
+                </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/contact"
-                  className="px-6 py-3 rounded-full bg-[#48B83D] hover:bg-[#3ea534] text-white font-bold text-xs tracking-wider uppercase text-center transition-all cursor-pointer shadow-lg shadow-green-500/20"
-                >
-                  Request Corporate Demo
-                </Link>
-                <Link
-                  href="/services"
-                  className="px-6 py-3 rounded-full bg-slate-700 hover:bg-slate-600 text-white font-bold text-xs tracking-wider uppercase text-center transition-all"
-                >
-                  View All Services
-                </Link>
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl font-bold text-white mb-2">Ready to onboard your organization?</h3>
+                <p className="text-xs text-slate-300 mb-6">
+                  Schedule an exploratory review with our enterprise mobility architects to evaluate tariff structures, roster automation, and pilot fleet trial runs.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/contact"
+                    className="px-6 py-3 rounded-full bg-[#48B83D] hover:bg-[#3ea534] text-white font-bold text-xs tracking-wider uppercase text-center transition-all cursor-pointer shadow-lg shadow-green-500/20"
+                  >
+                    Request Corporate Demo
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="px-6 py-3 rounded-full bg-slate-700 hover:bg-slate-600 text-white font-bold text-xs tracking-wider uppercase text-center transition-all"
+                  >
+                    View All Services
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

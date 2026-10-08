@@ -31,8 +31,8 @@ const PRIMARY: PrimaryMetric[] = [
     target: 1200,
     suffix: "+",
     format: true,
-    label: "Vehicles Network",
-    desc: "Owned & managed fleet Pan-India",
+    label: "Verified Vehicles",
+    desc: "Sedans, MPVs, Bus – Tempo Travellers – Coaches",
     progress: 92,
     tag: "Fleet",
   },
@@ -68,15 +68,17 @@ const PRIMARY: PrimaryMetric[] = [
 type SecondaryMetric = {
   icon: LucideIcon;
   value: string;
+  num?: number;
+  suffix?: string;
   label: string;
   sub?: string;
   live?: boolean;
 };
 
 const SECONDARY: SecondaryMetric[] = [
-  { icon: Network, value: "6", label: "Direct Metro Hubs", sub: "Mumbai, BLR, HYD, MAA, DEL, Pune" },
+  { icon: Network, value: "6", num: 6, label: "Direct Metro Hubs", sub: "Mumbai, BLR, HYD, MAA, DEL, Pune" },
   { icon: Radio, value: "24×7", label: "Command Centre", live: true },
-  { icon: Receipt, value: "5%", label: "GST Billing Model" },
+  { icon: Receipt, value: "5%", num: 5, suffix: "%", label: "GST Billing Model" },
   { icon: Leaf, value: "EV Ready", label: "Green Fleet Transition" },
 ];
 
@@ -182,6 +184,33 @@ function PrimaryCard({ metric, index, inView }: { metric: PrimaryMetric; index: 
   );
 }
 
+function SecondaryItem({ s, inView }: { s: SecondaryMetric; inView: boolean }) {
+  const Icon = s.icon;
+  const count = useCountUp(s.num ?? 0, inView && s.num !== undefined, 0, 1400);
+
+  return (
+    <div className="group flex items-center gap-3.5 px-5 py-4 transition-colors duration-300 hover:bg-green-50/70">
+      <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green-100 text-green-700 transition-all duration-300 group-hover:bg-[#48B83D] group-hover:text-white group-hover:scale-110">
+        <Icon className="h-5 w-5" />
+        {s.live && (
+          <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full border-2 border-white bg-green-500" />
+          </span>
+        )}
+      </div>
+      <div className="min-w-0">
+        <div className="text-lg font-black text-slate-900 leading-tight">
+          {s.num !== undefined ? `${count}${s.suffix ?? ""}` : s.value}
+        </div>
+        <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 truncate">
+          {s.label}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function AnimatedStatsGrid() {
   const { ref, inView } = useInView<HTMLDivElement>();
 
@@ -212,9 +241,9 @@ export default function AnimatedStatsGrid() {
                 Speedways At A Glance
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-black tracking-tight text-slate-900">
-                Operational Depth Built for{" "}
+                Enterprise-Grade Mobility Solutions Built for{" "}
                 <span className="bg-gradient-to-r from-[#48B83D] to-emerald-600 bg-clip-text text-transparent">
-                  Fortune 500 Scale
+                  Every Industry
                 </span>
               </h2>
             </div>
@@ -239,31 +268,9 @@ export default function AnimatedStatsGrid() {
               transitionDelay: "550ms",
             }}
           >
-            {SECONDARY.map((s) => {
-              const Icon = s.icon;
-              return (
-                <div
-                  key={s.label}
-                  className="group flex items-center gap-3.5 px-5 py-4 transition-colors duration-300 hover:bg-green-50/70"
-                >
-                  <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green-100 text-green-700 transition-all duration-300 group-hover:bg-[#48B83D] group-hover:text-white group-hover:scale-110">
-                    <Icon className="h-5 w-5" />
-                    {s.live && (
-                      <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full border-2 border-white bg-green-500" />
-                      </span>
-                    )}
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-lg font-black text-slate-900 leading-tight">{s.value}</div>
-                    <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 truncate">
-                      {s.label}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {SECONDARY.map((s) => (
+              <SecondaryItem key={s.label} s={s} inView={inView} />
+            ))}
           </div>
         </div>
       </div>

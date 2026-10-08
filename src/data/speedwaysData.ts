@@ -48,13 +48,13 @@ export const CLIENT_LOGOS = [
 ];
 
 export const SCALE_METRICS = [
-  { value: "1,200+", label: "Vehicles Network", desc: "Owned & Managed Fleet Pan-India" },
+  { value: "1,200+", label: "Verified Vehicles", desc: "Sedans, MPVs, Bus – Tempo Travellers – Coaches" },
   { value: "185+", label: "Cities Covered", desc: "Tier-1, Tier-2 & Tier-3 Coverage" },
   { value: "156+", label: "Enterprise Accounts", desc: "Fortune 500 & MNCs Empanelled" },
   { value: "6", label: "Metro Direct Hubs", desc: "Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune" },
   { value: "2012", label: "Established Year", desc: "Over a Decade of Operational Trust" },
   { value: "24×7", label: "Command Centre", desc: "Centralised Telemetry & Escalation" },
-  { value: "5%", label: "GST Billing Model", desc: "Direct Corporate Tax Credit Compliance" },
+  { value: "5%", label: "GST Billing Model", desc: "Standardized Corporate Tax Compliance" },
   { value: "EV Ready", label: "Green Fleet", desc: "ICE & Electric Hybrid Transition" },
 ];
 
@@ -145,52 +145,52 @@ export const SERVICES_CATALOG: ServiceItem[] = [
   {
     id: "airport-transfers",
     name: "Airport Transfer across India",
-    shortDesc: "Flight-tracked terminal pickups and drop-offs with dedicated paging service across India.",
+    shortDesc: "Reliable airport mobility with live flight monitoring and proactive chauffeur coordination.",
     detailedDesc:
-      "Punctual, stress-free airport mobility with live flight tracking, automated chauffeur reporting, and meet-and-greet support.",
-    audience: "Domestic & international business travelers, VIP arrivals, delegation flights",
+      "Reliable airport mobility with live flight monitoring and proactive chauffeur coordination, with specialized meet-and-greet assistance available for VIP and bulk movements.",
+    audience: "Domestic & international business delegates, VIP arrivals, leadership and bulk group transfers",
     iconName: "Plane",
     link: "/services/chauffeur-drive",
     category: "Rental",
     features: [
-      "Flight delay tracking",
-      "Name-board paging service",
-      "Terminal curb assistance",
-      "Zero chauffeur no-show guarantee",
+      "Live flight delay monitoring",
+      "Proactive chauffeur coordination",
+      "Terminal meet-and-greet assistance",
+      "Dedicated VIP & bulk movement support",
     ],
   },
   {
     id: "local-rentals",
-    name: "Local / Short-Term Rentals",
-    shortDesc: "Structured 4-hour / 40 km and 8-hour / 80 km in-city packages.",
+    name: "Local / Short-Term Rental",
+    shortDesc: "Flexible hourly mobility tailored for multi-stop corporate meetings, site visits, and inspections.",
     detailedDesc:
-      "Flexible hourly packages tailored for multi-stop corporate client meetings, site inspections, and citywide administrative transit.",
-    audience: "Half-day & full-day in-city travel with dedicated chauffeur at disposal",
+      "Flexible hourly mobility tailored for multi-stop corporate meetings, site visits, inspections, and seamless citywide business travel.",
+    audience: "Corporate leadership, client visits, multi-stop inspections, and seamless citywide travel",
     iconName: "Clock",
     link: "/services/chauffeur-drive",
     category: "Rental",
     features: [
-      "4h/40km and 8h/80km tiers",
-      "Transparent excess km/hr rate",
-      "Chauffeur at dedicated disposal",
-      "Multiple stops permitted",
+      "Flexible hourly packages (4h/40km & 8h/80km)",
+      "Multi-stop corporate itineraries",
+      "Dedicated chauffeur at continuous disposal",
+      "Seamless citywide business transit",
     ],
   },
   {
     id: "outstation-travel",
-    name: "Intercity / Outstation Travel",
-    shortDesc: "Point-to-point and round-trip highway transit with transparent per-km billing.",
+    name: "Outstation / Intercity Mobility",
+    shortDesc: "Enterprise-grade outstation mobility built around safety, comfort, and compliance.",
     detailedDesc:
-      "Cross-city corporate journeys connecting industrial belts, manufacturing corridors, and regional branch visits with zero surprise charges.",
-    audience: "Smooth intercity corporate visits with transparent outstation billing",
+      "Enterprise-grade outstation mobility built around safety, comfort, and compliance — with trained chauffeurs, well-maintained vehicles, monitored journeys, and 24×7 operational support.",
+    audience: "Industrial plant inspections, cross-city corporate visits, multi-hub audits, regional travel",
     iconName: "Navigation",
     link: "/services/chauffeur-drive",
     category: "Rental",
     features: [
-      "Transparent per-km tariffs",
-      "Night driver allowance clarity",
-      "Highway toll & permit transparency",
-      "Highway-tested premium vehicles",
+      "Trained senior highway chauffeurs",
+      "Well-maintained, audited vehicles",
+      "24×7 command centre monitored journeys",
+      "Transparent tariffs & statutory compliance",
     ],
   },
   {
@@ -401,20 +401,37 @@ export const FLEET_PORTFOLIO: FleetTier[] = [
     ],
   },
   {
-    id: "ev-coaches",
-    category: "EV & Coaches",
-    models: "Tata Tigor EV / Nexon EV / Tempo Traveller (13-26 Seater) / Luxury Volvo Coaches",
-    description: "Zero-emission electric cars for corporate ESG goals and large group corporate transfers.",
-    deploymentContext: "ESG sustainability programs, group conferences, bulk staff transport",
-    passengers: "4 to 45 Passengers",
-    luggage: "High-Capacity Cargo",
-    acType: "High-Efficiency Central AC",
-    fuelType: "100% Electric / Clean Diesel",
+    id: "ev-fleet",
+    category: "EV Green Fleet",
+    models: "Tata Tigor EV / Tata Nexon EV / MG ZS EV / BYD e6",
+    description: "Zero-tailpipe-emission electric cars for corporate ESG decarbonization goals.",
+    deploymentContext: "Corporate ESG programs, intra-city executive commute, campus green transfers",
+    passengers: "4 Passengers",
+    luggage: "2-3 Bags",
+    acType: "Climate Controlled AC",
+    fuelType: "100% Electric (Zero Tailpipe CO2)",
     highlights: [
-      "Zero tailpipe carbon emissions (EVs)",
-      "Bulk employee shift transit",
-      "Corporate offsite delegation movement",
-      "Integrated speed governors & tracking",
+      "Zero tailpipe carbon emissions",
+      "Auditable ESG carbon abatement reports",
+      "Regenerative smooth electric drive",
+      "Fast-charging depot integration",
+    ],
+  },
+  {
+    id: "bus-tempo-coaches",
+    category: "Bus – Tempo Travellers – Coaches",
+    models: "Force Urbania & Tempo Traveller (12 - 26 Seater) / BharatBenz & Volvo Coaches (35 - 55 Seater)",
+    description: "High-capacity group transportation for corporate offsites, campus shift commutes, and delegations.",
+    deploymentContext: "Group employee shifts, annual offsites, MICE delegates, bulk airport transits",
+    passengers: "12 to 55 Passengers",
+    luggage: "Dedicated High-Capacity Luggage Bays",
+    acType: "Centralized High-Capacity Air Conditioning",
+    fuelType: "Clean Diesel / Smart Euro-VI",
+    highlights: [
+      "Ergonomic pushback reclining seats",
+      "AIS-140 GPS & speed governors certified",
+      "Experienced commercial heavy-vehicle drivers",
+      "PA audio system & individual reading lamps",
     ],
   },
 ];
@@ -635,3 +652,238 @@ export const DIRECT_BRANCHES = [
     role: "Automotive, Engineering & Tech Hub Operations",
   },
 ];
+
+export interface LeaderProfile {
+  name: string;
+  role: string;
+  titleBadge?: string;
+  experience?: string;
+  about: string;
+  coreExpertise: string[];
+  pastBrands?: string[];
+  image?: string;
+}
+
+export const LEADERSHIP_TEAM: LeaderProfile[] = [
+  {
+    name: "Nikhil Desai",
+    role: "CEO",
+    titleBadge: "Founder & Chief Executive Officer",
+    experience: "14+ Years Leading Speedways",
+    about:
+      "The Founder & CEO of Speedways Fleet & Travel Management Pvt. Ltd. is a visionary leader with extensive experience in Corporate Mobility and Transportation Services. Since 2012 Speedways has been instrumental in building a professionally managed, technology-driven and customer-centric organization focused on reliability, service excellence and long-term partnerships. With a strong understanding of fleet operations and corporate travel management, he continues to lead the organization with a progressive vision towards innovation, operational efficiency and sustainable growth across India’s mobility sector.",
+    coreExpertise: [
+      "Corporate Mobility Vision",
+      "Fleet Operations",
+      "Corporate Travel Management",
+      "Technology & Innovation",
+      "Sustainable Growth",
+      "Enterprise Partnerships",
+    ],
+  },
+  {
+    name: "C K Balram",
+    role: "COO",
+    titleBadge: "Chief Operating Officer",
+    experience: "23 Years Industry Veteran",
+    pastBrands: ["Avis India (18 Yrs)", "Orix India", "Carzonrent", "Emirates"],
+    about:
+      "An accomplished mobility industry professional with 23 years of expertise in corporate car rentals, branch operations, and large-scale transportation management. He has held leadership roles with leading brands including Orix India, Carzonrent, and Avis, and successfully managed Mumbai and Bangalore operations for Avis for nearly 18 years. He also played a key role in establishing Emirates operations in India and has been recognized with Best Manager awards for operational excellence and business performance.",
+    coreExpertise: [
+      "Multi-city operations",
+      "Revenue growth",
+      "Profitability",
+      "Service delivery",
+      "Operational efficiency",
+      "Client retention",
+      "Team management",
+    ],
+  },
+  {
+    name: "Srinivas Krishna",
+    role: "National Head – Sales",
+    titleBadge: "National Head – Sales",
+    experience: "18 Years Sales Strategist",
+    pastBrands: ["Avis India", "Premier People Logistic Solutions"],
+    about:
+      "A dynamic sales and business development professional with 18 years of experience across corporate mobility, car rentals, automotive sales, and enterprise account management. He has a proven track record in driving revenue growth, strategic client acquisition, key account management, contract negotiations, and profitability enhancement across multiple territories. He has successfully managed large corporate portfolios for prominent mobility brands including Avis India and Premier People Logistic Solutions, while strengthening customer retention, utilization, and long-term strategic partnerships with enterprise clients.",
+    coreExpertise: [
+      "National sales strategy",
+      "Corporate acquisitions",
+      "Key account management",
+      "Pricing strategy",
+      "Enterprise relationship management",
+      "Sales training",
+      "Pipeline development",
+      "Business planning",
+    ],
+  },
+  {
+    name: "A S Kumaresh",
+    role: "Fleet Head – India",
+    titleBadge: "Fleet Head – India",
+    experience: "25 Years Fleet Maestro",
+    about:
+      "A seasoned fleet and transportation professional with 25 years of experience in corporate mobility, nationwide fleet management, operations control, chauffeur management, client servicing, and strategic planning. He leads nationwide operations and fleet management for Speedways across India. He is responsible for strategic planning, branch coordination, resource allocation, operational efficiency, fleet utilization, vendor development, chauffeur management, client escalation handling, and implementation of process-driven transportation operations.",
+    coreExpertise: [
+      "Fleet governance",
+      "Vendor management",
+      "Process optimization",
+      "Cost control",
+      "Operational excellence",
+      "Service continuity",
+    ],
+  },
+  {
+    name: "Sreejit",
+    role: "Head of Operations – Pan India",
+    titleBadge: "Head of Operations – Pan India",
+    experience: "Operations & SLA Director",
+    about:
+      "An experienced operations professional with strong expertise in nationwide transportation operations, corporate mobility management, fleet coordination, client servicing, and process-driven operational execution across multiple locations in India. He oversees pan-India operations with a strong focus on consistent service delivery and execution excellence. He is responsible for branch coordination, operational planning, client management, fleet deployment, vendor coordination, service delivery standards, escalation management, and smooth day-to-day transportation operations across regions.",
+    coreExpertise: [
+      "Operational planning",
+      "Branch coordination",
+      "Customer servicing",
+      "Fleet deployment",
+      "Compliance",
+      "Escalation management",
+    ],
+  },
+];
+
+export interface SafetyPillar {
+  title: string;
+  description: string;
+  badge?: string;
+  iconName?: string;
+}
+
+export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
+  {
+    title: "Police-Verified Chauffeurs",
+    description: "Chauffeurs undergo police verification and mandatory background checks before being deployed for passenger services.",
+    badge: "100% Background Check",
+    iconName: "UserCheck",
+  },
+  {
+    title: "In-Vehicle SOS & Panic Button",
+    description: "Easily accessible emergency controls enable passengers to raise an alert quickly whenever assistance is required.",
+    badge: "Instant Emergency Alert",
+    iconName: "AlertTriangle",
+  },
+  {
+    title: "Live GPS Journey Tracking",
+    description: "GPS-enabled vehicles are monitored in real time, providing visibility of vehicle location and trip movement throughout the journey.",
+    badge: "Real-Time Telemetry",
+    iconName: "Navigation",
+  },
+  {
+    title: "24×7 Command Centre Monitoring",
+    description: "Every active journey can be monitored by our operations team, enabling rapid coordination and escalation when required.",
+    badge: "Continuous Surveillance",
+    iconName: "Radio",
+  },
+  {
+    title: "Women Safety Protocol",
+    description: "Dedicated safety procedures for women travellers, including verified chauffeurs, journey monitoring, escalation protocols, and priority assistance.",
+    badge: "Priority Escort & Safety",
+    iconName: "ShieldAlert",
+  },
+  {
+    title: "Preventive Vehicle Maintenance",
+    description: "Vehicles undergo scheduled inspections and preventive maintenance to ensure roadworthiness, reliability, and passenger safety.",
+    badge: "Scheduled Audits",
+    iconName: "Wrench",
+  },
+  {
+    title: "100% Compliance-Driven Operations",
+    description: "Vehicles and chauffeurs operate under applicable regulatory, documentation, permit, insurance, and safety requirements.",
+    badge: "Statutory Governance",
+    iconName: "FileCheck",
+  },
+  {
+    title: "Trip & Chauffeur Audit Trail",
+    description: "Digital trip records provide visibility into chauffeur allocation, journey details, vehicle movement, and operational events—supporting corporate governance and audits.",
+    badge: "Digital Duty Slip",
+    iconName: "History",
+  },
+  {
+    title: "Emergency Response Protocol",
+    description: "Defined escalation procedures for accidents, breakdowns, medical emergencies, and other unexpected situations, supported by the 24×7 operations team.",
+    badge: "Rapid Escalation",
+    iconName: "Siren",
+  },
+  {
+    title: "Vehicle Fitness & Documentation Checks",
+    description: "Critical vehicle documents, fitness requirements, insurance, permits, and statutory compliances are systematically tracked.",
+    badge: "Systematic Verification",
+    iconName: "ClipboardCheck",
+  },
+  {
+    title: "Breakdown & Roadside Assistance",
+    description: "Operational support is available to coordinate assistance and minimize disruption in the event of a vehicle breakdown or roadside incident.",
+    badge: "Minimal Disruption",
+    iconName: "LifeBuoy",
+  },
+  {
+    title: "Chauffeur Training & Safety Standards",
+    description: "Chauffeurs are trained in professional conduct, defensive driving, passenger handling, emergency response, and corporate service standards.",
+    badge: "Certified Curriculum",
+    iconName: "Award",
+  },
+];
+
+export interface SubscriptionBenefit {
+  title: string;
+  subtitle: string;
+  description: string;
+  badge?: string;
+  iconName?: string;
+}
+
+export const SUBSCRIPTION_BENEFITS: SubscriptionBenefit[] = [
+  {
+    title: "Lower Total Cost of Mobility",
+    subtitle: "Asset-light corporate strategy",
+    description: "Reduce the costs and administrative burden associated with vehicle ownership and long-term fleet management.",
+    badge: "Cost Optimization",
+    iconName: "TrendingDown",
+  },
+  {
+    title: "Flexible Contract Tenures",
+    subtitle: "Customized horizon alignment",
+    description: "Choose 1, 2, or 3-year plans aligned with your business requirements and workforce needs.",
+    badge: "1, 2, or 3-Year Plans",
+    iconName: "Calendar",
+  },
+  {
+    title: "Minimal Upfront Investment",
+    subtitle: "Working capital preservation",
+    description: "Access vehicles with lower initial capital outlay, helping businesses preserve cash flow and working capital.",
+    badge: "Cash Flow Protection",
+    iconName: "Coins",
+  },
+  {
+    title: "Comprehensive Maintenance",
+    subtitle: "Zero surprise upkeep bills",
+    description: "Keep your fleet running smoothly with scheduled servicing, routine maintenance, and managed upkeep included in the plan.",
+    badge: "100% Upkeep Included",
+    iconName: "CheckCircle",
+  },
+  {
+    title: "Modern, Well-Maintained Fleet",
+    subtitle: "Periodic refresh cycles",
+    description: "Access the latest vehicle models and upgrade your fleet periodically to maintain comfort, safety, and a professional corporate experience.",
+    badge: "Latest Models",
+    iconName: "Sparkles",
+  },
+  {
+    title: "24×7 Operational Support",
+    subtitle: "Direct command center backing",
+    description: "Dedicated assistance throughout the contract, backed by Speedways’ 24×7 command centre for support, coordination, and issue resolution.",
+    badge: "Round-the-Clock Desk",
+    iconName: "Headphones",
+  },
+];
+

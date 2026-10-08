@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SymbolBadge from "@/components/SymbolBadge";
 import {
@@ -62,7 +63,7 @@ export default function ContactPage() {
   const faqs = [
     {
       q: "How does the 5% GST corporate billing structure work?",
-      a: "Speedways operates under the standardized 5% GST corporate commercial transport model. All invoices carry statutory GSTIN numbers, HSN/SAC codes, and geofenced digital duty slips, ensuring clean input tax credit (ITC) and zero billing ambiguity for your finance department.",
+      a: "Speedways operates under the standardized 5% GST corporate commercial transport model. All invoices carry statutory GSTIN numbers, HSN/SAC codes, and geofenced digital duty slips, ensuring transparent accounting, zero billing ambiguity, and smooth reconciliation for your finance department.",
     },
     {
       q: "What is your guaranteed lead time for vehicle dispatch?",
@@ -145,7 +146,7 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <ShieldCheck className="w-4 h-4 text-green-600" />
-                <span>5% GST Clean ITC</span>
+                <span>100% Compliant 5% GST Billing</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
                 <PhoneCall className="w-4 h-4 text-green-600" />
@@ -425,12 +426,26 @@ export default function ContactPage() {
             {/* Right Column: Head Office & Direct Branches */}
             <div className="lg:col-span-5 space-y-6">
               {/* Head Office Card */}
-              <div className="bg-white p-7 rounded-3xl border border-green-200 shadow-md relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-green-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
-                  Headquarters
+              <div className="bg-white rounded-3xl border border-green-200 shadow-md relative overflow-hidden group">
+                <div className="relative h-44 w-full bg-slate-100">
+                  <Image
+                    src="/images/hero-sedan.jpg"
+                    alt="Speedways Mumbai Corporate Head Office Fleet Staging"
+                    fill
+                    className="object-cover group-hover:scale-102 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                    Headquarters
+                  </div>
+                  <div className="absolute bottom-3 left-4 text-white">
+                    <span className="text-xs font-bold block">Mumbai Central Operations Desk</span>
+                    <span className="text-[10px] text-slate-300">Neelkanth Business Park, Vidyavihar</span>
+                  </div>
                 </div>
 
-                <div className="flex items-center gap-3 mb-4">
+                <div className="p-7">
+                  <div className="flex items-center gap-3 mb-4">
                   <div className="w-11 h-11 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center">
                     <Building2 className="w-6 h-6 text-green-700" />
                   </div>
@@ -499,9 +514,10 @@ export default function ContactPage() {
                   </span>
                 </div>
               </div>
+            </div>
 
-              {/* Direct Branch Network Directory */}
-              <div className="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-xs">
+            {/* Direct Branch Network Directory */}
+            <div className="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-xs">
                 <h3 className="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-green-600" />
                   <span>6 Direct Metro Branch Desks</span>

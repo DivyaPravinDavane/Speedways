@@ -243,3 +243,35 @@ body {
     0 0 35px -5px rgba(34, 197, 94, 0.12);
 }
 
+/* 6. Soft Floating Micro-Animations */
+@keyframes soft-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes soft-float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float {
+  animation: soft-float 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: soft-float-delayed 6s ease-in-out infinite 1s;
+}
+
+.animate-float-slow {
+  animation: soft-float 7s ease-in-out infinite 0.5s;
+}
+
+

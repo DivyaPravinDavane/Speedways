@@ -38,39 +38,79 @@ export default function TechnologyPage() {
         <Breadcrumbs items={[{ label: "Technology Platform" }]} />
       </div>
 
-      {/* Header Banner */}
-      <section className="py-14 md:py-20 border-b border-green-100/70 bg-[#F4FAF6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span>ENTERPRISE MOBILITY CLOUD • PROPRIETARY SAAS ENGINE</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Enterprise Mobility Engine: From Booking to Automated MIS
-            </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Experience zero paper log sheets, real-time GPS telemetry, algorithmic driver dispatch, and instant ERP-ready corporate invoicing across single or multi-city accounts.
-            </p>
+      {/* Header Banner with Command Centre & SaaS Engine Showcase */}
+      <section className="py-14 md:py-20 border-b border-green-100/70 bg-[#F4FAF6] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span>ENTERPRISE MOBILITY CLOUD • PROPRIETARY SAAS ENGINE</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Enterprise Mobility Engine: From Booking to Automated MIS
+              </h1>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Experience zero paper log sheets, real-time GPS telemetry, algorithmic driver dispatch, and instant ERP-ready corporate invoicing across single or multi-city accounts.
+              </p>
 
-            {/* Quick-Glance Architecture Pills */}
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
-                4h Local Lead Time
-              </span>
-              <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
-                99.8% On-Time SLA
-              </span>
-              <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
-                Contactless OTP Duty Slips
-              </span>
-              <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
-                SAP / Oracle MIS Exports
-              </span>
+              {/* Quick-Glance Architecture Pills */}
+              <div className="flex flex-wrap items-center gap-2 pt-2">
+                <span className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1.5 shadow-2xs">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
+                  4h Local Lead Time
+                </span>
+                <span className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1.5 shadow-2xs">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
+                  99.8% On-Time SLA
+                </span>
+                <span className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1.5 shadow-2xs">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
+                  Contactless OTP Duty Slips
+                </span>
+                <span className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1.5 shadow-2xs">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
+                  SAP / Oracle MIS Exports
+                </span>
+              </div>
+            </div>
+
+            {/* Right Showcase: Live Operations Console */}
+            <div className="lg:col-span-5 relative group">
+              <div className="absolute -inset-2 bg-gradient-to-tr from-green-500/20 to-emerald-400/10 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900">
+                <Image
+                  src="/images/command-center.jpg"
+                  alt="Speedways Enterprise Mobility Cloud and Command Center Telemetry Engine"
+                  width={720}
+                  height={480}
+                  className="w-full h-[320px] sm:h-[380px] object-cover group-hover:scale-102 transition-transform duration-500 opacity-90"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+
+                <div className="absolute bottom-4 left-4 right-4 text-white text-xs flex items-center justify-between">
+                  <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 font-semibold">
+                    Proprietary SaaS Telemetry Desk
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-green-500 text-white font-mono font-bold text-[11px] shadow-xs flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                    ONLINE
+                  </span>
+                </div>
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -left-3 sm:-left-5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-green-200 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center font-bold text-xs">
+                  API
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-slate-900">Real-Time ERP Sync</div>
+                  <div className="text-[10px] text-slate-500">SAP, Oracle & Workday Compatible</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

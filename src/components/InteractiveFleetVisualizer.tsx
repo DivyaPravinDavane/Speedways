@@ -324,10 +324,10 @@ export default function InteractiveFleetVisualizer() {
 
             <div className="mt-4 flex items-center justify-between">
               <Link
-                href="/fleet"
+                href="/services/chauffeur-drive"
                 className="text-xs font-bold text-slate-600 hover:text-green-600 transition-colors"
               >
-                View Full 6-Tier Fleet Table →
+                View Chauffeur Drive Specifications →
               </Link>
 
               <Link

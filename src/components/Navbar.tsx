@@ -84,8 +84,8 @@ export default function Navbar() {
       </div>
 
       {/* 1. MAIN NAVBAR */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
-        <div className="flex items-center justify-between gap-4 h-[74px]">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-4 xl:px-8">
+        <div className="flex items-center justify-between gap-2 lg:gap-3 xl:gap-6 h-[74px]">
           {/* Brand Logo (Official SPEEDWAYS Logo) */}
           <Link href="/" className="flex items-center group shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -96,8 +96,8 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop Navigation Links: Product ⌄ | Services ⌄ | Customers | Resources ⌄ | About Us ⌄ | Investors ⌄ */}
-          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-7 text-[14px] xl:text-[15px] font-medium text-slate-800 whitespace-nowrap">
+          {/* Desktop Navigation Links: Product ⌄ | Services ⌄ | Safety & Compliance | Customers | Leadership | Resources ⌄ | About Us ⌄ */}
+          <nav className="hidden lg:flex items-center space-x-2 xl:space-x-3.5 2xl:space-x-6 text-[13px] xl:text-[14px] 2xl:text-[15px] font-medium text-slate-800">
             {/* 1. PRODUCT DROPDOWN */}
             <div
               className="relative py-6"
@@ -105,8 +105,8 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer ${
-                  pathname.startsWith("/technology") || pathname === "/fleet"
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap ${
+                  pathname.startsWith("/technology")
                     ? "text-[#48B83D] font-semibold"
                     : "text-slate-800 hover:text-[#48B83D]"
                 }`}
@@ -123,7 +123,7 @@ export default function Navbar() {
               {/* Product Mega Menu */}
               {activeDropdown === "product" && (
                 <div
-                  className="absolute top-full left-0 w-[720px] bg-white border border-green-200/90 rounded-3xl flyout-premium-shadow p-6 pt-5 animate-in fade-in zoom-in-95 duration-200 z-50"
+                  className="absolute top-full left-0 w-[720px] max-w-[calc(100vw-32px)] bg-white border border-green-200/90 rounded-3xl flyout-premium-shadow p-6 pt-5 animate-in fade-in zoom-in-95 duration-200 z-50 whitespace-normal"
                   onMouseEnter={() => handleMouseEnter("product")}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -187,7 +187,7 @@ export default function Navbar() {
                     </Link>
 
                     <Link
-                      href="/fleet"
+                      href="/services/chauffeur-drive"
                       className="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-slate-50 transition-all group"
                     >
                       <div className="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
@@ -195,7 +195,7 @@ export default function Navbar() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-xs font-bold text-slate-900 group-hover:text-green-700 transition-colors flex items-center justify-between">
-                          <span>Interactive Fleet Visualizer</span>
+                          <span>Corporate Fleet & Vehicles</span>
                           <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
                             500+ Cabs
                           </span>
@@ -250,7 +250,7 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer ${
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap ${
                   pathname.startsWith("/services")
                     ? "text-[#48B83D] font-semibold"
                     : "text-slate-800 hover:text-[#48B83D]"
@@ -268,22 +268,22 @@ export default function Navbar() {
               {/* Services Mega Menu */}
               {activeDropdown === "services" && (
                 <div
-                  className="absolute top-full left-[-80px] w-[780px] bg-white border border-green-200/90 rounded-3xl flyout-premium-shadow p-6 pt-5 animate-in fade-in zoom-in-95 duration-200 z-50"
+                  className="absolute top-full left-[-40px] xl:left-[-100px] w-[860px] max-w-[calc(100vw-32px)] bg-white border border-green-200/90 rounded-3xl flyout-premium-shadow p-6 pt-5 animate-in fade-in zoom-in-95 duration-200 z-50 whitespace-normal"
                   onMouseEnter={() => handleMouseEnter("services")}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-100">
-                    <div>
+                  <div className="flex items-start justify-between gap-4 pb-3.5 mb-4 border-b border-slate-100">
+                    <div className="max-w-xl">
                       <span className="text-xs font-bold uppercase tracking-wider text-[#48B83D] block">
-                        Enterprise Mobility Services
+                        Enterprise Mobility Solutions
                       </span>
-                      <p className="text-xs text-slate-500 mt-0.5">
-                        Standardized SLAs, vetted chauffeurs, and 4-hour local lead times across 185+ cities
+                      <p className="text-xs text-slate-600 mt-1 leading-relaxed whitespace-normal">
+                        Seamless mobility across 185+ cities, with standardized spot rentals, hourly disposals, and intercity routes — governed by transparent tariffs, 5% GST billing, and 24×7 command centre oversight.
                       </p>
                     </div>
                     <Link
                       href="/services"
-                      className="text-xs font-bold text-green-700 hover:text-green-800 flex items-center gap-1.5 bg-green-50 px-3 py-1.5 rounded-xl hover:bg-green-100 transition-colors"
+                      className="text-xs font-bold text-green-700 hover:text-green-800 flex items-center gap-1.5 bg-green-50 px-3.5 py-2 rounded-xl hover:bg-green-100 transition-colors shrink-0 whitespace-nowrap"
                     >
                       <span>All 11 Verticals</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -301,33 +301,16 @@ export default function Navbar() {
                           href="/services/chauffeur-drive"
                           className="flex items-start gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-all group"
                         >
-                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
-                            <Car className="w-4 h-4" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
-                              Corporate Car Rental
-                            </div>
-                            <div className="text-[11px] text-slate-500">
-                              Spot & contract daily rentals with verified chauffeurs
-                            </div>
-                          </div>
-                        </Link>
-
-                        <Link
-                          href="/services/chauffeur-drive"
-                          className="flex items-start gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-all group"
-                        >
-                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
+                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors mt-0.5">
                             <Plane className="w-4 h-4" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
-                              Airport Zero-Wait Transfers
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700 transition-colors">
+                              Airport Transfer across India
                             </div>
-                            <div className="text-[11px] text-slate-500">
-                              Flight-tracked arrivals & terminal curbside paging
-                            </div>
+                            <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5 whitespace-normal">
+                              Reliable airport mobility with live flight monitoring and proactive chauffeur coordination, with specialized meet-and-greet assistance available for VIP and bulk movements.
+                            </p>
                           </div>
                         </Link>
 
@@ -335,16 +318,33 @@ export default function Navbar() {
                           href="/services/chauffeur-drive"
                           className="flex items-start gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-all group"
                         >
-                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
+                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors mt-0.5">
+                            <Clock className="w-4 h-4" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700 transition-colors">
+                              Local / Short Term Rental
+                            </div>
+                            <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5 whitespace-normal">
+                              Flexible hourly mobility tailored for multi-stop corporate meetings, site visits, inspections, and seamless citywide business travel.
+                            </p>
+                          </div>
+                        </Link>
+
+                        <Link
+                          href="/services/chauffeur-drive"
+                          className="flex items-start gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-all group"
+                        >
+                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors mt-0.5">
                             <Navigation2 className="w-4 h-4" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
-                              Intercity Highway Travel
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700 transition-colors">
+                              Out Station Intercity Mobility
                             </div>
-                            <div className="text-[11px] text-slate-500">
-                              Pan-India outstation travel with transparent per-km billing
-                            </div>
+                            <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5 whitespace-normal">
+                              Enterprise-grade outstation mobility built around safety, comfort, and compliance — with trained chauffeurs, well-maintained vehicles, monitored journeys, and 24×7 operational support.
+                            </p>
                           </div>
                         </Link>
                       </div>
@@ -360,16 +360,16 @@ export default function Navbar() {
                           href="/services/employee-transport"
                           className="flex items-start gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-all group"
                         >
-                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
+                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors mt-0.5">
                             <Users className="w-4 h-4" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700 transition-colors">
                               Employee Transport (ETS)
                             </div>
-                            <div className="text-[11px] text-slate-500">
-                              24×7 shift commute, route clustering & women safety
-                            </div>
+                            <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5 whitespace-normal">
+                              24×7 shift commute, route clustering & women safety protocols with geofenced live trip telemetry.
+                            </p>
                           </div>
                         </Link>
 
@@ -377,16 +377,16 @@ export default function Navbar() {
                           href="/services/vip-luxury-events"
                           className="flex items-start gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-all group"
                         >
-                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
+                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors mt-0.5">
                             <Crown className="w-4 h-4" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700 transition-colors">
                               VIP & Board Mobility
                             </div>
-                            <div className="text-[11px] text-slate-500">
-                              Mercedes, BMW, Audi & Fortuner CXO delegations
-                            </div>
+                            <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5 whitespace-normal">
+                              Mercedes, BMW, Audi & Fortuner executive fleets for CXO summits, board meetings & high-profile delegations.
+                            </p>
                           </div>
                         </Link>
 
@@ -394,30 +394,30 @@ export default function Navbar() {
                           href="/sustainability"
                           className="flex items-start gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-all group"
                         >
-                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
+                          <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors mt-0.5">
                             <Leaf className="w-4 h-4" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-green-700 transition-colors">
                               EV Mobility & ESG
                             </div>
-                            <div className="text-[11px] text-slate-500">
-                              Zero-emission fleet transition & Scope 1/2 reporting
-                            </div>
+                            <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5 whitespace-normal">
+                              Zero-emission electric vehicle transition, battery telemetry & Scope 1/2 sustainability audit reporting.
+                            </p>
                           </div>
                         </Link>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-4 pt-3.5 border-t border-slate-100 bg-slate-50 -mx-6 -mb-6 p-4 px-6 rounded-b-3xl flex items-center justify-between text-xs">
+                  <div className="mt-4 pt-3.5 border-t border-slate-100 bg-slate-50 -mx-6 -mb-6 p-4 px-6 rounded-b-3xl flex items-center justify-between text-xs whitespace-normal">
                     <span className="text-slate-600 flex items-center gap-2">
-                      <Radio className="w-3.5 h-3.5 text-[#48B83D] animate-pulse" />
-                      <strong>24×7 Active Command Center:</strong> 4h Local Lead Time Guarantee
+                      <Radio className="w-3.5 h-3.5 text-[#48B83D] animate-pulse shrink-0" />
+                      <span><strong>24×7 Active Command Center:</strong> 4h Local Lead Time Guarantee</span>
                     </span>
                     <Link
                       href="/contact"
-                      className="font-bold text-green-700 hover:text-green-800 flex items-center gap-1"
+                      className="font-bold text-green-700 hover:text-green-800 flex items-center gap-1 shrink-0 whitespace-nowrap"
                     >
                       Request Corporate RFP <ArrowRight className="w-3 h-3" />
                     </Link>
@@ -426,16 +426,40 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* 3. CUSTOMERS (DIRECT LINK - EXACTLY LIKE MOVEINSYNC IMAGE) */}
+            {/* 3. SAFETY & COMPLIANCE (NEW TAB) */}
+            <Link
+              href="/safety"
+              className={`transition-colors py-6 whitespace-nowrap ${
+                pathname === "/safety"
+                  ? "text-[#48B83D] font-semibold"
+                  : "text-slate-800 hover:text-[#48B83D]"
+              }`}
+            >
+              Safety & Compliance
+            </Link>
+
+            {/* 4. CUSTOMERS */}
             <Link
               href="/customers"
-              className={`transition-colors py-6 ${
+              className={`transition-colors py-6 whitespace-nowrap ${
                 pathname === "/customers"
                   ? "text-[#48B83D] font-semibold"
                   : "text-slate-800 hover:text-[#48B83D]"
               }`}
             >
               Customers
+            </Link>
+
+            {/* 5. LEADERSHIP */}
+            <Link
+              href="/leadership"
+              className={`transition-colors py-6 whitespace-nowrap ${
+                pathname === "/leadership"
+                  ? "text-[#48B83D] font-semibold"
+                  : "text-slate-800 hover:text-[#48B83D]"
+              }`}
+            >
+              Leadership
             </Link>
 
             {/* 4. RESOURCES DROPDOWN */}
@@ -445,7 +469,7 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer ${
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap ${
                   pathname.startsWith("/sustainability") || pathname === "/network-safety"
                     ? "text-[#48B83D] font-semibold"
                     : "text-slate-800 hover:text-[#48B83D]"
@@ -463,13 +487,13 @@ export default function Navbar() {
               {/* Resources Flyout Menu */}
               {activeDropdown === "resources" && (
                 <div
-                  className="absolute top-full left-[-100px] w-[640px] bg-white border border-green-200/90 rounded-3xl flyout-premium-shadow p-5 animate-in fade-in zoom-in-95 duration-200 z-50"
+                  className="absolute top-full left-[-100px] w-[640px] max-w-[calc(100vw-32px)] bg-white border border-green-200/90 rounded-3xl flyout-premium-shadow p-5 animate-in fade-in zoom-in-95 duration-200 z-50 whitespace-normal"
                   onMouseEnter={() => handleMouseEnter("resources")}
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="grid grid-cols-2 gap-3">
                     <Link
-                      href="/fleet#calculator"
+                      href="/contact"
                       className="flex items-start gap-3 p-3 rounded-2xl hover:bg-slate-50 transition-colors group"
                     >
                       <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
@@ -477,10 +501,10 @@ export default function Navbar() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
-                          Fleet Tariff Calculator
+                          Corporate Tariff & Empanelment
                         </div>
                         <div className="text-[11px] text-slate-500">
-                          Estimate rental, outstation & airport packages
+                          Request custom tariffs for local, outstation & airport routes
                         </div>
                       </div>
                     </Link>
@@ -553,15 +577,15 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* 5. ABOUT US DROPDOWN */}
+            {/* 5. ABOUT US DROPDOWN (Includes Company Overview, Leadership, Investors & Governance) */}
             <div
               className="relative py-6"
               onMouseEnter={() => handleMouseEnter("about")}
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer ${
-                  pathname.startsWith("/about-us")
+                className={`flex items-center gap-1 xl:gap-1.5 transition-colors cursor-pointer whitespace-nowrap ${
+                  pathname.startsWith("/about-us") || pathname === "/investors"
                     ? "text-[#48B83D] font-semibold"
                     : "text-slate-800 hover:text-[#48B83D]"
                 }`}
@@ -578,13 +602,13 @@ export default function Navbar() {
               {/* About Us Flyout Menu */}
               {activeDropdown === "about" && (
                 <div
-                  className="absolute top-full left-[-80px] w-80 bg-white border border-green-200/90 rounded-3xl flyout-premium-shadow p-3 animate-in fade-in zoom-in-95 duration-200 z-50"
+                  className="absolute top-full right-0 xl:left-[-120px] w-84 bg-white border border-green-200/90 rounded-3xl flyout-premium-shadow p-3 animate-in fade-in zoom-in-95 duration-200 z-50 whitespace-normal"
                   onMouseEnter={() => handleMouseEnter("about")}
                   onMouseLeave={handleMouseLeave}
                 >
                   <Link
                     href="/about-us"
-                    className="flex items-center gap-3 p-3 rounded-2xl hover:bg-slate-50 transition-colors group"
+                    className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"
                   >
                     <div className="w-8 h-8 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
                       <Building2 className="w-4 h-4" />
@@ -598,23 +622,38 @@ export default function Navbar() {
                   </Link>
 
                   <Link
-                    href="/about-us#governance"
-                    className="flex items-center gap-3 p-3 rounded-2xl hover:bg-slate-50 transition-colors group"
+                    href="/leadership"
+                    className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"
                   >
                     <div className="w-8 h-8 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
-                      <ShieldCheck className="w-4 h-4" />
+                      <Users className="w-4 h-4" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
-                        Client Governance
+                        Executive Leadership
                       </div>
-                      <div className="text-[11px] text-slate-500">Dedicated SPOC & Escalations</div>
+                      <div className="text-[11px] text-slate-500">100+ Yrs Mobility Bench</div>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/investors"
+                    className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
+                      <TrendingUp className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
+                        Investor Relations
+                      </div>
+                      <div className="text-[11px] text-slate-500">Fleet Scale & ESG Roadmap</div>
                     </div>
                   </Link>
 
                   <Link
                     href="/network-safety"
-                    className="flex items-center gap-3 p-3 rounded-2xl hover:bg-slate-50 transition-colors group"
+                    className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"
                   >
                     <div className="w-8 h-8 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
                       <MapPin className="w-4 h-4" />
@@ -628,8 +667,23 @@ export default function Navbar() {
                   </Link>
 
                   <Link
+                    href="/about-us#governance"
+                    className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
+                      <ShieldCheck className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
+                        Client Governance
+                      </div>
+                      <div className="text-[11px] text-slate-500">Dedicated SPOC & Escalations</div>
+                    </div>
+                  </Link>
+
+                  <Link
                     href="/about-us#testimonials"
-                    className="flex items-center gap-3 p-3 rounded-2xl hover:bg-slate-50 transition-colors group"
+                    className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"
                   >
                     <div className="w-8 h-8 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
                       <Award className="w-4 h-4" />
@@ -641,89 +695,6 @@ export default function Navbar() {
                       <div className="text-[11px] text-slate-500">Tata Steel, DBS, Merck, Kimberly</div>
                     </div>
                   </Link>
-                </div>
-              )}
-            </div>
-
-            {/* 6. INVESTORS DROPDOWN */}
-            <div
-              className="relative py-6"
-              onMouseEnter={() => handleMouseEnter("investors")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer ${
-                  pathname.startsWith("/investors")
-                    ? "text-[#48B83D] font-semibold"
-                    : "text-slate-800 hover:text-[#48B83D]"
-                }`}
-                aria-expanded={activeDropdown === "investors"}
-              >
-                <span>Investors</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${
-                    activeDropdown === "investors" ? "rotate-180 text-[#48B83D]" : ""
-                  }`}
-                />
-              </button>
-
-              {/* Investors Flyout Menu */}
-              {activeDropdown === "investors" && (
-                <div
-                  className="absolute top-full right-0 w-96 bg-white border border-green-200/90 rounded-3xl flyout-premium-shadow p-4 animate-in fade-in zoom-in-95 duration-200 z-50"
-                  onMouseEnter={() => handleMouseEnter("investors")}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <Link
-                    href="/investors"
-                    className="flex items-start gap-3 p-3 rounded-2xl hover:bg-slate-50 transition-colors group"
-                  >
-                    <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
-                      <TrendingUp className="w-4 h-4" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
-                        Financial & Fleet Scale
-                      </div>
-                      <div className="text-[11px] text-slate-500">
-                        185+ cities reach, 500+ verified fleet & 99.4% SLA
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href="/sustainability"
-                    className="flex items-start gap-3 p-3 rounded-2xl hover:bg-slate-50 transition-colors group"
-                  >
-                    <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
-                      <Leaf className="w-4 h-4" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
-                        ESG & Net-Zero Roadmap
-                      </div>
-                      <div className="text-[11px] text-slate-500">
-                        EV fleet transition & Scope 1/2 emissions offset
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href="/network-safety"
-                    className="flex items-start gap-3 p-3 rounded-2xl hover:bg-slate-50 transition-colors group"
-                  >
-                    <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:bg-[#48B83D] group-hover:text-white transition-colors">
-                      <ShieldCheck className="w-4 h-4" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-xs font-bold text-slate-900 group-hover:text-green-700">
-                        Corporate Governance
-                      </div>
-                      <div className="text-[11px] text-slate-500">
-                        ISO 9001/14001/27001 statutory compliance
-                      </div>
-                    </div>
-                  </Link>
 
                   <div className="mt-2 pt-2 border-t border-slate-100 px-2 flex justify-between items-center text-xs">
                     <span className="text-slate-500 font-medium">Headquarters: Mumbai</span>
@@ -731,7 +702,7 @@ export default function Navbar() {
                       href="/contact"
                       className="font-bold text-green-700 hover:text-green-800 flex items-center gap-1"
                     >
-                      Investor Contact <ArrowRight className="w-3 h-3" />
+                      SPOC Contact <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </div>
@@ -740,11 +711,11 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Elements: Green Pill Button + Regional Country Box */}
-          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 shrink-0">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
             {/* Signature Green Pill Button */}
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-4 xl:px-6 py-2.5 rounded-full bg-[#48B83D] hover:bg-[#3ea534] active:scale-97 text-white font-bold text-[13px] xl:text-[14px] whitespace-nowrap btn-glow-pulse transition-all duration-300 cursor-pointer shadow-md"
+              className="inline-flex items-center justify-center px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-full bg-[#48B83D] hover:bg-[#3ea534] active:scale-97 text-white font-bold text-xs xl:text-sm whitespace-nowrap btn-glow-pulse transition-all duration-300 cursor-pointer shadow-md"
             >
               Request a Demo
             </Link>
@@ -757,7 +728,7 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-green-200 bg-white hover:border-green-400 text-xs font-bold text-slate-800 transition-all duration-200 cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5"
+                className="flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 xl:py-2 rounded-xl border border-green-200 bg-white hover:border-green-400 text-xs font-bold text-slate-800 transition-all duration-200 cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5"
                 title="Pan-India Corporate Mobility (Direct Metros: BOM, DEL, BLR, HYD, MAA)"
               >
                 <span className="text-base leading-none">🇮🇳</span>
@@ -877,6 +848,15 @@ export default function Navbar() {
             </div>
 
             <Link
+              href="/safety"
+              className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+                pathname === "/safety" ? "bg-green-50 text-green-700" : "text-slate-800 hover:bg-slate-50"
+              }`}
+            >
+              Safety & Compliance (12 Pillars)
+            </Link>
+
+            <Link
               href="/customers"
               className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold ${
                 pathname === "/customers" ? "bg-green-50 text-green-700" : "text-slate-800 hover:bg-slate-50"
@@ -886,12 +866,12 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/fleet"
+              href="/leadership"
               className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold ${
-                pathname === "/fleet" ? "bg-green-50 text-green-700" : "text-slate-800 hover:bg-slate-50"
+                pathname === "/leadership" ? "bg-green-50 text-green-700" : "text-slate-800 hover:bg-slate-50"
               }`}
             >
-              Fleet & Tariff Estimator
+              Leadership (Executive Team)
             </Link>
 
             <Link

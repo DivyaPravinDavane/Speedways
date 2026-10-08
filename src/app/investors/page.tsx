@@ -2,7 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { AnimatedNumber } from "@/components/AnimatedCounter";
 import {
   TrendingUp,
   ShieldCheck,
@@ -30,39 +32,79 @@ export default function InvestorsPage() {
       {/* 2. Hero Section */}
       <section className="relative py-16 sm:py-24 bg-gradient-to-b from-slate-50 via-white to-white overflow-hidden border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-[#48B83D] border border-green-200 text-xs font-bold uppercase tracking-wider mb-4">
-              <TrendingUp className="w-3.5 h-3.5" />
-              Corporate Governance & Growth Architecture
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Sustainable Scale, Zero-Incident Culture, and <span className="text-[#48B83D]">Institutional Integrity</span>
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-              Founded in 2012, Speedways Fleet & Travel Management Pvt. Ltd. operates one of India’s most resilient enterprise mobility operations, combining tech-enabled SaaS dispatch with certified Pan-India ground execution.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="lg:col-span-7 space-y-4">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-[#48B83D] border border-green-200 text-xs font-bold uppercase tracking-wider shadow-2xs">
+                <TrendingUp className="w-3.5 h-3.5" />
+                Corporate Governance & Growth Architecture
+              </span>
+              <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Sustainable Scale, Zero-Incident Culture, and <span className="text-[#48B83D]">Institutional Integrity</span>
+              </h1>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Founded in 2012, Speedways Fleet & Travel Management Pvt. Ltd. operates one of India’s most resilient enterprise mobility operations, combining tech-enabled SaaS dispatch with certified Pan-India ground execution.
+              </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="px-6 py-3 rounded-full bg-[#48B83D] hover:bg-[#3ea534] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-green-500/20"
-              >
-                Connect with Board Office
-              </Link>
-              <Link
-                href="/sustainability"
-                className="px-6 py-3 rounded-full bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs uppercase tracking-wider border border-slate-200 shadow-2xs transition-all flex items-center gap-2"
-              >
-                <Leaf className="w-4 h-4 text-green-600" />
-                <span>ESG Transition Roadmap</span>
-              </Link>
+              <div className="pt-2 flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  className="px-6 py-3 rounded-full bg-[#48B83D] hover:bg-[#3ea534] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-green-500/20"
+                >
+                  Connect with Board Office
+                </Link>
+                <Link
+                  href="/sustainability"
+                  className="px-6 py-3 rounded-full bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs uppercase tracking-wider border border-slate-200 shadow-2xs transition-all flex items-center gap-2"
+                >
+                  <Leaf className="w-4 h-4 text-green-600" />
+                  <span>ESG Transition Roadmap</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Showcase: Executive Fleet Presence */}
+            <div className="lg:col-span-5 relative group">
+              <div className="absolute -inset-2 bg-gradient-to-tr from-green-500/20 to-emerald-400/10 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+                <Image
+                  src="/images/vip-fleet-lineup.jpg"
+                  alt="Speedways Institutional Fleet Staging and Enterprise Governance"
+                  width={720}
+                  height={480}
+                  className="w-full h-[300px] sm:h-[360px] object-cover group-hover:scale-102 transition-transform duration-500"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent pointer-events-none"></div>
+
+                <div className="absolute bottom-4 left-4 right-4 text-white text-xs flex items-center justify-between">
+                  <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 font-semibold">
+                    185+ Cities Network Scale
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-green-500 text-white font-mono font-bold text-[11px] shadow-xs">
+                    Est. 2012
+                  </span>
+                </div>
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -left-3 sm:-left-5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-green-200 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-green-100 text-green-700 flex items-center justify-center font-bold text-xs">
+                  SLA
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-slate-900">96.8% Client Retention Rate</div>
+                  <div className="text-[10px] text-slate-500">Long-Term Master Service Agreements</div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Key Operational Pillars */}
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-xs">
-              <div className="text-3xl sm:text-4xl font-black text-slate-900">14+</div>
+              <div className="text-3xl sm:text-4xl font-black text-slate-900">
+                <AnimatedNumber value={14} suffix="+" duration={1600} />
+              </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
                 Years Operating
               </div>
@@ -70,7 +112,9 @@ export default function InvestorsPage() {
             </div>
 
             <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-xs">
-              <div className="text-3xl sm:text-4xl font-black text-[#48B83D]">185+</div>
+              <div className="text-3xl sm:text-4xl font-black text-[#48B83D]">
+                <AnimatedNumber value={185} suffix="+" duration={1600} />
+              </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
                 Cities Network
               </div>
@@ -78,7 +122,9 @@ export default function InvestorsPage() {
             </div>
 
             <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-xs">
-              <div className="text-3xl sm:text-4xl font-black text-slate-900">96.8%</div>
+              <div className="text-3xl sm:text-4xl font-black text-slate-900">
+                <AnimatedNumber value={96.8} decimals={1} suffix="%" duration={1600} />
+              </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
                 Client Retention
               </div>
@@ -86,7 +132,9 @@ export default function InvestorsPage() {
             </div>
 
             <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-xs">
-              <div className="text-3xl sm:text-4xl font-black text-[#48B83D]">100%</div>
+              <div className="text-3xl sm:text-4xl font-black text-[#48B83D]">
+                <AnimatedNumber value={100} suffix="%" duration={1600} />
+              </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
                 Statutory Compliance
               </div>
