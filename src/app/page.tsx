@@ -8,16 +8,9 @@ import {
   ArrowRight,
   ShieldCheck,
   MapPin,
-  Clock,
   Sparkles,
   CheckCircle2,
   PhoneCall,
-  Car,
-  Plane,
-  Users,
-  Crown,
-  Leaf,
-  CalendarCheck,
   Settings,
   Network,
   Cpu,
@@ -48,72 +41,6 @@ import {
 } from "@/data/speedwaysData";
 
 export default function HomePage() {
-  const featuredServices = [
-    {
-      title: "Airport Transfer across India",
-      desc: "Reliable airport mobility with live flight monitoring and proactive chauffeur coordination, with specialized meet-and-greet assistance available for VIP and bulk movements.",
-      icon: Plane,
-      link: "/services/chauffeur-drive",
-      tag: "Flight-Tracked",
-      stats: "Terminal Meet & Greet",
-      image: "/images/airport-chauffeur.jpg",
-    },
-    {
-      title: "Local / Short Term Rental",
-      desc: "Flexible hourly mobility tailored for multi-stop corporate meetings, site visits, inspections, and seamless citywide business travel.",
-      icon: Clock,
-      link: "/services/chauffeur-drive",
-      tag: "Hourly Disposals",
-      stats: "4h & 8h Packages",
-      image: "/images/hero-sedan.jpg",
-    },
-    {
-      title: "Out Station Mobility",
-      desc: "Enterprise-grade outstation mobility built around safety, comfort, and compliance — with trained chauffeurs, well-maintained vehicles, monitored journeys, and 24×7 operational support.",
-      icon: Car,
-      link: "/services/chauffeur-drive",
-      tag: "Intercity Highway",
-      stats: "Monitored Journeys",
-      image: "/images/sedan-interior.jpg",
-    },
-    {
-      title: "Employee Transportation (ETS)",
-      desc: "Turnkey shift commute, algorithmic route clustering, and women safety escorts.",
-      icon: Users,
-      link: "/services/employee-transport",
-      tag: "Turnkey Commute",
-      stats: "22-28% Cost Cut",
-      image: "/images/employee-transit.jpg",
-    },
-    {
-      title: "VIP & Luxury Movement",
-      desc: "Mercedes, BMW, Audi, and Fortuner deployments for C-suite and board summits.",
-      icon: Crown,
-      link: "/services/vip-luxury-events",
-      tag: "White-Glove CXO",
-      stats: "Strict NDA Guard",
-      image: "/images/vip-fleet-lineup.jpg",
-    },
-    {
-      title: "EV Mobility & ESG",
-      desc: "Clean ICE-to-EV corporate fleet transition with verified carbon abatement reports.",
-      icon: Leaf,
-      link: "/sustainability",
-      tag: "Zero-Emissions",
-      stats: "Scope 1 & 2 ESG",
-      image: "/images/ev-fleet.jpg",
-    },
-    {
-      title: "MICE & Bulk Events",
-      desc: "Transport desks, on-site fleet dispatchers, and mass delegate shuttles for annual AGMs.",
-      icon: CalendarCheck,
-      link: "/services/vip-luxury-events",
-      tag: "Mass Coordination",
-      stats: "10 to 100+ Cabs",
-      image: "/images/mice-fleet.jpg",
-    },
-  ];
-
   return (
     <div className="bg-[#F4FAF6]">
       {/* 1. HERO SECTION */}
@@ -333,92 +260,6 @@ export default function HomePage() {
 
           {/* Interactive Widget Component */}
           <LiveTelemetrySimulator />
-        </div>
-      </section>
-
-      {/* 5. CORE SERVICES PREVIEW (Picture-Rich Cards) */}
-      <section className="py-20 bg-[#F4FAF6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
-                Full-Spectrum Portfolio
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight">
-                Corporate Mobility Solutions
-              </h2>
-              <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
-                Seamless mobility across 185+ cities, with standardized spot rentals, hourly disposals, and intercity routes — governed by transparent tariffs, 5% GST billing, and 24×7 command centre oversight.
-              </p>
-            </div>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-sm font-bold text-green-600 hover:text-green-700 hover:underline shrink-0"
-            >
-              <span>Explore All 11 Services</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredServices.map((service, idx) => {
-              const IconComp = service.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white rounded-2xl border border-green-200/80 hover-border-flow card-premium-shadow group flex flex-col justify-between overflow-hidden transition-all duration-300"
-                >
-                  {/* Service Image Card Header */}
-                  <div className="relative h-48 w-full overflow-hidden bg-slate-100">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute top-3 left-3">
-                      <SymbolBadge icon={IconComp} size="sm" />
-                    </div>
-                    <div className="absolute top-3 right-3">
-                      <span className="text-[11px] font-bold text-slate-900 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-md shadow-xs">
-                        {service.tag}
-                      </span>
-                    </div>
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <h3 className="text-lg font-bold text-white drop-shadow-xs">
-                        {service.title}
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div className="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        {service.desc}
-                      </p>
-
-                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                        <span className="font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded">
-                          {service.stats}
-                        </span>
-                        <span className="text-slate-500 font-medium">Pan-India SLAs</span>
-                      </div>
-                    </div>
-
-                    <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
-                      <Link
-                        href={service.link}
-                        className="text-xs font-bold text-green-600 hover:text-green-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform"
-                      >
-                        View Specs & Tariff <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
