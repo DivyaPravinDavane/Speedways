@@ -144,36 +144,21 @@ body {
   }
 }
 
-/* Continuous animated glowing border */
+/* 1. Precision Corporate Border Utilities */
 .animated-border-flow {
-  position: relative;
-  background: 
-    linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, #48b83d, #86efac, #22c55e, #bbf7d0, #48b83d) border-box;
-  border: 1.5px solid transparent;
-  background-size: 250% 250%;
-  animation: border-gradient-shift 4.5s ease infinite;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s ease;
 }
 
-/* Animated border on hover only */
 .hover-border-flow {
-  position: relative;
-  background: 
-    linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, #dcfce7, #dcfce7) border-box;
-  border: 1.5px solid transparent;
-  background-size: 250% 250%;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease;
 }
 .hover-border-flow:hover {
-  background: 
-    linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, #48b83d, #86efac, #22c55e, #10b981, #48b83d) border-box;
-  border: 1.5px solid transparent;
-  background-size: 250% 250%;
-  animation: border-gradient-shift 3.5s ease infinite;
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px -12px rgba(34, 197, 94, 0.18), 0 8px 16px -6px rgba(15, 23, 42, 0.05);
+  border-color: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
 }
 
 /* 2. Shimmer sweep line along border bottom */
@@ -197,42 +182,26 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(72, 184, 61, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(22, 163, 74, 0.6), transparent);
   animation: shimmer-sweep 3.5s infinite ease-in-out;
 }
 
 /* 3. Premium layered card shadow */
 .card-premium-shadow {
-  box-shadow: 
-    0 1px 3px rgba(15, 23, 42, 0.03),
-    0 8px 24px -4px rgba(15, 23, 42, 0.05),
-    0 16px 36px -8px rgba(34, 197, 94, 0.08);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.03);
+  transition: all 0.25s ease;
 }
 .card-premium-shadow:hover {
-  box-shadow: 
-    0 2px 6px rgba(15, 23, 42, 0.04),
-    0 16px 36px -6px rgba(15, 23, 42, 0.08),
-    0 28px 56px -10px rgba(34, 197, 94, 0.22);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
 }
 
-/* 4. Glowing CTA Button with pulse */
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(72, 184, 61, 0.35), 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
-  50% {
-    box-shadow: 0 0 26px rgba(72, 184, 61, 0.65), 0 6px 18px rgba(0, 0, 0, 0.08);
-  }
-}
-
+/* 4. Refined Corporate CTA Button */
 .btn-glow-pulse {
-  animation: pulse-glow 3s infinite ease-in-out;
+  transition: all 0.2s ease;
 }
 .btn-glow-pulse:hover {
-  animation: none;
-  box-shadow: 0 0 32px rgba(72, 184, 61, 0.8), 0 8px 20px rgba(0, 0, 0, 0.12);
-  transform: scale(1.03);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
 }
 
 /* 5. Deep Floating Flyout Menu Shadow */

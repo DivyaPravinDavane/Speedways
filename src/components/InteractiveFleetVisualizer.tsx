@@ -9,7 +9,6 @@ import {
   Fan,
   Fuel,
   CheckCircle2,
-  Sparkles,
   ArrowRight,
   ShieldCheck,
   Zap,

@@ -12,13 +12,11 @@ import {
   Award,
   CheckCircle2,
   ArrowRight,
-  Star,
   Users,
   Clock,
   TrendingUp,
   MapPin,
   FileCheck,
-  Sparkles,
   Quote,
   Radio,
 } from "lucide-react";
@@ -186,7 +184,7 @@ export default function CustomersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-[#48B83D] border border-green-200 text-xs font-bold uppercase tracking-wider mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
+              <ShieldCheck className="w-3.5 h-3.5" />
               Trusted by Fortune 500 Corporates Since 2012
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">

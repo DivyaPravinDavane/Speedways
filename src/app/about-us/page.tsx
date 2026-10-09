@@ -11,7 +11,6 @@ import {
   Target,
   Compass,
   Award,
-  Sparkles,
   Users,
   CheckCircle2,
   Building,
@@ -687,7 +686,6 @@ export default function AboutUsPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm shadow-md shadow-green-500/25 transition-all cursor-pointer"
               >
-                <Sparkles className="w-4 h-4" />
                 <span>Empanel Speedways</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>

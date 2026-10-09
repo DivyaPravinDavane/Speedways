@@ -10,10 +10,8 @@ import {
   Compass,
   Building2,
   TrendingUp,
-  Sparkles,
   ChevronRight,
   Quote,
-  Star,
   CheckCircle2,
   X,
   ExternalLink,
@@ -106,7 +104,7 @@ export default function LeadershipSection({ className = "" }: { className?: stri
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-green-50 text-green-700 border border-green-200/80 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-green-600 animate-pulse" />
+            <Building2 className="w-3.5 h-3.5 text-green-600" />
             Executive Leadership & Governance
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">

@@ -11,9 +11,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Speedways. Advancing Enterprise Mobility | Enterprise Mobility Pan-India",
-  description: "Speedways. Advancing Enterprise Mobility. Purpose in Every Promise. Excellence in Every Experience. Inspired by Commitment. Delivered with Excellence. Committed to Excellence. Defined by Trust. 1,200+ fleet depth, 185+ city coverage, our technology platform, and centralised 24x7 command centre governance.",
-  keywords: "corporate car rental, employee transportation, ETS, fleet management India, chauffeur drive corporate, enterprise technology platform, VIP movement, airport transfer across India, corporate mobility",
+  title: "Speedways | Corporate Car Rental & Employee Transportation Services (ETS) India",
+  description: "Speedways is India's trusted corporate mobility platform operating across 185+ cities with 1,200+ fleet vehicles. Providing employee transportation services (ETS), executive car rental with chauffeur, airport transfers, VIP delegation mobility, and 24×7 central command oversight.",
+  keywords: "corporate car rental, employee transportation, ETS India, corporate cab service, fleet management India, chauffeur drive corporate, airport transfers India, corporate mobility, long term car lease",
 };
 
 export default function RootLayout({

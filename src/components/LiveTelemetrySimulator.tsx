@@ -13,7 +13,6 @@ import {
   Car,
   AlertTriangle,
   FileCheck,
-  Sparkles,
   Zap,
   Gauge,
   UserCheck,

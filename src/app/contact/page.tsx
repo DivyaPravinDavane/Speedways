@@ -12,7 +12,6 @@ import {
   Clock,
   Send,
   CheckCircle2,
-  Sparkles,
   ShieldCheck,
   Globe,
   FileCheck,
@@ -117,7 +116,7 @@ export default function ContactPage() {
           <div className="max-w-3xl space-y-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-green-600" />
+                <ShieldCheck className="w-3.5 h-3.5 text-green-600" />
                 Procurement & Vendor Onboarding
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
@@ -410,8 +409,8 @@ export default function ContactPage() {
                       <span>Processing Request...</span>
                     ) : (
                       <>
-                        <Sparkles className="w-4 h-4" />
                         <span>Submit Empanelment Request</span>
+                        <Send className="w-4 h-4" />
                       </>
                     )}
                   </button>

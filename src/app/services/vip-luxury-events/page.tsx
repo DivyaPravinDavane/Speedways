@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   CheckCircle2,
   Award,
-  Sparkles,
+  Plane,
   ArrowRight,
   PhoneCall,
   UserCheck,
@@ -107,7 +107,7 @@ export default function VipLuxuryEventsPage() {
                 Executive Protocol & Event Logistics
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
-                <Sparkles className="w-3 h-3 text-green-600" />
+                <ShieldCheck className="w-3 h-3 text-green-600" />
                 White-Glove Chauffeur Fleet
               </span>
             </div>
@@ -135,7 +135,7 @@ export default function VipLuxuryEventsPage() {
                 <span>On-Site MICE Transport Desks</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
-                <Star className="w-4 h-4 text-green-600" />
+                <Plane className="w-4 h-4 text-green-600" />
                 <span>Curbside Airport Staging</span>
               </div>
             </div>

@@ -13,6 +13,7 @@ import {
   Leaf,
   CalendarCheck,
   PhoneCall,
+  Mail,
   Menu,
   X,
   ChevronDown,
@@ -33,7 +34,6 @@ import {
   Briefcase,
   CheckCircle2,
   MapPin,
-  Sparkles,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -78,9 +78,36 @@ export default function Navbar() {
           : "border-b border-slate-200/80"
       }`}
     >
-      {/* Animated shimmer line (own clipped layer so dropdowns are never cut off) */}
-      <div className="pointer-events-none absolute inset-x-0 top-[74px] h-[2px] overflow-hidden z-10">
-        <div className="h-full w-full bg-gradient-to-r from-transparent via-[#48B83D] to-transparent animate-[shimmer-sweep_3.5s_ease-in-out_infinite]" />
+      {/* Top Corporate Utility Bar (Rego reference) */}
+      <div className="bg-slate-900 text-slate-300 text-[11.5px] py-1.5 px-4 sm:px-6 lg:px-4 xl:px-8 border-b border-slate-800 hidden md:block">
+        <div className="w-full max-w-[1536px] mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-4 text-slate-300 font-medium">
+            <a href="tel:9820630817" className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <PhoneCall className="w-3 h-3 text-[#48B83D]" />
+              <span>24×7 Central Support: <strong className="text-white">+91 98206 30817</strong></span>
+            </a>
+            <span className="text-slate-700">|</span>
+            <a href="mailto:info@speedways.co.in" className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <Mail className="w-3 h-3 text-[#48B83D]" />
+              <span>Corporate RFPs: <strong className="text-white">info@speedways.co.in</strong></span>
+            </a>
+            <span className="text-slate-700">|</span>
+            <span className="flex items-center gap-1.5 text-slate-400">
+              <MapPin className="w-3 h-3 text-[#48B83D]" />
+              <span>185+ Cities Pan-India</span>
+            </span>
+          </div>
+          <div className="flex items-center gap-4 text-xs font-semibold">
+            <Link href="/contact" className="hover:text-white text-slate-300 transition-colors">
+              Attach Your Fleet
+            </Link>
+            <span className="text-slate-700">|</span>
+            <Link href="/contact" className="text-[#48B83D] hover:text-green-300 transition-colors flex items-center gap-1">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Corporate Login</span>
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* 1. MAIN NAVBAR */}
@@ -229,7 +256,7 @@ export default function Navbar() {
 
                   <div className="mt-4 pt-3.5 border-t border-slate-100 bg-slate-50 -mx-6 -mb-6 p-4 px-6 rounded-b-3xl flex items-center justify-between text-xs">
                     <span className="text-slate-600 flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-[#48B83D]" />
+                      <Layers className="w-4 h-4 text-[#48B83D]" />
                       <strong>New:</strong> Multi-tenant Corporate Admin Portal with live MIS dashboards
                     </span>
                     <Link
@@ -712,15 +739,15 @@ export default function Navbar() {
 
           {/* Right Action Elements: Green Pill Button + Regional Country Box */}
           <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
-            {/* Signature Green Pill Button */}
+            {/* Signature Corporate Green Button */}
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-full bg-[#48B83D] hover:bg-[#3ea534] active:scale-97 text-white font-bold text-xs xl:text-sm whitespace-nowrap btn-glow-pulse transition-all duration-300 cursor-pointer shadow-md"
+              className="inline-flex items-center justify-center px-4 xl:px-5 py-2 xl:py-2.5 rounded-xl bg-green-600 hover:bg-green-700 active:scale-98 text-white font-bold text-xs xl:text-sm whitespace-nowrap transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
             >
               Request a Demo
             </Link>
 
-            {/* Country Flag Pill Box (Exactly as seen in MoveInSync: [ 🇮🇳 IN ]) */}
+            {/* Country Flag Pill Box: [ 🇮🇳 IN ] */}
             <div
               className="relative"
               onMouseEnter={() => setIsCountryOpen(true)}
@@ -728,7 +755,7 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 xl:py-2 rounded-xl border border-green-200 bg-white hover:border-green-400 text-xs font-bold text-slate-800 transition-all duration-200 cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5"
+                className="flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 xl:py-2 rounded-xl border border-slate-200 bg-white hover:border-green-500 text-xs font-bold text-slate-800 transition-all duration-200 cursor-pointer shadow-xs hover:shadow-md"
                 title="Pan-India Corporate Mobility (Direct Metros: BOM, DEL, BLR, HYD, MAA)"
               >
                 <span className="text-base leading-none">🇮🇳</span>
@@ -737,7 +764,7 @@ export default function Navbar() {
 
               {/* Regional Dispatch Tooltip */}
               {isCountryOpen && (
-                <div className="absolute right-0 top-full mt-2 w-64 p-3 bg-white rounded-2xl flyout-premium-shadow border border-green-200 text-xs animate-in fade-in zoom-in-95 duration-150 z-50">
+                <div className="absolute right-0 top-full mt-2 w-64 p-3 bg-white rounded-2xl flyout-premium-shadow border border-slate-200 text-xs animate-in fade-in zoom-in-95 duration-150 z-50">
                   <div className="font-bold text-slate-900 mb-1 flex items-center justify-between">
                     <span>Pan-India Network</span>
                     <span className="text-[10px] text-green-700 bg-green-100 px-2 py-0.5 rounded-full font-bold">
@@ -763,7 +790,7 @@ export default function Navbar() {
           <div className="flex lg:hidden items-center gap-2">
             <Link
               href="/contact"
-              className="px-4 py-2 rounded-full bg-[#48B83D] text-white text-xs font-bold"
+              className="px-4 py-2 rounded-xl bg-green-600 text-white text-xs font-bold"
             >
               Demo
             </Link>
@@ -778,19 +805,20 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 2. MOVEINSYNC SIGNATURE AMBER ANNOUNCEMENT RIBBON */}
-      <div className="bg-[#FFBE38] text-slate-900 text-xs sm:text-[13.5px] font-semibold py-2.5 px-4 border-t border-amber-400/40">
+      {/* 2. CORPORATE MOBILITY ANNOUNCEMENT RIBBON */}
+      <div className="bg-slate-900 text-slate-200 text-xs sm:text-[13px] font-medium py-2 px-4 border-t border-slate-800">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 sm:gap-4 flex-wrap text-center">
-          <span>
-            <strong>Mobility Symposium 2026</strong> — Resilient Mobility: Readying India&apos;s Cities for an Uncertain World | 8th Oct, 2026 | The Taj West End
+          <span className="flex items-center gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span><strong>Pan-India Enterprise Mobility &amp; ETS</strong> — 1,200+ Verified Fleet across 185+ Cities | Fast-Track 48h Empanelment</span>
           </span>
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-white text-green-700 font-bold text-[11px] shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all shrink-0 border border-amber-300/60"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-lg bg-green-600 hover:bg-green-500 text-white font-semibold text-xs shadow-xs transition-colors shrink-0"
           >
-            <span>Know More</span>
-            <ArrowRight className="w-3 h-3 text-[#48B83D]" />
+            <span>Request Corporate RFP</span>
+            <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
       </div>

@@ -9,7 +9,6 @@ import {
   Car,
   PhoneCall,
   Search,
-  Sparkles,
   ArrowRight,
   CheckCircle2,
   Building2,

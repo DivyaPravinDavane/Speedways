@@ -3,7 +3,7 @@
 import React from "react";
 import { InfoCard } from "@/components/ui/info-card";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function SpeedwaysInfoCards() {
   const cards = [

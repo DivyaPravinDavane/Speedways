@@ -13,7 +13,7 @@ import {
   CheckCircle2,
   FileText,
   Percent,
-  Sparkles,
+  MapPin,
   ArrowRight,
   PhoneCall,
   DollarSign,
@@ -132,7 +132,7 @@ export default function ChauffeurDrivePage() {
                 Chauffeur-Driven Enterprise Mobility
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
-                <Sparkles className="w-3 h-3 text-green-600" />
+                <MapPin className="w-3 h-3 text-green-600" />
                 Spot & Daily Rentals Across 185+ Cities
               </span>
             </div>

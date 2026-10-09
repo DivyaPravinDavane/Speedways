@@ -7,7 +7,6 @@ import {
   ShieldCheck,
   MapPin,
   Clock,
-  Sparkles,
   CheckCircle2,
   AlertTriangle,
   Radio,

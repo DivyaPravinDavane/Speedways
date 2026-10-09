@@ -16,7 +16,6 @@ import {
   FileCheck,
   TrendingUp,
   ShieldCheck,
-  Sparkles,
   ArrowRight,
   Database,
   BarChart3,
@@ -354,7 +353,6 @@ export default function TechnologyPage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm shadow-md transition-all"
                 >
-                  <Sparkles className="w-4 h-4" />
                   <span>Schedule Platform Demo</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>

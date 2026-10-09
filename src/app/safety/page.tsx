@@ -22,7 +22,6 @@ import {
   Calendar,
   Coins,
   CheckCircle,
-  Sparkles,
   Headphones,
   ArrowRight,
   PhoneCall,
@@ -59,7 +58,7 @@ export default function SafetyAndCompliancePage() {
     Calendar,
     Coins,
     CheckCircle,
-    Sparkles,
+    Car,
     Headphones,
   };
 

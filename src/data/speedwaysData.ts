@@ -876,7 +876,7 @@ export const SUBSCRIPTION_BENEFITS: SubscriptionBenefit[] = [
     subtitle: "Periodic refresh cycles",
     description: "Access the latest vehicle models and upgrade your fleet periodically to maintain comfort, safety, and a professional corporate experience.",
     badge: "Latest Models",
-    iconName: "Sparkles",
+    iconName: "Car",
   },
   {
     title: "24×7 Operational Support",

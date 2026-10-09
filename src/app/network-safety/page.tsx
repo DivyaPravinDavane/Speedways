@@ -16,7 +16,6 @@ import {
   AlertTriangle,
   Globe,
   CheckCircle2,
-  Sparkles,
   ArrowRight,
   PhoneCall,
   Building,
