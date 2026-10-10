@@ -33,123 +33,10 @@ import {
   Zap,
 } from "lucide-react";
 import { TESTIMONIALS } from "@/data/speedwaysData";
-import { Timeline, type TimelineItem } from "@/components/ui/timeline";
+import EvolutionRoadmap from "@/components/EvolutionRoadmap";
 
 export default function AboutUsPage() {
   const [selectedStakeholder, setSelectedStakeholder] = useState<number>(0);
-
-  const evolutionTimelineItems: TimelineItem[] = [
-    {
-      id: "2012",
-      title: "Founding & Launch in Mumbai (2012)",
-      description:
-        "Speedways Fleet & Travel Management Pvt. Ltd. was established with 15 corporate sedans at Mumbai Head Office, introducing structured SLAs to replace informal local rental desks.",
-      timestamp: "Founding Year • 2012",
-      status: "completed",
-      icon: <Building2 className="h-3 w-3 text-white" />,
-      content: (
-        <div className="rounded-2xl border border-green-200/90 bg-white p-4 card-premium-shadow">
-          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <span className="text-xs font-black text-slate-900">Head Office Established</span>
-            <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
-              15 Verified Vehicles
-            </span>
-          </div>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Pioneered guaranteed chauffeur reporting protocols and monthly consolidated corporate billing for Mumbai's major financial centers.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: "2015",
-      title: "Direct Metro Hub Expansion (2015)",
-      description:
-        "Expanded direct branch offices into Delhi NCR, Bengaluru, Hyderabad, and Chennai, scaling to 300+ dedicated fleet vehicles across manufacturing clusters and IT corridors.",
-      timestamp: "Pan-Metro Expansion • 2015",
-      status: "completed",
-      icon: <MapPin className="h-3 w-3 text-white" />,
-      content: (
-        <div className="rounded-2xl border border-green-200/90 bg-white p-4 card-premium-shadow">
-          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <span className="text-xs font-black text-slate-900">Direct Metro Branches</span>
-            <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
-              300+ Fleet Depth
-            </span>
-          </div>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Enabled enterprise clients to sign uniform single-vendor transportation agreements across multi-city operating footprints.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: "2018",
-      title: "Enterprise Cloud & AIS-140 Telemetry (2018)",
-      description:
-        "Integrated proprietary enterprise dispatch technology nationwide, pioneering 100% digital duty slips (e-DDS), geofenced passenger OTP authentication, and automated monthly ERP invoicing.",
-      timestamp: "Digital Innovation • 2018",
-      status: "completed",
-      icon: <Radio className="h-3 w-3 text-white" />,
-      content: (
-        <div className="rounded-2xl border border-green-200/90 bg-white p-4 card-premium-shadow">
-          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <span className="text-xs font-black text-slate-900">100% Digital Duty Slips</span>
-            <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
-              Zero-Dispute ERP MIS
-            </span>
-          </div>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Deployed live AIS-140 GPS telemetry tracking, geofence deviation alarms, and a centralized 24×7 Command Centre in Mumbai for continuous trip oversight.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: "2021",
-      title: "ESG Leadership & Green Fleet Transition (2021)",
-      description:
-        "Launched corporate electric vehicle operations with Tata Tigor EV and Nexon EV fleets, supporting enterprise client Scope 1 and Scope 2 decarbonization targets.",
-      timestamp: "Green Mobility • 2021",
-      status: "completed",
-      icon: <Leaf className="h-3 w-3 text-white" />,
-      content: (
-        <div className="rounded-2xl border border-green-200/90 bg-white p-4 card-premium-shadow">
-          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <span className="text-xs font-black text-slate-900">Zero-Emission Commute</span>
-            <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
-              Scope 1 &amp; 2 ESG Ready
-            </span>
-          </div>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Introduced EV pilot corridors for campus shuttles and airport transfers with managed charging grids and clean emission audit logs.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: "2026",
-      title: "185+ Cities National Network (2026 Present)",
-      description:
-        "Operating 1,200+ verified vehicles across 185+ cities and 6 direct metro hubs, serving 156+ Fortune & Enterprise clients with 24×7 Command Centre governance and statutory 5% GST corporate billing.",
-      timestamp: "Institutional Scale • 2026 Present",
-      status: "active",
-      icon: <Award className="h-3 w-3 text-white" />,
-      content: (
-        <div className="rounded-2xl border border-green-300 bg-green-50/70 p-4 card-premium-shadow">
-          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <span className="text-xs font-black text-slate-900">Pan-India Unified Governance</span>
-            <span className="text-[10px] font-bold text-green-800 bg-white border border-green-300 px-2 py-0.5 rounded-full">
-              1,200+ Fleet • 185+ Cities
-            </span>
-          </div>
-          <p className="text-xs text-slate-700 leading-relaxed">
-            Consolidated single or multi-city accounts governed by ISO-aligned quality frameworks, dedicated SPOCs, and structured Long-Term Rental (LTR Lease) programs.
-          </p>
-        </div>
-      ),
-    },
-  ];
 
   const pillars = [
     {
@@ -360,32 +247,10 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Interactive 2012-to-Present Journey Timeline */}
-      <section className="py-20 bg-slate-50/70 border-b border-slate-200/80">
+      {/* Interactive 2012-to-Present Journey Roadmap */}
+      <section className="py-16 sm:py-24 bg-slate-50/70 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-[#48B83D] border border-green-200 text-xs font-bold uppercase tracking-wider mb-3">
-              <Award className="w-3.5 h-3.5" />
-              Growth Milestone Timeline
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">
-              The Evolution of Speedways (2012 - Present)
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
-              From our 2012 founding with 15 corporate sedans in Mumbai to a 1,200+ vehicle pan-India footprint across 185+ cities, explore the key milestones that established Speedways as a trusted enterprise mobility leader.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-green-200/90 card-premium-shadow">
-            <Timeline
-              items={evolutionTimelineItems}
-              variant="spacious"
-              orientation="vertical"
-              showConnectors={true}
-              showTimestamps={true}
-              timestampPosition="top"
-            />
-          </div>
+          <EvolutionRoadmap />
         </div>
       </section>
 
