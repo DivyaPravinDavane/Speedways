@@ -28,43 +28,126 @@ import {
   Radio,
   Quote,
   Star,
+  Building2,
+  Leaf,
+  Zap,
 } from "lucide-react";
 import { TESTIMONIALS } from "@/data/speedwaysData";
+import { Timeline, type TimelineItem } from "@/components/ui/timeline";
 
 export default function AboutUsPage() {
-  const [selectedMilestone, setSelectedMilestone] = useState<number>(4);
   const [selectedStakeholder, setSelectedStakeholder] = useState<number>(0);
 
-  const milestones = [
+  const evolutionTimelineItems: TimelineItem[] = [
     {
-      year: "2012",
-      title: "Founding in Mumbai",
-      desc: "Speedways Fleet & Travel Management Pvt. Ltd. established with 15 corporate sedans at Mumbai Head Office, introducing structured SLAs to replace informal taxi desks.",
-      metric: "15 Cabs",
+      id: "2012",
+      title: "Founding & Launch in Mumbai (2012)",
+      description:
+        "Speedways Fleet & Travel Management Pvt. Ltd. was established with 15 corporate sedans at Mumbai Head Office, introducing structured SLAs to replace informal local rental desks.",
+      timestamp: "Founding Year • 2012",
+      status: "completed",
+      icon: <Building2 className="h-3 w-3 text-white" />,
+      content: (
+        <div className="rounded-2xl border border-green-200/90 bg-white p-4 card-premium-shadow">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span className="text-xs font-black text-slate-900">Head Office Established</span>
+            <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
+              15 Verified Vehicles
+            </span>
+          </div>
+          <p className="text-xs text-slate-600 leading-relaxed">
+            Pioneered guaranteed chauffeur reporting protocols and monthly consolidated corporate billing for Mumbai's major financial centers.
+          </p>
+        </div>
+      ),
     },
     {
-      year: "2015",
-      title: "Direct Metro Expansion",
-      desc: "Expanded direct branch offices into Delhi NCR, Bengaluru, Hyderabad, and Chennai, scaling to 300+ dedicated fleet vehicles across manufacturing and IT hubs.",
-      metric: "300+ Fleet",
+      id: "2015",
+      title: "Direct Metro Hub Expansion (2015)",
+      description:
+        "Expanded direct branch offices into Delhi NCR, Bengaluru, Hyderabad, and Chennai, scaling to 300+ dedicated fleet vehicles across manufacturing clusters and IT corridors.",
+      timestamp: "Pan-Metro Expansion • 2015",
+      status: "completed",
+      icon: <MapPin className="h-3 w-3 text-white" />,
+      content: (
+        <div className="rounded-2xl border border-green-200/90 bg-white p-4 card-premium-shadow">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span className="text-xs font-black text-slate-900">Direct Metro Branches</span>
+            <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
+              300+ Fleet Depth
+            </span>
+          </div>
+          <p className="text-xs text-slate-600 leading-relaxed">
+            Enabled enterprise clients to sign uniform single-vendor transportation agreements across multi-city operating footprints.
+          </p>
+        </div>
+      ),
     },
     {
-      year: "2018",
-      title: "Enterprise Cloud Telemetry",
-      desc: "Integrated our proprietary enterprise technology platform nationwide, pioneering 100% digital duty slips, geofenced passenger OTPs, and contactless ERP billing.",
-      metric: "Zero Paper",
+      id: "2018",
+      title: "Enterprise Cloud & AIS-140 Telemetry (2018)",
+      description:
+        "Integrated proprietary enterprise dispatch technology nationwide, pioneering 100% digital duty slips (e-DDS), geofenced passenger OTP authentication, and automated monthly ERP invoicing.",
+      timestamp: "Digital Innovation • 2018",
+      status: "completed",
+      icon: <Radio className="h-3 w-3 text-white" />,
+      content: (
+        <div className="rounded-2xl border border-green-200/90 bg-white p-4 card-premium-shadow">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span className="text-xs font-black text-slate-900">100% Digital Duty Slips</span>
+            <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
+              Zero-Dispute ERP MIS
+            </span>
+          </div>
+          <p className="text-xs text-slate-600 leading-relaxed">
+            Deployed live AIS-140 GPS telemetry tracking, geofence deviation alarms, and a centralized 24×7 Command Centre in Mumbai for continuous trip oversight.
+          </p>
+        </div>
+      ),
     },
     {
-      year: "2021",
-      title: "ESG & EV Green Commute",
-      desc: "Launched corporate electric vehicle operations with Tata Tigor EV and Nexon EV fleets, supporting enterprise client Scope 1 and Scope 2 decarbonization targets.",
-      metric: "EV Ready",
+      id: "2021",
+      title: "ESG Leadership & Green Fleet Transition (2021)",
+      description:
+        "Launched corporate electric vehicle operations with Tata Tigor EV and Nexon EV fleets, supporting enterprise client Scope 1 and Scope 2 decarbonization targets.",
+      timestamp: "Green Mobility • 2021",
+      status: "completed",
+      icon: <Leaf className="h-3 w-3 text-white" />,
+      content: (
+        <div className="rounded-2xl border border-green-200/90 bg-white p-4 card-premium-shadow">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span className="text-xs font-black text-slate-900">Zero-Emission Commute</span>
+            <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
+              Scope 1 &amp; 2 ESG Ready
+            </span>
+          </div>
+          <p className="text-xs text-slate-600 leading-relaxed">
+            Introduced EV pilot corridors for campus shuttles and airport transfers with managed charging grids and clean emission audit logs.
+          </p>
+        </div>
+      ),
     },
     {
-      year: "2026",
-      title: "185+ Cities National Network",
-      desc: "Operating 1,200+ managed vehicles across 185+ cities nationwide, governed by our 24×7 Mumbai Command Centre and 5 certified ISO management frameworks.",
-      metric: "185+ Cities",
+      id: "2026",
+      title: "185+ Cities National Network (2026 Present)",
+      description:
+        "Operating 1,200+ verified vehicles across 185+ cities and 6 direct metro hubs, serving 156+ Fortune & Enterprise clients with 24×7 Command Centre governance and statutory 5% GST corporate billing.",
+      timestamp: "Institutional Scale • 2026 Present",
+      status: "active",
+      icon: <Award className="h-3 w-3 text-white" />,
+      content: (
+        <div className="rounded-2xl border border-green-300 bg-green-50/70 p-4 card-premium-shadow">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span className="text-xs font-black text-slate-900">Pan-India Unified Governance</span>
+            <span className="text-[10px] font-bold text-green-800 bg-white border border-green-300 px-2 py-0.5 rounded-full">
+              1,200+ Fleet • 185+ Cities
+            </span>
+          </div>
+          <p className="text-xs text-slate-700 leading-relaxed">
+            Consolidated single or multi-city accounts governed by ISO-aligned quality frameworks, dedicated SPOCs, and structured Long-Term Rental (LTR Lease) programs.
+          </p>
+        </div>
+      ),
     },
   ];
 
@@ -281,64 +364,27 @@ export default function AboutUsPage() {
       <section className="py-20 bg-slate-50/70 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-[#48B83D] border border-green-200 text-xs font-bold uppercase tracking-wider mb-3">
+              <Award className="w-3.5 h-3.5" />
               Growth Milestone Timeline
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">
               The Evolution of Speedways (2012 - Present)
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Click any milestone below to review the operational scaling and technological advancements that built our enterprise credibility.
+              From our 2012 founding with 15 corporate sedans in Mumbai to a 1,200+ vehicle pan-India footprint across 185+ cities, explore the key milestones that established Speedways as a trusted enterprise mobility leader.
             </p>
           </div>
 
-          {/* Stepper Buttons */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-8">
-            {milestones.map((m, idx) => (
-              <button
-                key={idx}
-                onClick={() => setSelectedMilestone(idx)}
-                className={`p-4 rounded-2xl text-left border transition-all cursor-pointer ${
-                  selectedMilestone === idx
-                    ? "bg-white border-green-500 shadow-md ring-2 ring-green-500/20"
-                    : "bg-white/60 hover:bg-white border-slate-200"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-1.5">
-                  <span
-                    className={`text-sm font-black ${
-                      selectedMilestone === idx ? "text-green-700 font-mono" : "text-slate-500 font-mono"
-                    }`}
-                  >
-                    {m.year}
-                  </span>
-                  <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.2 rounded-full">
-                    {m.metric}
-                  </span>
-                </div>
-                <div className="text-xs font-bold text-slate-900 line-clamp-1">{m.title}</div>
-              </button>
-            ))}
-          </div>
-
-          {/* Active Milestone Card */}
-          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-xl flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-24 h-24 rounded-2xl bg-green-500 text-white flex flex-col items-center justify-center shrink-0 shadow-lg shadow-green-500/25">
-              <span className="text-2xl font-black font-mono">{milestones[selectedMilestone].year}</span>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-green-100">Milestone</span>
-            </div>
-            <div className="space-y-2 flex-1">
-              <h3 className="text-2xl font-black text-slate-900">
-                {milestones[selectedMilestone].title}
-              </h3>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                {milestones[selectedMilestone].desc}
-              </p>
-              <div className="pt-2 text-xs font-bold text-green-700 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Verified Historical Corporate Benchmark</span>
-              </div>
-            </div>
+          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-green-200/90 card-premium-shadow">
+            <Timeline
+              items={evolutionTimelineItems}
+              variant="spacious"
+              orientation="vertical"
+              showConnectors={true}
+              showTimestamps={true}
+              timestampPosition="top"
+            />
           </div>
         </div>
       </section>
@@ -358,7 +404,7 @@ export default function AboutUsPage() {
                 Many corporate mobility providers struggle when expanding beyond a single city because they lack either local ground presence or centralized operational oversight. Speedways solves this dual challenge through our unique hybrid architecture.
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Our central Mumbai Command Centre unifies booking management, safety tracking, and financial reconciliation across all 185+ cities. Meanwhile, our 6 direct metro hubs (Mumbai, Bangalore, Hyderabad, Chennai, Delhi NCR, Pune) and vetted ground partners guarantee on-time physical car deployment and personalized guest care.
+                Our central Mumbai Command Centre unifies booking management, safety tracking, and financial reconciliation across all 185+ cities. Meanwhile, our 6 direct metro hubs (Mumbai, Bengaluru, Hyderabad, Chennai, Delhi NCR, Pune) and vetted ground partners guarantee on-time physical car deployment and personalized guest care.
               </p>
 
               <div className="pt-2 space-y-3">

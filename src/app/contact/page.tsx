@@ -66,7 +66,7 @@ export default function ContactPage() {
     },
     {
       q: "What is your guaranteed lead time for vehicle dispatch?",
-      a: "For spot bookings in direct metro hubs (Mumbai, Bangalore, Hyderabad, Chennai, Delhi NCR, Pune), we guarantee a 2 to 4-hour lead time. For pre-booked airport transfers, chauffeurs report 15 minutes prior to scheduled flight touchdown with live flight delay monitoring.",
+      a: "For spot bookings in direct metro hubs (Mumbai, Bengaluru, Hyderabad, Chennai, Delhi NCR, Pune), we guarantee a 2 to 4-hour lead time. For pre-booked airport transfers, chauffeurs report 15 minutes prior to scheduled flight touchdown with live flight delay monitoring.",
     },
     {
       q: "How are Speedways chauffeurs verified and monitored?",

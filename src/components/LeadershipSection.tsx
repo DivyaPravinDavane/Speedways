@@ -59,7 +59,7 @@ export default function LeadershipSection({ className = "" }: { className?: stri
     }
     if (leader.role === "COO") {
       return [
-        "18+ years leading Mumbai & Bangalore operations for Avis India",
+        "18+ years leading Mumbai & Bengaluru operations for Avis India",
         "Overseeing multi-city branch profitability and SLA benchmarks",
         "Standardizing fleet quality, branch logistics, and revenue growth",
       ];
@@ -145,7 +145,7 @@ export default function LeadershipSection({ className = "" }: { className?: stri
             </div>
             <div className="p-2 transition-transform hover:-translate-y-0.5">
               <div className="text-2xl sm:text-3xl font-black text-[#48B83D]">
-                <AnimatedNumber value={50} suffix="+" duration={1600} />
+                <AnimatedNumber value={156} suffix="+" duration={1600} />
               </div>
               <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">
                 Enterprise Corporates
@@ -263,16 +263,17 @@ export default function LeadershipSection({ className = "" }: { className?: stri
                   <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
                     Core Strategic Focus:
                   </span>
-                  <div className="flex flex-wrap gap-2">
+                  <ul className="flex flex-wrap gap-2 list-none p-0 m-0">
                     {ceo.coreExpertise.map((exp, idx) => (
-                      <span
+                      <li
                         key={idx}
                         className="text-xs font-medium px-3 py-1 rounded-xl bg-slate-800/90 text-green-300 border border-slate-700/80 hover:border-green-500/50 transition-colors"
                       >
-                        ✓ {exp}
-                      </span>
+                        <span aria-hidden="true" className="mr-1">✓</span>
+                        <span>{exp}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -384,14 +385,18 @@ export default function LeadershipSection({ className = "" }: { className?: stri
                         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1.5">
                           Prior Enterprise Pedigree:
                         </span>
-                        <div className="flex flex-wrap gap-1">
-                          {leader.pastBrands.map((b, bIdx) => (
-                            <span
-                              key={bIdx}
-                              className="text-[10px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md border border-slate-200/60"
-                            >
-                              {b}
-                            </span>
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          {leader.pastBrands.map((b, bIdx, arr) => (
+                            <React.Fragment key={bIdx}>
+                              <span
+                                className="text-[10px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md border border-slate-200/60"
+                              >
+                                {b}
+                              </span>
+                              {bIdx < arr.length - 1 && (
+                                <span className="text-slate-300 text-[10px] select-none">{" · "}</span>
+                              )}
+                            </React.Fragment>
                           ))}
                         </div>
                       </div>

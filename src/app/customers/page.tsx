@@ -61,7 +61,7 @@ export default function CustomersPage() {
       sector: "Banking & Financial Services",
       category: "banking",
       scope: "VIP Delegations & Shift Logistics",
-      stat: "Zero SLA Penalties",
+      stat: "99.8% SLA Adherence",
       quote: "White-glove chauffeur etiquette and rigorous geofenced digital billing have streamlined our audit trails completely.",
       author: "Executive Director - Corporate Services",
     },
@@ -71,7 +71,7 @@ export default function CustomersPage() {
       sector: "Pharmaceuticals & Healthcare",
       category: "pharma",
       scope: "24×7 Research Lab Workforce Commute",
-      stat: "100% Women Safe Commute",
+      stat: "Women Safe Commute Protocol",
       quote: "Speedways provides real-time SOS tracking and verified security escorts for our late-night laboratory shifts.",
       author: "Director - Workplace Safety",
     },
@@ -91,7 +91,7 @@ export default function CustomersPage() {
       sector: "Space & Aerospace Technology",
       category: "it",
       scope: "Executive Chauffeur & VIP Transit",
-      stat: "100% On-Time SLA",
+      stat: "99.8% On-Time SLA",
       quote: "Speedways delivers complete reliability with continuous telemetry, sanitized executive vehicles, and dedicated SPOC support.",
       author: "Enterprise Administration Lead",
     },
@@ -106,7 +106,7 @@ export default function CustomersPage() {
       author: "Operations & Logistics Manager",
     },
     {
-      name: "Kimberly",
+      name: "Kimberly-Clark",
       logo: "/logos/kimberly.svg",
       sector: "Global Consumer & Healthcare",
       category: "pharma",
@@ -161,7 +161,7 @@ export default function CustomersPage() {
       sector: "Fintech Venture Capital & Advisory",
       category: "banking",
       scope: "VIP Board Meetings & Investor Delegations",
-      stat: "Zero-Delay SLA",
+      stat: "Strict Dispatch SLA",
       quote: "Reliable airport transfers, immaculate vehicle standards, and seamless mobility coordination for our investment leadership.",
       author: "Executive Operations Desk",
     },
@@ -191,7 +191,7 @@ export default function CustomersPage() {
               Powering Mission-Critical Mobility for <span className="text-[#48B83D]">India’s Industry Leaders</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-              From global technology enterprises and manufacturing leaders to leading financial institutions, 50+ organizations rely on Speedways for safe, compliant, and professionally managed corporate mobility.
+              From global technology enterprises and manufacturing leaders to leading financial institutions, 156+ Fortune &amp; Enterprise clients rely on Speedways for safe, compliant, and professionally managed corporate mobility.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -243,12 +243,12 @@ export default function CustomersPage() {
 
             {/* Floating Top Badge */}
             <div className="hidden sm:flex absolute -top-4 -right-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-xl border border-green-200 items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-green-100 text-green-700 flex items-center justify-center font-black text-xs">
-                50+
+              <div className="w-10 h-8 rounded-xl bg-green-100 text-green-700 flex items-center justify-center font-black text-xs">
+                156+
               </div>
               <div className="text-left">
-                <div className="text-xs font-black text-slate-900">Fortune Clients Empaneled</div>
-                <div className="text-[10px] text-slate-500">Zero SLA Penalties Recorded</div>
+                <div className="text-xs font-black text-slate-900">Fortune &amp; Enterprise Clients</div>
+                <div className="text-[10px] text-slate-500">Documented SLA Adherence Track Record</div>
               </div>
             </div>
           </div>
@@ -282,17 +282,17 @@ export default function CustomersPage() {
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
                 Verified Vehicles
               </div>
-              <p className="text-[11px] text-slate-400 mt-0.5">Bus – Tempo Travellers – Coaches & Sedans</p>
+              <p className="text-[11px] text-slate-400 mt-0.5">Sedans, MPVs, buses, tempo travellers and coaches</p>
             </div>
 
             <div className="p-6 rounded-3xl bg-white border border-green-200/80 card-premium-shadow hover-border-flow text-center transition-all duration-300">
               <div className="text-3xl sm:text-4xl font-black text-[#48B83D]">
-                <AnimatedNumber value={0} from={5} duration={1200} />
+                <AnimatedNumber value={100} suffix="%" duration={1400} />
               </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
-                Tolerance Policy
+                Safety Governance
               </div>
-              <p className="text-[11px] text-slate-400 mt-0.5">Women Night Safety & SOS</p>
+              <p className="text-[11px] text-slate-400 mt-0.5">Women Safe Commute &amp; SOS Protocol</p>
             </div>
           </div>
         </div>
@@ -441,7 +441,7 @@ export default function CustomersPage() {
                 </div>
                 <div className="flex items-center gap-2.5 text-xs text-slate-200">
                   <CheckCircle2 className="w-4 h-4 text-[#48B83D]" />
-                  <span>ISO 9001 (Quality), ISO 14001 (Environment), ISO 27001 (Data Security)</span>
+                  <span>ISO 9001 (Quality), ISO 27001 (Data Security) &amp; ISO 45001 Aligned Governance</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs text-slate-200">
                   <CheckCircle2 className="w-4 h-4 text-[#48B83D]" />
@@ -465,12 +465,12 @@ export default function CustomersPage() {
                 </div>
                 <div className="absolute bottom-3 left-4 right-4">
                   <span className="text-[11px] font-mono text-green-400 font-bold">LIVE TELEMETRY DESK</span>
-                  <div className="text-xs text-slate-200 font-medium">99.4% Verified On-Time Dispatch SLA</div>
+                  <div className="text-xs text-slate-200 font-medium">99.4% Documented On-Time Dispatch SLA</div>
                 </div>
               </div>
 
               <div className="p-6 sm:p-8">
-                <h3 className="text-xl font-bold text-white mb-2">Ready to onboard your organization?</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Schedule an Enterprise Account Consultation</h3>
                 <p className="text-xs text-slate-300 mb-6">
                   Schedule an exploratory review with our enterprise mobility architects to evaluate tariff structures, roster automation, and pilot fleet trial runs.
                 </p>
@@ -480,7 +480,7 @@ export default function CustomersPage() {
                     href="/contact"
                     className="px-6 py-3 rounded-full bg-[#48B83D] hover:bg-[#3ea534] text-white font-bold text-xs tracking-wider uppercase text-center transition-all cursor-pointer shadow-lg shadow-green-500/20"
                   >
-                    Request Corporate Demo
+                    Request Consultation &amp; Demo
                   </Link>
                   <Link
                     href="/services"

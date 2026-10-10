@@ -91,7 +91,7 @@ export default function SafetyAndCompliancePage() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-bold text-slate-700">
               <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs">
                 <UserCheck className="w-4 h-4 text-green-600" />
-                <span>100% Police-Verified Drivers</span>
+                <span>Documented Police-Verified Chauffeurs</span>
               </div>
               <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs">
                 <AlertTriangle className="w-4 h-4 text-green-600" />
@@ -158,7 +158,7 @@ export default function SafetyAndCompliancePage() {
                 <div className="flex items-center gap-2">
                   <span className="px-3 py-1.5 rounded-xl bg-[#48B83D] text-white font-bold text-xs shadow-md flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4" />
-                    <span>ISO 9001 & 45001 Certified</span>
+                    <span>ISO 9001, 27001 &amp; 45001 Aligned Governance</span>
                   </span>
                 </div>
               </div>
@@ -172,10 +172,10 @@ export default function SafetyAndCompliancePage() {
         <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center max-w-2xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-              12 Pillars of Passenger Safety & Statutory Governance
+              12 Pillars of Passenger Safety &amp; Statutory Governance
             </h2>
             <p className="text-slate-600 text-sm mt-2">
-              Every trip booked across our 185+ city network is governed by standardized standard operating procedures.
+              Every trip booked across our 185+ city network is governed by standard operating procedures.
             </p>
           </div>
 
@@ -234,7 +234,7 @@ export default function SafetyAndCompliancePage() {
               Long-Term Corporate Fleet Strategy
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
-              Speedways — Corporate Car Subscription Benefits (LTR- Lease)
+              Corporate Car Subscription Benefits — Long-Term Rental (LTR Lease)
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
               Transform capital expenditure into predictable operating costs with structured 1, 2, or 3-year executive vehicle subscriptions including 100% maintenance, insurance, and 24×7 command centre support.

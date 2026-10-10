@@ -32,7 +32,7 @@ const PRIMARY: PrimaryMetric[] = [
     suffix: "+",
     format: true,
     label: "Verified Vehicles",
-    desc: "Sedans, MPVs, Bus – Tempo Travellers – Coaches",
+    desc: "Sedans, MPVs, buses, tempo travellers and coaches",
     progress: 92,
     tag: "Fleet",
   },
@@ -57,9 +57,8 @@ const PRIMARY: PrimaryMetric[] = [
   {
     icon: CalendarCheck,
     target: 2012,
-    from: 1990,
     label: "Established",
-    desc: "Over a decade of operational trust",
+    desc: "Over a decade of enterprise mobility trust",
     progress: 100,
     tag: "Legacy",
   },
@@ -76,9 +75,9 @@ type SecondaryMetric = {
 };
 
 const SECONDARY: SecondaryMetric[] = [
-  { icon: Network, value: "6", num: 6, label: "Direct Metro Hubs", sub: "Mumbai, BLR, HYD, MAA, DEL, Pune" },
+  { icon: Network, value: "6", num: 6, label: "Direct Metro Hubs", sub: "Mumbai, Bengaluru, Hyderabad, Chennai, Delhi NCR, Pune" },
   { icon: Radio, value: "24×7", label: "Command Centre", live: true },
-  { icon: Receipt, value: "5%", num: 5, suffix: "%", label: "GST Billing Model" },
+  { icon: Receipt, value: "5%", num: 5, suffix: "%", label: "Statutory 5% GST Billing" },
   { icon: Leaf, value: "EV Ready", label: "Green Fleet Transition" },
 ];
 
@@ -106,9 +105,9 @@ function useInView<T extends Element>(threshold = 0.25) {
   return { ref, inView };
 }
 
-/** Animates a number from `from` to `to` with ease-out once `start` is true. */
+/** Animates a number from `from` to `to` with ease-out once `start` is true. Defaults to `to` for SSR/crawlers. */
 function useCountUp(to: number, start: boolean, from = 0, duration = 1800) {
-  const [value, setValue] = useState(from);
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     if (!start) return;

@@ -92,8 +92,8 @@ export default function LiveTelemetrySimulator() {
           <div>
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-green-400 flex items-center gap-1.5">
               <span>Enterprise Real-Time Telemetry</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-slate-300">Live GPS Ping (4s Latency)</span>
+              <span className="text-slate-500">{" "}•{" "}</span>
+              <span className="text-slate-300">Live GPS Ping (4-second latency)</span>
             </div>
             <div className="text-sm font-bold text-white">
               {current.title} — Active Dispatch Monitor
@@ -156,12 +156,12 @@ export default function LiveTelemetrySimulator() {
           <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs space-y-2 z-10">
             <div className="flex items-center gap-2.5 text-xs text-slate-700">
               <span className="w-2.5 h-2.5 rounded-full bg-green-500 shrink-0"></span>
-              <span className="font-bold text-slate-900">Pickup:</span>
+              <span className="font-bold text-slate-900">Pickup: </span>
               <span className="truncate">{current.from}</span>
             </div>
             <div className="flex items-center gap-2.5 text-xs text-slate-700 pt-1 border-t border-slate-100">
               <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
-              <span className="font-bold text-slate-900">Destination:</span>
+              <span className="font-bold text-slate-900">Destination: </span>
               <span className="truncate">{current.to}</span>
             </div>
           </div>
@@ -322,12 +322,12 @@ export default function LiveTelemetrySimulator() {
 
             <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
               <span className="text-[10px] uppercase font-bold text-slate-400 block">
-                Est. Arrival (ETA)
+                Estimated Arrival (ETA)
               </span>
               <span className="text-base font-extrabold text-green-600 block mt-0.5">
                 {etaMins} mins
               </span>
-              <span className="text-[10px] text-slate-500">{current.distance} left</span>
+              <span className="text-[10px] text-slate-500">· {current.distance} remaining</span>
             </div>
           </div>
 
@@ -352,7 +352,7 @@ export default function LiveTelemetrySimulator() {
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
-                24×7 Command Center Tracking
+                24×7 Command Centre Tracking
               </span>
               <span className="font-semibold text-green-700">Active Oversight</span>
             </div>

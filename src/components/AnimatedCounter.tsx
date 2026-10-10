@@ -23,15 +23,17 @@ export function AnimatedNumber({
   format = false,
   className = "",
 }: AnimatedNumberProps) {
-  // If value is 0 and no explicit 'from' was passed, start from 5 so '0' visibly counts down to 0
-  const startFrom = from !== undefined ? from : value === 0 ? 5 : 0;
-  const [displayValue, setDisplayValue] = useState<number>(startFrom);
+  // Initialize displayValue to the target value so SSR, crawlers, and initial DOM inspection
+  // render the real figure (2012, 1,200+, 185+, 156+, 5%, etc.) instead of zero
+  const [displayValue, setDisplayValue] = useState<number>(value);
   const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
     const el = elementRef.current;
     if (!el) return;
+
+    const startFrom = from !== undefined ? from : 0;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -68,7 +70,7 @@ export function AnimatedNumber({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [value, startFrom, duration, decimals, hasAnimated]);
+  }, [value, from, duration, decimals, hasAnimated]);
 
   let formatted = "";
   if (decimals > 0) {

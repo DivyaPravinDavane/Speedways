@@ -9,7 +9,7 @@ export default function PictographicalComparison() {
       metric: "Chauffeur Verification",
       icon: Shield,
       traditional: "Self-declared or unknown local drivers with no formal police audit",
-      speedways: "100% Police-verified, biometric background checked & corporate groomed",
+      speedways: "Documented police verification, biometric background checks & trained in corporate service standards",
     },
     {
       metric: "Duty Slip & Billing",
@@ -21,7 +21,7 @@ export default function PictographicalComparison() {
       metric: "On-Time Fulfillment",
       icon: Clock,
       traditional: "Frequent delays, last-minute cancellations, no driver dispatch buffer",
-      speedways: "99.8% On-time SLA, chauffeur reporting 90 mins prior via automated SMS",
+      speedways: "99.8% On-time SLA, chauffeur reporting confirmation sent 90 minutes before scheduled pickup",
     },
     {
       metric: "Live Telemetry & Safety",
@@ -33,7 +33,7 @@ export default function PictographicalComparison() {
       metric: "Corporate Tax Credit",
       icon: Award,
       traditional: "Unorganized vendors, unregistered bills, lost GST input tax credits",
-      speedways: "Structured 5% GST corporate billing model with full audit traceability",
+      speedways: "Statutory 5% GST corporate billing model with full invoice audit traceability",
     },
   ];
 

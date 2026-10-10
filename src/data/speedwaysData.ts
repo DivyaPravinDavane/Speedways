@@ -35,11 +35,11 @@ export const CLIENT_LOGOS = [
   "Volvo",
   "Aditya Birla Group",
   "DBS Bank",
-  "Merck",
+  "Merck Group",
   "Newspace",
   "ATPI",
   "DABICO Airport",
-  "Kimberly",
+  "Kimberly-Clark",
   "BCD Travel",
   "CMS Info Systems",
   "Mu Sigma",
@@ -48,10 +48,10 @@ export const CLIENT_LOGOS = [
 ];
 
 export const SCALE_METRICS = [
-  { value: "1,200+", label: "Verified Vehicles", desc: "Sedans, MPVs, Bus – Tempo Travellers – Coaches" },
+  { value: "1,200+", label: "Verified Vehicles", desc: "Sedans, MPVs, buses, tempo travellers and coaches" },
   { value: "185+", label: "Cities Covered", desc: "Tier-1, Tier-2 & Tier-3 Coverage" },
   { value: "156+", label: "Enterprise Accounts", desc: "Fortune 500 & MNCs Empanelled" },
-  { value: "6", label: "Metro Direct Hubs", desc: "Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune" },
+  { value: "6", label: "Metro Direct Hubs", desc: "Mumbai, Bengaluru, Hyderabad, Chennai, Delhi NCR, Pune" },
   { value: "2012", label: "Established Year", desc: "Over a Decade of Operational Trust" },
   { value: "24×7", label: "Command Centre", desc: "Centralised Telemetry & Escalation" },
   { value: "5%", label: "GST Billing Model", desc: "Standardized Corporate Tax Compliance" },
@@ -73,7 +73,7 @@ export const EXECUTIVE_QUESTIONS = [
     question: "Can You Handle Scale?",
     headline: "1,200+ Fleet Across 185+ Pan-India Cities",
     description:
-      "Operational depth supporting high-volume spot rentals, airport movements, daily employee commutes, and outstation corporate travel backed by 6 direct metro hubs (Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune) and an integrated partner network.",
+      "Operational depth supporting high-volume spot rentals, airport movements, daily employee commutes, and outstation corporate travel backed by 6 direct metro hubs (Mumbai, Bengaluru, Hyderabad, Chennai, Delhi NCR, Pune) and an integrated partner network.",
     iconName: "Network",
     badge: "Scale & Reach",
   },
@@ -617,8 +617,8 @@ export const DIRECT_BRANCHES = [
     role: "Corporate Head Office & Central 24×7 Command Centre",
   },
   {
-    city: "Bangalore",
-    address: "Serenity, 1176/A, HBR 1st Stage, 4th Block, Bangalore- 560043",
+    city: "Bengaluru",
+    address: "Serenity, 1176/A, HBR 1st Stage, 4th Block, Bengaluru - 560043",
     phone: "9820630817",
     email: "blr@speedwaysftm.com",
     role: "South India Operations Hub & IT Corridor Desk",
@@ -686,9 +686,9 @@ export const LEADERSHIP_TEAM: LeaderProfile[] = [
     role: "COO",
     titleBadge: "Chief Operating Officer",
     experience: "23 Years Industry Veteran",
-    pastBrands: ["Avis India (18 Yrs)", "Orix India", "Carzonrent", "Emirates"],
+    pastBrands: ["Avis India (18 Years)", "Orix India", "Carzonrent", "Emirates"],
     about:
-      "An accomplished mobility industry professional with 23 years of expertise in corporate car rentals, branch operations, and large-scale transportation management. He has held leadership roles with leading brands including Orix India, Carzonrent, and Avis, and successfully managed Mumbai and Bangalore operations for Avis for nearly 18 years. He also played a key role in establishing Emirates operations in India and has been recognized with Best Manager awards for operational excellence and business performance.",
+      "An accomplished mobility industry professional with 23 years of expertise in corporate car rentals, branch operations, and large-scale transportation management. He has held leadership roles with leading brands including Orix India, Carzonrent, and Avis, and successfully managed Mumbai and Bengaluru operations for Avis for nearly 18 years. He also played a key role in establishing Emirates operations in India and has been recognized with Best Manager awards for operational excellence and business performance.",
     coreExpertise: [
       "Multi-city operations",
       "Revenue growth",
@@ -763,13 +763,13 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
   {
     title: "Police-Verified Chauffeurs",
     description: "Chauffeurs undergo police verification and mandatory background checks before being deployed for passenger services.",
-    badge: "100% Background Check",
+    badge: "Documented Background Verification",
     iconName: "UserCheck",
   },
   {
     title: "In-Vehicle SOS & Panic Button",
     description: "Easily accessible emergency controls enable passengers to raise an alert quickly whenever assistance is required.",
-    badge: "Instant Emergency Alert",
+    badge: "In-Cabin Emergency Alert",
     iconName: "AlertTriangle",
   },
   {
@@ -781,7 +781,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
   {
     title: "24×7 Command Centre Monitoring",
     description: "Every active journey can be monitored by our operations team, enabling rapid coordination and escalation when required.",
-    badge: "Continuous Surveillance",
+    badge: "Continuous Telemetry Oversight",
     iconName: "Radio",
   },
   {
@@ -797,7 +797,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     iconName: "Wrench",
   },
   {
-    title: "100% Compliance-Driven Operations",
+    title: "Statutory Compliance-Driven Operations",
     description: "Vehicles and chauffeurs operate under applicable regulatory, documentation, permit, insurance, and safety requirements.",
     badge: "Statutory Governance",
     iconName: "FileCheck",

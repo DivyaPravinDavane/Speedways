@@ -44,12 +44,12 @@ export default function NetworkSafetyPage() {
     { city: "Mumbai (Head Office)", top: "54%", left: "26%", role: "Head Office & Command Centre" },
     { city: "Pune", top: "58%", left: "30%", role: "Automotive & Engineering Corridor Hub" },
     { city: "Hyderabad", top: "62%", left: "44%", role: "Telangana & AP Operations Desk" },
-    { city: "Bangalore", top: "76%", left: "38%", role: "South India Hub & Tech Corridor" },
+    { city: "Bengaluru", top: "76%", left: "38%", role: "South India Hub & Tech Corridor" },
     { city: "Chennai", top: "77%", left: "48%", role: "Automotive Corridor Hub" },
   ];
 
   const networkCities = [
-    "Mumbai", "Delhi NCR", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune",
+    "Mumbai", "Delhi NCR", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune",
     "Ahmedabad", "Jaipur", "Chandigarh", "Lucknow", "Kochi", "Indore", "Coimbatore",
     "Vadodara", "Bhubaneswar", "Visakhapatnam", "Nagpur", "Surat", "Patna", "Guwahati",
     "Bhopal", "Ludhiana", "Agra", "Varanasi", "Mysuru", "Nashik", "Rajkot", "Dehradun",
@@ -134,7 +134,7 @@ export default function NetworkSafetyPage() {
               </h1>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Consolidate single or multi-city corporate accounts under 6 direct metro hubs (Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune), 185+ managed partner cities, continuous live telemetry, and ISO-certified quality standards.
+                Consolidate single or multi-city corporate accounts under 6 direct metro hubs (Mumbai, Bengaluru, Hyderabad, Chennai, Delhi NCR, Pune), 185+ managed partner cities, continuous live telemetry, and ISO-aligned quality standards.
               </p>
 
               {/* Quick Live Telemetry Chips */}

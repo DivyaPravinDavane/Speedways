@@ -76,7 +76,7 @@ const testimonials = [
     designation: "VP Corporate Administration",
     company: "LUX INDUSTRY",
     testimonial:
-      "Speedways has been an invaluable partner for intercity outstation and executive rentals. SLA-backed vehicles and 5% GST billing provide full compliance.",
+      "Speedways has been an invaluable partner for intercity outstation and executive rentals. SLA-backed vehicles and compliant statutory GST corporate billing records.",
     avatar:
       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80",
     logo: Logo09,

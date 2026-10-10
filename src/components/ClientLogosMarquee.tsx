@@ -37,9 +37,9 @@ export const ENTERPRISE_CLIENTS: EnterpriseClient[] = [
     imgClass: "h-11 sm:h-12 max-w-[165px] w-auto",
   },
   {
-    name: "Merck",
+    name: "Merck Group",
     logo: "/logos/merck.svg",
-    alt: "Merck Healthcare Client",
+    alt: "Merck Group Healthcare Client",
     imgClass: "h-11 sm:h-12 max-w-[170px] w-auto",
   },
   {
@@ -61,7 +61,7 @@ export const ENTERPRISE_CLIENTS: EnterpriseClient[] = [
     imgClass: "h-11 sm:h-12 max-w-[190px] w-auto",
   },
   {
-    name: "Kimberly",
+    name: "Kimberly-Clark",
     logo: "/logos/kimberly.svg",
     alt: "Kimberly-Clark Enterprise Client",
     imgClass: "h-11 sm:h-12 max-w-[185px] w-auto",

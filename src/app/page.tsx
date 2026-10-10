@@ -126,11 +126,11 @@ export default function HomePage() {
                 <span className="font-bold text-slate-900">
                   <AnimatedNumber value={185} suffix="+" />
                 </span>{" "}
-                cities. Serving 150+ Fortune enterprises with{" "}
+                cities. Serving 156+ Fortune &amp; Enterprise clients with{" "}
                 <span className="font-bold text-slate-900">
                   <AnimatedNumber value={1200} suffix="+" format={true} />
                 </span>{" "}
-                verified fleet vehicles, AIS-140 live telemetry, and centralized 24×7 command center governance.
+                verified fleet vehicles, AIS-140 live telemetry, and centralized 24×7 command centre governance.
               </motion.p>
 
               {/* Action Buttons */}
@@ -173,7 +173,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
                   <span>
-                    <AnimatedNumber value={5} suffix="%" className="font-bold text-slate-900" /> GST Billing Model
+                    <AnimatedNumber value={5} suffix="%" className="font-bold text-slate-900" /> Statutory 5% GST Billing
                   </span>
                 </div>
               </div>
@@ -419,7 +419,7 @@ export default function HomePage() {
                 Long-Term Vehicle Leasing
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-white mt-2.5">
-                Speedways — Corporate Car Subscription Benefits (LTR- Lease)
+                Corporate Car Subscription Benefits — Long-Term Rental (LTR Lease)
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
                 Lower total cost of mobility, flexible 1, 2, or 3-year contract tenures, minimal upfront investment, comprehensive maintenance, modern fleet, and 24×7 command centre support.
@@ -603,25 +603,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 11. BOTTOM CORPORATE EMPANELMENT CTA BANNER */}
+      {/* 11. STRATEGIC CORPORATE EMPANELMENT & RFP DESK */}
       <section className="py-16 bg-[#F0FDF4] border-t border-[#DCFCE7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
-              Empanelment Process • Fast-Track 48h Turnaround
+              Strategic Mobility Procurement • 48-Hour Fast-Track Empanelment
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Ready to Empanel Speedways for Your Corporate Mobility Needs?
+              Empanel Speedways as Your Strategic Corporate Mobility Partner
             </h2>
             <p className="text-slate-600 text-base">
-              Submit your corporate RFP or schedule a direct consultation with our enterprise account team. 6 direct branches (Mumbai, Bangalore, Hyderabad, Chennai, Delhi, Pune) and 185+ managed cities ready for deployment.
+              Submit your corporate RFP or schedule a direct consultation with our enterprise account team. 6 direct branches (Mumbai, Bengaluru, Hyderabad, Chennai, Delhi NCR, Pune) and 185+ managed cities ready for deployment.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 pt-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold text-base shadow-md shadow-green-500/25 transition-all"
               >
-                <span>Submit Empanelment Request</span>
+                <span>Submit Corporate RFP</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
@@ -629,7 +629,7 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-base border border-slate-200 transition-colors"
               >
                 <PhoneCall className="w-4 h-4 text-green-600" />
-                <span>Call 9820630817</span>
+                <span>Call 24×7 Operations Desk</span>
               </a>
             </div>
           </div>

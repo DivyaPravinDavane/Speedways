@@ -85,7 +85,7 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     left: "38%",
     leadTime: "2 Hours",
     fleetStrength: "220+ Vehicles",
-    address: "Serenity, 1176/A, HBR 1st Stage, 4th Block, Bangalore 560 043",
+    address: "Serenity, 1176/A, HBR 1st Stage, 4th Block, Bengaluru - 560043",
     phone: "9820630817",
     highlights: [
       "South India Regional Operations Hub",

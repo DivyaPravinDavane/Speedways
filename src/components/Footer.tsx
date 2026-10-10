@@ -67,8 +67,8 @@ export default function Footer() {
               <p className="font-bold text-slate-900">
                 Speedways. Advancing Enterprise Mobility.
               </p>
-              <p className="text-xs text-slate-500 italic">
-                Purpose in Every Promise. Excellence in Every Experience. Inspired by Commitment. Delivered with Excellence. Committed to Excellence. Defined by Trust.
+              <p className="text-xs text-slate-500 font-medium">
+                Committed to Excellence. Defined by Trust.
               </p>
               <p className="text-xs text-slate-600 pt-1">
                 India&apos;s leading corporate mobility platform combining fleet scale, 185+ city coverage, our technology platform, and centralised 24×7 governance.
@@ -82,28 +82,29 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>5% GST Corporate Billing Model with Complete Statutory Traceability</span>
+                <span>5% GST Corporate Billing Model with Invoice Traceability</span>
               </div>
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>ISO 9001, ISO 27001, ISO 45001 Aligned Governance</span>
+                <span>ISO 9001, ISO 27001 &amp; ISO 45001 Aligned Governance</span>
               </div>
             </div>
 
-            <div className="pt-4 flex items-center gap-3">
+            <div className="pt-4 flex flex-wrap items-center gap-3">
               <a
                 href="tel:9820630817"
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-50 text-green-800 text-xs font-semibold border border-green-200/60"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-green-600" />
-                24×7 Desk: 9820630817
+                <span>24×7 Desk: 9820630817</span>
               </a>
+              <span className="text-slate-300 hidden sm:inline" aria-hidden="true">|</span>
               <a
                 href="mailto:info@speedwaysftm.com"
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors"
               >
                 <Mail className="w-3.5 h-3.5 text-slate-500" />
-                info@speedwaysftm.com
+                <span>info@speedwaysftm.com</span>
               </a>
             </div>
           </div>
@@ -245,16 +246,16 @@ export default function Footer() {
               </div>
 
               <div className="pt-1.5">
-                <strong className="text-slate-900 block text-xs">Bangalore Branch:</strong>
+                <strong className="text-slate-900 block text-xs">Bengaluru Branch:</strong>
                 <p className="text-slate-500 mt-0.5">
-                  Serenity, 1176/A, HBR 1st Stage, 4th Block, Bangalore- 560043
+                  Serenity, 1176/A, HBR 1st Stage, 4th Block, Bengaluru - 560043
                 </p>
               </div>
 
               <div className="pt-1.5">
                 <strong className="text-slate-900 block text-xs">6 Direct Metro Branches:</strong>
                 <p className="text-slate-500 mt-0.5">
-                  Mumbai (HO) • Bangalore • Hyderabad • Chennai • Delhi NCR • Pune
+                  Mumbai (HO) • Bengaluru • Hyderabad • Chennai • Delhi NCR • Pune
                 </p>
               </div>
 
@@ -281,7 +282,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Speedways Fleet & Travel Management Pvt. Ltd. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
-            <span className="text-slate-400">GST Registration: 5% Corporate Billing Model</span>
+            <span className="text-slate-400">Corporate Billing with Applicable Statutory GST Treatment &amp; Invoicing</span>
             <Link href="/about-us#governance" className="hover:text-green-600 transition-colors">
               SLA Governance
             </Link>
