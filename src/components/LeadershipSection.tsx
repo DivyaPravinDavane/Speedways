@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Award,
@@ -26,7 +27,13 @@ import { AnimatedNumber } from "@/components/AnimatedCounter";
 
 type FilterTab = "all" | "c-suite" | "operations" | "commercial";
 
-export default function LeadershipSection({ className = "" }: { className?: string }) {
+export default function LeadershipSection({
+  className = "",
+  id = "leadership",
+}: {
+  className?: string;
+  id?: string;
+}) {
   const [activeTab, setActiveTab] = useState<FilterTab>("all");
   const [selectedLeader, setSelectedLeader] = useState<LeaderProfile | null>(null);
 
@@ -88,6 +95,7 @@ export default function LeadershipSection({ className = "" }: { className?: stri
 
   return (
     <section
+      id={id}
       className={`py-16 md:py-24 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden ${className}`}
     >
       {/* Decorative Blur Background Orbs */}
@@ -105,7 +113,7 @@ export default function LeadershipSection({ className = "" }: { className?: stri
         >
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-green-50 text-green-700 border border-green-200/80 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
             <Building2 className="w-3.5 h-3.5 text-green-600" />
-            Executive Leadership & Governance
+            06. Executive Leadership Team
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             Industry Veterans Driving{" "}
@@ -177,11 +185,23 @@ export default function LeadershipSection({ className = "" }: { className?: stri
               {/* Left Column: CEO Credentials Card */}
               <div className="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left border-b lg:border-b-0 lg:border-r border-slate-800/90 pb-6 lg:pb-0 lg:pr-8">
                 <div className="relative mb-5">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-[#48B83D] via-emerald-500 to-green-600 p-1 shadow-xl">
-                    <div className="w-full h-full rounded-[22px] bg-slate-950 flex items-center justify-center text-white">
-                      <span className="text-3xl sm:text-4xl font-black tracking-wider text-green-400">
-                        ND
-                      </span>
+                  <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-3xl bg-gradient-to-br from-[#48B83D] via-emerald-500 to-green-600 p-1 shadow-2xl">
+                    <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-slate-950">
+                      {ceo.image ? (
+                        <Image
+                          src={ceo.image}
+                          alt={ceo.name}
+                          fill
+                          className="object-cover object-top"
+                          priority
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-white">
+                          <span className="text-3xl sm:text-4xl font-black tracking-wider text-green-400">
+                            ND
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div className="absolute -bottom-2 -right-2 bg-[#48B83D] text-white p-2 rounded-xl shadow-lg ring-4 ring-slate-900">
@@ -357,13 +377,24 @@ export default function LeadershipSection({ className = "" }: { className?: stri
                   className="bg-white rounded-3xl p-6 border border-slate-200/90 card-premium-shadow hover:border-green-400 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
-                    {/* Header Avatar Monogram & Experience Pill */}
+                    {/* Header Avatar Photo & Experience Pill */}
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-700 p-0.5 shadow-sm group-hover:scale-105 transition-transform">
-                        <div className="w-full h-full rounded-[14px] bg-white flex items-center justify-center font-black text-base text-slate-900 group-hover:bg-green-50 group-hover:text-green-800 transition-colors">
-                          {initials}
+                      {leader.image ? (
+                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-md border-2 border-green-200/80 group-hover:border-green-500 group-hover:scale-105 transition-all bg-slate-100">
+                          <Image
+                            src={leader.image}
+                            alt={leader.name}
+                            fill
+                            className="object-cover object-top"
+                          />
                         </div>
-                      </div>
+                      ) : (
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-700 p-0.5 shadow-sm group-hover:scale-105 transition-transform">
+                          <div className="w-full h-full rounded-[14px] bg-white flex items-center justify-center font-black text-base text-slate-900 group-hover:bg-green-50 group-hover:text-green-800 transition-colors">
+                            {initials}
+                          </div>
+                        </div>
+                      )}
 
                       <span className="text-[10px] font-bold text-green-800 bg-green-50 px-2.5 py-1 rounded-full border border-green-200 uppercase tracking-wider text-right shadow-2xs">
                         {leader.experience || "Veteran"}
@@ -539,7 +570,7 @@ export default function LeadershipSection({ className = "" }: { className?: stri
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <a
-              href="/contact"
+              href="#contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 active:bg-green-700 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all cursor-pointer"
             >
               <span>Schedule Executive Consultation</span>
@@ -578,15 +609,26 @@ export default function LeadershipSection({ className = "" }: { className?: stri
 
               {/* Modal Header */}
               <div className="flex items-start gap-4 mb-6 pr-8">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-700 p-0.5 shadow-md shrink-0">
-                  <div className="w-full h-full rounded-[14px] bg-white flex items-center justify-center font-black text-xl text-slate-900">
-                    {selectedLeader.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")
-                      .substring(0, 2)}
+                {selectedLeader.image ? (
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shadow-lg border-2 border-green-500/60 shrink-0 bg-slate-100">
+                    <Image
+                      src={selectedLeader.image}
+                      alt={selectedLeader.name}
+                      fill
+                      className="object-cover object-top"
+                    />
                   </div>
-                </div>
+                ) : (
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-700 p-0.5 shadow-md shrink-0">
+                    <div className="w-full h-full rounded-[14px] bg-white flex items-center justify-center font-black text-xl text-slate-900">
+                      {selectedLeader.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")
+                        .substring(0, 2)}
+                    </div>
+                  </div>
+                )}
                 <div>
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-green-50 text-green-700 border border-green-200 text-[11px] font-bold uppercase tracking-wider mb-1">
                     {selectedLeader.experience || "Executive"}
@@ -656,7 +698,8 @@ export default function LeadershipSection({ className = "" }: { className?: stri
                     Close
                   </button>
                   <a
-                    href="/contact"
+                    href="#contact"
+                    onClick={() => setSelectedLeader(null)}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-white text-xs font-bold uppercase tracking-wider shadow-sm transition-all"
                   >
                     <span>Connect with Office</span>

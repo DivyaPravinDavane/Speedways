@@ -100,7 +100,7 @@ export const ENTERPRISE_CLIENTS: EnterpriseClient[] = [
 
 export default function ClientLogosMarquee() {
   return (
-    <section className="py-10 bg-slate-50 border-b border-slate-200/80 overflow-hidden relative">
+    <section id="customers" className="scroll-mt-24 py-10 bg-slate-50 border-b border-slate-200/80 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
         <span className="text-[11px] uppercase tracking-widest font-extrabold text-slate-500">
           Trusted by Procurement & Corporate Travel Desks at India&apos;s Leading Enterprises

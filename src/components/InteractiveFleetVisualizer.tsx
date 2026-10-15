@@ -23,10 +23,10 @@ export default function InteractiveFleetVisualizer() {
   const fleetData = [
     {
       id: "economy-sedan",
-      name: "Economy Sedan",
-      models: "Maruti Dzire / Hyundai Aura / Amaze",
-      image: "/images/hero-sedan.jpg",
-      tag: "Point-to-Point Transit",
+      name: "Economy & Executive Sedans",
+      models: "Dzire, Aura, Amaze, Ciaz, Honda City",
+      image: "/images/fleet/01-sedans.png",
+      tag: "Point-to-Point & Airport",
       passengers: 4,
       luggage: 2,
       ac: "Dual AC Climate Control",
@@ -38,32 +38,13 @@ export default function InteractiveFleetVisualizer() {
         "Ozone sanitized cabin",
         "Digital duty slip",
       ],
-      idealFor: "Daily office commutes, spot staff errands, single executive airport drop",
-    },
-    {
-      id: "executive-sedan",
-      name: "Executive Sedan",
-      models: "Maruti Ciaz / Honda City / Verna",
-      image: "/images/sedan-interior.jpg",
-      tag: "Mid-to-Senior Leadership",
-      passengers: 4,
-      luggage: 3,
-      ac: "Multi-Zone Auto Climate",
-      fuel: "Petrol / Hybrid",
-      rates: { "4h": "₹ 1,950", "8h": "₹ 3,200", outstation: "₹ 15 / km" },
-      amenities: [
-        "Extra legroom comfort",
-        "Leatherette executive seats",
-        "Bottled water & sanitizers",
-        "High-speed device chargers",
-      ],
-      idealFor: "Client visits, visiting auditors, executive meetings, senior management transit",
+      idealFor: "Airport transfers, local rentals, and everyday corporate travel",
     },
     {
       id: "premium-muv",
-      name: "Premium MUV (Innova)",
-      models: "Toyota Innova Crysta / Hycross",
-      image: "/images/airport-chauffeur.jpg",
+      name: "MUV & Premium MUV",
+      models: "Ertiga, Carens, Innova Crysta, Innova Hycross",
+      image: "/images/fleet/02-muv.png",
       tag: "Enterprise Benchmark",
       passengers: 7,
       luggage: 5,
@@ -76,13 +57,13 @@ export default function InteractiveFleetVisualizer() {
         "Dedicated airport paging desk",
         "50-point safety inspection",
       ],
-      idealFor: "Visiting delegations, Fortune 500 leadership, airport VIP transfers, outstation tours",
+      idealFor: "Family travel, executive transfers, and outstation journeys",
     },
     {
       id: "luxury-suv",
-      name: "Luxury SUV & Board Sedans",
-      models: "Mercedes-Benz E-Class / BMW 5 / Fortuner",
-      image: "/images/vip-fleet-lineup.jpg",
+      name: "Luxury & Premium Cars",
+      models: "Mercedes-Benz E-Class, BMW 5 Series, Audi A4",
+      image: "/images/fleet/03-luxury.png",
       tag: "C-Suite & State Summits",
       passengers: 4,
       luggage: 4,
@@ -95,13 +76,13 @@ export default function InteractiveFleetVisualizer() {
         "Pre-trip VIP inspection",
         "Priority Command Room escort",
       ],
-      idealFor: "Board members, international dignitaries, AGM summits, executive delegations",
+      idealFor: "CXO travel, VIP guests, weddings, and special occasions",
     },
     {
       id: "ev-green",
-      name: "EV Mobility (Green Fleet)",
-      models: "Tata Tigor EV / Tata Nexon EV",
-      image: "/images/ev-fleet.jpg",
+      name: "Electric Vehicle Fleet",
+      models: "Tata EVs, BYD and other available electric vehicles",
+      image: "/images/fleet/04-electric.png",
       tag: "Scope 1 & 2 ESG Compliance",
       passengers: 4,
       luggage: 2,
@@ -114,7 +95,45 @@ export default function InteractiveFleetVisualizer() {
         "Campus charger compatibility",
         "Monthly ESG certificate",
       ],
-      idealFor: "Corporate sustainability mandates, campus fixed routes, eco-conscious leadership",
+      idealFor: "Sustainable corporate and city mobility",
+    },
+    {
+      id: "tempo-travellers",
+      name: "Tempo Travellers",
+      models: "Multiple seating configurations (12, 17, 20, 26 Seater)",
+      image: "/images/fleet/05-tempo-travellers.png",
+      tag: "Group Tours & Offsites",
+      passengers: 17,
+      luggage: 12,
+      ac: "Ducted Individual AC",
+      fuel: "Commercial Clean Diesel",
+      rates: { "4h": "₹ 3,500", "8h": "₹ 5,800", outstation: "₹ 26 / km" },
+      amenities: [
+        "Reclining push-back seats",
+        "Individual AC louvers",
+        "Ample luggage boot",
+        "Trained highway chauffeur",
+      ],
+      idealFor: "Group tours, family trips, weddings, and corporate outings",
+    },
+    {
+      id: "large-coaches",
+      name: "Buses & Large Coaches (24 to 50+ Seater)",
+      models: "24-Seater Mini, 36-Seater Bus, 40+ Seater Volvo/Scania",
+      image: "/images/fleet/08-large-coaches-40.png",
+      tag: "MICE & Employee Transit",
+      passengers: 45,
+      luggage: 40,
+      ac: "Central High-Tonnage AC",
+      fuel: "Multi-Axle Heavy Diesel",
+      rates: { "4h": "₹ 7,500", "8h": "₹ 13,000", outstation: "₹ 55 / km" },
+      amenities: [
+        "Air suspension comfort",
+        "Under-floor luggage holds",
+        "On-ground logistics coordinator",
+        "PA & microphone system",
+      ],
+      idealFor: "MICE events, large corporate groups, tours, and conferences",
     },
   ];
 
@@ -322,20 +341,20 @@ export default function InteractiveFleetVisualizer() {
             </div>
 
             <div className="mt-4 flex items-center justify-between">
-              <Link
-                href="/services/chauffeur-drive"
+              <a
+                href="#services"
                 className="text-xs font-bold text-slate-600 hover:text-green-600 transition-colors"
               >
-                View Chauffeur Drive Specifications →
-              </Link>
+                View All 11 Mobility Services →
+              </a>
 
-              <Link
-                href={`/contact?vehicle=${current.id}`}
+              <a
+                href="#contact"
                 className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all"
               >
                 <span>Reserve {current.name}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

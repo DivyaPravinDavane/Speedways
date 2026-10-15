@@ -52,17 +52,17 @@ export default function SpeedwaysInfoCards() {
   ];
 
   return (
-    <section className="py-20 bg-white border-b border-slate-100">
+    <div className="w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
             Dynamic Interactive Spotlights
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 tracking-tight">
             Flagship Enterprise Mobility Highlights
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2">
-            Hover over the interactive cards below to experience the rotating gradient borders, dynamic cursor tracking, and instant service deep-dives.
+          </h3>
+          <p className="text-slate-600 text-xs sm:text-sm mt-2">
+            Hover over the interactive cards below to experience rotating gradient borders, dynamic cursor tracking, and instant service deep-dives.
           </p>
         </div>
 
@@ -88,17 +88,7 @@ export default function SpeedwaysInfoCards() {
             </div>
           ))}
         </div>
-
-        <div className="mt-10 text-center flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all"
-          >
-            <span>Explore All Mobility Verticals</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
       </div>
-    </section>
+    </div>
   );
 }

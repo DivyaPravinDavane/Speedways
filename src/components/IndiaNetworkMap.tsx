@@ -651,7 +651,7 @@ export default function IndiaNetworkMap() {
                   <span>Call Operations Desk</span>
                 </a>
                 <a
-                  href="/contact"
+                  href="#contact"
                   className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 text-xs font-bold transition-all"
                 >
                   <span>Request RFP</span>

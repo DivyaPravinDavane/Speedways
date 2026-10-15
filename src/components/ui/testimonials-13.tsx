@@ -83,20 +83,22 @@ const testimonials = [
   },
 ];
 
-const Testimonials = () => (
-  <div className="px-6 py-20">
-    <div className="text-center max-w-3xl mx-auto mb-10">
-      <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
-        Enterprise Mobility Case Studies
-      </span>
-      <h2 className="text-center font-bold text-3xl sm:text-4xl text-slate-900 mt-3 tracking-tight">
-        Enterprise Success Stories
-      </h2>
-      <p className="mt-2.5 text-center text-slate-600 text-sm sm:text-base leading-relaxed">
-        Proven execution and verified trust from procurement heads, corporate travel desks, and administration leaders across India
-      </p>
-    </div>
-    <div className="mask-x-from-80% mt-8 space-y-px border border-slate-200/90 rounded-3xl bg-slate-50/60 overflow-hidden shadow-sm">
+const Testimonials = ({ hideHeader = false }: { hideHeader?: boolean }) => (
+  <div className={hideHeader ? "px-2 py-4" : "px-6 py-20"}>
+    {!hideHeader && (
+      <div className="text-center max-w-3xl mx-auto mb-10">
+        <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
+          Enterprise Mobility Case Studies
+        </span>
+        <h2 className="text-center font-bold text-3xl sm:text-4xl text-slate-900 mt-3 tracking-tight">
+          Enterprise Success Stories
+        </h2>
+        <p className="mt-2.5 text-center text-slate-600 text-sm sm:text-base leading-relaxed">
+          Proven execution and verified trust from procurement heads, corporate travel desks, and administration leaders across India
+        </p>
+      </div>
+    )}
+    <div className={`mask-x-from-80% space-y-px border border-slate-200/90 rounded-3xl bg-slate-50/60 overflow-hidden shadow-sm ${hideHeader ? "mt-2" : "mt-8"}`}>
       <Marquee className="py-0 [--duration:50s] [--gap:0px]" pauseOnHover>
         <TestimonialList />
       </Marquee>

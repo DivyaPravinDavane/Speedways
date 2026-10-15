@@ -40,11 +40,12 @@ export default function ServicesPage() {
   const [inquirySubmitted, setInquirySubmitted] = useState<boolean>(false);
 
   const categories = [
-    { label: "All", count: 11 },
-    { label: "Rental", count: 4 },
-    { label: "Commute", count: 2 },
-    { label: "Executive", count: 3 },
-    { label: "Sustainable", count: 2 },
+    { label: "All", count: SERVICES_CATALOG.length },
+    { label: "Rental", count: SERVICES_CATALOG.filter((s) => s.category === "Rental").length },
+    { label: "Commute", count: SERVICES_CATALOG.filter((s) => s.category === "Commute").length },
+    { label: "Executive", count: SERVICES_CATALOG.filter((s) => s.category === "Executive").length },
+    { label: "Management", count: SERVICES_CATALOG.filter((s) => s.category === "Management").length },
+    { label: "Sustainable", count: SERVICES_CATALOG.filter((s) => s.category === "Sustainable").length },
   ];
 
   // Map icon name to Lucide Icon

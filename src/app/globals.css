@@ -107,6 +107,11 @@
   --pattern-color2: rgba(240,240,240,0.15);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+}
+
 body {
   background-color: #f4faf6;
   color: #0f172a;
@@ -139,6 +144,21 @@ body {
   to {
     transform: translateX(calc(-100% - var(--gap, 1rem)));
   }
+}
+
+@keyframes marquee-smooth {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-smooth {
+  display: flex;
+  width: max-content;
+  animation: marquee-smooth 35s linear infinite;
 }
 
 @keyframes marquee-vertical {
