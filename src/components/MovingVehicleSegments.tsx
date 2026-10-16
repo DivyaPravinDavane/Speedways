@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -9,13 +9,14 @@ import {
   Fan,
   Fuel,
   CheckCircle2,
-  ArrowRight,
   ShieldCheck,
   Zap,
   Car,
   Bus,
   Building2,
   Calendar,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 export interface VehicleSegment {
@@ -224,31 +225,52 @@ export default function MovingVehicleSegments({
       ? VEHICLE_SEGMENTS
       : VEHICLE_SEGMENTS.filter((s) => s.category === activeCategory);
 
-  // Duplicate for seamless infinite loop effect
-  const tickerItems = [...displayedSegments, ...displayedSegments];
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const handleEnquire = (seg: VehicleSegment) => {
-    if (onSelectSegment) {
-      onSelectSegment(seg.name);
-    } else {
-      const el = document.getElementById("enquiry") || document.getElementById("contact");
-      if (el) {
-        const headerOffset = 76;
-        const elementPosition = el.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
+  const checkScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
     }
   };
 
-  const [viewMode, setViewMode] = useState<"marquee" | "catalogue">("marquee");
+  useEffect(() => {
+    checkScroll();
+    const el = scrollContainerRef.current;
+    if (el) {
+      el.addEventListener("scroll", checkScroll, { passive: true });
+      window.addEventListener("resize", checkScroll);
+      return () => {
+        el.removeEventListener("scroll", checkScroll);
+        window.removeEventListener("resize", checkScroll);
+      };
+    }
+  }, [displayedSegments]);
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  }, [activeCategory]);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const cardWidth = 384; // card width (360) + gap (24)
+      scrollContainerRef.current.scrollBy({
+        left: direction === "left" ? -cardWidth : cardWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const [viewMode, setViewMode] = useState<"carousel" | "catalogue">("carousel");
 
   return (
     <div className="w-full space-y-6">
-      {/* Controls Bar: Category Pills + View Mode Switcher */}
+      {/* Controls Bar: Category Pills + Arrows + View Mode Switcher */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Category Pills Switcher */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
@@ -279,45 +301,107 @@ export default function MovingVehicleSegments({
           ))}
         </div>
 
-        {/* View Mode Switcher */}
-        <div className="flex items-center gap-1 p-1 bg-white border border-slate-200 rounded-xl text-xs font-bold shadow-2xs shrink-0">
-          <button
-            type="button"
-            onClick={() => setViewMode("marquee")}
-            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-              viewMode === "marquee"
-                ? "bg-green-600 text-white shadow-xs"
-                : "text-slate-600 hover:text-slate-900"
-            }`}
-          >
-            Horizontal Moving
-          </button>
-          <button
-            type="button"
-            onClick={() => setViewMode("catalogue")}
-            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-              viewMode === "catalogue"
-                ? "bg-green-600 text-white shadow-xs"
-                : "text-slate-600 hover:text-slate-900"
-            }`}
-          >
-            Catalogue List (01 - 08)
-          </button>
+        {/* Navigation Arrows Controls & View Mode */}
+        <div className="flex items-center gap-3">
+          {viewMode === "carousel" && (
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => scroll("left")}
+                disabled={!canScrollLeft}
+                aria-label="Previous vehicles"
+                className={`w-9 h-9 rounded-xl border flex items-center justify-center transition-all cursor-pointer ${
+                  canScrollLeft
+                    ? "bg-white text-slate-800 border-slate-200 hover:bg-[#48B83D] hover:text-white hover:border-[#48B83D] shadow-xs active:scale-95"
+                    : "bg-slate-100 text-slate-300 border-slate-200 cursor-not-allowed opacity-50"
+                }`}
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scroll("right")}
+                disabled={!canScrollRight}
+                aria-label="Next vehicles"
+                className={`w-9 h-9 rounded-xl border flex items-center justify-center transition-all cursor-pointer ${
+                  canScrollRight
+                    ? "bg-white text-slate-800 border-slate-200 hover:bg-[#48B83D] hover:text-white hover:border-[#48B83D] shadow-xs active:scale-95"
+                    : "bg-slate-100 text-slate-300 border-slate-200 cursor-not-allowed opacity-50"
+                }`}
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          )}
+
+          <div className="flex items-center gap-1 p-1 bg-white border border-slate-200 rounded-xl text-xs font-bold shadow-2xs shrink-0">
+            <button
+              type="button"
+              onClick={() => setViewMode("carousel")}
+              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+                viewMode === "carousel"
+                  ? "bg-green-600 text-white shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              Carousel
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode("catalogue")}
+              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+                viewMode === "catalogue"
+                  ? "bg-green-600 text-white shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              Catalogue List
+            </button>
+          </div>
         </div>
       </div>
 
-      {viewMode === "marquee" ? (
-        /* Horizontal Moving Marquee Ticker */
-        <div className="relative w-full overflow-hidden py-4 group">
-          {/* Soft edge blur vignettes */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#F4FAF6] via-[#F4FAF6]/70 to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#F4FAF6] via-[#F4FAF6]/70 to-transparent z-10" />
+      {viewMode === "carousel" ? (
+        /* Horizontal Carousel with Arrows at Ends */
+        <div className="relative w-full py-4 group">
+          {/* Floating Left Arrow Button at the end */}
+          <button
+            type="button"
+            onClick={() => scroll("left")}
+            disabled={!canScrollLeft}
+            aria-label="Previous vehicles"
+            className={`absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-20 w-11 sm:w-12 h-11 sm:h-12 rounded-full border flex items-center justify-center transition-all duration-200 cursor-pointer shadow-xl ${
+              canScrollLeft
+                ? "bg-white/95 text-slate-900 border-slate-200 hover:bg-[#48B83D] hover:text-white hover:border-[#48B83D] hover:scale-110 active:scale-95"
+                : "bg-white/60 text-slate-300 border-slate-100 cursor-not-allowed opacity-0 pointer-events-none"
+            }`}
+          >
+            <ChevronLeft className="w-6 h-6 -ml-0.5" />
+          </button>
 
-          <div className="flex gap-6 animate-marquee-smooth group-hover:[animation-play-state:paused] w-max">
-            {tickerItems.map((seg, idx) => (
+          {/* Floating Right Arrow Button at the end */}
+          <button
+            type="button"
+            onClick={() => scroll("right")}
+            disabled={!canScrollRight}
+            aria-label="Next vehicles"
+            className={`absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-20 w-11 sm:w-12 h-11 sm:h-12 rounded-full border flex items-center justify-center transition-all duration-200 cursor-pointer shadow-xl ${
+              canScrollRight
+                ? "bg-white/95 text-slate-900 border-slate-200 hover:bg-[#48B83D] hover:text-white hover:border-[#48B83D] hover:scale-110 active:scale-95"
+                : "bg-white/60 text-slate-300 border-slate-100 cursor-not-allowed opacity-0 pointer-events-none"
+            }`}
+          >
+            <ChevronRight className="w-6 h-6 -mr-0.5" />
+          </button>
+
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth py-3 px-1 snap-x snap-mandatory focus:outline-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {displayedSegments.map((seg) => (
               <div
-                key={`${seg.id}-${idx}`}
-                className="w-[320px] sm:w-[360px] bg-white rounded-3xl p-5 border border-green-200/90 shadow-md hover:shadow-xl hover:border-green-500 transition-all duration-300 shrink-0 flex flex-col justify-between"
+                key={seg.id}
+                className="w-[320px] sm:w-[360px] bg-white rounded-3xl p-5 border border-green-200/90 shadow-md hover:shadow-xl hover:border-green-500 transition-all duration-300 shrink-0 flex flex-col justify-between snap-start"
               >
                 <div>
                   {/* Image Header with Segment Tag */}
@@ -376,24 +460,12 @@ export default function MovingVehicleSegments({
                   </div>
 
                   {/* Use Case */}
-                  <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     <strong className="text-slate-900 block font-semibold mb-0.5">
                       Corporate Deployment:
                     </strong>
                     {seg.useCase}
                   </p>
-                </div>
-
-                {/* Action Button */}
-                <div className="pt-3 border-t border-slate-100">
-                  <button
-                    type="button"
-                    onClick={() => handleEnquire(seg)}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-green-600 text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer group/btn"
-                  >
-                    <span>Enquire for {seg.name}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
                 </div>
               </div>
             ))}
@@ -435,18 +507,6 @@ export default function MovingVehicleSegments({
                     {seg.useCase}
                   </div>
                 </div>
-              </div>
-
-              {/* Action */}
-              <div className="sm:shrink-0 w-full sm:w-auto">
-                <button
-                  type="button"
-                  onClick={() => handleEnquire(seg)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-green-600 text-white text-xs font-bold transition-colors cursor-pointer"
-                >
-                  <span>Enquire</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
               </div>
             </div>
           ))}

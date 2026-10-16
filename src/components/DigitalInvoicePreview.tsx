@@ -36,7 +36,7 @@ export default function DigitalInvoicePreview() {
             <span className="w-3 h-3 rounded-full bg-green-500 inline-block" />
           </div>
           <span className="text-xs text-slate-400 font-mono pl-2 border-l border-slate-700">
-            indecab.cloud/speedways/invoice/SW-INV-2024-BOM-88492
+            portal.speedways.in/invoice/SW-INV-2024-BOM-88492
           </span>
         </div>
 

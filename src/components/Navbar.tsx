@@ -282,29 +282,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 2. PROMINENT SPEEDWAYS TAGLINE & ANNOUNCEMENT RIBBON */}
-      <div className="bg-slate-900 text-slate-200 text-xs sm:text-[13px] font-medium py-2 px-4 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-4 flex-wrap text-center">
-          <div className="flex items-center gap-2.5 mx-auto lg:mx-0">
-            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="tracking-wide">
-              <strong className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-300 to-green-500 font-black tracking-widest uppercase">
-                &ldquo;YOUR JOURNEY STARTS HERE…&rdquo;
-              </strong>{" "}
-              — Pan-India Enterprise Mobility Across 185+ Cities | Trusted by 185+ Corporates
-            </span>
-          </div>
-
-          <Link
-            href="/#enquiry"
-            onClick={(e) => handleNavClick(e, "#enquiry")}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-green-600 hover:bg-green-500 text-white font-bold text-xs shadow-xs transition-colors shrink-0"
-          >
-            <span>Corporate Enquiry Desk</span>
-            <ArrowRight className="w-3 h-3" />
-          </Link>
-        </div>
-      </div>
 
       {/* 3. MOBILE RESPONSIVE DRAWER */}
       {isMobileMenuOpen && (
@@ -364,7 +341,7 @@ export default function Navbar() {
                   : "text-slate-800 hover:bg-slate-50"
               }`}
             >
-              Technology (Indecab Platform)
+              Technology Platform
             </Link>
 
             <Link

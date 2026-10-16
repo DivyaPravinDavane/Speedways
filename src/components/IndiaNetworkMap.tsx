@@ -1,20 +1,13 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import {
   MapPin,
-  ShieldCheck,
-  Radio,
-  Clock,
-  Car,
-  PhoneCall,
   Search,
-  ArrowRight,
   CheckCircle2,
-  Building2,
   Compass,
+  ChevronDown,
 } from "lucide-react";
-import { AnimatedNumber } from "@/components/AnimatedCounter";
 
 export interface CityHubLocation {
   id: string;
@@ -34,30 +27,11 @@ export interface CityHubLocation {
 }
 
 export const MAJOR_LOCATIONS: CityHubLocation[] = [
-  {
-    id: "mumbai",
-    city: "Mumbai",
-    state: "Maharashtra",
-    region: "West",
-    type: "Direct Metro Hub",
-    isDirectMetro: true,
-    top: "58%",
-    left: "26%",
-    leadTime: "2 Hours",
-    fleetStrength: "320+ Vehicles",
-    address: "Speedways House, Andheri East / BKC Central Corridor, Mumbai 400 069",
-    phone: "9820630817",
-    highlights: [
-      "National Head Office & Central 24×7 Command Centre",
-      "CSMIA Terminal 1 & 2 Dedicated Airport Paging Desk",
-      "BKC & Lower Parel CXO Executive Chauffeur Pool",
-    ],
-    vehiclesAvailable: ["Sedans", "Innova Hycross", "Luxury SUVs", "Bus & Coaches"],
-  },
+  // --- NORTH INDIA (11 Cities) ---
   {
     id: "delhi-ncr",
     city: "Delhi NCR",
-    state: "Delhi / Haryana / UP",
+    state: "Delhi / NCR",
     region: "North",
     type: "Direct Metro Hub",
     isDirectMetro: true,
@@ -65,15 +39,212 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     left: "37%",
     leadTime: "2 Hours",
     fleetStrength: "240+ Vehicles",
-    address: "DLF Cyber City, Sector 24, Gurugram, Haryana 122 002",
+    address: "DLF Cyber City, Sector 24, Gurugram / Noida IT Corridor, Delhi NCR 122 002",
     phone: "9820630817",
     highlights: [
-      "North India Regional Hub & Diplomatic Movement",
-      "IGI Airport T3 24×7 Terminal Transfer Desk",
-      "Gurugram Cyber Hub & Noida IT Corridor Coverage",
+      "North India Regional Operations Command Desk",
+      "IGI Airport T1, T2 & T3 24×7 Paging Desks",
+      "Diplomatic Delegations & Fortune 500 Executive Mobility",
     ],
-    vehiclesAvailable: ["Sedans", "Innova Crysta", "Mercedes / BMW", "Tempo Travellers"],
+    vehiclesAvailable: ["Sedans", "Innova Hycross", "Mercedes / BMW", "Volvo Coaches"],
   },
+  {
+    id: "chandigarh",
+    city: "Chandigarh",
+    state: "Punjab / Haryana",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "24%",
+    left: "35%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "50+ Vehicles",
+    address: "IT Park, Kishangarh / Mohali Phase 8, Chandigarh 160 101",
+    phone: "9820630817",
+    highlights: [
+      "Tricity (Chandigarh-Mohali-Panchkula) Enterprise Transit",
+      "Shaheed Bhagat Singh Airport Transfers",
+      "Himachal & Punjab Industrial Belt Transit",
+    ],
+    vehiclesAvailable: ["Executive Sedans", "Innova Crysta", "Tempo Travellers"],
+  },
+  {
+    id: "jaipur",
+    city: "Jaipur",
+    state: "Rajasthan",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "37%",
+    left: "33%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "45+ Vehicles",
+    address: "Tonk Road & Sitapura Industrial Area, Jaipur 302 022",
+    phone: "9820630817",
+    highlights: [
+      "MICE Delegations & Heritage Corporate Conclaves",
+      "Sitapura & Mahindra World City Industrial Transit",
+      "Jaipur International Airport Meet & Greet",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta", "Luxury SUVs"],
+  },
+  {
+    id: "lucknow",
+    city: "Lucknow",
+    state: "Uttar Pradesh",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "37%",
+    left: "52%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "35+ Vehicles",
+    address: "Vibhuti Khand, Gomti Nagar, Lucknow 226 010",
+    phone: "9820630817",
+    highlights: [
+      "UP Capital Administration & Corporate Movement",
+      "Chaudhary Charan Singh Airport Transfers",
+      "IT City & Banking Institutional Fleets",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "dehradun",
+    city: "Dehradun",
+    state: "Uttarakhand",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "27%",
+    left: "40%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "30+ Vehicles",
+    address: "Rajpur Road / SIDCUL Industrial Area, Dehradun 248 001",
+    phone: "9820630817",
+    highlights: [
+      "Jolly Grant Airport VIP Paging Desk",
+      "Pharma SEZ & Institutional Government Mobility",
+      "Mussoorie & Rishikesh Corporate Retreats",
+    ],
+    vehiclesAvailable: ["Innova Crysta", "4x4 SUVs", "Tempo Travellers"],
+  },
+  {
+    id: "amritsar",
+    city: "Amritsar",
+    state: "Punjab",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "22%",
+    left: "32%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "30+ Vehicles",
+    address: "Mall Road / Sri Guru Ram Dass Jee Airport, Amritsar 143 001",
+    phone: "9820630817",
+    highlights: [
+      "International Airport Flight-Synchronized Transfers",
+      "Commercial Delegations & Cross-Border Logistics Support",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "ludhiana",
+    city: "Ludhiana",
+    state: "Punjab",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "25%",
+    left: "33%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "35+ Vehicles",
+    address: "Ferozepur Road / Industrial Area A, Ludhiana 141 001",
+    phone: "9820630817",
+    highlights: [
+      "Textile, Engineering & Industrial Delegation Movement",
+      "Fast-Track Chandigarh & Delhi Intercity Dispatches",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "jodhpur",
+    city: "Jodhpur",
+    state: "Rajasthan",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "39%",
+    left: "28%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "25+ Vehicles",
+    address: "Residency Road & Boranada SEZ, Jodhpur 342 012",
+    phone: "9820630817",
+    highlights: [
+      "Sun City Corporate Delegations & MICE Movements",
+      "Jodhpur Civil Airport Meet & Greet",
+      "Handicrafts SEZ & Industrial Transit",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta", "Luxury SUVs"],
+  },
+  {
+    id: "udaipur",
+    city: "Udaipur",
+    state: "Rajasthan",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "44%",
+    left: "28%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "25+ Vehicles",
+    address: "City Palace Road / Maharana Pratap Airport, Udaipur 313 001",
+    phone: "9820630817",
+    highlights: [
+      "Global Leadership Summits & Luxury MICE Mobility",
+      "Airport VIP Concierge & Mineral Industrial Transits",
+    ],
+    vehiclesAvailable: ["Luxury Sedans", "Innova Hycross", "Tempo Travellers"],
+  },
+  {
+    id: "jammu",
+    city: "Jammu",
+    state: "Jammu & Kashmir",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "18%",
+    left: "32%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "25+ Vehicles",
+    address: "Gandhi Nagar / Bari Brahmana Industrial Complex, Jammu 180 004",
+    phone: "9820630817",
+    highlights: [
+      "Bari Brahmana Industrial Transit & Corporate Transfers",
+      "Jammu Airport VIP Chauffeur Meet & Greet",
+    ],
+    vehiclesAvailable: ["Innova Crysta", "4x4 SUVs", "Tempo Travellers"],
+  },
+  {
+    id: "srinagar",
+    city: "Srinagar",
+    state: "Jammu & Kashmir",
+    region: "North",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "14%",
+    left: "32%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "25+ Vehicles",
+    address: "Rajbagh Commercial Hub / Sheikh ul-Alam Airport, Srinagar 190 008",
+    phone: "9820630817",
+    highlights: [
+      "Institutional Delegations & Premium Corporate Retreats",
+      "Srinagar International Airport Flight-Synced Transfers",
+    ],
+    vehiclesAvailable: ["4x4 Premium SUVs", "Innova Hycross", "Luxury Tempo Travellers"],
+  },
+
+  // --- SOUTH INDIA (11 Cities) ---
   {
     id: "bangalore",
     city: "Bengaluru",
@@ -93,26 +264,6 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
       "Electronic City & Whitefield Campus Commutes",
     ],
     vehiclesAvailable: ["Sedans", "EV Green Fleet", "Innova Hycross", "Volvo Coaches"],
-  },
-  {
-    id: "hyderabad",
-    city: "Hyderabad",
-    state: "Telangana",
-    region: "South",
-    type: "Direct Metro Hub",
-    isDirectMetro: true,
-    top: "64%",
-    left: "44%",
-    leadTime: "2 Hours",
-    fleetStrength: "160+ Vehicles",
-    address: "HITEC City Phase 2, Madhapur, Hyderabad 500 081",
-    phone: "9820630817",
-    highlights: [
-      "HITEC City & Financial District 24×7 Operations",
-      "RGIA Shamshabad Live Flight Tracked Dispatches",
-      "Pharma & IT Corporate Dedicated Fleets",
-    ],
-    vehiclesAvailable: ["Sedans", "Innova Crysta", "Electric Cabs", "Buses"],
   },
   {
     id: "chennai",
@@ -135,101 +286,24 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     vehiclesAvailable: ["Sedans", "MUVs", "Tempo Travellers", "Luxury Fleet"],
   },
   {
-    id: "pune",
-    city: "Pune",
-    state: "Maharashtra",
-    region: "West",
+    id: "hyderabad",
+    city: "Hyderabad",
+    state: "Telangana",
+    region: "South",
     type: "Direct Metro Hub",
     isDirectMetro: true,
-    top: "62%",
-    left: "30%",
+    top: "64%",
+    left: "44%",
     leadTime: "2 Hours",
-    fleetStrength: "110+ Vehicles",
-    address: "Magarpatta Cybercity / Hinjawadi IT Park Phase 1, Pune 411 028",
+    fleetStrength: "160+ Vehicles",
+    address: "HITEC City Phase 2, Madhapur, Hyderabad 500 081",
     phone: "9820630817",
     highlights: [
-      "Hinjawadi IT Corridor & Chakan Auto Belt Operations",
-      "Mumbai–Pune Expressway Rapid Transit Service",
-      "Corporate Shift Commutes & Factory Audits",
+      "HITEC City & Financial District 24×7 Operations",
+      "RGIA Shamshabad Live Flight Tracked Dispatches",
+      "Pharma & IT Corporate Dedicated Fleets",
     ],
-    vehiclesAvailable: ["Executive Sedans", "Innova Crysta", "Tempo Travellers"],
-  },
-  {
-    id: "kolkata",
-    city: "Kolkata",
-    state: "West Bengal",
-    region: "East",
-    type: "Strategic Network Center",
-    isDirectMetro: false,
-    top: "50%",
-    left: "71%",
-    leadTime: "3-4 Hours",
-    fleetStrength: "70+ Vehicles",
-    address: "Sector V, Salt Lake City & New Town, Kolkata 700 091",
-    phone: "9820630817",
-    highlights: [
-      "East India Strategic Corporate Desk",
-      "NSCBIA Airport Live Tracked Arrivals",
-      "Salt Lake Sector V IT Hub & Central Kolkata Transit",
-    ],
-    vehiclesAvailable: ["Sedans", "MUVs", "Volvo Coaches"],
-  },
-  {
-    id: "ahmedabad",
-    city: "Ahmedabad",
-    state: "Gujarat",
-    region: "West",
-    type: "Strategic Network Center",
-    isDirectMetro: false,
-    top: "48%",
-    left: "24%",
-    leadTime: "3-4 Hours",
-    fleetStrength: "65+ Vehicles",
-    address: "SG Highway & GIFT City Corporate Corridor, Ahmedabad 380 054",
-    phone: "9820630817",
-    highlights: [
-      "GIFT City Financial Center & Sanand Industrial Transit",
-      "Sardar Vallabhbhai Patel Airport Chauffeur Desk",
-    ],
-    vehiclesAvailable: ["Executive Sedans", "Innova Hycross", "Coaches"],
-  },
-  {
-    id: "jaipur",
-    city: "Jaipur",
-    state: "Rajasthan",
-    region: "North",
-    type: "Strategic Network Center",
-    isDirectMetro: false,
-    top: "37%",
-    left: "33%",
-    leadTime: "3-4 Hours",
-    fleetStrength: "45+ Vehicles",
-    address: "Tonk Road & Sitapura Industrial Area, Jaipur 302 022",
-    phone: "9820630817",
-    highlights: [
-      "MICE Delegations & Heritage Corporate Conclaves",
-      "Sitapura & Mahindra World City Industrial Transit",
-    ],
-    vehiclesAvailable: ["Sedans", "Innova Crysta", "Luxury SUVs"],
-  },
-  {
-    id: "chandigarh",
-    city: "Chandigarh",
-    state: "Punjab / Haryana",
-    region: "North",
-    type: "Strategic Network Center",
-    isDirectMetro: false,
-    top: "24%",
-    left: "35%",
-    leadTime: "3-4 Hours",
-    fleetStrength: "50+ Vehicles",
-    address: "IT Park, Kishangarh / Mohali Phase 8, Chandigarh 160 101",
-    phone: "9820630817",
-    highlights: [
-      "Tricity (Chandigarh-Mohali-Panchkula) Enterprise Transit",
-      "Shaheed Bhagat Singh Airport Transfers",
-    ],
-    vehiclesAvailable: ["Sedans", "MUVs", "Tempo Travellers"],
+    vehiclesAvailable: ["Sedans", "Innova Crysta", "Electric Cabs", "Buses"],
   },
   {
     id: "kochi",
@@ -251,42 +325,159 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     vehiclesAvailable: ["Sedans", "Innova Crysta", "Tempo Travellers"],
   },
   {
-    id: "indore",
-    city: "Indore",
-    state: "Madhya Pradesh",
-    region: "Central",
+    id: "coimbatore",
+    city: "Coimbatore",
+    state: "Tamil Nadu",
+    region: "South",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "83%",
+    left: "40%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "45+ Vehicles",
+    address: "Avinashi Road & TIDEL Park Tech Corridor, Coimbatore 641 014",
+    phone: "9820630817",
+    highlights: [
+      "TIDEL Park IT & Textile Engineering Industrial Transit",
+      "Coimbatore International Airport Terminal Meet & Greet",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta", "Tempo Travellers"],
+  },
+  {
+    id: "mysuru",
+    city: "Mysuru",
+    state: "Karnataka",
+    region: "South",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "81%",
+    left: "36%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "35+ Vehicles",
+    address: "Hebbal Industrial Area / Infosys Campus Corridor, Mysuru 570 016",
+    phone: "9820630817",
+    highlights: [
+      "Bengaluru-Mysuru Expressway Rapid Shuttle Commutes",
+      "Tech Campus Intercity Mobility",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "vijayawada",
+    city: "Vijayawada",
+    state: "Andhra Pradesh",
+    region: "South",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "66%",
+    left: "50%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "30+ Vehicles",
+    address: "Benz Circle & Amaravati Capital Highway, Vijayawada 520 010",
+    phone: "9820630817",
+    highlights: [
+      "AP State Capital Administration & SEZ Transportation",
+      "Gannavaram Airport Flight-Tracked Transfers",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "visakhapatnam",
+    city: "Visakhapatnam",
+    state: "Andhra Pradesh",
+    region: "South",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "62%",
+    left: "56%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "40+ Vehicles",
+    address: "Rushikonda IT SEZ & Port Industrial Corridor, Vizag 530 045",
+    phone: "9820630817",
+    highlights: [
+      "Port, Steel & Offshore Energy Institutional Mobility",
+      "Visakhapatnam Airport VIP Transfers",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta", "Coaches"],
+  },
+  {
+    id: "mangalore",
+    city: "Mangalore",
+    state: "Karnataka",
+    region: "South",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "77%",
+    left: "34%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "30+ Vehicles",
+    address: "Kavoor / Mangalore SEZ & Port Highway, Mangaluru 575 015",
+    phone: "9820630817",
+    highlights: [
+      "Petrochemical SEZ & Coastal Commercial Corridors",
+      "MIA Bajpe Airport Meet & Greet",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "hubballi",
+    city: "Hubballi",
+    state: "Karnataka",
+    region: "South",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "72%",
+    left: "34%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "25+ Vehicles",
+    address: "Gokul Road / Hubballi Airport Corridor, Hubballi 580 030",
+    phone: "9820630817",
+    highlights: [
+      "North Karnataka Commercial & Engineering Belt",
+      "Hubballi Airport Domestic Flight Coordination",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "madurai",
+    city: "Madurai",
+    state: "Tamil Nadu",
+    region: "South",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "86%",
+    left: "41%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "25+ Vehicles",
+    address: "KK Nagar & Ring Road Industrial Corridor, Madurai 625 020",
+    phone: "9820630817",
+    highlights: [
+      "Automotive Ancillary & Health Industry Transport",
+      "Madurai International Airport Paging Services",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+
+  // --- EAST INDIA (12 Cities) ---
+  {
+    id: "kolkata",
+    city: "Kolkata",
+    state: "West Bengal",
+    region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
     top: "50%",
-    left: "35%",
+    left: "71%",
     leadTime: "3-4 Hours",
-    fleetStrength: "40+ Vehicles",
-    address: "Super Corridor & Pithampur Industrial SEZ, Indore 452 010",
+    fleetStrength: "70+ Vehicles",
+    address: "Sector V, Salt Lake City & New Town, Kolkata 700 091",
     phone: "9820630817",
     highlights: [
-      "Central India Commercial & Pharma SEZ Corridor",
-      "Devi Ahilya Bai Holkar Airport Transfers",
+      "East India Strategic Corporate Desk",
+      "NSCBIA Airport Live Tracked Arrivals",
+      "Salt Lake Sector V IT Hub & Central Kolkata Transit",
     ],
-    vehiclesAvailable: ["Sedans", "Innova Crysta", "Staff Buses"],
-  },
-  {
-    id: "lucknow",
-    city: "Lucknow",
-    state: "Uttar Pradesh",
-    region: "North",
-    type: "Strategic Network Center",
-    isDirectMetro: false,
-    top: "37%",
-    left: "52%",
-    leadTime: "3-4 Hours",
-    fleetStrength: "35+ Vehicles",
-    address: "Vibhuti Khand, Gomti Nagar, Lucknow 226 010",
-    phone: "9820630817",
-    highlights: [
-      "UP Capital Administration & Corporate Movement",
-      "Chaudhary Charan Singh Airport Transfers",
-    ],
-    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+    vehiclesAvailable: ["Sedans", "MUVs", "Volvo Coaches"],
   },
   {
     id: "bhubaneswar",
@@ -308,6 +499,352 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     vehiclesAvailable: ["Sedans", "Innova Crysta", "Buses"],
   },
   {
+    id: "guwahati",
+    city: "Guwahati",
+    state: "Assam",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "39%",
+    left: "82%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "30+ Vehicles",
+    address: "GS Road Commercial Corridor & Dispur, Guwahati 781 005",
+    phone: "9820630817",
+    highlights: [
+      "North-East Regional Enterprise Headquarters Gateway",
+      "Lokpriya Gopinath Bordoloi Airport Transfers",
+    ],
+    vehiclesAvailable: ["Innova Crysta", "4x4 SUVs", "Tempo Travellers"],
+  },
+  {
+    id: "ranchi",
+    city: "Ranchi",
+    state: "Jharkhand",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "47%",
+    left: "63%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "30+ Vehicles",
+    address: "Main Road / Namkum Industrial Corridor, Ranchi 834 001",
+    phone: "9820630817",
+    highlights: [
+      "Mining, Steel & Institutional Government Movement",
+      "Birsa Munda Airport Terminal Transfers",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "patna",
+    city: "Patna",
+    state: "Bihar",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "42%",
+    left: "62%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "35+ Vehicles",
+    address: "Bailey Road & Exhibition Road Commercial Corridor, Patna 800 001",
+    phone: "9820630817",
+    highlights: [
+      "Government Institutional Delegations & Corporate BFSI Transit",
+      "Jay Prakash Narayan International Airport Desk",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "jamshedpur",
+    city: "Jamshedpur",
+    state: "Jharkhand",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "49%",
+    left: "65%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "35+ Vehicles",
+    address: "Bistupur Commercial Corridor & Tata Steel Plant Hub, Jamshedpur 831 001",
+    phone: "9820630817",
+    highlights: [
+      "Tata Industrial Belt Dedicated Executive Chauffeur Pool",
+      "Ranchi / Kolkata Intercity Highway Transit",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "siliguri",
+    city: "Siliguri",
+    state: "West Bengal",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "37%",
+    left: "74%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "25+ Vehicles",
+    address: "Sevoke Road / Bagdogra Airport Corridor, Siliguri 734 001",
+    phone: "9820630817",
+    highlights: [
+      "Bagdogra International Airport Paging & Tea Estate Movements",
+      "Sikkim & North Bengal Intercity Transit Hub",
+    ],
+    vehiclesAvailable: ["Innova Crysta", "4x4 SUVs", "Tempo Travellers"],
+  },
+  {
+    id: "durgapur",
+    city: "Durgapur",
+    state: "West Bengal",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "48%",
+    left: "69%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "25+ Vehicles",
+    address: "City Centre / Steel Plant Industrial Corridor, Durgapur 713 216",
+    phone: "9820630817",
+    highlights: [
+      "Asansol-Durgapur Steel & Industrial Belt Fleets",
+      "Kazi Nazrul Islam Airport (Andal) Flight Coordination",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "cuttack",
+    city: "Cuttack",
+    state: "Odisha",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "56%",
+    left: "68%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "25+ Vehicles",
+    address: "Choudwar Industrial SEZ & Link Road, Cuttack 753 012",
+    phone: "9820630817",
+    highlights: [
+      "Twin City (Bhubaneswar-Cuttack) Executive Movement",
+      "High Court & Government Administration Transit",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "agartala",
+    city: "Agartala",
+    state: "Tripura",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "45%",
+    left: "79%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "20+ Vehicles",
+    address: "Airport Road / Secretariat Complex, Agartala 799 009",
+    phone: "9820630817",
+    highlights: [
+      "Maharaja Bir Bikram Airport VIP Meet & Greet",
+      "North-East Border Corridor Corporate Transportation",
+    ],
+    vehiclesAvailable: ["Innova Crysta", "Sedans"],
+  },
+  {
+    id: "shillong",
+    city: "Shillong",
+    state: "Meghalaya",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "41%",
+    left: "81%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "20+ Vehicles",
+    address: "Police Bazar / Umroi Airport Corridor, Shillong 793 001",
+    phone: "9820630817",
+    highlights: [
+      "Institutional & MICE Delegations in Meghalaya",
+      "Guwahati-Shillong Scenic Highway Transfers",
+    ],
+    vehiclesAvailable: ["Innova Crysta", "Premium SUVs"],
+  },
+  {
+    id: "raipur",
+    city: "Raipur",
+    state: "Chhattisgarh",
+    region: "East",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "54%",
+    left: "53%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "30+ Vehicles",
+    address: "VIP Road / Naya Raipur Corporate Zone, Raipur 492 001",
+    phone: "9820630817",
+    highlights: [
+      "Naya Raipur Smart City & Mineral Energy Corridor",
+      "Swami Vivekananda Airport VIP Meet & Greet",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+
+  // --- WEST INDIA (11 Cities) ---
+  {
+    id: "mumbai",
+    city: "Mumbai",
+    state: "Maharashtra",
+    region: "West",
+    type: "Direct Metro Hub",
+    isDirectMetro: true,
+    top: "58%",
+    left: "26%",
+    leadTime: "2 Hours",
+    fleetStrength: "320+ Vehicles",
+    address: "Speedways House, Andheri East / BKC Central Corridor, Mumbai 400 069",
+    phone: "9820630817",
+    highlights: [
+      "National Head Office & Central 24×7 Command Centre",
+      "CSMIA Terminal 1 & 2 Dedicated Airport Paging Desk",
+      "BKC & Lower Parel CXO Executive Chauffeur Pool",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Hycross", "Luxury SUVs", "Bus & Coaches"],
+  },
+  {
+    id: "pune",
+    city: "Pune",
+    state: "Maharashtra",
+    region: "West",
+    type: "Direct Metro Hub",
+    isDirectMetro: true,
+    top: "62%",
+    left: "30%",
+    leadTime: "2 Hours",
+    fleetStrength: "110+ Vehicles",
+    address: "Magarpatta Cybercity / Hinjawadi IT Park Phase 1, Pune 411 028",
+    phone: "9820630817",
+    highlights: [
+      "Hinjawadi IT Corridor & Chakan Auto Belt Operations",
+      "Mumbai–Pune Expressway Rapid Transit Service",
+      "Corporate Shift Commutes & Factory Audits",
+    ],
+    vehiclesAvailable: ["Executive Sedans", "Innova Crysta", "Tempo Travellers"],
+  },
+  {
+    id: "ahmedabad",
+    city: "Ahmedabad",
+    state: "Gujarat",
+    region: "West",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "48%",
+    left: "24%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "65+ Vehicles",
+    address: "SG Highway & GIFT City Corporate Corridor, Ahmedabad 380 054",
+    phone: "9820630817",
+    highlights: [
+      "GIFT City Financial Center & Sanand Industrial Transit",
+      "Sardar Vallabhbhai Patel Airport Chauffeur Desk",
+    ],
+    vehiclesAvailable: ["Executive Sedans", "Innova Hycross", "Coaches"],
+  },
+  {
+    id: "vadodara",
+    city: "Vadodara",
+    state: "Gujarat",
+    region: "West",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "50%",
+    left: "27%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "45+ Vehicles",
+    address: "Alkapuri / Makarpura GIDC Industrial Corridor, Vadodara 390 007",
+    phone: "9820630817",
+    highlights: [
+      "Chemical, Power & Heavy Engineering Corridors",
+      "Vadodara Airport Direct Chauffeur Pickups",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta", "Buses"],
+  },
+  {
+    id: "surat",
+    city: "Surat",
+    state: "Gujarat",
+    region: "West",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "52%",
+    left: "26%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "50+ Vehicles",
+    address: "Surat Diamond Bourse & Hazira Port Corridor, Surat 395 007",
+    phone: "9820630817",
+    highlights: [
+      "Surat Diamond Bourse (SDB) Dedicated Transit Desk",
+      "Hazira Petrochemical & Heavy Engineering SEZ Fleets",
+    ],
+    vehiclesAvailable: ["Executive Sedans", "Innova Hycross", "MUVs"],
+  },
+  {
+    id: "rajkot",
+    city: "Rajkot",
+    state: "Gujarat",
+    region: "West",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "47%",
+    left: "20%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "30+ Vehicles",
+    address: "150 Feet Ring Road / Hirasar Airport Corridor, Rajkot 360 005",
+    phone: "9820630817",
+    highlights: [
+      "Engineering, Forging & Casting SEZ Transit",
+      "New Hirasar Green Field Airport Transfers",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "nashik",
+    city: "Nashik",
+    state: "Maharashtra",
+    region: "West",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "56%",
+    left: "29%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "35+ Vehicles",
+    address: "Ambad & Satpur MIDC Auto Belt, Nashik 422 010",
+    phone: "9820630817",
+    highlights: [
+      "Auto Manufacturing Corridors & Mumbai Transit Corridor",
+      "Ozar Airport VIP Meet & Greet",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
+  {
+    id: "nagpur",
+    city: "Nagpur",
+    state: "Maharashtra",
+    region: "West",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "53%",
+    left: "44%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "40+ Vehicles",
+    address: "MIHAN SEZ / Wardha Road Logistics Corridor, Nagpur 440 015",
+    phone: "9820630817",
+    highlights: [
+      "Central India Logistics Hub & MIHAN Aerospace SEZ",
+      "Dr. Babasaheb Ambedkar International Airport Desks",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta", "Tempo Travellers"],
+  },
+  {
     id: "goa",
     city: "Goa",
     state: "Goa",
@@ -326,21 +863,93 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     ],
     vehiclesAvailable: ["Innova Crysta", "Luxury Sedans", "Tempo Travellers"],
   },
+  {
+    id: "indore",
+    city: "Indore",
+    state: "Madhya Pradesh",
+    region: "West",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "50%",
+    left: "35%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "40+ Vehicles",
+    address: "Super Corridor & Pithampur Industrial SEZ, Indore 452 010",
+    phone: "9820630817",
+    highlights: [
+      "Central India Commercial & Pharma SEZ Corridor",
+      "Devi Ahilya Bai Holkar Airport Transfers",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta", "Staff Buses"],
+  },
+  {
+    id: "bhopal",
+    city: "Bhopal",
+    state: "Madhya Pradesh",
+    region: "West",
+    type: "Strategic Network Center",
+    isDirectMetro: false,
+    top: "48%",
+    left: "39%",
+    leadTime: "3-4 Hours",
+    fleetStrength: "30+ Vehicles",
+    address: "MP Nagar Zone 1 & Mandideep Industrial Area, Bhopal 462 011",
+    phone: "9820630817",
+    highlights: [
+      "State Secretariat Administration & Institutional Movement",
+      "Raja Bhoj Airport Terminal Transfers",
+    ],
+    vehiclesAvailable: ["Sedans", "Innova Crysta"],
+  },
 ];
 
 export default function IndiaNetworkMap() {
   const [selectedHubId, setSelectedHubId] = useState<string>("mumbai");
   const [regionFilter, setRegionFilter] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const dropdownContainerRef = useRef<HTMLDivElement>(null);
+
+  // Click outside to close city dropdowns
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownContainerRef.current &&
+        !dropdownContainerRef.current.contains(event.target as Node)
+      ) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const getCitiesByCategory = (cat: string) => {
+    if (cat === "All") return MAJOR_LOCATIONS;
+    if (cat === "Direct Metros") return MAJOR_LOCATIONS.filter((l) => l.isDirectMetro);
+    if (cat === "North India" || cat === "North") return MAJOR_LOCATIONS.filter((l) => l.region === "North");
+    if (cat === "South India" || cat === "South") return MAJOR_LOCATIONS.filter((l) => l.region === "South");
+    if (cat === "West India" || cat === "West") return MAJOR_LOCATIONS.filter((l) => l.region === "West");
+    if (cat === "East India" || cat === "East") return MAJOR_LOCATIONS.filter((l) => l.region === "East");
+    return MAJOR_LOCATIONS;
+  };
 
   const filteredLocations = useMemo(() => {
     return MAJOR_LOCATIONS.filter((loc) => {
-      const matchesRegion =
-        regionFilter === "All"
-          ? true
-          : regionFilter === "Direct Metros"
-          ? loc.isDirectMetro
-          : loc.region === regionFilter;
+      let matchesRegion = true;
+      if (regionFilter === "All") {
+        matchesRegion = true;
+      } else if (regionFilter === "Direct Metros") {
+        matchesRegion = loc.isDirectMetro;
+      } else if (regionFilter === "North India" || regionFilter === "North") {
+        matchesRegion = loc.region === "North";
+      } else if (regionFilter === "South India" || regionFilter === "South") {
+        matchesRegion = loc.region === "South";
+      } else if (regionFilter === "West India" || regionFilter === "West") {
+        matchesRegion = loc.region === "West";
+      } else if (regionFilter === "East India" || regionFilter === "East") {
+        matchesRegion = loc.region === "East";
+      }
 
       const matchesSearch =
         searchQuery.trim() === "" ||
@@ -368,7 +977,7 @@ export default function IndiaNetworkMap() {
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-green-700 shadow-2xs mb-4">
             <Compass className="w-3.5 h-3.5 text-[#48B83D]" />
-            Pan-India Footprint & Operations
+            Pan-India Footprint &amp; Operations
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             185+ Cities Nationwide,{" "}
@@ -376,27 +985,117 @@ export default function IndiaNetworkMap() {
               One Unified Standard
             </span>
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed">
-            From our 24×7 Central Command Centre in Mumbai to 6 direct metro hubs and strategic Tier-2/3 network centers, Speedways ensures guaranteed lead times, verified fleet availability, and identical service SLAs across India.
-          </p>
         </div>
 
-        {/* Filter Pills and Search */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-100">
+        {/* Filter Pills with Anchored City Dropdowns */}
+        <div
+          ref={dropdownContainerRef}
+          className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-100 relative"
+        >
           <div className="flex flex-wrap items-center gap-2">
-            {["All", "Direct Metros", "North", "South", "West", "East"].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setRegionFilter(cat)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  regionFilter === cat
-                    ? "bg-[#48B83D] text-white shadow-sm"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                }`}
-              >
-                {cat === "Direct Metros" ? "★ 6 Direct Metros" : cat}
-              </button>
-            ))}
+            {["All", "Direct Metros", "North India", "South India", "West India", "East India"].map((cat) => {
+              const categoryCities = getCitiesByCategory(cat);
+              const isOpen = openDropdown === cat;
+              const isActive = regionFilter === cat;
+
+              return (
+                <div key={cat} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setRegionFilter(cat);
+                      setOpenDropdown((prev) => (prev === cat ? null : cat));
+                    }}
+                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                      isActive
+                        ? "bg-[#48B83D] text-white shadow-sm ring-2 ring-green-600/20"
+                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                    }`}
+                  >
+                    <span>{cat === "Direct Metros" ? "★ 6 Direct Metros" : cat}</span>
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {/* Dropdown Menu directly below this direction */}
+                  {isOpen && (
+                    <div className="absolute left-0 top-full mt-2 w-72 sm:w-80 max-h-84 overflow-y-auto bg-white rounded-2xl shadow-2xl border border-slate-200 p-2 z-50 animate-in fade-in zoom-in-95 duration-150">
+                      <div className="px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-slate-500 border-b border-slate-100 flex items-center justify-between">
+                        <span>
+                          {cat === "Direct Metros"
+                            ? "6 Direct Metro Hubs"
+                            : cat === "All"
+                            ? "All Network Cities"
+                            : `${cat} Cities`}
+                        </span>
+                        <span className="text-[10px] text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full font-bold">
+                          {categoryCities.length} Cities
+                        </span>
+                      </div>
+
+                      <div className="py-1 space-y-0.5 max-h-64 overflow-y-auto divide-y divide-slate-50">
+                        {categoryCities.map((city) => {
+                          const isSelected = selectedHubId === city.id;
+
+                          return (
+                            <button
+                              key={city.id}
+                              type="button"
+                              onClick={() => {
+                                setSelectedHubId(city.id);
+                                setRegionFilter(cat);
+                                setOpenDropdown(null);
+                              }}
+                              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left text-xs transition-colors cursor-pointer group ${
+                                isSelected
+                                  ? "bg-green-50 text-green-900 font-bold border border-green-200"
+                                  : "text-slate-700 hover:bg-slate-50"
+                              }`}
+                            >
+                              <div className="flex items-center gap-2.5">
+                                <MapPin
+                                  className={`w-3.5 h-3.5 shrink-0 ${
+                                    isSelected
+                                      ? "text-green-600"
+                                      : "text-slate-400 group-hover:text-green-600"
+                                  }`}
+                                />
+                                <div>
+                                  <div className="font-semibold text-slate-900 flex items-center gap-1.5">
+                                    <span>{city.city}</span>
+                                    {isSelected && (
+                                      <CheckCircle2 className="w-3 h-3 text-green-600 shrink-0" />
+                                    )}
+                                  </div>
+                                  <div className="text-[10px] text-slate-400 font-normal">
+                                    {city.state}
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="text-right shrink-0">
+                                {city.isDirectMetro ? (
+                                  <span className="text-[9.5px] font-bold bg-green-100 text-green-800 px-1.5 py-0.5 rounded border border-green-200">
+                                    Direct Hub
+                                  </span>
+                                ) : (
+                                  <span className="text-[10px] text-slate-400 font-medium">
+                                    {city.fleetStrength}
+                                  </span>
+                                )}
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           <div className="relative min-w-[220px]">
@@ -411,10 +1110,32 @@ export default function IndiaNetworkMap() {
           </div>
         </div>
 
-        {/* Map + Detail Showcase Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* LEFT: Interactive India Map Visual Container */}
-          <div className="lg:col-span-7 bg-slate-900 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-2xl border border-slate-800 flex flex-col justify-between min-h-[580px] sm:min-h-[640px]">
+        {/* Selected Hub Live Status Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-8 p-3 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs text-slate-600">
+          <div className="flex items-center gap-2">
+            <span className="text-[10.5px] font-bold uppercase tracking-wider text-slate-400">
+              Active City:
+            </span>
+            <span className="font-extrabold text-slate-900 flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-lg border border-slate-200 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              {activeHub.city} ({activeHub.state})
+            </span>
+            <span className="text-slate-400">•</span>
+            <span className="text-green-700 font-bold">{activeHub.type}</span>
+          </div>
+          <div className="flex items-center gap-4 text-[11px] text-slate-500">
+            <span>
+              Guaranteed SLA: <strong className="text-slate-800">{activeHub.leadTime}</strong>
+            </span>
+            <span className="text-slate-300">|</span>
+            <span>
+              Fleet: <strong className="text-green-700">{activeHub.fleetStrength}</strong>
+            </span>
+          </div>
+        </div>
+
+        {/* Interactive India Map Visual Container */}
+        <div className="w-full bg-slate-900 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-2xl border border-slate-800 flex flex-col justify-between min-h-[580px] sm:min-h-[640px]">
             {/* Dark Map Grid & Telemetry Overlay */}
             <div
               className="absolute inset-0 opacity-15 pointer-events-none"
@@ -551,156 +1272,6 @@ export default function IndiaNetworkMap() {
               <span className="text-slate-500 font-mono">185+ Managed Cities</span>
             </div>
           </div>
-
-          {/* RIGHT: Active Hub Executive Spec Card */}
-          <div className="lg:col-span-5 bg-slate-50 rounded-3xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between min-h-[580px] sm:min-h-[640px]">
-            <div>
-              {/* Type Badge & City Headline */}
-              <div className="flex items-center justify-between mb-3">
-                <span
-                  className={`text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${
-                    activeHub.isDirectMetro
-                      ? "bg-green-100 text-green-800 border border-green-200"
-                      : "bg-slate-200 text-slate-700"
-                  }`}
-                >
-                  {activeHub.type}
-                </span>
-                <span className="text-xs font-semibold text-slate-500">
-                  {activeHub.region} India Region
-                </span>
-              </div>
-
-              <h3 className="text-3xl font-black text-slate-900 tracking-tight flex items-center gap-2">
-                {activeHub.city}
-                <span className="text-sm font-medium text-slate-500">({activeHub.state})</span>
-              </h3>
-
-              {/* SLA & Fleet Metric Badges */}
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500 font-bold uppercase tracking-wider">
-                    <Clock className="w-3.5 h-3.5 text-green-600" />
-                    Dispatch SLA
-                  </div>
-                  <div className="text-xl font-black text-slate-900 mt-1">
-                    {activeHub.leadTime}
-                  </div>
-                  <div className="text-[11px] text-slate-500">Guaranteed lead time</div>
-                </div>
-
-                <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500 font-bold uppercase tracking-wider">
-                    <Car className="w-3.5 h-3.5 text-green-600" />
-                    Verified Fleet
-                  </div>
-                  <div className="text-xl font-black text-green-700 mt-1">
-                    {activeHub.fleetStrength}
-                  </div>
-                  <div className="text-[11px] text-slate-500">Commercially licensed</div>
-                </div>
-              </div>
-
-              {/* Operations Highlights */}
-              <div className="mt-6">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-[#48B83D]" />
-                  Hub Operational Capabilities
-                </h4>
-                <ul className="space-y-2">
-                  {activeHub.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Vehicles Available in this Location */}
-              <div className="mt-6 pt-5 border-t border-slate-200">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">
-                  Vehicles Deployed in {activeHub.city}:
-                </span>
-                <div className="flex flex-wrap gap-1.5">
-                  {activeHub.vehiclesAvailable.map((v, i) => (
-                    <span
-                      key={i}
-                      className="text-xs font-medium bg-white text-slate-800 border border-slate-200 px-2.5 py-1 rounded-lg"
-                    >
-                      {v}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Address & Direct Desk Callout */}
-            <div className="mt-6 pt-5 border-t border-slate-200">
-              <div className="flex items-start gap-2 text-xs text-slate-600 mb-3">
-                <MapPin className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
-                <span>{activeHub.address}</span>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href={`tel:${activeHub.phone}`}
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#48B83D] hover:bg-[#3ea534] text-white text-xs font-bold uppercase tracking-wider shadow-sm transition-all"
-                >
-                  <PhoneCall className="w-3.5 h-3.5" />
-                  <span>Call Operations Desk</span>
-                </a>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 text-xs font-bold transition-all"
-                >
-                  <span>Request RFP</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Global Network Metrics Footer Bar */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-200/90 text-center">
-          <div>
-            <div className="text-2xl sm:text-3xl font-black text-slate-900">
-              <AnimatedNumber value={185} suffix="+" duration={1600} />
-            </div>
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-0.5">
-              Cities Covered
-            </div>
-            <div className="text-[11px] text-slate-400">Pan-India Tier 1, 2 & 3</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-black text-[#48B83D]">
-              <AnimatedNumber value={1200} format suffix="+" duration={1600} />
-            </div>
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-0.5">
-              Verified Vehicles
-            </div>
-            <div className="text-[11px] text-slate-400">Sedans, MPVs, Bus, Coaches</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-black text-slate-900">
-              <AnimatedNumber value={6} duration={1200} />
-            </div>
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-0.5">
-              Direct Metro Hubs
-            </div>
-            <div className="text-[11px] text-slate-400">Company-Owned Facilities</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-black text-[#48B83D]">
-              <AnimatedNumber value={24} duration={1200} />×<AnimatedNumber value={7} duration={1200} />
-            </div>
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-0.5">
-              Command Centre
-            </div>
-            <div className="text-[11px] text-slate-400">Mumbai HO Central Telemetry</div>
-          </div>
-        </div>
       </div>
     </section>
   );

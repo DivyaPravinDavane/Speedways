@@ -258,7 +258,7 @@ export const SERVICES_CATALOG: ServiceItem[] = [
       "Complete driver recruitment & payroll management",
       "Statutory compliance & document audit management",
       "Preventive fleet maintenance scheduling",
-      "Integrated Indecab telematics & fuel reconciliation",
+      "Integrated telematics & fuel reconciliation",
     ],
   },
   {
@@ -705,7 +705,7 @@ export const LEADERSHIP_TEAM: LeaderProfile[] = [
     ],
   },
   {
-    name: "Sreejit",
+    name: "Sreejit Nair",
     role: "Head of Operations – Pan India",
     titleBadge: "Head of Operations – Pan India",
     experience: "Operations & SLA Director",

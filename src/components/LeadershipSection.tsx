@@ -11,7 +11,6 @@ import {
   Compass,
   Building2,
   TrendingUp,
-  ChevronRight,
   Quote,
   CheckCircle2,
   X,
@@ -23,7 +22,6 @@ import {
   UserCheck,
 } from "lucide-react";
 import { LEADERSHIP_TEAM, type LeaderProfile } from "@/data/speedwaysData";
-import { AnimatedNumber } from "@/components/AnimatedCounter";
 
 type FilterTab = "all" | "c-suite" | "operations" | "commercial";
 
@@ -38,12 +36,12 @@ export default function LeadershipSection({
   const [selectedLeader, setSelectedLeader] = useState<LeaderProfile | null>(null);
 
   const ceo = LEADERSHIP_TEAM[0];
-  const allOfficers = LEADERSHIP_TEAM;
+  const allOfficers = LEADERSHIP_TEAM.filter((leader) => leader.role !== "CEO");
 
   // Filter leaders based on active tab
   const filteredLeaders = allOfficers.filter((leader) => {
     if (activeTab === "all") return true;
-    if (activeTab === "c-suite") return leader.role === "CEO" || leader.role === "COO";
+    if (activeTab === "c-suite") return leader.role === "COO";
     if (activeTab === "operations")
       return (
         leader.role === "COO" ||
@@ -51,7 +49,7 @@ export default function LeadershipSection({
         leader.role.includes("Operations")
       );
     if (activeTab === "commercial")
-      return leader.role.includes("Sales") || leader.role === "CEO";
+      return leader.role.includes("Sales");
     return true;
   });
 
@@ -121,45 +119,6 @@ export default function LeadershipSection({
               India’s Corporate Mobility
             </span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Over a century of collective leadership expertise forged across top global mobility brands—including Avis, Orix, Carzonrent, Emirates, and Premier Logistics—powers Speedways’ pan-India reliability, technological innovation, and client trust.
-          </p>
-
-          {/* Quick Leadership Experience Metrics Strip */}
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-2xl bg-white border border-slate-200/90 card-premium-shadow text-center">
-            <div className="p-2 transition-transform hover:-translate-y-0.5">
-              <div className="text-2xl sm:text-3xl font-black text-slate-900">
-                <AnimatedNumber value={100} suffix="+ Yrs" duration={1600} />
-              </div>
-              <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">
-                Combined Leadership
-              </div>
-            </div>
-            <div className="p-2 transition-transform hover:-translate-y-0.5">
-              <div className="text-2xl sm:text-3xl font-black text-[#48B83D]">
-                <AnimatedNumber value={1200} format suffix="+" duration={1600} />
-              </div>
-              <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">
-                Verified Fleet Managed
-              </div>
-            </div>
-            <div className="p-2 transition-transform hover:-translate-y-0.5">
-              <div className="text-2xl sm:text-3xl font-black text-slate-900">
-                <AnimatedNumber value={185} suffix="+" duration={1600} />
-              </div>
-              <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">
-                Cities Governed
-              </div>
-            </div>
-            <div className="p-2 transition-transform hover:-translate-y-0.5">
-              <div className="text-2xl sm:text-3xl font-black text-[#48B83D]">
-                <AnimatedNumber value={156} suffix="+" duration={1600} />
-              </div>
-              <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">
-                Enterprise Corporates
-              </div>
-            </div>
-          </div>
         </motion.div>
 
         {/* 1. PRESIDENTIAL SPOTLIGHT: FOUNDER & CEO */}
@@ -218,7 +177,7 @@ export default function LeadershipSection({
                   {ceo.name}
                 </h3>
                 <p className="text-xs font-semibold text-slate-400 mt-0.5">
-                  Chief Executive Officer • Established 2012
+                  Chief Executive Officer
                 </p>
 
                 <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/70 border border-slate-700 text-xs text-green-400 font-medium">
@@ -244,57 +203,6 @@ export default function LeadershipSection({
                     {ceo.about}
                   </p>
                 </div>
-
-                {/* 3 Structured Executive Pillars */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-slate-800/80">
-                  <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800">
-                    <div className="w-8 h-8 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center mb-2 font-bold text-xs">
-                      01
-                    </div>
-                    <div className="text-xs font-bold text-white">Pan-India Governance</div>
-                    <p className="text-[11px] text-slate-400 mt-1">
-                      Institutional accountability spanning 185+ tier 1, 2 & 3 city nodes.
-                    </p>
-                  </div>
-
-                  <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800">
-                    <div className="w-8 h-8 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center mb-2 font-bold text-xs">
-                      02
-                    </div>
-                    <div className="text-xs font-bold text-white">Technology-Led Scale</div>
-                    <p className="text-[11px] text-slate-400 mt-1">
-                      Real-time AIS-140 telemetry, 5-stage trip lifecycle, and digital audit logs.
-                    </p>
-                  </div>
-
-                  <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800">
-                    <div className="w-8 h-8 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center mb-2 font-bold text-xs">
-                      03
-                    </div>
-                    <div className="text-xs font-bold text-white">Long-Term Trust</div>
-                    <p className="text-[11px] text-slate-400 mt-1">
-                      Transparent 5% corporate billing and 14+ years of customer-centricity.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Core Strategic Focus Badges */}
-                <div className="pt-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
-                    Core Strategic Focus:
-                  </span>
-                  <ul className="flex flex-wrap gap-2 list-none p-0 m-0">
-                    {ceo.coreExpertise.map((exp, idx) => (
-                      <li
-                        key={idx}
-                        className="text-xs font-medium px-3 py-1 rounded-xl bg-slate-800/90 text-green-300 border border-slate-700/80 hover:border-green-500/50 transition-colors"
-                      >
-                        <span aria-hidden="true" className="mr-1">✓</span>
-                        <span>{exp}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -315,9 +223,26 @@ export default function LeadershipSection({
           <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-slate-100 border border-slate-200 text-xs font-semibold">
             {[
               { id: "all", label: "All Leaders", count: allOfficers.length },
-              { id: "c-suite", label: "C-Suite & Board", count: 2 },
-              { id: "operations", label: "Operations & Fleet", count: 3 },
-              { id: "commercial", label: "Commercial", count: 2 },
+              {
+                id: "operations",
+                label: "Operations & Fleet",
+                count: allOfficers.filter(
+                  (l) =>
+                    l.role === "COO" ||
+                    l.role.includes("Fleet") ||
+                    l.role.includes("Operations")
+                ).length,
+              },
+              {
+                id: "commercial",
+                label: "Commercial",
+                count: allOfficers.filter((l) => l.role.includes("Sales")).length,
+              },
+              {
+                id: "c-suite",
+                label: "C-Suite & Board",
+                count: allOfficers.filter((l) => l.role === "COO").length,
+              },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -524,7 +449,7 @@ export default function LeadershipSection({
                 step: "Level 3",
                 sla: "30 Min",
                 role: "National Operations Head",
-                desc: "Pan-India SLA reconciliation led directly by Sreejit & A S Kumaresh.",
+                desc: "Pan-India SLA reconciliation led directly by Sreejit Nair & A S Kumaresh.",
               },
               {
                 step: "Level 4",
@@ -558,26 +483,7 @@ export default function LeadershipSection({
           </div>
         </motion.div>
 
-        {/* 5. CORPORATE CONSULTATION CTA BANNER */}
-        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-green-50/70 border border-green-200/80 flex flex-col md:flex-row items-center justify-between gap-6 card-premium-shadow">
-          <div className="max-w-2xl">
-            <h4 className="text-lg font-bold text-slate-900">
-              Want to discuss custom enterprise SLAs directly with our leadership team?
-            </h4>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1">
-              Connect with our National Sales Head or COO to review your pan-India travel volume, customized tariff structures, and master service agreements.
-            </p>
-          </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 active:bg-green-700 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all cursor-pointer"
-            >
-              <span>Schedule Executive Consultation</span>
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
+
       </div>
 
       {/* 6. INTERACTIVE LEADER BIO DOSSIER MODAL */}

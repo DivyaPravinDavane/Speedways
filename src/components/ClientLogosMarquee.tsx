@@ -98,22 +98,32 @@ export const ENTERPRISE_CLIENTS: EnterpriseClient[] = [
   },
 ];
 
-export default function ClientLogosMarquee() {
+export default function ClientLogosMarquee({
+  hideHeader = false,
+  className = "",
+  fadeColor = "from-slate-50",
+}: {
+  hideHeader?: boolean;
+  className?: string;
+  fadeColor?: string;
+} = {}) {
   return (
-    <section id="customers" className="scroll-mt-24 py-10 bg-slate-50 border-b border-slate-200/80 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
-        <span className="text-[11px] uppercase tracking-widest font-extrabold text-slate-500">
-          Trusted by Procurement & Corporate Travel Desks at India&apos;s Leading Enterprises
-        </span>
-      </div>
+    <div className={`overflow-hidden relative ${className}`}>
+      {!hideHeader && (
+        <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
+          <span className="text-[11px] uppercase tracking-widest font-extrabold text-slate-500">
+            Trusted by Procurement & Corporate Travel Desks at India&apos;s Leading Enterprises
+          </span>
+        </div>
+      )}
 
       {/* Marquee Container with Gradient Edge Masks */}
       <div className="relative w-full overflow-hidden">
         {/* Left Gradient Fade */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-slate-50 to-transparent z-20" />
+        <div className={`pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r ${fadeColor} to-transparent z-20`} />
 
         {/* Right Gradient Fade */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-slate-50 to-transparent z-20" />
+        <div className={`pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l ${fadeColor} to-transparent z-20`} />
 
         {/* Continuous Infinite Animated Marquee Loop */}
         <Marquee className="py-2 [--duration:35s] [--gap:1.5rem]" pauseOnHover={false} repeat={4}>
@@ -138,6 +148,6 @@ export default function ClientLogosMarquee() {
           ))}
         </Marquee>
       </div>
-    </section>
+    </div>
   );
 }

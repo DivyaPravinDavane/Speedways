@@ -21,6 +21,7 @@ import {
   Activity,
   Award,
   Zap,
+  RefreshCw,
   ChevronDown,
   Receipt,
   Compass,
@@ -55,10 +56,9 @@ import SymbolBadge from "@/components/SymbolBadge";
 import LiveTelemetrySimulator from "@/components/LiveTelemetrySimulator";
 import PictographicalComparison from "@/components/PictographicalComparison";
 import SpeedwaysInfoCards from "@/components/SpeedwaysInfoCards";
-import InteractiveFleetVisualizer from "@/components/InteractiveFleetVisualizer";
 import IndiaNetworkMap from "@/components/IndiaNetworkMap";
+import ISOCertificationsSection from "@/components/ISOCertificationsSection";
 import EvolutionRoadmap from "@/components/EvolutionRoadmap";
-import Testimonials from "@/components/ui/testimonials-13";
 import ClientLogosMarquee from "@/components/ClientLogosMarquee";
 import AnimatedStatsGrid from "@/components/AnimatedStatsGrid";
 import LeadershipSection from "@/components/LeadershipSection";
@@ -258,21 +258,6 @@ export default function HomePage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="lg:col-span-6 space-y-6"
             >
-              {/* Pre-Headline Flow Eyebrow & Tagline Callout */}
-              <div className="flex flex-wrap items-center gap-2.5">
-                <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1.5 rounded-full inline-block">
-                  01. About Speedways &amp; Enterprise USP
-                </span>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-green-400 text-xs font-black uppercase tracking-widest shadow-md"
-                >
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <span>&ldquo;YOUR JOURNEY STARTS HERE…&rdquo;</span>
-                </motion.div>
-              </div>
 
               {/* Main H1 Headline */}
               <motion.h1
@@ -311,57 +296,9 @@ export default function HomePage() {
                 <span className="font-bold text-slate-900">
                   <AnimatedNumber value={1200} suffix="+" format={true} />
                 </span>{" "}
-                verified fleet vehicles, Indecab cloud management, and centralized 24×7 command centre governance.
+                verified fleet vehicles, enterprise cloud management, and centralized 24×7 command centre governance.
               </motion.p>
 
-              {/* Action Buttons: Direct In-Page Anchor Smooth Scrolling */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                className="flex flex-wrap items-center gap-3.5 pt-2"
-              >
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("enquiry")}
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-green-600 hover:bg-green-700 active:scale-98 text-white font-bold text-sm sm:text-base shadow-sm hover:shadow-md transition-all group cursor-pointer"
-                >
-                  <span>Request Corporate Empanelment</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("services")}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-green-50 hover:bg-green-100 text-green-800 font-bold text-sm border border-green-200 transition-all cursor-pointer"
-                >
-                  <span>2. Mobility Services</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("fleet")}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm border border-slate-300 shadow-2xs hover:border-slate-400 transition-all cursor-pointer"
-                >
-                  <span>3. Vehicle Segments</span>
-                </button>
-              </motion.div>
-
-              {/* Trust Badges Row */}
-              <div className="pt-4 grid grid-cols-3 gap-3 border-t border-slate-200/80 max-w-lg">
-                <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                  <span>99.4% On-Time SLA</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                  <span>Paperless e-DTR</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                  <span>5% GST ITC Compliant</span>
-                </div>
-              </div>
             </motion.div>
 
             {/* Right Hero Image Column with Anchored Telemetry Badges */}
@@ -380,60 +317,12 @@ export default function HomePage() {
 
                 <div className="absolute bottom-4 left-4 right-4 text-white text-xs font-medium flex items-center justify-between">
                   <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 shadow-sm font-semibold tracking-wide">
-                    Speedways Executive Chauffeur &amp; Fleet Operations
+                    Speedways Executive Fleet Operations
                   </span>
                   <span className="px-2.5 py-1 rounded-full bg-green-600 text-white font-mono font-bold text-[11px] shadow-sm flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                     24×7 ACTIVE
                   </span>
-                </div>
-              </div>
-
-              {/* Anchored Badge 1: 100% Background Verified */}
-              <div className="absolute -top-4 -left-2 sm:-left-5 bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-lg border border-slate-200 flex items-center gap-3 z-20">
-                <div className="w-10 h-10 rounded-lg bg-green-50 text-green-700 flex items-center justify-center shrink-0 border border-green-200">
-                  <ShieldCheck className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-slate-900 tracking-tight flex items-center gap-1">
-                    <span className="text-green-700 font-extrabold text-base">
-                      <AnimatedNumber value={100} suffix="%" duration={1400} />
-                    </span>
-                    <span>100% Verified</span>
-                  </div>
-                  <div className="text-[11px] font-medium text-slate-500">Chauffeur Police Background Clearance</div>
-                </div>
-              </div>
-
-              {/* Anchored Badge 2: Live GPS Telemetry */}
-              <div className="absolute -bottom-4 -right-2 sm:-right-5 bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-lg border border-slate-200 flex items-center gap-3 z-20">
-                <div className="relative w-10 h-10 rounded-lg bg-green-50 text-green-700 flex items-center justify-center shrink-0 border border-green-200">
-                  <Radio className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
-                    Live GPS Telemetry
-                  </div>
-                  <div className="text-[11px] font-medium text-slate-500">
-                    Continuous <span className="font-bold text-slate-700">24×7</span> Central Command Oversight
-                  </div>
-                </div>
-              </div>
-
-              {/* Anchored Badge 3: 185+ Cities */}
-              <div className="hidden sm:flex absolute top-1/2 -right-4 sm:-right-6 transform -translate-y-1/2 bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-lg border border-slate-200 items-center gap-3 z-20">
-                <div className="w-10 h-10 rounded-lg bg-green-50 text-green-700 flex items-center justify-center shrink-0 border border-green-200">
-                  <MapPin className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-slate-900 tracking-tight flex items-center gap-1">
-                    <span className="text-green-700 font-extrabold text-base">
-                      <AnimatedNumber value={185} suffix="+" duration={1600} />
-                    </span>
-                    <span>Cities</span>
-                  </div>
-                  <div className="text-[11px] font-medium text-slate-500">Pan-India Coverage</div>
                 </div>
               </div>
             </div>
@@ -455,56 +344,52 @@ export default function HomePage() {
           {/* Vision, Mission & Promise Cards (Pillars of Speedways USP) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {/* Vision */}
-            <div className="p-7 rounded-3xl bg-slate-900 text-white shadow-xl flex flex-col justify-between relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="p-7 rounded-3xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_12px_24px_-6px_rgba(22,101,52,0.12),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_20px_32px_-8px_rgba(22,101,52,0.2),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-green-500/20 text-green-400 flex items-center justify-center mb-5 border border-green-500/30">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center mb-5 shadow-[0_6px_14px_-2px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.5),inset_0_-2px_0_rgba(20,83,45,0.4)]">
                   <Compass className="w-6 h-6" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-green-400">Our Strategic Aim</span>
-                <h3 className="text-2xl font-black text-white mt-1 mb-3">Our Vision</h3>
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">Our Vision</h3>
+                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
                   To be India&apos;s most trusted, technologically forward, and compliance-driven enterprise mobility ecosystem — eliminating operational friction for corporate travel desks nationwide.
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-slate-800 text-xs font-semibold text-slate-400 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-green-400" />
+              <div className="mt-6 pt-4 border-t border-green-200/70 text-xs font-semibold text-green-800 flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
                 <span>Pan-India Mobility Standard</span>
               </div>
             </div>
 
             {/* Mission */}
-            <div className="p-7 rounded-3xl bg-white border border-green-200/90 shadow-md flex flex-col justify-between hover:shadow-xl transition-all group">
+            <div className="p-7 rounded-3xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_12px_24px_-6px_rgba(22,101,52,0.12),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_20px_32px_-8px_rgba(22,101,52,0.2),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center mb-5">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center mb-5 shadow-[0_6px_14px_-2px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.5),inset_0_-2px_0_rgba(20,83,45,0.4)]">
                   <TrendingUp className="w-6 h-6" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-green-700">Operational Philosophy</span>
-                <h3 className="text-2xl font-black text-slate-900 mt-1 mb-3">Our Mission</h3>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">Our Mission</h3>
+                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
                   Delivering seamless, safe, punctual, and transparent ground transportation solutions across 185+ cities with verified chauffeurs, zero surge pricing, and live 24×7 command center accountability.
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-600 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-green-600" />
+              <div className="mt-6 pt-4 border-t border-green-200/70 text-xs font-semibold text-green-800 flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
                 <span>100% Operational Discipline</span>
               </div>
             </div>
 
             {/* Promise */}
-            <div className="p-7 rounded-3xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 shadow-md flex flex-col justify-between hover:shadow-xl transition-all group">
+            <div className="p-7 rounded-3xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_12px_24px_-6px_rgba(22,101,52,0.12),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_20px_32px_-8px_rgba(22,101,52,0.2),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-green-600 text-white flex items-center justify-center mb-5 shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center mb-5 shadow-[0_6px_14px_-2px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.5),inset_0_-2px_0_rgba(20,83,45,0.4)]">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-green-800">Our Enterprise Commitment</span>
-                <h3 className="text-2xl font-black text-slate-900 mt-1 mb-3">The Speedways Promise</h3>
+                <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">The Speedways Promise</h3>
                 <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
                   99.4% on-time arrival guarantee, 100% police background verified chauffeurs, instant paperless digital billing, and rapid 30-minute replacement guarantee across all metro hubs.
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-green-200/60 text-xs font-semibold text-green-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-green-700" />
+              <div className="mt-6 pt-4 border-t border-green-200/70 text-xs font-semibold text-green-800 flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
                 <span>Zero Compromise Service Level</span>
               </div>
             </div>
@@ -512,95 +397,20 @@ export default function HomePage() {
 
           {/* Scale Metrics & Fleet Strength */}
           <div className="mb-14">
-            <div className="text-center max-w-2xl mx-auto mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Verified Fleet Strength &amp; Scale</span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
-                1,200+ Fleet Vehicles Across 185+ Cities
-              </h3>
-            </div>
             <AnimatedStatsGrid />
           </div>
 
           {/* Network Coverage: 185+ Cities with 6 Direct Metro Hubs Map */}
           <div className="mb-16">
-            <div className="text-center max-w-3xl mx-auto mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
-                Pan-India Footprint
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
-                Network Coverage: 185+ Cities with 6 Direct Metro Hubs
-              </h3>
-              <p className="text-slate-600 text-xs sm:text-sm mt-1">
-                Headquartered in Mumbai with direct branch offices in Bengaluru, Delhi NCR, Hyderabad, Chennai, and Pune — providing single point of contact (SPOC) accountability across India.
-              </p>
-            </div>
             <IndiaNetworkMap />
           </div>
 
-          {/* 100% Statutory, Regulatory & Safety Compliance Framework */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 mb-16">
-            <div className="text-center max-w-2xl mx-auto mb-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
-                Zero Compromise Compliance Framework
-              </span>
-              <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-2">
-                100% Statutory, Regulatory &amp; Safety Compliance
-              </h3>
-            </div>
+          {/* ISO Certifications & Audited Governance Framework */}
+          <ISOCertificationsSection />
 
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 items-center text-center divide-y md:divide-y-0 md:divide-x divide-slate-200">
-              <div className="flex items-center justify-center gap-2.5 py-1 px-3">
-                <ShieldCheck className="w-5 h-5 text-green-600 shrink-0" />
-                <div className="text-left">
-                  <div className="text-xs font-bold text-slate-900 leading-tight">ISO 9001:2015</div>
-                  <div className="text-[10px] text-slate-500">Quality Certified Operations</div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center gap-2.5 py-1 px-3">
-                <FileCheck className="w-5 h-5 text-green-600 shrink-0" />
-                <div className="text-left">
-                  <div className="text-xs font-bold text-slate-900 leading-tight">ISO 27001</div>
-                  <div className="text-[10px] text-slate-500">Enterprise Data Security</div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center gap-2.5 py-1 px-3">
-                <Radio className="w-5 h-5 text-green-600 shrink-0" />
-                <div className="text-left">
-                  <div className="text-xs font-bold text-slate-900 leading-tight">AIS-140 GPS</div>
-                  <div className="text-[10px] text-slate-500">Govt Telemetry Certified</div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center gap-2.5 py-1 px-3">
-                <Award className="w-5 h-5 text-green-600 shrink-0" />
-                <div className="text-left">
-                  <div className="text-xs font-bold text-slate-900 leading-tight">100% Police Verified</div>
-                  <div className="text-[10px] text-slate-500">7-Point Chauffeur Vetting</div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center gap-2.5 py-1 px-3 col-span-2 md:col-span-1">
-                <Receipt className="w-5 h-5 text-green-600 shrink-0" />
-                <div className="text-left">
-                  <div className="text-xs font-bold text-slate-900 leading-tight">5% GST ITC Compliant</div>
-                  <div className="text-[10px] text-slate-500">Audit-Ready e-Invoicing</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Trusted by 185+ Corporates Client Marquee */}
-          <div>
-            <div className="text-center max-w-2xl mx-auto mb-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
-                Corporate Endorsement
-              </span>
-              <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-2">
-                Trusted by 185+ Corporates Across All Industry Sectors Pan India
-              </h3>
-              <p className="text-slate-500 text-xs mt-1">
-                BFSI, IT &amp; ITES, Consulting, Pharma, Automotive, Aerospace, and Manufacturing leaders.
-              </p>
-            </div>
-            <ClientLogosMarquee />
+          {/* Speedways Heritage & Evolution Roadmap (2012 — Present) */}
+          <div className="mt-16 pt-14 border-t border-slate-200/90">
+            <EvolutionRoadmap />
           </div>
         </div>
       </section>
@@ -620,9 +430,6 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
               Enterprise Mobility Services
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
-              All 9 specialized corporate mobility verticals designed with strict SLAs, verified chauffeurs, Indecab live telemetry, and 5% GST tax compliance across 185+ cities.
-            </p>
           </div>
 
           {/* Category Filter Tabs */}
@@ -716,53 +523,11 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-
-                  <div className="p-6 pt-0 border-t border-slate-100 mt-2">
-                    <button
-                      type="button"
-                      onClick={() => scrollToContactWithService(service.name)}
-                      className="w-full mt-4 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-green-600 text-slate-700 hover:text-white border border-slate-200 hover:border-green-600 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer group/btn"
-                    >
-                      <span>Inquire for {service.name}</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
                 </div>
               );
             })}
           </div>
 
-          {/* 4 SLA Pillars Strip */}
-          <div className="mt-14 pt-10 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-slate-200">
-              <Clock className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-              <div>
-                <div className="text-sm font-bold text-slate-900">2h - 4h Lead Time</div>
-                <div className="text-xs text-slate-600 mt-0.5">2-hour spot dispatch in Tier-1 metros; 4-hour pan-India guarantee.</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-slate-200">
-              <ShieldCheck className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-              <div>
-                <div className="text-sm font-bold text-slate-900">100% Chauffeur Vetting</div>
-                <div className="text-xs text-slate-600 mt-0.5">Mandatory police background clearance, drug screening, defensive driving.</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-slate-200">
-              <FileCheck className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-              <div>
-                <div className="text-sm font-bold text-slate-900">Zero Paper Workflow</div>
-                <div className="text-xs text-slate-600 mt-0.5">GPS timestamps via e-DTR, geofenced passenger OTP start/end, and toll capture.</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-slate-200">
-              <Building className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-              <div>
-                <div className="text-sm font-bold text-slate-900">5% Corporate GST Model</div>
-                <div className="text-xs text-slate-600 mt-0.5">Unified monthly consolidated MIS, statutory HSN/SAC codes, e-invoicing.</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -776,13 +541,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1 rounded-full inline-block">
-              03. Vehicle Segments (Horizontal &amp; Moving)
+              03. Vehicle Segments
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
-              Vehicle Categories &amp; Moving Fleet Segments
+              Vehicle Categories &amp; Fleet Segments
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Explore our complete range spanning executive sedans, premium MUVs, group coaches, and corporate employee mobility. Hover over any moving card to inspect specifications.
+              Explore our complete range spanning executive sedans, premium MUVs, group coaches, and corporate employee mobility. Use the navigation arrows to browse all segments.
             </p>
           </div>
 
@@ -817,32 +582,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Moving Horizontal Marquee Component */}
-          <div className="mb-14">
+          {/* Vehicle Segments Carousel */}
+          <div>
             <MovingVehicleSegments onSelectSegment={(name) => scrollToContactWithService(name)} />
-          </div>
-
-          {/* Interactive Fleet Visualizer & Tariffs */}
-          <div className="pt-10 border-t border-green-200/80">
-            <div className="text-center max-w-2xl mx-auto mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
-                Detailed Tariff Guide
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
-                Executive Fleet Matrix &amp; Transparent Tariff Guide
-              </h3>
-              <p className="text-slate-600 text-xs sm:text-sm mt-1">
-                Compare models, luggage capacity, in-cabin amenities, and standard 4h/40km, 8h/80km, and outstation pricing structures.
-              </p>
-            </div>
-            <InteractiveFleetVisualizer />
           </div>
         </div>
       </section>
 
       {/* =========================================================================
           STEP 4: TECHNOLOGY
-          (Inde cab – Booking Process – Confirmation – SLA – No Show –
+          (Enterprise Mobility – Booking Process – Confirmation – SLA – No Show –
            Chauffeur Details shared well in Advance – Tracking –
            Invoicing (Invoice Screen shot with GPS map and route) – MIS)
          ========================================================================= */}
@@ -850,183 +599,159 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1 rounded-full inline-block">
-              04. Technology &amp; Indecab Platform Architecture
+              04. Technology &amp; Enterprise Platform Architecture
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
-              Indecab Platform &amp; End-to-End Digital Workflow
+              Enterprise Platform &amp; End-to-End Digital Workflow
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
               From instant corporate booking to paperless digital duty slips and GPS breadcrumb invoices — every journey is automated, tracked, and reconciliation-ready.
             </p>
           </div>
 
-          {/* Indecab 8-Stage Digital Workflow Visual Strip */}
+          {/* Enterprise 8-Stage Digital Workflow Visual Strip */}
           <div className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
               {/* Stage 1 */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+              <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-green-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
                       01
-                    </span>
-                    <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded">
-                      Inde cab Cloud
                     </span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Booking Process</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     Corporate travel desks book in seconds via web portal, WhatsApp bot, email, or direct API integration with employee cost-center tagging.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-200/80 text-[11px] font-semibold text-slate-500">
+                <div className="mt-4 pt-3 border-t border-green-200/70 text-[11px] font-semibold text-green-800">
                   ✓ Self-Service &amp; Desk Booking
                 </div>
               </div>
 
               {/* Stage 2 */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+              <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-green-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
                       02
-                    </span>
-                    <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded">
-                      Instant Push
                     </span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Booking Confirmation</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     Automated confirmation sent within seconds to the employee and travel coordinator with unique booking ID, route parameters, and emergency hotline.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-200/80 text-[11px] font-semibold text-slate-500">
+                <div className="mt-4 pt-3 border-t border-green-200/70 text-[11px] font-semibold text-green-800">
                   ✓ SMS, Email &amp; WhatsApp Alert
                 </div>
               </div>
 
               {/* Stage 3 */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+              <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-green-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
                       03
-                    </span>
-                    <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded">
-                      99.4% Punctuality
                     </span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">SLA Commitment</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     Guaranteed 2-hour spot dispatch SLA in Tier-1 metros and 4-hour pan-India guarantee with 99.4% contractual on-time arrival benchmark.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-200/80 text-[11px] font-semibold text-slate-500">
+                <div className="mt-4 pt-3 border-t border-green-200/70 text-[11px] font-semibold text-green-800">
                   ✓ Contractual Service Penalty
                 </div>
               </div>
 
               {/* Stage 4 */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+              <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-green-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
                       04
-                    </span>
-                    <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded">
-                      Zero No-Show
                     </span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">No-Show Mitigation</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     Chauffeur reports 15 to 30 minutes in advance. If any transit delay is flagged by automated telemetry, our standby buffer vehicle is instantly dispatched.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-200/80 text-[11px] font-semibold text-slate-500">
+                <div className="mt-4 pt-3 border-t border-green-200/70 text-[11px] font-semibold text-green-800">
                   ✓ 15-30 Min Prior Arrival
                 </div>
               </div>
 
               {/* Stage 5 */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+              <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-green-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
                       05
-                    </span>
-                    <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded">
-                      2 Hours Prior
                     </span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Chauffeur Details in Advance</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     Chauffeur photo, name, police-verified badge ID, direct phone number, vehicle registration, and boarding OTP are dispatched 2 hours before trip time.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-200/80 text-[11px] font-semibold text-slate-500">
+                <div className="mt-4 pt-3 border-t border-green-200/70 text-[11px] font-semibold text-green-800">
                   ✓ Full Driver Identity Profile
                 </div>
               </div>
 
               {/* Stage 6 */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+              <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-green-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
                       06
-                    </span>
-                    <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded">
-                      AIS-140 GPS
                     </span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Live Real-Time Tracking</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     Live telemetry link for passenger and transport manager with real-time speed monitoring, geofence deviation detection, and automated arrival alerts.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-200/80 text-[11px] font-semibold text-slate-500">
+                <div className="mt-4 pt-3 border-t border-green-200/70 text-[11px] font-semibold text-green-800">
                   ✓ Continuous Command Oversight
                 </div>
               </div>
 
               {/* Stage 7 */}
-              <div className="p-5 rounded-2xl bg-green-50 border border-green-300 flex flex-col justify-between">
+              <div className="p-5 rounded-2xl bg-gradient-to-b from-[#EBF8EE] via-[#DDF4E2] to-[#D0EFD7] border border-green-300 border-b-[5px] border-b-green-400 shadow-[0_12px_24px_-5px_rgba(22,101,52,0.15),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-500 hover:shadow-[0_18px_32px_-6px_rgba(22,101,52,0.22),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-green-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-600 to-emerald-700 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
                       07
-                    </span>
-                    <span className="text-[10px] font-bold text-green-800 bg-green-200 px-2 py-0.5 rounded">
-                      GPS Map Attached
                     </span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Automated e-Invoicing</h4>
-                  <p className="text-xs text-slate-700 leading-relaxed">
+                  <p className="text-xs text-slate-800 leading-relaxed font-medium">
                     Paperless digital duty slip (e-DTR) with start/end OTP verification, electronic toll sync, and an embedded GPS breadcrumb route map snapshot.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-green-200 text-[11px] font-bold text-green-800">
+                <div className="mt-4 pt-3 border-t border-green-300/80 text-[11px] font-extrabold text-green-900">
                   ✓ 100% Audit-Ready Invoice
                 </div>
               </div>
 
               {/* Stage 8 */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+              <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-green-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
                       08
-                    </span>
-                    <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded">
-                      ERP / SAP Sync
                     </span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Corporate MIS &amp; Analytics</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     Consolidated monthly MIS billing broken down by cost center, business unit, city, and vehicle tier, with direct SAP/Oracle export capabilities.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-200/80 text-[11px] font-semibold text-slate-500">
+                <div className="mt-4 pt-3 border-t border-green-200/70 text-[11px] font-semibold text-green-800">
                   ✓ 5% GST Input Tax Credit
                 </div>
               </div>
@@ -1078,170 +803,79 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1 rounded-full inline-block">
-              05. Safety, Enterprise Compliance &amp; Lady Traveller SLA
+              05. Safety &amp; Enterprise Compliance
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
               Institutional Safety &amp; 100% Statutory Compliance
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Engineered with 7-point chauffeur verification, ISO systems, in-cab panic buttons, 24×7 command center monitoring, and specialized night safety protocols for women employees.
-            </p>
           </div>
 
-          {/* Detailed Lady Traveller SLA & Night Safety Spotlight Card */}
-          <div className="mb-16 p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white shadow-2xl border border-slate-800 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-black uppercase tracking-wider">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>Specialized Lady Traveller Protocol (8:00 PM – 6:00 AM)</span>
-                </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-                  Lady Traveller SLA &amp; Real-Time Tracking Mechanism
-                </h3>
-
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Speedways operates an uncompromising duty-of-care protocol for female corporate employees during late-night and early-morning shifts. Every trip adheres to rigorous statutory guidelines and automated tech triggers.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
-                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
-                    <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block font-semibold">First-Pickup / Last-Drop Protection</strong>
-                      <span className="text-slate-400 text-[11px]">Female employee is never left alone in vehicle without security personnel.</span>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
-                    <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block font-semibold">Vetted Security Escort Guard</strong>
-                      <span className="text-slate-400 text-[11px]">Mandatory physical security guard deployed for late shift single drops.</span>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
-                    <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block font-semibold">Live Trip Route Link</strong>
-                      <span className="text-slate-400 text-[11px]">Automated live map sharing link sent to family and transport coordinator.</span>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
-                    <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block font-semibold">Safe Confirmation Callback</strong>
-                      <span className="text-slate-400 text-[11px]">Command center verifies employee safe entry into residence before trip close.</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Lady Traveller Telemetry Box */}
-              <div className="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 space-y-4">
-                <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                  <span className="text-xs font-bold text-green-400 flex items-center gap-1.5">
-                    <Radio className="w-3.5 h-3.5 animate-pulse" />
-                    Command Center Geofence Monitor
-                  </span>
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-green-500 text-slate-950 font-black">
-                    ACTIVE SENSORS
-                  </span>
-                </div>
-
-                <div className="space-y-2.5 text-xs">
-                  <div className="flex justify-between items-center p-2.5 rounded-lg bg-black/40">
-                    <span className="text-slate-300">In-Cab Physical Panic SOS:</span>
-                    <strong className="text-green-400 font-mono">AIS-140 Connected</strong>
-                  </div>
-                  <div className="flex justify-between items-center p-2.5 rounded-lg bg-black/40">
-                    <span className="text-slate-300">Route Deviation Alarm (&gt;200m):</span>
-                    <strong className="text-green-400 font-mono">0 Deviations Flagged</strong>
-                  </div>
-                  <div className="flex justify-between items-center p-2.5 rounded-lg bg-black/40">
-                    <span className="text-slate-300">Standby Emergency Response:</span>
-                    <strong className="text-green-400 font-mono">&lt; 15 Mins Rapid SLA</strong>
-                  </div>
-                  <div className="flex justify-between items-center p-2.5 rounded-lg bg-black/40">
-                    <span className="text-slate-300">Chauffeur Background Status:</span>
-                    <strong className="text-green-400 font-mono">100% Police Cleared</strong>
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("enquiry")}
-                  className="w-full py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
-                >
-                  Request Night Shift Transport Matrix →
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* 12 Core Safety & Compliance Pillars Grid */}
+          {/* 12 Core Safety & Compliance Pillars Grid in 3-D Green Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {SAFETY_COMPLIANCE_PILLARS.map((pillar, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-green-300 transition-all flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center">
-                      <ShieldCheck className="w-5 h-5 text-green-600" />
+                  <div className="mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center shadow-[0_3px_8px_rgba(22,101,52,0.25),inset_0_1px_1px_rgba(255,255,255,0.4)]">
+                      <ShieldCheck className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-[10px] font-bold text-green-800 bg-green-100/70 px-2 py-0.5 rounded">
-                      ✓ {pillar.badge}
-                    </span>
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                  <h3 className="text-base font-extrabold text-slate-900 mb-1.5">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed font-normal">
                     {pillar.description}
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                <div className="mt-5 pt-3.5 border-t border-green-200/70 flex items-center justify-between text-[11px] font-semibold text-green-800">
                   <span>Pan-India SLA Governance</span>
-                  <span className="text-green-600 font-bold">Audit-Ready</span>
+                  <span className="font-extrabold text-green-700">Audit-Ready ✓</span>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Incident Report, 30-min Replacement Process & Emergency Response Strip */}
+          {/* Incident Report, 30-min Replacement Process & Emergency Response Strip in 3-D Green Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="p-6 rounded-2xl bg-white border border-green-200 shadow-sm">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-3">
-                <AlertTriangle className="w-5 h-5 text-amber-600" />
+            <div className="p-6 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-amber-500 to-amber-600 text-white flex items-center justify-center mb-3 shadow-[0_3px_8px_rgba(217,119,6,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
+                  <AlertTriangle className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-base font-extrabold text-slate-900 mb-1">Incident Report SOP</h4>
+                <p className="text-xs text-slate-700 leading-relaxed font-normal">
+                  Standard operating protocol with 15-minute escalation to enterprise travel admin, automated ticket logging, and comprehensive post-incident analysis report within 12 hours.
+                </p>
               </div>
-              <h4 className="text-base font-bold text-slate-900 mb-1">Incident Report SOP</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Standard operating protocol with 15-minute escalation to enterprise travel admin, automated ticket logging, and comprehensive post-incident analysis report within 12 hours.
-              </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white border border-green-200 shadow-sm">
-              <div className="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center mb-3">
-                <Clock className="w-5 h-5 text-green-600" />
+            <div className="p-6 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center mb-3 shadow-[0_3px_8px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
+                  <Clock className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-base font-extrabold text-slate-900 mb-1">30-Min Replacement Process SLA</h4>
+                <p className="text-xs text-slate-700 leading-relaxed font-normal">
+                  Standby buffer vehicles deployed at central metro nodes (Mumbai, BLR, DEL, HYD, MAA, PNQ) ensuring a replacement vehicle is dispatched and on-site within 30 minutes in breakdown cases.
+                </p>
               </div>
-              <h4 className="text-base font-bold text-slate-900 mb-1">30-Min Replacement Process SLA</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Standby buffer vehicles deployed at central metro nodes (Mumbai, BLR, DEL, HYD, MAA, PNQ) ensuring a replacement vehicle is dispatched and on-site within 30 minutes in breakdown cases.
-              </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white border border-green-200 shadow-sm">
-              <div className="w-10 h-10 rounded-xl bg-red-100 text-red-700 flex items-center justify-center mb-3">
-                <LifeBuoy className="w-5 h-5 text-red-600" />
+            <div className="p-6 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-red-500 to-red-600 text-white flex items-center justify-center mb-3 shadow-[0_3px_8px_rgba(220,38,38,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
+                  <LifeBuoy className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-base font-extrabold text-slate-900 mb-1">Emergency Response Team (ERT)</h4>
+                <p className="text-xs text-slate-700 leading-relaxed font-normal">
+                  24×7 multi-tier emergency response coordinated with local medical networks, road assistance towing networks, and city police control rooms across all 185+ operating cities.
+                </p>
               </div>
-              <h4 className="text-base font-bold text-slate-900 mb-1">Emergency Response Team (ERT)</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                24×7 multi-tier emergency response coordinated with local medical networks, road assistance towing networks, and city police control rooms across all 185+ operating cities.
-              </p>
             </div>
           </div>
         </div>
@@ -1250,7 +884,7 @@ export default function HomePage() {
       {/* =========================================================================
           STEP 6: LEADERSHIP
           (Leadership Team: Nikhil Desai, C K Balram, Srinivas Krishna,
-           A S Kumaresh, Sreejit with verified photos and executive dossiers)
+           A S Kumaresh, Sreejit Nair with verified photos and executive dossiers)
          ========================================================================= */}
       <LeadershipSection id="leadership" />
 
@@ -1306,9 +940,9 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Animated Marquee Success Stories */}
+          {/* Continuous Moving Companies Marquee */}
           <div className="mt-14 pt-10 border-t border-slate-200/80">
-            <Testimonials hideHeader={true} />
+            <ClientLogosMarquee hideHeader={true} fadeColor="from-white" />
           </div>
         </div>
       </section>
@@ -1495,18 +1129,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Speedways Heritage & Evolution Roadmap (2012 — 2024) */}
-          <div className="mb-16 pt-12 border-t border-green-200/80">
-            <div className="text-center max-w-2xl mx-auto mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
-                Over a Decade of Trust
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 tracking-tight">
-                Speedways Evolution Roadmap (2012 — 2024)
-              </h3>
-            </div>
-            <EvolutionRoadmap />
-          </div>
+
 
           {/* Procurement FAQ Accordion */}
           <div className="pt-12 border-t border-green-200/80 max-w-4xl mx-auto">

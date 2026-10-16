@@ -43,7 +43,7 @@ export default function Footer() {
               &ldquo;YOUR JOURNEY STARTS HERE…&rdquo;
             </h3>
             <p className="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
-              Consolidate single-city or multi-city corporate accounts with 1,200+ verified fleet vehicles, Indecab cloud technology, and 100% compliance across 185+ cities.
+              Consolidate single-city or multi-city corporate accounts with 1,200+ verified fleet vehicles, enterprise cloud technology, and 100% compliance across 185+ cities.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function Footer() {
                 &ldquo;YOUR JOURNEY STARTS HERE…&rdquo;
               </p>
               <p className="text-xs text-slate-600 pt-1">
-                India&apos;s leading corporate mobility platform combining fleet scale, 185+ city coverage, Indecab technology platform, and centralised 24×7 command centre governance.
+                India&apos;s leading corporate mobility platform combining fleet scale, 185+ city coverage, enterprise technology platform, and centralised 24×7 command centre governance.
               </p>
             </div>
 
@@ -263,7 +263,7 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, "#technology")}
                   className="hover:text-green-600 transition-colors"
                 >
-                  Indecab Platform Integration
+                  Enterprise Platform Integration
                 </Link>
               </li>
               <li>
