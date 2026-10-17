@@ -25,8 +25,8 @@ import {
   Search,
   Check,
   Clock,
-  Car,
   ChevronRight,
+  Download,
 } from "lucide-react";
 import {
   DIRECT_BRANCHES,
@@ -374,14 +374,35 @@ export default function NetworkSafetyPage() {
                 </div>
               </div>
 
-              <div className="pt-2 flex items-center justify-between">
-                <Link
-                  href="/contact"
-                  className="text-xs font-bold text-green-700 hover:text-green-800 flex items-center gap-1.5"
-                >
-                  <span>Request ISO Certificate Copy for RFP</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+              <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                {isoStandards[activeIsoTab].code === "ISO 9001" ? (
+                  <div className="flex flex-wrap items-center gap-2">
+                    <a
+                      href="/certificates/iso-9001-2015-certificate.pdf"
+                      download="ISO-9001-2015-Speedways-Certificate.pdf"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-xs transition-colors cursor-pointer"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Download Certificate (PDF)</span>
+                    </a>
+                    <a
+                      href="/certificates/iso-9001-2015-certificate.png"
+                      download="ISO-9001-2015-Speedways-Certificate.png"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs border border-slate-300 transition-colors cursor-pointer"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Download PNG</span>
+                    </a>
+                  </div>
+                ) : (
+                  <Link
+                    href="/contact"
+                    className="text-xs font-bold text-green-700 hover:text-green-800 flex items-center gap-1.5"
+                  >
+                    <span>Request ISO Certificate Copy for RFP</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                )}
                 <span className="text-xs font-mono text-slate-400">Verified by Bureau Veritas</span>
               </div>
             </div>

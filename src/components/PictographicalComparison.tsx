@@ -30,9 +30,9 @@ export default function PictographicalComparison() {
       speedways: "Continuous 24×7 GPS monitoring, geofence deviation alarms & panic button",
     },
     {
-      metric: "Corporate Tax Credit",
+      metric: "Corporate Tax & Invoicing",
       icon: Award,
-      traditional: "Unorganized vendors, unregistered bills, lost GST input tax credits",
+      traditional: "Unorganized vendors, unregistered bills, audit and compliance vulnerabilities",
       speedways: "Statutory 5% GST corporate billing model with full invoice audit traceability",
     },
   ];

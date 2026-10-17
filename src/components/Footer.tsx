@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
 
 export default function Footer() {
@@ -31,42 +30,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-50 border-t border-slate-200 text-slate-600">
-      {/* Pre-footer Callout Bar Highlighting Speedways Tagline */}
-      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white py-10 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1.5 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-black uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5 text-green-400" />
-              <span>Speedways Corporate Tagline</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              &ldquo;YOUR JOURNEY STARTS HERE…&rdquo;
-            </h3>
-            <p className="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
-              Consolidate single-city or multi-city corporate accounts with 1,200+ verified fleet vehicles, enterprise cloud technology, and 100% compliance across 185+ cities.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-            <a
-              href="tel:9820630817"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm transition-all"
-            >
-              <PhoneCall className="w-4 h-4 text-green-400" />
-              <span>24×7 Hotline: 9820630817</span>
-            </a>
-            <Link
-              href="/#enquiry"
-              onClick={(e) => handleNavClick(e, "#enquiry")}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-sm shadow-md transition-all group"
-            >
-              <span>Submit Corporate Enquiry</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
@@ -95,23 +58,33 @@ export default function Footer() {
               <p className="text-xs text-green-700 font-extrabold uppercase tracking-wide">
                 &ldquo;YOUR JOURNEY STARTS HERE…&rdquo;
               </p>
-              <p className="text-xs text-slate-600 pt-1">
-                India&apos;s leading corporate mobility platform combining fleet scale, 185+ city coverage, enterprise technology platform, and centralised 24×7 command centre governance.
-              </p>
             </div>
 
             <div className="pt-2 space-y-2 text-xs text-slate-500">
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>Established 2012 • Trusted by 185+ Corporates Pan India</span>
+                <span>Trusted by 185+ Corporates Pan India</span>
               </div>
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
                 <span>5% GST Corporate Billing Model with Full Audit Trail</span>
               </div>
               <div className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>ISO 9001, ISO 27001 &amp; ISO 45001 Aligned Governance</span>
+                <ShieldCheck className="w-4 h-4 text-green-600 shrink-0" />
+                <span className="text-slate-800">
+                  <span className="inline-block px-1.5 py-0.5 rounded bg-green-100 text-green-800 font-bold text-[10px] uppercase tracking-wider mr-1.5 border border-green-200">
+                    ISO Safety Aligned
+                  </span>
+                  ISO 9001 (Quality), ISO 45001 (Safety) &amp; ISO 27001
+                  <a
+                    href="/certificates/iso-9001-2015-certificate.pdf"
+                    download="ISO-9001-2015-Speedways-Certificate.pdf"
+                    className="ml-2 text-[11px] font-bold text-green-700 hover:text-green-800 underline inline-flex items-center gap-0.5"
+                    title="Download Verified ISO 9001 Certificate"
+                  >
+                    (Download ISO 9001)
+                  </a>
+                </span>
               </div>
             </div>
 
@@ -227,7 +200,7 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, "#fleet")}
                   className="hover:text-green-600 transition-colors"
                 >
-                  Cars &amp; SUVs (Economy to Luxury)
+                  Economy &amp; Executive Sedans
                 </Link>
               </li>
               <li>
@@ -236,7 +209,7 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, "#fleet")}
                   className="hover:text-green-600 transition-colors"
                 >
-                  Group (Tempo &amp; Mini Buses)
+                  MUVs &amp; Innova Crysta / Hycross
                 </Link>
               </li>
               <li>
@@ -245,7 +218,7 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, "#fleet")}
                   className="hover:text-green-600 transition-colors"
                 >
-                  Luxury 40+ Seater Coaches
+                  Luxury &amp; Premium Cars (CXO)
                 </Link>
               </li>
               <li>
@@ -254,34 +227,34 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, "#fleet")}
                   className="hover:text-green-600 transition-colors"
                 >
-                  Electric Fleet (Tigor, Nexon EV)
+                  Electric Vehicle Fleet (EVs)
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#technology"
-                  onClick={(e) => handleNavClick(e, "#technology")}
+                  href="/#fleet"
+                  onClick={(e) => handleNavClick(e, "#fleet")}
                   className="hover:text-green-600 transition-colors"
                 >
-                  Enterprise Platform Integration
+                  Tempo Travellers (12–26 Seater)
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#technology"
-                  onClick={(e) => handleNavClick(e, "#technology")}
+                  href="/#fleet"
+                  onClick={(e) => handleNavClick(e, "#fleet")}
                   className="hover:text-green-600 transition-colors"
                 >
-                  Digital GPS Duty Slips (e-DDS)
+                  Mini Buses &amp; Staff Buses (24–36 Seater)
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#safety"
-                  onClick={(e) => handleNavClick(e, "#safety")}
+                  href="/#fleet"
+                  onClick={(e) => handleNavClick(e, "#fleet")}
                   className="hover:text-green-600 transition-colors"
                 >
-                  Lady Traveller SLA Protocol
+                  Luxury Large Coaches (40+ Seater)
                 </Link>
               </li>
             </ul>
@@ -350,9 +323,10 @@ export default function Footer() {
             <Link
               href="/#safety"
               onClick={(e) => handleNavClick(e, "#safety")}
-              className="hover:text-green-600 transition-colors"
+              className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-green-50 border border-green-200 text-green-700 font-bold hover:bg-green-100 transition-colors"
             >
-              100% Compliance
+              <ShieldCheck className="w-3.5 h-3.5 text-green-600" />
+              <span>ISO Certified Safety &amp; 100% Compliance</span>
             </Link>
             <Link
               href="/#enquiry"

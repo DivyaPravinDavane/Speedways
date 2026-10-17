@@ -458,7 +458,7 @@ export const PLATFORM_STAGES = [
     desc: "Automated aggregation into GST-compliant invoices with line-item duty slips and monthly MIS reporting.",
     details: [
       "Consolidated monthly invoicing",
-      "5% GST input tax credit clarity",
+      "Statutory 5% GST billing clarity",
       "Cost-center spend breakdown",
       "Direct ERP / SAP export support",
     ],

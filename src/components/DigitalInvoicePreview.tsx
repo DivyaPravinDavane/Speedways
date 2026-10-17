@@ -292,7 +292,7 @@ export default function DigitalInvoicePreview() {
                   </tr>
                   <tr className="bg-green-50/70 border-t border-green-200">
                     <td colSpan={3} className="py-3 px-4 text-right font-bold text-slate-900">
-                      Total Invoice Payable (5% GST ITC Compliant):
+                      Total Invoice Payable (5% GST Compliant):
                     </td>
                     <td colSpan={2} className="py-3 px-4 text-right font-mono font-black text-green-800 text-sm">
                       ₹ 4,306.62

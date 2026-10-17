@@ -77,7 +77,7 @@ import {
 const HOME_FAQS = [
   {
     q: "Is Speedways primarily a B2B corporate car rental provider or also B2C?",
-    a: "Speedways operates strictly as an enterprise B2B mobility partner specializing in long-term contracts, employee transportation services (ETS), executive daily car rental with chauffeur, and airport transfers for corporations. We also support large-scale MICE events, VIP board delegations, and executive mobility for empaneled enterprise clients with 30-day corporate credit terms and 5% GST input tax credit.",
+    a: "Speedways operates strictly as an enterprise B2B mobility partner specializing in long-term contracts, employee transportation services (ETS), executive daily car rental with chauffeur, and airport transfers for corporations. We also support large-scale MICE events, VIP board delegations, and executive mobility for empaneled enterprise clients with 30-day corporate credit terms and transparent 5% GST corporate billing.",
   },
   {
     q: "How does Speedways ensure driver training and police verification?",
@@ -89,7 +89,7 @@ const HOME_FAQS = [
   },
   {
     q: "How does transparent 5% GST billing and digital duty slips (e-DDS) work?",
-    a: "Speedways operates on a 100% paperless workflow. Chauffeurs and passengers close trips digitally with OTP authentication and digital signatures, capturing GPS mileage, route polyline snapshots, and toll receipts instantly. Finance and procurement teams receive itemized monthly GST invoices with direct ERP/SAP export capabilities, ensuring 100% audit compliance and 5% GST input tax credit.",
+    a: "Speedways operates on a 100% paperless workflow. Chauffeurs and passengers close trips digitally with OTP authentication and digital signatures, capturing GPS mileage, route polyline snapshots, and toll receipts instantly. Finance and procurement teams receive itemized monthly GST invoices with direct ERP/SAP export capabilities, ensuring 100% audit compliance and transparent 5% GST corporate billing.",
   },
   {
     q: "What safety protocols are followed for female employees during night shifts?",
@@ -143,12 +143,6 @@ export default function HomePage() {
     "Corporate Car Rental",
     "Airport Transfers",
     "Employee Transport (ETS)",
-    "Monthly & Long-Term Leasing",
-    "VIP & CXO Movement",
-    "MICE & Event Transportation",
-    "Intercity & Outstation",
-    "Fleet Management Services",
-    "EV Mobility Solutions",
   ];
 
   const serviceCategories = [
@@ -752,7 +746,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-green-200/70 text-[11px] font-semibold text-green-800">
-                  ✓ 5% GST Input Tax Credit
+                  ✓ Statutory 5% GST Corporate Invoicing
                 </div>
               </div>
             </div>
@@ -1414,73 +1408,23 @@ export default function HomePage() {
                       </>
                     )}
                   </button>
-
-                  <div className="flex items-center justify-center gap-6 pt-2 text-xs text-slate-500 font-medium text-center">
-                    <span className="flex items-center gap-1.5">
-                      <ShieldCheck className="w-4 h-4 text-green-600" />
-                      5% GST ITC Compliant
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-green-600" />
-                      30-Day Corporate Credit Terms
-                    </span>
-                  </div>
                 </form>
               )}
             </div>
 
-            {/* Right: 24/7 Command Hotline & Direct Branch Office Cards */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="p-6 rounded-3xl bg-slate-900 text-white shadow-xl">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-950 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider mb-3">
-                  <PhoneCall className="w-3.5 h-3.5" />
-                  24×7 Operations Command
+            {/* Right: Direct Branch Office Cards */}
+            <div className="lg:col-span-5 space-y-3">
+              <div className="flex items-center justify-between pb-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-green-600" />
+                  Direct Branch Network
                 </span>
-                <h3 className="text-xl font-black text-white">
-                  Immediate Dispatch &amp; SPOC Desk
-                </h3>
-                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-                  Connect directly with our centralized duty manager for emergency spot dispatches, airport VIP coordination, or procurement empanelment reviews.
-                </p>
-
-                <div className="mt-5 space-y-3">
-                  <a
-                    href="tel:9820630817"
-                    className="flex items-center justify-between p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 text-white transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-green-500 text-white flex items-center justify-center font-bold">
-                        <PhoneCall className="w-4 h-4" />
-                      </div>
-                      <div className="text-left">
-                        <div className="text-xs text-slate-400">24×7 Direct Operations Hotline</div>
-                        <div className="text-sm font-black">+91 98206 30817</div>
-                      </div>
-                    </div>
-                    <span className="text-xs font-bold text-green-400">Call Now →</span>
-                  </a>
-
-                  <a
-                    href="mailto:info@speedwaysftm.com"
-                    className="flex items-center justify-between p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 text-white transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-slate-700 text-slate-200 flex items-center justify-center font-bold">
-                        @
-                      </div>
-                      <div className="text-left">
-                        <div className="text-xs text-slate-400">Corporate RFP &amp; Empanelment</div>
-                        <div className="text-sm font-bold">info@speedwaysftm.com</div>
-                      </div>
-                    </div>
-                    <span className="text-xs font-bold text-slate-300">Email →</span>
-                  </a>
-                </div>
+                <span className="text-[10px] font-bold text-green-700 bg-white border border-green-200 px-2 py-0.5 rounded-full">
+                  6 Metro Hubs
+                </span>
               </div>
 
-              {/* Metro Direct Branch Cards */}
-              <div className="space-y-3 max-h-[500px] overflow-y-auto pr-1">
-                {DIRECT_BRANCHES.map((b, idx) => (
+              {DIRECT_BRANCHES.map((b, idx) => (
                   <div
                     key={idx}
                     className="p-4 rounded-2xl bg-white border border-green-200 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
@@ -1519,7 +1463,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 ))}
-              </div>
             </div>
           </div>
         </div>

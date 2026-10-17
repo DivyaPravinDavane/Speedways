@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useRef, useEffect } from "react";
+import Image from "next/image";
 import {
   MapPin,
   Search,
@@ -35,8 +36,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Direct Metro Hub",
     isDirectMetro: true,
-    top: "30%",
-    left: "37%",
+    top: "29.3%",
+    left: "32.6%",
     leadTime: "2 Hours",
     fleetStrength: "240+ Vehicles",
     address: "DLF Cyber City, Sector 24, Gurugram / Noida IT Corridor, Delhi NCR 122 002",
@@ -55,8 +56,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "24%",
-    left: "35%",
+    top: "22.5%",
+    left: "29.2%",
     leadTime: "3-4 Hours",
     fleetStrength: "50+ Vehicles",
     address: "IT Park, Kishangarh / Mohali Phase 8, Chandigarh 160 101",
@@ -75,8 +76,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "37%",
-    left: "33%",
+    top: "33.7%",
+    left: "27.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "45+ Vehicles",
     address: "Tonk Road & Sitapura Industrial Area, Jaipur 302 022",
@@ -95,8 +96,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "37%",
-    left: "52%",
+    top: "34.7%",
+    left: "46.7%",
     leadTime: "3-4 Hours",
     fleetStrength: "35+ Vehicles",
     address: "Vibhuti Khand, Gomti Nagar, Lucknow 226 010",
@@ -115,8 +116,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "27%",
-    left: "40%",
+    top: "23.6%",
+    left: "36.4%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "Rajpur Road / SIDCUL Industrial Area, Dehradun 248 001",
@@ -135,8 +136,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "22%",
-    left: "32%",
+    top: "20.5%",
+    left: "22.6%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "Mall Road / Sri Guru Ram Dass Jee Airport, Amritsar 143 001",
@@ -154,8 +155,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "25%",
-    left: "33%",
+    top: "22.3%",
+    left: "26.0%",
     leadTime: "3-4 Hours",
     fleetStrength: "35+ Vehicles",
     address: "Ferozepur Road / Industrial Area A, Ludhiana 141 001",
@@ -173,8 +174,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "39%",
-    left: "28%",
+    top: "36.1%",
+    left: "17.9%",
     leadTime: "3-4 Hours",
     fleetStrength: "25+ Vehicles",
     address: "Residency Road & Boranada SEZ, Jodhpur 342 012",
@@ -193,8 +194,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "44%",
-    left: "28%",
+    top: "42.0%",
+    left: "20.0%",
     leadTime: "3-4 Hours",
     fleetStrength: "25+ Vehicles",
     address: "City Palace Road / Maharana Pratap Airport, Udaipur 313 001",
@@ -212,8 +213,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "18%",
-    left: "32%",
+    top: "13.7%",
+    left: "25.6%",
     leadTime: "3-4 Hours",
     fleetStrength: "25+ Vehicles",
     address: "Gandhi Nagar / Bari Brahmana Industrial Complex, Jammu 180 004",
@@ -231,8 +232,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "North",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "14%",
-    left: "32%",
+    top: "9.3%",
+    left: "26.7%",
     leadTime: "3-4 Hours",
     fleetStrength: "25+ Vehicles",
     address: "Rajbagh Commercial Hub / Sheikh ul-Alam Airport, Srinagar 190 008",
@@ -252,8 +253,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Direct Metro Hub",
     isDirectMetro: true,
-    top: "79%",
-    left: "38%",
+    top: "82.5%",
+    left: "33.0%",
     leadTime: "2 Hours",
     fleetStrength: "220+ Vehicles",
     address: "Serenity, 1176/A, HBR 1st Stage, 4th Block, Bengaluru - 560043",
@@ -272,8 +273,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Direct Metro Hub",
     isDirectMetro: true,
-    top: "78%",
-    left: "48%",
+    top: "80.6%",
+    left: "46.2%",
     leadTime: "2 Hours",
     fleetStrength: "140+ Vehicles",
     address: "Old Mahabalipuram Road (OMR), Perungudi, Chennai 600 096",
@@ -292,8 +293,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Direct Metro Hub",
     isDirectMetro: true,
-    top: "64%",
-    left: "44%",
+    top: "67.4%",
+    left: "38.5%",
     leadTime: "2 Hours",
     fleetStrength: "160+ Vehicles",
     address: "HITEC City Phase 2, Madhapur, Hyderabad 500 081",
@@ -312,8 +313,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "88%",
-    left: "35%",
+    top: "89.4%",
+    left: "22.6%",
     leadTime: "3-4 Hours",
     fleetStrength: "40+ Vehicles",
     address: "Infopark Phase 1, Kakkanad, Kochi 682 042",
@@ -331,8 +332,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "83%",
-    left: "40%",
+    top: "86.9%",
+    left: "31.3%",
     leadTime: "3-4 Hours",
     fleetStrength: "45+ Vehicles",
     address: "Avinashi Road & TIDEL Park Tech Corridor, Coimbatore 641 014",
@@ -350,8 +351,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "81%",
-    left: "36%",
+    top: "84.5%",
+    left: "28.7%",
     leadTime: "3-4 Hours",
     fleetStrength: "35+ Vehicles",
     address: "Hebbal Industrial Area / Infosys Campus Corridor, Mysuru 570 016",
@@ -369,8 +370,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "66%",
-    left: "50%",
+    top: "71.1%",
+    left: "48.0%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "Benz Circle & Amaravati Capital Highway, Vijayawada 520 010",
@@ -388,8 +389,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "62%",
-    left: "56%",
+    top: "64.0%",
+    left: "58.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "40+ Vehicles",
     address: "Rushikonda IT SEZ & Port Industrial Corridor, Vizag 530 045",
@@ -407,8 +408,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "77%",
-    left: "34%",
+    top: "79.6%",
+    left: "20.0%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "Kavoor / Mangalore SEZ & Port Highway, Mangaluru 575 015",
@@ -426,8 +427,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "72%",
-    left: "34%",
+    top: "72.8%",
+    left: "22.6%",
     leadTime: "3-4 Hours",
     fleetStrength: "25+ Vehicles",
     address: "Gokul Road / Hubballi Airport Corridor, Hubballi 580 030",
@@ -445,8 +446,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "South",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "86%",
-    left: "41%",
+    top: "90.3%",
+    left: "34.9%",
     leadTime: "3-4 Hours",
     fleetStrength: "25+ Vehicles",
     address: "KK Nagar & Ring Road Industrial Corridor, Madurai 625 020",
@@ -466,8 +467,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "50%",
-    left: "71%",
+    top: "50.0%",
+    left: "69.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "70+ Vehicles",
     address: "Sector V, Salt Lake City & New Town, Kolkata 700 091",
@@ -486,8 +487,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "57%",
-    left: "67%",
+    top: "57.5%",
+    left: "62.1%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "Infocity / Chandaka Industrial Estate, Bhubaneswar 751 024",
@@ -505,8 +506,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "39%",
-    left: "82%",
+    top: "35.5%",
+    left: "79.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "GS Road Commercial Corridor & Dispur, Guwahati 781 005",
@@ -524,8 +525,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "47%",
-    left: "63%",
+    top: "46.5%",
+    left: "58.1%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "Main Road / Namkum Industrial Corridor, Ranchi 834 001",
@@ -543,8 +544,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "42%",
-    left: "62%",
+    top: "38.0%",
+    left: "61.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "35+ Vehicles",
     address: "Bailey Road & Exhibition Road Commercial Corridor, Patna 800 001",
@@ -562,8 +563,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "49%",
-    left: "65%",
+    top: "48.0%",
+    left: "61.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "35+ Vehicles",
     address: "Bistupur Commercial Corridor & Tata Steel Plant Hub, Jamshedpur 831 001",
@@ -581,8 +582,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "37%",
-    left: "74%",
+    top: "36.0%",
+    left: "71.0%",
     leadTime: "3-4 Hours",
     fleetStrength: "25+ Vehicles",
     address: "Sevoke Road / Bagdogra Airport Corridor, Siliguri 734 001",
@@ -600,8 +601,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "48%",
-    left: "69%",
+    top: "48.0%",
+    left: "66.1%",
     leadTime: "3-4 Hours",
     fleetStrength: "25+ Vehicles",
     address: "City Centre / Steel Plant Industrial Corridor, Durgapur 713 216",
@@ -619,8 +620,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "56%",
-    left: "68%",
+    top: "56.4%",
+    left: "62.1%",
     leadTime: "3-4 Hours",
     fleetStrength: "25+ Vehicles",
     address: "Choudwar Industrial SEZ & Link Road, Cuttack 753 012",
@@ -638,8 +639,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "45%",
-    left: "79%",
+    top: "46.0%",
+    left: "78.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "20+ Vehicles",
     address: "Airport Road / Secretariat Complex, Agartala 799 009",
@@ -657,8 +658,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "41%",
-    left: "81%",
+    top: "38.5%",
+    left: "79.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "20+ Vehicles",
     address: "Police Bazar / Umroi Airport Corridor, Shillong 793 001",
@@ -676,8 +677,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "East",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "54%",
-    left: "53%",
+    top: "53.5%",
+    left: "49.0%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "VIP Road / Naya Raipur Corporate Zone, Raipur 492 001",
@@ -697,8 +698,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Direct Metro Hub",
     isDirectMetro: true,
-    top: "58%",
-    left: "26%",
+    top: "59.1%",
+    left: "13.5%",
     leadTime: "2 Hours",
     fleetStrength: "320+ Vehicles",
     address: "Speedways House, Andheri East / BKC Central Corridor, Mumbai 400 069",
@@ -717,8 +718,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Direct Metro Hub",
     isDirectMetro: true,
-    top: "62%",
-    left: "30%",
+    top: "62.0%",
+    left: "17.2%",
     leadTime: "2 Hours",
     fleetStrength: "110+ Vehicles",
     address: "Magarpatta Cybercity / Hinjawadi IT Park Phase 1, Pune 411 028",
@@ -737,8 +738,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "48%",
-    left: "24%",
+    top: "44.5%",
+    left: "17.4%",
     leadTime: "3-4 Hours",
     fleetStrength: "65+ Vehicles",
     address: "SG Highway & GIFT City Corporate Corridor, Ahmedabad 380 054",
@@ -756,8 +757,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "50%",
-    left: "27%",
+    top: "48.0%",
+    left: "19.0%",
     leadTime: "3-4 Hours",
     fleetStrength: "45+ Vehicles",
     address: "Alkapuri / Makarpura GIDC Industrial Corridor, Vadodara 390 007",
@@ -775,8 +776,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "52%",
-    left: "26%",
+    top: "52.0%",
+    left: "17.9%",
     leadTime: "3-4 Hours",
     fleetStrength: "50+ Vehicles",
     address: "Surat Diamond Bourse & Hazira Port Corridor, Surat 395 007",
@@ -794,8 +795,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "47%",
-    left: "20%",
+    top: "46.5%",
+    left: "9.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "150 Feet Ring Road / Hirasar Airport Corridor, Rajkot 360 005",
@@ -813,8 +814,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "56%",
-    left: "29%",
+    top: "56.1%",
+    left: "16.4%",
     leadTime: "3-4 Hours",
     fleetStrength: "35+ Vehicles",
     address: "Ambad & Satpur MIDC Auto Belt, Nashik 422 010",
@@ -832,8 +833,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "53%",
-    left: "44%",
+    top: "54.5%",
+    left: "38.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "40+ Vehicles",
     address: "MIHAN SEZ / Wardha Road Logistics Corridor, Nagpur 440 015",
@@ -851,8 +852,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "70%",
-    left: "27%",
+    top: "72.5%",
+    left: "17.0%",
     leadTime: "3-4 Hours",
     fleetStrength: "35+ Vehicles",
     address: "Dabolim & Mopa Airport Corridors / Panaji, Goa 403 001",
@@ -870,8 +871,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "50%",
-    left: "35%",
+    top: "49.0%",
+    left: "27.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "40+ Vehicles",
     address: "Super Corridor & Pithampur Industrial SEZ, Indore 452 010",
@@ -889,8 +890,8 @@ export const MAJOR_LOCATIONS: CityHubLocation[] = [
     region: "West",
     type: "Strategic Network Center",
     isDirectMetro: false,
-    top: "48%",
-    left: "39%",
+    top: "47.0%",
+    left: "32.5%",
     leadTime: "3-4 Hours",
     fleetStrength: "30+ Vehicles",
     address: "MP Nagar Zone 1 & Mandideep Industrial Area, Bhopal 462 011",
@@ -1076,17 +1077,13 @@ export default function IndiaNetworkMap() {
                                 </div>
                               </div>
 
-                              <div className="text-right shrink-0">
-                                {city.isDirectMetro ? (
+                              {city.isDirectMetro && (
+                                <div className="text-right shrink-0">
                                   <span className="text-[9.5px] font-bold bg-green-100 text-green-800 px-1.5 py-0.5 rounded border border-green-200">
                                     Direct Hub
                                   </span>
-                                ) : (
-                                  <span className="text-[10px] text-slate-400 font-medium">
-                                    {city.fleetStrength}
-                                  </span>
-                                )}
-                              </div>
+                                </div>
+                              )}
                             </button>
                           );
                         })}
@@ -1135,143 +1132,109 @@ export default function IndiaNetworkMap() {
         </div>
 
         {/* Interactive India Map Visual Container */}
-        <div className="w-full bg-slate-900 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-2xl border border-slate-800 flex flex-col justify-between min-h-[580px] sm:min-h-[640px]">
-            {/* Dark Map Grid & Telemetry Overlay */}
-            <div
-              className="absolute inset-0 opacity-15 pointer-events-none"
-              style={{
-                backgroundImage:
-                  "radial-gradient(#48B83D 1px, transparent 1px), linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px)",
-                backgroundSize: "24px 24px, 48px 48px, 48px 48px",
-              }}
-            />
+        <div className="w-full bg-gradient-to-br from-[#F5FDF7] via-[#EEFBF1] to-[#E2F7E7] rounded-3xl p-6 sm:p-8 relative overflow-hidden border-2 border-green-300/80 border-b-[6px] border-b-green-500 shadow-[0_20px_45px_-12px_rgba(22,101,52,0.16),0_6px_18px_rgba(0,0,0,0.03),inset_0_2px_1px_rgba(255,255,255,0.95)] flex flex-col justify-between min-h-[640px] sm:min-h-[740px]">
+          {/* Light Grid & Radar Texture */}
+          <div
+            className="absolute inset-0 opacity-25 pointer-events-none"
+            style={{
+              backgroundImage:
+                "radial-gradient(#16a34a 1.2px, transparent 1.2px), linear-gradient(to right, rgba(22,163,74,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(22,163,74,0.07) 1px, transparent 1px)",
+              backgroundSize: "24px 24px, 48px 48px, 48px 48px",
+            }}
+          />
 
-            {/* Top Telemetry Header inside Map */}
-            <div className="relative z-10 flex items-center justify-between border-b border-slate-800/80 pb-4 mb-2">
-              <div className="flex items-center gap-2">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
-                </span>
-                <span className="text-xs font-mono font-bold tracking-wider text-green-400 uppercase">
-                  Speedways Fleet Radar • Live Pan-India Grid
-                </span>
-              </div>
-              <span className="text-[11px] font-mono text-slate-400">
-                185+ Cities Connected
+          {/* Top Telemetry Header inside Map */}
+          <div className="relative z-10 flex items-center justify-between border-b border-green-200/90 pb-4 mb-2">
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600" />
+              </span>
+              <span className="text-xs font-mono font-bold tracking-wider text-green-900 uppercase">
+                Speedways Fleet Radar • Live Pan-India Grid
               </span>
             </div>
+            <span className="text-[11px] font-mono font-semibold text-slate-600">
+              185+ Cities Connected
+            </span>
+          </div>
 
-            {/* MAP CANVAS with Stylized Vector India Outline & Beacons */}
-            <div className="relative w-full h-[440px] sm:h-[480px] my-auto flex items-center justify-center">
-              {/* Detailed Stylized SVG Map Contour of India */}
-              <svg
-                viewBox="0 0 500 580"
-                className="w-full h-full max-h-[460px] object-contain opacity-40 filter drop-shadow-[0_0_15px_rgba(72,184,61,0.15)]"
-                fill="none"
-              >
-                {/* Stylized high-accuracy boundary polygon for India */}
-                <path
-                  d="M 215 35
-                     C 220 25, 230 20, 240 25
-                     C 255 35, 270 45, 275 60
-                     C 280 75, 265 90, 260 100
-                     C 275 110, 290 120, 310 135
-                     C 325 145, 345 155, 360 155
-                     C 380 155, 410 145, 435 150
-                     C 450 155, 465 170, 460 185
-                     C 455 200, 435 205, 415 205
-                     C 390 205, 375 220, 360 235
-                     C 345 250, 335 270, 325 290
-                     C 320 310, 310 330, 295 355
-                     C 280 380, 260 410, 245 445
-                     C 235 470, 225 500, 215 530
-                     C 210 545, 205 550, 200 550
-                     C 195 550, 190 540, 185 525
-                     C 175 490, 160 450, 150 420
-                     C 140 390, 130 360, 125 330
-                     C 118 295, 110 270, 100 245
-                     C 90 220, 85 205, 95 190
-                     C 105 175, 120 180, 135 185
-                     C 150 190, 165 175, 175 160
-                     C 185 145, 190 125, 195 105
-                     C 200 85, 205 60, 215 35 Z"
-                  fill="#1E293B"
-                  stroke="#334155"
-                  strokeWidth="2.5"
-                  strokeLinejoin="round"
-                />
+          {/* MAP CANVAS with Exact India Map & Plotted City Beacons */}
+          <div className="relative w-full max-w-[560px] aspect-[975/1024] my-auto mx-auto flex items-center justify-center">
+            {/* The India Map with State Outlines in Lighter Shades */}
+            <Image
+              src="/images/india-map-transparent.png"
+              alt="Speedways Pan-India Network Map"
+              fill
+              className="object-contain pointer-events-none select-none opacity-80 filter drop-shadow-[0_2px_8px_rgba(22,101,52,0.12)]"
+              priority
+            />
 
-                {/* Regional Contour Rings */}
-                <circle cx="215" cy="180" r="140" stroke="#48B83D" strokeWidth="0.5" strokeDasharray="4 6" opacity="0.3" />
-                <circle cx="215" cy="330" r="110" stroke="#48B83D" strokeWidth="0.5" strokeDasharray="3 5" opacity="0.25" />
-              </svg>
+            {/* BEACONS LAYER */}
+            {filteredLocations.map((hub) => {
+              const isSelected = selectedHubId === hub.id;
+              return (
+                <button
+                  key={hub.id}
+                  onClick={() => setSelectedHubId(hub.id)}
+                  style={{ top: hub.top, left: hub.left }}
+                  className={`absolute -translate-x-1/2 -translate-y-1/2 group transition-all duration-300 cursor-pointer ${
+                    isSelected ? "scale-125 z-30" : "scale-100 z-10 hover:scale-115"
+                  }`}
+                  title={`${hub.city} - ${hub.type}`}
+                >
+                  <span className="relative flex h-5 w-5 items-center justify-center">
+                    {/* Pulse Ring */}
+                    {hub.isDirectMetro ? (
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+                    ) : (
+                      <span className="animate-pulse absolute inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-40" />
+                    )}
 
-              {/* BEACONS LAYER */}
-              {filteredLocations.map((hub) => {
-                const isSelected = selectedHubId === hub.id;
-                return (
-                  <button
-                    key={hub.id}
-                    onClick={() => setSelectedHubId(hub.id)}
-                    style={{ top: hub.top, left: hub.left }}
-                    className={`absolute -translate-x-1/2 -translate-y-1/2 group transition-all duration-300 cursor-pointer ${
-                      isSelected ? "scale-125 z-30" : "scale-100 z-10 hover:scale-115"
-                    }`}
-                    title={`${hub.city} - ${hub.type}`}
-                  >
-                    <span className="relative flex h-5 w-5 items-center justify-center">
-                      {/* Pulse Ring */}
-                      {hub.isDirectMetro ? (
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                      ) : (
-                        <span className="animate-pulse absolute inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-40" />
-                      )}
-
-                      {/* Beacon Core Dot */}
-                      <span
-                        className={`relative inline-flex rounded-full items-center justify-center font-bold text-[9px] shadow-lg transition-all ${
-                          isSelected
-                            ? "h-5 w-5 bg-white text-slate-950 ring-3 ring-[#48B83D]"
-                            : hub.isDirectMetro
-                            ? "h-4 w-4 bg-[#48B83D] text-white border-2 border-slate-900"
-                            : "h-3 w-3 bg-emerald-400 border border-slate-900"
-                        }`}
-                      >
-                        {hub.isDirectMetro ? "★" : ""}
-                      </span>
-                    </span>
-
-                    {/* Floating City Label */}
+                    {/* Beacon Core Dot */}
                     <span
-                      className={`absolute left-1/2 -translate-x-1/2 -bottom-5 whitespace-nowrap text-[10px] font-bold px-2 py-0.5 rounded-md shadow-md transition-all ${
+                      className={`relative inline-flex rounded-full items-center justify-center font-black text-[9px] shadow-md transition-all ${
                         isSelected
-                          ? "bg-[#48B83D] text-white font-extrabold scale-105"
-                          : "bg-slate-900/90 text-slate-300 border border-slate-700/80 group-hover:text-white group-hover:border-green-400"
+                          ? "h-5 w-5 bg-green-700 text-white ring-3 ring-green-300 shadow-lg"
+                          : hub.isDirectMetro
+                          ? "h-4 w-4 bg-[#48B83D] text-white border-2 border-white shadow"
+                          : "h-3 w-3 bg-emerald-600 border-2 border-white shadow-2xs"
                       }`}
                     >
-                      {hub.city}
+                      {hub.isDirectMetro ? "★" : ""}
                     </span>
-                  </button>
-                );
-              })}
-            </div>
+                  </span>
 
-            {/* Bottom Legend inside Map */}
-            <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-800 text-[11px] text-slate-400">
-              <div className="flex items-center gap-4">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#48B83D] inline-block" />
-                  <strong className="text-white">★ 6 Direct Metros</strong> (Mumbai HO, BLR, HYD, MAA, DEL, Pune)
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
-                  Strategic Hubs
-                </span>
-              </div>
-              <span className="text-slate-500 font-mono">185+ Managed Cities</span>
-            </div>
+                  {/* Floating City Label */}
+                  <span
+                    className={`absolute left-1/2 -translate-x-1/2 -bottom-5 whitespace-nowrap text-[10px] font-bold px-2 py-0.5 rounded-md shadow-md transition-all pointer-events-none ${
+                      isSelected
+                        ? "bg-green-700 text-white font-extrabold scale-105 border border-green-500 z-30"
+                        : "bg-white/95 text-slate-800 border border-green-200/90 group-hover:text-green-800 group-hover:border-green-400 group-hover:bg-white"
+                    }`}
+                  >
+                    {hub.city}
+                  </span>
+                </button>
+              );
+            })}
           </div>
+
+          {/* Bottom Legend inside Map */}
+          <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-green-200/90 text-[11px] text-slate-700">
+            <div className="flex items-center gap-4">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#48B83D] inline-block shadow-2xs" />
+                <strong className="text-slate-900">★ 6 Direct Metros</strong> (Mumbai HO, BLR, HYD, MAA, DEL, Pune)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-600 inline-block" />
+                <span className="font-semibold text-slate-700">Strategic Hubs</span>
+              </span>
+            </div>
+            <span className="text-green-900 font-bold font-mono">185+ Managed Cities</span>
+          </div>
+        </div>
       </div>
     </section>
   );
