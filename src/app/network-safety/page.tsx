@@ -31,7 +31,6 @@ import {
 import {
   DIRECT_BRANCHES,
   COMMAND_CENTRE_PILLARS,
-  SAFETY_PILLARS,
 } from "@/data/speedwaysData";
 
 export default function NetworkSafetyPage() {

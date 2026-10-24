@@ -30,9 +30,13 @@ import {
   Clock,
   Layers,
   ChevronRight,
+  Users,
+  FileText,
+  Flag,
 } from "lucide-react";
 import {
   SAFETY_COMPLIANCE_PILLARS,
+  EMERGENCY_RESPONSE_WORKFLOW,
   SUBSCRIPTION_BENEFITS,
 } from "@/data/speedwaysData";
 
@@ -60,6 +64,9 @@ export default function SafetyAndCompliancePage() {
     CheckCircle,
     Car,
     Headphones,
+    Users,
+    FileText,
+    Flag,
   };
 
   return (
@@ -81,29 +88,33 @@ export default function SafetyAndCompliancePage() {
               Safety Built Into <span className="text-[#48B83D]">Every Journey</span>
             </h1>
             <p className="mt-3 text-lg font-bold text-slate-800">
-              Safety & Compliance
+              Statutory &amp; Safety Compliance
             </p>
             <p className="mt-2 text-base sm:text-lg text-slate-600 leading-relaxed">
-              From police-verified chauffeurs and in-vehicle SOS buttons to round-the-clock command centre oversight and long-term car subscription benefits, Speedways provides an uncompromising safety shield for India’s corporate workforce.
+              A structured compliance framework governs every vehicle and chauffeur deployment, with documented controls designed to maintain regulatory readiness, operational safety and passenger protection throughout the service lifecycle.
             </p>
 
             {/* Quick Live Telemetry Badges */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-bold text-slate-700">
               <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs">
                 <UserCheck className="w-4 h-4 text-green-600" />
-                <span>Documented Police-Verified Chauffeurs</span>
+                <span>Police-Verified Chauffeurs</span>
               </div>
               <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs">
                 <AlertTriangle className="w-4 h-4 text-green-600" />
-                <span>In-Vehicle SOS & Panic Buttons</span>
+                <span>In-Vehicle SOS &amp; Panic Button</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                <Navigation className="w-4 h-4 text-green-600" />
+                <span>Live GPS Journey Tracking</span>
               </div>
               <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs">
                 <Radio className="w-4 h-4 text-green-600 animate-pulse" />
-                <span>24×7 Command Centre Telemetry</span>
+                <span>24×7 Command Centre Monitoring</span>
               </div>
               <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs">
                 <ShieldAlert className="w-4 h-4 text-green-600" />
-                <span>Women Safety Priority Protocol</span>
+                <span>Women Safety Protocol</span>
               </div>
             </div>
 
@@ -117,7 +128,7 @@ export default function SafetyAndCompliancePage() {
                     : "text-slate-700 hover:text-slate-900"
                 }`}
               >
-                12 Safety & Compliance Pillars
+                10 Safety &amp; Compliance Pillars
               </button>
               <button
                 onClick={() => setActiveTab("subscription")}
@@ -152,7 +163,7 @@ export default function SafetyAndCompliancePage() {
                     Zero-Compromise Security Framework
                   </span>
                   <span className="text-sm font-semibold text-white">
-                    7-Point Background Check • Real-Time GPS Geofencing • In-Vehicle SOS Buttons
+                    Identity Verification • Real-Time GPS Tracking • In-Vehicle SOS Buttons
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -167,22 +178,25 @@ export default function SafetyAndCompliancePage() {
         </div>
       </section>
 
-      {/* 3. SAFETY & COMPLIANCE (12 PILLARS) SECTION */}
+      {/* 3. SAFETY & COMPLIANCE (10 PILLARS) SECTION */}
       {activeTab === "safety" && (
         <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-              12 Pillars of Passenger Safety &amp; Statutory Governance
+          <div className="mb-12 text-center max-w-3xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded-full">
+              Enterprise Governance
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mt-3">
+              10 Pillars of Passenger Safety &amp; Statutory Governance
             </h2>
-            <p className="text-slate-600 text-sm mt-2">
-              Every trip booked across our 185+ city network is governed by standard operating procedures.
+            <p className="text-slate-600 text-sm sm:text-base mt-2">
+              Every vehicle and chauffeur deployment is governed by standardized controls, regulatory readiness, and continuous telemetry oversight nationwide.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SAFETY_COMPLIANCE_PILLARS.map((pillar, idx) => {
               const IconComp = iconMap[pillar.iconName || "ShieldCheck"] || ShieldCheck;
-              const stepNumber = String(idx + 1).padStart(2, "0");
+              const stepNumber = pillar.num || String(idx + 1).padStart(2, "0");
 
               return (
                 <div
@@ -195,7 +209,7 @@ export default function SafetyAndCompliancePage() {
                       <div className="w-12 h-12 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center group-hover:bg-[#48B83D] group-hover:text-white transition-colors shadow-2xs">
                         <IconComp className="w-6 h-6" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-slate-400">
+                      <span className="text-xs font-mono font-bold text-[#48B83D] bg-green-50 px-2.5 py-1 rounded-lg border border-green-200/60">
                         #{stepNumber}
                       </span>
                     </div>
@@ -204,6 +218,11 @@ export default function SafetyAndCompliancePage() {
                     <h3 className="text-lg font-black text-slate-900 group-hover:text-[#48B83D] transition-colors">
                       {pillar.title}
                     </h3>
+                    {pillar.subtitle && pillar.subtitle !== pillar.title && (
+                      <div className="text-xs font-bold text-slate-500 mt-1">
+                        {pillar.subtitle}
+                      </div>
+                    )}
 
                     {/* Description */}
                     <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -213,15 +232,85 @@ export default function SafetyAndCompliancePage() {
 
                   {/* Badge */}
                   {pillar.badge && (
-                    <div className="mt-5 pt-4 border-t border-slate-100">
+                    <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
                       <span className="text-[11px] font-bold text-green-800 bg-green-50 px-2.5 py-1 rounded-full border border-green-200">
                         ✓ {pillar.badge}
+                      </span>
+                      <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                        Documented SOP
                       </span>
                     </div>
                   )}
                 </div>
               );
             })}
+          </div>
+
+          {/* DEDICATED EMERGENCY RESPONSE & BUSINESS CONTINUITY FRAMEWORK (THE 8 STEPS) */}
+          <div className="mt-20 pt-16 border-t border-slate-200">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-700 border border-red-200 text-xs font-bold uppercase tracking-wider shadow-2xs">
+                <Siren className="w-3.5 h-3.5 text-red-600" />
+                24×7 Duty of Care &amp; Incident Lifecycle
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+                Emergency Response &amp; Business Continuity
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+                A proactive 24×7 emergency management framework designed to protect passengers, mobilize the right resources quickly and maintain service continuity through unexpected events. From the first alert to final closure, every critical situation follows a defined process of assessment, escalation, intervention, recovery and review.
+              </p>
+            </div>
+
+            {/* The 8 Process Stages */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {EMERGENCY_RESPONSE_WORKFLOW.map((wf, idx) => {
+                const stepIcons: Record<string, any> = {
+                  "01": Radio,
+                  "02": ShieldCheck,
+                  "03": Users,
+                  "04": LifeBuoy,
+                  "05": Car,
+                  "06": FileText,
+                  "07": CheckCircle2,
+                  "08": Flag,
+                };
+                const StepIcon = stepIcons[wf.step] || ShieldCheck;
+
+                return (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-green-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-xs font-black font-mono text-green-700 bg-green-50 px-2.5 py-1 rounded-lg border border-green-200/60">
+                          STAGE {wf.step}
+                        </span>
+                        <div className="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-colors">
+                          <StepIcon className="w-4 h-4" />
+                        </div>
+                      </div>
+
+                      <h4 className="text-base font-black text-slate-900 group-hover:text-green-700 transition-colors">
+                        {wf.title}
+                      </h4>
+                      <div className="text-xs font-bold text-green-700 mt-1 mb-2">
+                        {wf.tagline}
+                      </div>
+
+                      <p className="text-xs text-slate-600 leading-relaxed">
+                        {wf.description}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-slate-100 text-[10px] font-semibold text-slate-400 flex items-center gap-1">
+                      <CheckCircle2 className="w-3 h-3 text-green-600" />
+                      <span>Process Lifecycle Controlled</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
       )}

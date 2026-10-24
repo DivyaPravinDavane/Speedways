@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -51,6 +52,11 @@ import {
   Smartphone,
   Layers,
   FileSpreadsheet,
+  UserCheck,
+  ShieldAlert,
+  Wrench,
+  History,
+  Siren,
 } from "lucide-react";
 import SymbolBadge from "@/components/SymbolBadge";
 import LiveTelemetrySimulator from "@/components/LiveTelemetrySimulator";
@@ -69,6 +75,7 @@ import {
   EXECUTIVE_QUESTIONS,
   TESTIMONIALS,
   SAFETY_COMPLIANCE_PILLARS,
+  EMERGENCY_RESPONSE_WORKFLOW,
   SERVICES_CATALOG,
   EV_ROADMAP_STEPS,
   DIRECT_BRANCHES,
@@ -379,7 +386,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">The Speedways Promise</h3>
                 <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                  99.4% on-time arrival guarantee, 100% police background verified chauffeurs, instant paperless digital billing, and rapid 30-minute replacement guarantee across all metro hubs.
+                  99.4% on-time arrival guarantee, 100% police background verified chauffeurs, instant paperless digital billing, and rapid vehicle recovery and replacement arrangements across all metro hubs.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-green-200/70 text-xs font-semibold text-green-800 flex items-center gap-1.5">
@@ -788,10 +795,8 @@ export default function HomePage() {
 
       {/* =========================================================================
           STEP 5: SAFETY
-          (Compliance – Driver Verification – ISO Certificates – SLA –
-           Documents Validation – SOS – Panic Button – Lady Traveller SLA and Tracking
-           Mechanism - 24/7 Command Centre, Incident Report – Replacement process -
-           Emergency Response)
+          (10 Safety & Compliance Pillars, Duty of Care, 24×7 Command Centre,
+           and Emergency Response & Business Continuity Framework)
          ========================================================================= */}
       <section id="safety" className="scroll-mt-24 py-20 bg-slate-50/70 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -802,74 +807,118 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
               Institutional Safety &amp; 100% Statutory Compliance
             </h2>
+            <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+              A structured compliance framework governs every vehicle and chauffeur deployment, with documented controls designed to maintain regulatory readiness, operational safety and passenger protection throughout the service lifecycle.
+            </p>
           </div>
 
-
-
-          {/* 12 Core Safety & Compliance Pillars Grid in 3-D Green Boxes */}
+          {/* 10 Core Safety & Compliance Pillars Grid in 3-D Green Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {SAFETY_COMPLIANCE_PILLARS.map((pillar, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center shadow-[0_3px_8px_rgba(22,101,52,0.25),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                      <ShieldCheck className="w-5 h-5 text-white" />
+            {SAFETY_COMPLIANCE_PILLARS.map((pillar, idx) => {
+              const iconMap: Record<string, any> = {
+                UserCheck,
+                AlertTriangle,
+                Navigation,
+                Radio,
+                ShieldAlert,
+                Wrench,
+                FileCheck,
+                History,
+                Siren,
+                Award,
+                ShieldCheck,
+              };
+              const IconComp = iconMap[pillar.iconName || "ShieldCheck"] || ShieldCheck;
+              const stepNumber = pillar.num || String(idx + 1).padStart(2, "0");
+
+              return (
+                <div
+                  key={idx}
+                  className="p-6 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center shadow-[0_3px_8px_rgba(22,101,52,0.25),inset_0_1px_1px_rgba(255,255,255,0.4)]">
+                        <IconComp className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-green-700 bg-white/70 px-2.5 py-0.5 rounded-md border border-green-200/80">
+                        #{stepNumber}
+                      </span>
                     </div>
+                    <h3 className="text-base font-extrabold text-slate-900 mb-1">
+                      {pillar.title}
+                    </h3>
+                    {pillar.subtitle && pillar.subtitle !== pillar.title && (
+                      <div className="text-[11px] font-bold text-green-800 mb-1.5">
+                        {pillar.subtitle}
+                      </div>
+                    )}
+                    <p className="text-xs text-slate-700 leading-relaxed font-normal">
+                      {pillar.description}
+                    </p>
                   </div>
-                  <h3 className="text-base font-extrabold text-slate-900 mb-1.5">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-xs text-slate-700 leading-relaxed font-normal">
-                    {pillar.description}
-                  </p>
+                  <div className="mt-5 pt-3.5 border-t border-green-200/70 flex items-center justify-between text-[11px] font-semibold text-slate-700">
+                    <span className="text-slate-600 font-medium">{pillar.badge}</span>
+                    <span className="font-extrabold text-green-700">Verified Protocol ✓</span>
+                  </div>
                 </div>
-                <div className="mt-5 pt-3.5 border-t border-green-200/70 flex items-center justify-between text-[11px] font-semibold text-green-800">
-                  <span>Pan-India SLA Governance</span>
-                  <span className="font-extrabold text-green-700">Audit-Ready ✓</span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          {/* Incident Report, 30-min Replacement Process & Emergency Response Strip in 3-D Green Boxes */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="p-6 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-amber-500 to-amber-600 text-white flex items-center justify-center mb-3 shadow-[0_3px_8px_rgba(217,119,6,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                  <AlertTriangle className="w-5 h-5 text-white" />
-                </div>
-                <h4 className="text-base font-extrabold text-slate-900 mb-1">Incident Report SOP</h4>
-                <p className="text-xs text-slate-700 leading-relaxed font-normal">
-                  Standard operating protocol with 15-minute escalation to enterprise travel admin, automated ticket logging, and comprehensive post-incident analysis report within 12 hours.
+          {/* Emergency Response & Business Continuity 8-Stage Lifecycle */}
+          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-green-200/90 shadow-md mb-10">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-6 border-b border-slate-100">
+              <div className="max-w-2xl">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-700 border border-red-200 text-xs font-bold uppercase tracking-wider mb-2">
+                  <Siren className="w-3.5 h-3.5 text-red-600" />
+                  24×7 Duty of Care Protocol
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                  Emergency Response &amp; Business Continuity
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                  A proactive 24×7 emergency management framework designed to protect passengers, mobilize the right resources quickly and maintain service continuity through unexpected events. From the first alert to final closure, every critical situation follows a defined process of assessment, escalation, intervention, recovery and review.
                 </p>
               </div>
+              <Link
+                href="/safety"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#48B83D] hover:bg-[#3ea534] text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all shrink-0 self-start lg:self-auto"
+              >
+                <span>Explore Full Safety Protocol</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
 
-            <div className="p-6 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center mb-3 shadow-[0_3px_8px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                  <Clock className="w-5 h-5 text-white" />
+            {/* 8-Stage Lifecycle Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {EMERGENCY_RESPONSE_WORKFLOW.map((wf, idx) => (
+                <div
+                  key={idx}
+                  className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:bg-white hover:border-green-300 hover:shadow-md transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[11px] font-mono font-bold text-green-700 bg-green-50 px-2 py-0.5 rounded border border-green-200/60">
+                        STAGE {wf.step}
+                      </span>
+                    </div>
+                    <h4 className="text-sm font-bold text-slate-900 group-hover:text-green-700 transition-colors">
+                      {wf.title}
+                    </h4>
+                    <p className="text-[11px] font-semibold text-green-700 mt-1 mb-2">
+                      {wf.tagline}
+                    </p>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {wf.description}
+                    </p>
+                  </div>
+                  <div className="mt-3 pt-2.5 border-t border-slate-200/60 text-[10px] font-semibold text-slate-400 flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-green-600" />
+                    <span>Operational Control</span>
+                  </div>
                 </div>
-                <h4 className="text-base font-extrabold text-slate-900 mb-1">30-Min Replacement Process SLA</h4>
-                <p className="text-xs text-slate-700 leading-relaxed font-normal">
-                  Standby buffer vehicles deployed at central metro nodes (Mumbai, BLR, DEL, HYD, MAA, PNQ) ensuring a replacement vehicle is dispatched and on-site within 30 minutes in breakdown cases.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-red-500 to-red-600 text-white flex items-center justify-center mb-3 shadow-[0_3px_8px_rgba(220,38,38,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                  <LifeBuoy className="w-5 h-5 text-white" />
-                </div>
-                <h4 className="text-base font-extrabold text-slate-900 mb-1">Emergency Response Team (ERT)</h4>
-                <p className="text-xs text-slate-700 leading-relaxed font-normal">
-                  24×7 multi-tier emergency response coordinated with local medical networks, road assistance towing networks, and city police control rooms across all 185+ operating cities.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>

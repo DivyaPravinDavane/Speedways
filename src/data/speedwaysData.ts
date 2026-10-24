@@ -181,7 +181,7 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     name: "Monthly & Long-Term Leasing",
     shortDesc: "Dedicated monthly and multi-year vehicle allocations with zero balance sheet liability.",
     detailedDesc:
-      "Comprehensive corporate car subscription and leasing programs offering dedicated executive cars, trained chauffeurs, full preventive maintenance, and guaranteed 30-min replacement backup.",
+      "Comprehensive corporate car subscription and leasing programs offering dedicated executive cars, trained chauffeurs, full preventive maintenance, and rapid vehicle replacement and recovery backup.",
     audience: "Corporate leadership, expatriates, and long-term project team dedicated transport",
     iconName: "Calendar",
     link: "/#enquiry",
@@ -724,7 +724,9 @@ export const LEADERSHIP_TEAM: LeaderProfile[] = [
 ];
 
 export interface SafetyPillar {
+  num?: string;
   title: string;
+  subtitle?: string;
   description: string;
   badge?: string;
   iconName?: string;
@@ -732,76 +734,151 @@ export interface SafetyPillar {
 
 export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
   {
-    title: "Police-Verified Chauffeurs",
-    description: "Chauffeurs undergo police verification and mandatory background checks before being deployed for passenger services.",
-    badge: "Documented Background Verification",
+    num: "01",
+    title: "Chauffeur Verification",
+    subtitle: "Police-Verified Chauffeurs",
+    description: "Every chauffeur undergoes police verification, identity validation and mandatory background screening before being approved for passenger deployment.",
+    badge: "Police-Verified Chauffeurs",
     iconName: "UserCheck",
   },
   {
-    title: "In-Vehicle SOS & Panic Button",
-    description: "Easily accessible emergency controls enable passengers to raise an alert quickly whenever assistance is required.",
-    badge: "In-Cabin Emergency Alert",
+    num: "02",
+    title: "SOS & Emergency Alert",
+    subtitle: "In-Vehicle SOS & Panic Button",
+    description: "A discreet, easily accessible emergency alert system enables passengers to request immediate assistance and trigger a coordinated response whenever a safety concern arises during the journey.",
+    badge: "In-Vehicle SOS & Panic Button",
     iconName: "AlertTriangle",
   },
   {
-    title: "Live GPS Journey Tracking",
-    description: "GPS-enabled vehicles are monitored in real time, providing visibility of vehicle location and trip movement throughout the journey.",
-    badge: "Real-Time Telemetry",
+    num: "03",
+    title: "GPS Journey Tracking",
+    subtitle: "Live GPS Journey Tracking",
+    description: "Real-time GPS tracking provides continuous visibility of vehicle location, route progress and journey status, enabling proactive monitoring and timely intervention throughout every Journey.",
+    badge: "Live GPS Journey Tracking",
     iconName: "Navigation",
   },
   {
-    title: "24×7 Command Centre Monitoring",
-    description: "Every active journey can be monitored by our operations team, enabling rapid coordination and escalation when required.",
-    badge: "Continuous Telemetry Oversight",
+    num: "04",
+    title: "Command Centre",
+    subtitle: "24×7 Command Centre Monitoring",
+    description: "Our 24×7 Command Centre provides continuous oversight of active journeys, enabling proactive monitoring, rapid intervention and coordinated escalation whenever an operational or safety exception arises.",
+    badge: "24×7 Command Centre Monitoring",
     iconName: "Radio",
   },
   {
-    title: "Women Safety Protocol",
-    description: "Dedicated safety procedures for women travellers, including verified chauffeurs, journey monitoring, escalation protocols, and priority assistance.",
-    badge: "Priority Escort & Safety",
+    num: "05",
+    title: "Women Traveller Safety",
+    subtitle: "Women Safety Protocol",
+    description: "A proactive safety framework for women travellers, combining verified chauffeur deployment, continuous journey visibility and defined escalation protocols. Every alert is treated with priority, enabling prompt intervention and coordinated assistance throughout the journey.",
+    badge: "Women Safety Protocol",
     iconName: "ShieldAlert",
   },
   {
-    title: "Preventive Vehicle Maintenance",
-    description: "Vehicles undergo scheduled inspections and preventive maintenance to ensure roadworthiness, reliability, and passenger safety.",
-    badge: "Scheduled Audits",
+    num: "06",
+    title: "Preventive Maintenance",
+    subtitle: "Preventive Vehicle Maintenance",
+    description: "Our fleet is managed through a proactive preventive-maintenance programme, with scheduled inspections, manufacturer-recommended servicing and safety-critical checks designed to identify and address potential issues before deployment. This helps ensure every vehicle is roadworthy, reliable and ready for safe passenger operations.",
+    badge: "Preventive Vehicle Maintenance",
     iconName: "Wrench",
   },
   {
-    title: "Statutory Compliance-Driven Operations",
-    description: "Vehicles and chauffeurs operate under applicable regulatory, documentation, permit, insurance, and safety requirements.",
-    badge: "Statutory Governance",
+    num: "07",
+    title: "Statutory & Safety Compliance",
+    subtitle: "Statutory Compliance-Driven Operations",
+    description: "A structured statutory compliance framework governs every vehicle and chauffeur deployment, covering applicable permits, licences, insurance, fitness and safety requirements. Compliance validity is continuously monitored, with defined controls for renewal, exception management and deployment clearance.",
+    badge: "Statutory Compliance-Driven Operations",
     iconName: "FileCheck",
   },
   {
-    title: "Trip & Chauffeur Audit Trail",
+    num: "08",
+    title: "Audit Trail",
+    subtitle: "Trip & Chauffeur Audit Trail",
     description: "Digital trip records provide visibility into chauffeur allocation, journey details, vehicle movement, and operational events—supporting corporate governance and audits.",
-    badge: "Digital Duty Slip",
+    badge: "Trip & Chauffeur Audit Trail",
     iconName: "History",
   },
   {
-    title: "Emergency Response Protocol",
-    description: "Defined escalation procedures for accidents, breakdowns, medical emergencies, and other unexpected situations, supported by the 24×7 operations team.",
-    badge: "Rapid Escalation",
+    num: "09",
+    title: "Emergency Response & Business Continuity",
+    subtitle: "24×7 Emergency Management Framework",
+    description: "A proactive 24×7 emergency management framework designed to protect passengers, mobilize the right resources quickly and maintain service continuity through unexpected events. From the first alert to final closure, every critical situation follows a defined process of assessment, escalation, intervention, recovery and review.",
+    badge: "Emergency Response & Business Continuity",
     iconName: "Siren",
   },
   {
-    title: "Vehicle Fitness & Documentation Checks",
-    description: "Critical vehicle documents, fitness requirements, insurance, permits, and statutory compliances are systematically tracked.",
-    badge: "Systematic Verification",
-    iconName: "ClipboardCheck",
+    num: "10",
+    title: "Chauffeur Training & Safety Standards",
+    subtitle: "Chauffeur Training & Safety Standards",
+    description: "Chauffeurs are trained in professional conduct, defensive driving, passenger handling, emergency response, and corporate service standards.",
+    badge: "Chauffeur Training & Safety Standards",
+    iconName: "Award",
+  },
+];
+
+export interface EmergencyResponseStep {
+  step: string;
+  title: string;
+  tagline: string;
+  description: string;
+  iconName?: string;
+}
+
+export const EMERGENCY_RESPONSE_WORKFLOW: EmergencyResponseStep[] = [
+  {
+    step: "01",
+    title: "24×7 Command & Control",
+    tagline: "Centralized oversight for faster, informed decisions.",
+    description: "The Command Centre provides continuous visibility of active journeys and critical alerts, enabling the operations team to assess the situation, establish passenger status and activate the appropriate response based on the nature and severity of the event.",
+    iconName: "Radio",
   },
   {
-    title: "Breakdown & Roadside Assistance",
-    description: "Operational support is available to coordinate assistance and minimize disruption in the event of a vehicle breakdown or roadside incident.",
-    badge: "Minimal Disruption",
+    step: "02",
+    title: "Immediate Passenger Protection",
+    tagline: "Passenger welfare remains the first priority.",
+    description: "Every safety alert or unexpected event is treated with priority. The response begins by establishing passenger safety, confirming the vehicle location and determining the assistance required before coordinating the next intervention.",
+    iconName: "ShieldCheck",
+  },
+  {
+    step: "03",
+    title: "Structured Escalation & Coordination",
+    tagline: "The right people are engaged at the right time.",
+    description: "A defined escalation matrix connects operations teams with designated client stakeholders and relevant support agencies. Escalation is based on incident severity, passenger impact and the level of assistance required.",
+    iconName: "Users",
+  },
+  {
+    step: "04",
+    title: "Emergency & On-Ground Assistance",
+    tagline: "Coordinated support where the incident occurs.",
+    description: "Where required, Speedways coordinates with appropriate medical services, roadside assistance, towing partners and relevant emergency authorities to facilitate timely on-ground intervention and passenger support.",
     iconName: "LifeBuoy",
   },
   {
-    title: "Chauffeur Training & Safety Standards",
-    description: "Chauffeurs are trained in professional conduct, defensive driving, passenger handling, emergency response, and corporate service standards.",
-    badge: "Certified Curriculum",
-    iconName: "Award",
+    step: "05",
+    title: "Rapid Recovery & Replacement",
+    tagline: "Minimizing disruption without compromising safety.",
+    description: "When a vehicle becomes unavailable, recovery and replacement arrangements are initiated at the earliest possible opportunity. Replacement deployment remains subject to vehicle readiness, chauffeur eligibility, location, traffic and operational availability.",
+    iconName: "Car",
+  },
+  {
+    step: "06",
+    title: "Incident Reporting & Client Communication",
+    tagline: "Clear communication. Complete traceability.",
+    description: "Reportable incidents are digitally recorded with the relevant trip, vehicle, chauffeur, location, timeline, actions taken and resolution details. Designated enterprise stakeholders are informed in accordance with the agreed client escalation matrix and SLA.",
+    iconName: "FileText",
+  },
+  {
+    step: "07",
+    title: "Root Cause & Corrective Action",
+    tagline: "Every significant incident becomes an opportunity to strengthen the operation.",
+    description: "Post-incident reviews assess what occurred, why it occurred, how effectively it was managed and what controls can be strengthened. Corrective and preventive actions are documented, assigned and tracked through closure.",
+    iconName: "CheckCircle2",
+  },
+  {
+    step: "08",
+    title: "Journey Continuity & Closure",
+    tagline: "From incident management to a controlled return to service.",
+    description: "Where required, alternative transportation is coordinated to minimize passenger disruption. The incident remains under operational oversight until the passenger is supported, the journey is stabilized and all required records and actions are formally closed.",
+    iconName: "Flag",
   },
 ];
 
