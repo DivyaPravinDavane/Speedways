@@ -75,7 +75,6 @@ import {
   EXECUTIVE_QUESTIONS,
   TESTIMONIALS,
   SAFETY_COMPLIANCE_PILLARS,
-  EMERGENCY_RESPONSE_WORKFLOW,
   SERVICES_CATALOG,
   EV_ROADMAP_STEPS,
   DIRECT_BRANCHES,
@@ -129,7 +128,6 @@ export default function HomePage() {
   };
 
   // Contact Form State
-  const [contactTab, setContactTab] = useState<"spot" | "ets" | "vip">("spot");
   const [selectedServices, setSelectedServices] = useState<string[]>([
     "Corporate Car Rental",
   ]);
@@ -145,12 +143,6 @@ export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState<string | null>(null);
-
-  const availableServices = [
-    "Corporate Car Rental",
-    "Airport Transfers",
-    "Employee Transport (ETS)",
-  ];
 
   const serviceCategories = [
     { label: "All", count: SERVICES_CATALOG.length },
@@ -191,16 +183,6 @@ export default function HomePage() {
     selectedServiceCategory === "All"
       ? SERVICES_CATALOG
       : SERVICES_CATALOG.filter((s) => s.category === selectedServiceCategory);
-
-  const toggleService = (srv: string) => {
-    if (selectedServices.includes(srv)) {
-      if (selectedServices.length > 1) {
-        setSelectedServices(selectedServices.filter((s) => s !== srv));
-      }
-    } else {
-      setSelectedServices([...selectedServices, srv]);
-    }
-  };
 
   const handleCopyPhone = (phone: string) => {
     navigator.clipboard.writeText(phone);
@@ -866,61 +848,7 @@ export default function HomePage() {
             })}
           </div>
 
-          {/* Emergency Response & Business Continuity 8-Stage Lifecycle */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-green-200/90 shadow-md mb-10">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-6 border-b border-slate-100">
-              <div className="max-w-2xl">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-700 border border-red-200 text-xs font-bold uppercase tracking-wider mb-2">
-                  <Siren className="w-3.5 h-3.5 text-red-600" />
-                  24×7 Duty of Care Protocol
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                  Emergency Response &amp; Business Continuity
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-                  A proactive 24×7 emergency management framework designed to protect passengers, mobilize the right resources quickly and maintain service continuity through unexpected events. From the first alert to final closure, every critical situation follows a defined process of assessment, escalation, intervention, recovery and review.
-                </p>
-              </div>
-              <Link
-                href="/safety"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#48B83D] hover:bg-[#3ea534] text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all shrink-0 self-start lg:self-auto"
-              >
-                <span>Explore Full Safety Protocol</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
 
-            {/* 8-Stage Lifecycle Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {EMERGENCY_RESPONSE_WORKFLOW.map((wf, idx) => (
-                <div
-                  key={idx}
-                  className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:bg-white hover:border-green-300 hover:shadow-md transition-all flex flex-col justify-between group"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[11px] font-mono font-bold text-green-700 bg-green-50 px-2 py-0.5 rounded border border-green-200/60">
-                        STAGE {wf.step}
-                      </span>
-                    </div>
-                    <h4 className="text-sm font-bold text-slate-900 group-hover:text-green-700 transition-colors">
-                      {wf.title}
-                    </h4>
-                    <p className="text-[11px] font-semibold text-green-700 mt-1 mb-2">
-                      {wf.tagline}
-                    </p>
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      {wf.description}
-                    </p>
-                  </div>
-                  <div className="mt-3 pt-2.5 border-t border-slate-200/60 text-[10px] font-semibold text-slate-400 flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3 text-green-600" />
-                    <span>Operational Control</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -1227,7 +1155,7 @@ export default function HomePage() {
               09. Corporate Mobility Enquiry &amp; RFP Desk
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
-              Submit Your Corporate Mobility Enquiry
+              Submit Your Query
             </h2>
             <div className="mt-2.5 inline-block text-xs sm:text-sm font-black uppercase tracking-widest text-green-800 bg-green-100 border border-green-200 px-3.5 py-1 rounded-xl">
               &ldquo;YOUR JOURNEY STARTS HERE…&rdquo;
@@ -1240,42 +1168,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Left: Interactive RFP Form Container */}
             <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-green-200 shadow-xl">
-              {/* Form Navigation Tabs */}
-              <div className="flex items-center gap-2 p-1 bg-slate-100 rounded-2xl mb-8">
-                <button
-                  type="button"
-                  onClick={() => setContactTab("spot")}
-                  className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition-all cursor-pointer ${
-                    contactTab === "spot"
-                      ? "bg-white text-slate-900 shadow-xs"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
-                >
-                  Spot &amp; Chauffeur Drive
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setContactTab("ets")}
-                  className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition-all cursor-pointer ${
-                    contactTab === "ets"
-                      ? "bg-white text-slate-900 shadow-xs"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
-                >
-                  Employee Transport (ETS)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setContactTab("vip")}
-                  className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition-all cursor-pointer ${
-                    contactTab === "vip"
-                      ? "bg-white text-slate-900 shadow-xs"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
-                >
-                  VIP &amp; Board Mobility
-                </button>
-              </div>
+
 
               {formSubmitted ? (
                 <div className="text-center py-12 space-y-4">
@@ -1309,30 +1202,6 @@ export default function HomePage() {
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-6">
-                  {/* Service Multi-Select Chips */}
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">
-                      Select Required Mobility Services:
-                    </label>
-                    <div className="flex flex-wrap gap-2">
-                      {availableServices.map((srv) => (
-                        <button
-                          key={srv}
-                          type="button"
-                          onClick={() => toggleService(srv)}
-                          className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
-                            selectedServices.includes(srv)
-                              ? "bg-green-600 text-white border-green-600 shadow-2xs"
-                              : "bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300"
-                          }`}
-                        >
-                          {selectedServices.includes(srv) && <span className="mr-1">✓</span>}
-                          {srv}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">
@@ -1396,7 +1265,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                        Primary Hub City *
+                        Region *
                       </label>
                       <select
                         value={formData.city}

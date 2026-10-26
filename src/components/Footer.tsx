@@ -3,12 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import {
-  PhoneCall,
-  Mail,
   MapPin,
   ShieldCheck,
-  CheckCircle2,
-  ArrowRight,
 } from "lucide-react";
 
 export default function Footer() {
@@ -60,51 +56,6 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="pt-2 space-y-2 text-xs text-slate-500">
-              <div className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>Trusted by 185+ Corporates Pan India</span>
-              </div>
-              <div className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>5% GST Corporate Billing Model with Full Audit Trail</span>
-              </div>
-              <div className="flex items-center gap-2 font-medium">
-                <ShieldCheck className="w-4 h-4 text-green-600 shrink-0" />
-                <span className="text-slate-800">
-                  <span className="inline-block px-1.5 py-0.5 rounded bg-green-100 text-green-800 font-bold text-[10px] uppercase tracking-wider mr-1.5 border border-green-200">
-                    ISO Safety Aligned
-                  </span>
-                  ISO 9001 (Quality), ISO 45001 (Safety) &amp; ISO 27001
-                  <a
-                    href="/certificates/iso-9001-2015-certificate.pdf"
-                    download="ISO-9001-2015-Speedways-Certificate.pdf"
-                    className="ml-2 text-[11px] font-bold text-green-700 hover:text-green-800 underline inline-flex items-center gap-0.5"
-                    title="Download Verified ISO 9001 Certificate"
-                  >
-                    (Download ISO 9001)
-                  </a>
-                </span>
-              </div>
-            </div>
-
-            <div className="pt-4 flex flex-wrap items-center gap-3">
-              <a
-                href="tel:9820630817"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-50 text-green-800 text-xs font-semibold border border-green-200/60"
-              >
-                <PhoneCall className="w-3.5 h-3.5 text-green-600" />
-                <span>24×7 Operations: 9820630817</span>
-              </a>
-              <span className="text-slate-300 hidden sm:inline" aria-hidden="true">|</span>
-              <a
-                href="mailto:info@speedwaysftm.com"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5 text-slate-500" />
-                <span>info@speedwaysftm.com</span>
-              </a>
-            </div>
           </div>
 
           {/* Col 1: Mobility Solutions */}
@@ -288,20 +239,6 @@ export default function Footer() {
                 </p>
               </div>
 
-              <div className="pt-1.5">
-                <strong className="text-slate-900 block text-xs">Tier-2/3 Network:</strong>
-                <p className="text-slate-500">185+ Managed Partner Cities Pan-India</p>
-              </div>
-
-              <div className="pt-3">
-                <Link
-                  href="/#enquiry"
-                  onClick={(e) => handleNavClick(e, "#enquiry")}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-green-600 hover:text-green-700 hover:underline"
-                >
-                  Submit Fast-Track Enquiry <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
             </div>
           </div>
         </div>
@@ -312,7 +249,12 @@ export default function Footer() {
             © {new Date().getFullYear()} Speedways Fleet &amp; Travel Management Pvt. Ltd. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
-            <span className="text-slate-400">Corporate Billing with Applicable Statutory GST Treatment &amp; Invoicing</span>
+            <Link
+              href="/contact"
+              className="hover:text-green-600 transition-colors"
+            >
+              Contact for More Details
+            </Link>
             <Link
               href="/#about"
               onClick={(e) => handleNavClick(e, "#about")}

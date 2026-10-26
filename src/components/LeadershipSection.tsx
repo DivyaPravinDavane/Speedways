@@ -95,11 +95,14 @@ export default function LeadershipSection({
             06. Executive Leadership Team
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Industry Veterans Driving{" "}
+            Decades of Expertise.{" "}
             <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">
-              India’s Corporate Mobility
+              Driving the Speedways Vision
             </span>
           </h2>
+          <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            Experienced leaders shaping the future of corporate mobility through insight, innovation, and execution.
+          </p>
         </motion.div>
 
         {/* 1. PRESIDENTIAL SPOTLIGHT: FOUNDER & CEO */}
