@@ -143,12 +143,12 @@ export default function Navbar() {
             </a>
             <span className="text-slate-700">|</span>
             <Link
-              href="/#about"
-              onClick={(e) => handleNavClick(e, "#about")}
+              href="/#enquiry"
+              onClick={(e) => handleNavClick(e, "#enquiry")}
               className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
             >
-              <MapPin className="w-3 h-3 text-[#48B83D]" />
-              <span>185+ Cities Pan-India Coverage</span>
+              <ArrowRight className="w-3 h-3 text-[#48B83D]" />
+              <span>Get in touch for more details</span>
             </Link>
           </div>
 

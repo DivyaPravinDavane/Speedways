@@ -48,6 +48,7 @@ import {
   AlertTriangle,
   LifeBuoy,
   HeartHandshake,
+  Headphones,
   Sparkles,
   Smartphone,
   Layers,
@@ -282,6 +283,23 @@ export default function HomePage() {
                 verified fleet vehicles, enterprise cloud management, and centralized 24×7 command centre governance.
               </motion.p>
 
+              {/* Hero Action Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
+                className="flex flex-wrap items-center gap-3.5 pt-2"
+              >
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("enquiry")}
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-green-600 via-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg active:scale-98 transition-all duration-200 cursor-pointer group"
+                >
+                  <Headphones className="w-5 h-5 text-green-200 group-hover:scale-110 transition-transform" />
+                  <span>Talk to Our Experts</span>
+                </button>
+              </motion.div>
+
             </motion.div>
 
             {/* Right Hero Image Column with Anchored Telemetry Badges */}
@@ -296,17 +314,7 @@ export default function HomePage() {
                   priority
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/15 to-transparent rounded-xl pointer-events-none" />
 
-                <div className="absolute bottom-4 left-4 right-4 text-white text-xs font-medium flex items-center justify-between">
-                  <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 shadow-sm font-semibold tracking-wide">
-                    Speedways Executive Fleet Operations
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full bg-green-600 text-white font-mono font-bold text-[11px] shadow-sm flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                    24×7 ACTIVE
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -523,46 +531,12 @@ export default function HomePage() {
       <section id="fleet" className="scroll-mt-24 py-20 bg-[#F4FAF6] border-b border-green-100/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1 rounded-full inline-block">
-              03. Vehicle Segments
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
               Vehicle Categories &amp; Fleet Segments
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
               Explore our complete range spanning executive sedans, premium MUVs, group coaches, and corporate employee mobility. Use the navigation arrows to browse all segments.
             </p>
-          </div>
-
-          {/* 3 Categories Pills Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-            <div className="p-4 rounded-2xl bg-white border border-green-200 shadow-2xs text-center">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-green-700 bg-green-50 px-2.5 py-0.5 rounded-full inline-block mb-1">
-                Tier 1
-              </span>
-              <h4 className="text-base font-bold text-slate-900">Cars &amp; SUVs</h4>
-              <p className="text-xs text-slate-600 mt-1">
-                Economy • Executive • MUV • Premium MUV • Luxury • Electric
-              </p>
-            </div>
-            <div className="p-4 rounded-2xl bg-white border border-green-200 shadow-2xs text-center">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-green-700 bg-green-50 px-2.5 py-0.5 rounded-full inline-block mb-1">
-                Tier 2
-              </span>
-              <h4 className="text-base font-bold text-slate-900">Group Transportation</h4>
-              <p className="text-xs text-slate-600 mt-1">
-                Tempo Travellers • 24-Seater Mini Buses • 36-Seater Buses • 40+ Seater Coaches
-              </p>
-            </div>
-            <div className="p-4 rounded-2xl bg-white border border-green-200 shadow-2xs text-center">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-green-700 bg-green-50 px-2.5 py-0.5 rounded-full inline-block mb-1">
-                Tier 3
-              </span>
-              <h4 className="text-base font-bold text-slate-900">Corporate Mobility</h4>
-              <p className="text-xs text-slate-600 mt-1">
-                Employee Transport • Corporate Rentals • Fleet Management • MICE &amp; Events
-              </p>
-            </div>
           </div>
 
           {/* Vehicle Segments Carousel */}

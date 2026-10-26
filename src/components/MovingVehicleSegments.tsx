@@ -38,7 +38,7 @@ export const VEHICLE_SEGMENTS: VehicleSegment[] = [
   {
     id: "economy-executive-sedans",
     category: "Cars & SUVs",
-    name: "01. Economy & Executive Sedans",
+    name: "Economy & Executive Sedans",
     models: "Dzire, Aura, Amaze, Ciaz, Honda City",
     seating: "4 Passengers",
     luggage: "2 - 3 Suitcases",
@@ -51,7 +51,7 @@ export const VEHICLE_SEGMENTS: VehicleSegment[] = [
   {
     id: "muv-premium-muv",
     category: "Cars & SUVs",
-    name: "02. MUV & Premium MUV",
+    name: "MUV & Premium MUV",
     models: "Ertiga, Carens, Innova Crysta, Innova Hycross",
     seating: "6 - 7 Passengers",
     luggage: "4 - 5 Suitcases",
@@ -64,7 +64,7 @@ export const VEHICLE_SEGMENTS: VehicleSegment[] = [
   {
     id: "luxury-premium-cars",
     category: "Cars & SUVs",
-    name: "03. Luxury & Premium Cars",
+    name: "Luxury & Premium Cars",
     models: "Mercedes-Benz E-Class, BMW 5 Series, Audi A4",
     seating: "4 Passengers",
     luggage: "3 - 4 Suitcases",
@@ -77,7 +77,7 @@ export const VEHICLE_SEGMENTS: VehicleSegment[] = [
   {
     id: "electric-vehicle-fleet",
     category: "Cars & SUVs",
-    name: "04. Electric Vehicle Fleet",
+    name: "Electric Vehicle Fleet",
     models: "Tata EVs, BYD and other available electric vehicles",
     seating: "4 Passengers",
     luggage: "2 - 3 Suitcases",
@@ -92,7 +92,7 @@ export const VEHICLE_SEGMENTS: VehicleSegment[] = [
   {
     id: "tempo-travellers",
     category: "Group Transportation",
-    name: "05. Tempo Travellers",
+    name: "Tempo Travellers",
     models: "Multiple seating configurations (12, 17, 20, 26 Seater)",
     seating: "12 - 26 Passengers",
     luggage: "10 - 15 Suitcases",
@@ -105,7 +105,7 @@ export const VEHICLE_SEGMENTS: VehicleSegment[] = [
   {
     id: "mini-buses-24",
     category: "Group Transportation",
-    name: "06. Mini Buses — 24 Seater",
+    name: "Mini Buses — 24 Seater",
     models: "Medium-capacity group transport (Eicher / Marcopolo)",
     seating: "24 Passengers",
     luggage: "Overhead & Rear Boot",
@@ -118,7 +118,7 @@ export const VEHICLE_SEGMENTS: VehicleSegment[] = [
   {
     id: "buses-36",
     category: "Group Transportation",
-    name: "07. Buses — 36 Seater",
+    name: "Buses — 36 Seater",
     models: "Group and staff transportation (Tata Starbus / Ashok Leyland)",
     seating: "36 Passengers",
     luggage: "Under-Floor Luggage Bay",
@@ -131,7 +131,7 @@ export const VEHICLE_SEGMENTS: VehicleSegment[] = [
   {
     id: "large-coaches-40",
     category: "Group Transportation",
-    name: "08. Large Coaches — 40+ Seater",
+    name: "Large Coaches — 40+ Seater",
     models: "40, 45, 49 and 50+ seats, subject to availability (Volvo / Scania)",
     seating: "40 - 50+ Passengers",
     luggage: "Large Under-Floor Cargo",
@@ -141,60 +141,6 @@ export const VEHICLE_SEGMENTS: VehicleSegment[] = [
     tag: "MICE & Large Groups",
     useCase: "MICE events, large corporate groups, tours, and conferences.",
   },
-
-  // 3. Corporate Mobility
-  {
-    id: "ets-mobility",
-    category: "Corporate Mobility",
-    name: "Employee Transport (ETS)",
-    models: "Sedans, MUVs, Tempo Travellers & AC Buses",
-    seating: "Rostered Multi-Shift Capacity",
-    luggage: "Laptop & Hand Luggage",
-    acType: "Continuous Air-Conditioning",
-    fuel: "Hybrid, Diesel & Electric Fleet",
-    image: "/images/employee-transit.jpg",
-    tag: "24×7 Shift Transit",
-    useCase: "Automated route optimization, lady safety protocol, OTP boarding, command centre",
-  },
-  {
-    id: "corporate-rentals",
-    category: "Corporate Mobility",
-    name: "Corporate Rentals",
-    models: "Executive Sedans & Premium MUVs on Demand",
-    seating: "4 - 6 Passengers",
-    luggage: "Executive Luggage Allowance",
-    acType: "Dual Zone Auto AC",
-    fuel: "Petrol, Hybrid & EV",
-    image: "/images/fleet/01-sedans.png",
-    tag: "On-Demand Chauffeur",
-    useCase: "Hourly 4h/8h/12h local business usage, airport transfers, client meetings",
-  },
-  {
-    id: "fleet-management",
-    category: "Corporate Mobility",
-    name: "Fleet Management Services",
-    models: "Turnkey Dedicated Corporate Fleet & Chauffeurs",
-    seating: "Enterprise Scalable",
-    luggage: "Custom Corporate Requirements",
-    acType: "Fully Managed Air-Conditioning",
-    fuel: "All Fuel Types Managed",
-    image: "/images/command-center.jpg",
-    tag: "Total Mobility Governance",
-    useCase: "Full lifecycle vehicle leasing, driver staffing, preventive maintenance, compliance",
-  },
-  {
-    id: "mice-events",
-    category: "Corporate Mobility",
-    name: "MICE & Events Transportation",
-    models: "Bulk Fleet Mobilization (50 - 200+ Vehicles)",
-    seating: "High-Volume Delegation Scale",
-    luggage: "Dedicated Event Luggage Logistics",
-    acType: "Air-Conditioned Premium Fleet",
-    fuel: "Fleet Mix (Luxury, MPVs, Coaches)",
-    image: "/images/fleet/08-large-coaches-40.png",
-    tag: "Conferences & Summits",
-    useCase: "On-site dispatch coordinator, airport paging desks, synchronized fleet dispatch",
-  },
 ];
 
 export default function MovingVehicleSegments({
@@ -202,28 +148,7 @@ export default function MovingVehicleSegments({
 }: {
   onSelectSegment?: (segmentName: string) => void;
 }) {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
-
-  const categories = [
-    { label: "All Segments", count: VEHICLE_SEGMENTS.length },
-    {
-      label: "Cars & SUVs",
-      count: VEHICLE_SEGMENTS.filter((s) => s.category === "Cars & SUVs").length,
-    },
-    {
-      label: "Group Transportation",
-      count: VEHICLE_SEGMENTS.filter((s) => s.category === "Group Transportation").length,
-    },
-    {
-      label: "Corporate Mobility",
-      count: VEHICLE_SEGMENTS.filter((s) => s.category === "Corporate Mobility").length,
-    },
-  ];
-
-  const displayedSegments =
-    activeCategory === "All Segments" || activeCategory === "All"
-      ? VEHICLE_SEGMENTS
-      : VEHICLE_SEGMENTS.filter((s) => s.category === activeCategory);
+  const displayedSegments = VEHICLE_SEGMENTS;
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -250,12 +175,6 @@ export default function MovingVehicleSegments({
     }
   }, [displayedSegments]);
 
-  useEffect(() => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
-    }
-  }, [activeCategory]);
-
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
       const cardWidth = 384; // card width (360) + gap (24)
@@ -270,36 +189,8 @@ export default function MovingVehicleSegments({
 
   return (
     <div className="w-full space-y-6">
-      {/* Controls Bar: Category Pills + Arrows + View Mode Switcher */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* Category Pills Switcher */}
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
-          {categories.map((cat) => (
-            <button
-              key={cat.label}
-              type="button"
-              onClick={() => setActiveCategory(cat.label)}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
-                activeCategory === cat.label ||
-                (activeCategory === "All" && cat.label === "All Segments")
-                  ? "bg-green-600 text-white shadow-md shadow-green-600/25 scale-102"
-                  : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200"
-              }`}
-            >
-              <span>{cat.label}</span>
-              <span
-                className={`text-[10px] px-1.5 py-0.2 rounded-full font-extrabold ${
-                  activeCategory === cat.label ||
-                  (activeCategory === "All" && cat.label === "All Segments")
-                    ? "bg-white text-green-700"
-                    : "bg-slate-100 text-slate-600"
-                }`}
-              >
-                {cat.count}
-              </span>
-            </button>
-          ))}
-        </div>
+      {/* Controls Bar: Navigation Arrows & View Mode Switcher */}
+      <div className="flex items-center justify-end gap-4">
 
         {/* Navigation Arrows Controls & View Mode */}
         <div className="flex items-center gap-3">
