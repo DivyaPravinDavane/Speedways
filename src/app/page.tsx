@@ -1284,7 +1284,7 @@ export default function HomePage() {
 
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                        Estimated Monthly Fleet Requirement
+                        Estimated Monthly
                       </label>
                       <select
                         value={formData.monthlyFleetCount}
