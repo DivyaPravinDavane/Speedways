@@ -163,20 +163,6 @@ function PrimaryCard({ metric, index, inView }: { metric: PrimaryMetric; index: 
             {metric.suffix && <span className="text-[#48B83D]">{metric.suffix}</span>}
           </div>
           <div className="mt-2 text-sm font-bold text-slate-900">{metric.label}</div>
-          <div className="mt-0.5 text-xs text-slate-500">{metric.desc}</div>
-        </div>
-
-        {/* Animated progress bar */}
-        <div className="relative mt-5">
-          <div className="h-1.5 w-full overflow-hidden rounded-full bg-green-100">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-[#48B83D] via-green-400 to-emerald-500 transition-[width] duration-[1600ms] ease-out"
-              style={{
-                width: inView ? `${metric.progress}%` : "0%",
-                transitionDelay: `${300 + index * 120}ms`,
-              }}
-            />
-          </div>
         </div>
       </div>
     </div>
