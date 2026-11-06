@@ -695,7 +695,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1 rounded-full inline-block">
-              05. Safety &amp; Enterprise Compliance
+              Safety &amp; Enterprise Compliance
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
               Institutional Safety &amp; 100% Statutory Compliance
@@ -705,7 +705,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 10 Core Safety & Compliance Pillars Grid in 3-D Green Boxes */}
+          {/* Core Safety & Compliance Pillars Grid in 3-D Green Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {SAFETY_COMPLIANCE_PILLARS.map((pillar, idx) => {
               const iconMap: Record<string, any> = {
@@ -722,7 +722,6 @@ export default function HomePage() {
                 ShieldCheck,
               };
               const IconComp = iconMap[pillar.iconName || "ShieldCheck"] || ShieldCheck;
-              const stepNumber = pillar.num || String(idx + 1).padStart(2, "0");
 
               return (
                 <div
@@ -734,9 +733,6 @@ export default function HomePage() {
                       <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center shadow-[0_3px_8px_rgba(22,101,52,0.25),inset_0_1px_1px_rgba(255,255,255,0.4)]">
                         <IconComp className="w-5 h-5 text-white" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-green-700 bg-white/70 px-2.5 py-0.5 rounded-md border border-green-200/80">
-                        #{stepNumber}
-                      </span>
                     </div>
                     <h3 className="text-base font-extrabold text-slate-900 mb-1">
                       {pillar.title}

@@ -128,7 +128,7 @@ export default function SafetyAndCompliancePage() {
                     : "text-slate-700 hover:text-slate-900"
                 }`}
               >
-                10 Safety &amp; Compliance Pillars
+                Safety &amp; Compliance Pillars
               </button>
               <button
                 onClick={() => setActiveTab("subscription")}
@@ -186,7 +186,7 @@ export default function SafetyAndCompliancePage() {
               Enterprise Governance
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mt-3">
-              10 Pillars of Passenger Safety &amp; Statutory Governance
+              Pillars of Passenger Safety &amp; Statutory Governance
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
               Every vehicle and chauffeur deployment is governed by standardized controls, regulatory readiness, and continuous telemetry oversight nationwide.
@@ -196,7 +196,6 @@ export default function SafetyAndCompliancePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SAFETY_COMPLIANCE_PILLARS.map((pillar, idx) => {
               const IconComp = iconMap[pillar.iconName || "ShieldCheck"] || ShieldCheck;
-              const stepNumber = pillar.num || String(idx + 1).padStart(2, "0");
 
               return (
                 <div
@@ -204,14 +203,11 @@ export default function SafetyAndCompliancePage() {
                   className="bg-white rounded-3xl p-7 border border-green-200/80 card-premium-shadow hover-border-flow transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
-                    {/* Top Row: Icon + Step Badge */}
+                    {/* Top Row: Icon */}
                     <div className="flex items-center justify-between mb-5">
                       <div className="w-12 h-12 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center group-hover:bg-[#48B83D] group-hover:text-white transition-colors shadow-2xs">
                         <IconComp className="w-6 h-6" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-[#48B83D] bg-green-50 px-2.5 py-1 rounded-lg border border-green-200/60">
-                        #{stepNumber}
-                      </span>
                     </div>
 
                     {/* Title */}
@@ -282,10 +278,7 @@ export default function SafetyAndCompliancePage() {
                     className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-green-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                   >
                     <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-xs font-black font-mono text-green-700 bg-green-50 px-2.5 py-1 rounded-lg border border-green-200/60">
-                          STAGE {wf.step}
-                        </span>
+                      <div className="flex items-center justify-start mb-4">
                         <div className="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-colors">
                           <StepIcon className="w-4 h-4" />
                         </div>
