@@ -34,7 +34,6 @@ import {
   Shield,
   Gem,
   HandMetal,
-  Filter,
   Car,
   Leaf,
   BatteryCharging,
@@ -111,7 +110,6 @@ const HOME_FAQS = [
 
 export default function HomePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [selectedServiceCategory, setSelectedServiceCategory] = useState<string>("All");
 
   // Sustainability Calculator State
   const [dailyKms, setDailyKms] = useState<number>(300);
@@ -146,15 +144,6 @@ export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState<string | null>(null);
 
-  const serviceCategories = [
-    { label: "All", count: SERVICES_CATALOG.length },
-    { label: "Rental", count: SERVICES_CATALOG.filter((s) => s.category === "Rental").length },
-    { label: "Commute", count: SERVICES_CATALOG.filter((s) => s.category === "Commute").length },
-    { label: "Executive", count: SERVICES_CATALOG.filter((s) => s.category === "Executive").length },
-    { label: "Management", count: SERVICES_CATALOG.filter((s) => s.category === "Management").length },
-    { label: "Sustainable", count: SERVICES_CATALOG.filter((s) => s.category === "Sustainable").length },
-  ];
-
   const iconMap: Record<string, any> = {
     Compass,
     Plane,
@@ -180,11 +169,6 @@ export default function HomePage() {
     "fleet-management-services": "/images/command-center.jpg",
     "ev-mobility-solutions": "/images/ev-fleet.jpg",
   };
-
-  const filteredServices =
-    selectedServiceCategory === "All"
-      ? SERVICES_CATALOG
-      : SERVICES_CATALOG.filter((s) => s.category === selectedServiceCategory);
 
   const handleCopyPhone = (phone: string) => {
     navigator.clipboard.writeText(phone);
@@ -393,46 +377,16 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1 rounded-full inline-block">
-              02. Corporate Mobility Services Suite
+              Corporate Mobility Services Suite
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
               Enterprise Mobility Services
             </h2>
           </div>
 
-          {/* Category Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-2 flex items-center gap-1.5">
-              <Filter className="w-3.5 h-3.5" /> Category Filter:
-            </span>
-            {serviceCategories.map((cat) => (
-              <button
-                key={cat.label}
-                type="button"
-                onClick={() => setSelectedServiceCategory(cat.label)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
-                  selectedServiceCategory === cat.label
-                    ? "bg-green-600 text-white shadow-md shadow-green-600/25 scale-102"
-                    : "bg-white hover:bg-slate-200 text-slate-700 border border-slate-200"
-                }`}
-              >
-                <span>{cat.label === "All" ? "All 9 Services" : cat.label}</span>
-                <span
-                  className={`text-[10px] px-1.5 py-0.5 rounded-full font-extrabold ${
-                    selectedServiceCategory === cat.label
-                      ? "bg-white text-green-700"
-                      : "bg-slate-100 text-slate-600"
-                  }`}
-                >
-                  {cat.count}
-                </span>
-              </button>
-            ))}
-          </div>
-
           {/* 9 Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredServices.map((service) => {
+            {SERVICES_CATALOG.map((service) => {
               const IconComp = iconMap[service.iconName] || Compass;
               return (
                 <div
