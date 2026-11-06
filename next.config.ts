@@ -39,8 +39,13 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
-        source: "/about-us",
-        destination: "/#about",
+        source: "/about",
+        destination: "/about-us",
+        permanent: false,
+      },
+      {
+        source: "/about-speedways",
+        destination: "/about-us",
         permanent: false,
       },
       {

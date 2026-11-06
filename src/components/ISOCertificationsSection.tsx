@@ -11,7 +11,6 @@ import {
   RefreshCw,
   CheckCircle2,
   Award,
-  Sparkles,
   FileCheck,
   Download,
   Eye,
@@ -240,16 +239,6 @@ export default function ISOCertificationsSection() {
                 </div>
               </div>
 
-              {/* Reason of Having ISO Box */}
-              <div className="p-5 rounded-2xl bg-gradient-to-br from-green-50/70 to-emerald-50/40 border border-green-200/80">
-                <div className="text-xs font-bold uppercase tracking-wider text-green-800 mb-1.5 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#48B83D]" />
-                  Operational Purpose &amp; Rationale
-                </div>
-                <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
-                  {activeCert.reason}
-                </p>
-              </div>
 
               {/* Standard Classification Tag */}
               <div className="flex items-center gap-2 text-xs text-slate-500 pt-1">

@@ -66,6 +66,7 @@ import SpeedwaysInfoCards from "@/components/SpeedwaysInfoCards";
 import IndiaNetworkMap from "@/components/IndiaNetworkMap";
 import ISOCertificationsSection from "@/components/ISOCertificationsSection";
 import EvolutionRoadmap from "@/components/EvolutionRoadmap";
+import VisionMissionPromiseAnimated from "@/components/VisionMissionPromiseAnimated";
 import ClientLogosMarquee from "@/components/ClientLogosMarquee";
 import AnimatedStatsGrid from "@/components/AnimatedStatsGrid";
 import LeadershipSection from "@/components/LeadershipSection";
@@ -243,45 +244,62 @@ export default function HomePage() {
               className="lg:col-span-6 space-y-6"
             >
 
-              {/* Main H1 Headline */}
+
+              {/* Main Headline */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12]"
+                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]"
               >
-                Speedways.{" "}
+                Moving People.{" "}
                 <motion.span
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+                  transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
                   className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-500"
                 >
-                  Advancing Enterprise Mobility.
+                  Connecting Opportunities.
                 </motion.span>
               </motion.h1>
 
-              {/* Supporting Copy */}
+              {/* Subtitle */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl"
+                className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl"
               >
-                <strong className="text-slate-800 font-bold block mb-1.5 text-sm sm:text-base">
-                  India&apos;s Premier Corporate Mobility &amp; Employee Transportation Partner
-                </strong>
-                Established in 2012, Speedways Fleet &amp; Travel Management delivers safe, 100% compliant, and technology-driven ground transportation across{" "}
-                <span className="font-bold text-slate-900">
-                  <AnimatedNumber value={185} suffix="+" />
-                </span>{" "}
-                cities. Trusted by{" "}
-                <span className="font-bold text-slate-900">185+ corporates</span> across sectors Pan-India with{" "}
-                <span className="font-bold text-slate-900">
-                  <AnimatedNumber value={1200} suffix="+" format={true} />
-                </span>{" "}
-                verified fleet vehicles, enterprise cloud management, and centralized 24×7 command centre governance.
+                Your Trusted Partner in Car Rental &amp; Corporate Employee Transportation.
               </motion.p>
+
+              {/* Punchline */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
+                className="text-base sm:text-lg text-slate-900 font-bold"
+              >
+                Reliable Rides. Safe Journeys. Smarter Mobility.
+              </motion.p>
+
+              {/* Category Pills */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                className="flex flex-wrap items-center gap-2.5 pt-1"
+              >
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-green-50 text-green-700 border border-green-200 shadow-2xs">
+                  Car Rental
+                </span>
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-green-50 text-green-700 border border-green-200 shadow-2xs">
+                  Employee Transport
+                </span>
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-green-50 text-green-700 border border-green-200 shadow-2xs">
+                  Corporate Mobility
+                </span>
+              </motion.div>
 
               {/* Hero Action Button */}
               <motion.div
@@ -298,6 +316,14 @@ export default function HomePage() {
                   <Headphones className="w-5 h-5 text-green-200 group-hover:scale-110 transition-transform" />
                   <span>Talk to Our Experts</span>
                 </button>
+
+                <Link
+                  href="/about-us"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-green-600 hover:bg-green-600 text-green-700 hover:text-white font-bold text-sm sm:text-base shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer group"
+                >
+                  <span>About Speedways</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </motion.div>
 
             </motion.div>
@@ -313,8 +339,6 @@ export default function HomePage() {
                   className="w-full h-[360px] sm:h-[430px] md:h-[480px] lg:h-[510px] xl:h-[540px] object-cover rounded-xl transition-transform duration-700 ease-out"
                   priority
                 />
-
-
               </div>
             </div>
           </div>
@@ -332,58 +356,9 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Vision, Mission & Promise Cards (Pillars of Speedways USP) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {/* Vision */}
-            <div className="p-7 rounded-3xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_12px_24px_-6px_rgba(22,101,52,0.12),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_20px_32px_-8px_rgba(22,101,52,0.2),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center mb-5 shadow-[0_6px_14px_-2px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.5),inset_0_-2px_0_rgba(20,83,45,0.4)]">
-                  <Compass className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">Our Vision</h3>
-                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                  To be India&apos;s most trusted, technologically forward, and compliance-driven enterprise mobility ecosystem — eliminating operational friction for corporate travel desks nationwide.
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-green-200/70 text-xs font-semibold text-green-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>Pan-India Mobility Standard</span>
-              </div>
-            </div>
-
-            {/* Mission */}
-            <div className="p-7 rounded-3xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_12px_24px_-6px_rgba(22,101,52,0.12),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_20px_32px_-8px_rgba(22,101,52,0.2),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center mb-5 shadow-[0_6px_14px_-2px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.5),inset_0_-2px_0_rgba(20,83,45,0.4)]">
-                  <TrendingUp className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">Our Mission</h3>
-                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                  Delivering seamless, safe, punctual, and transparent ground transportation solutions across 185+ cities with verified chauffeurs, zero surge pricing, and live 24×7 command center accountability.
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-green-200/70 text-xs font-semibold text-green-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>100% Operational Discipline</span>
-              </div>
-            </div>
-
-            {/* Promise */}
-            <div className="p-7 rounded-3xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[5px] border-b-green-300 shadow-[0_12px_24px_-6px_rgba(22,101,52,0.12),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-400 hover:shadow-[0_20px_32px_-8px_rgba(22,101,52,0.2),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-green-500 to-green-600 text-white flex items-center justify-center mb-5 shadow-[0_6px_14px_-2px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.5),inset_0_-2px_0_rgba(20,83,45,0.4)]">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">The Speedways Promise</h3>
-                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                  99.4% on-time arrival guarantee, 100% police background verified chauffeurs, instant paperless digital billing, and rapid vehicle recovery and replacement arrangements across all metro hubs.
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-green-200/70 text-xs font-semibold text-green-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                <span>Zero Compromise Service Level</span>
-              </div>
-            </div>
+          {/* Vision, Mission & Promise Cards (Animated Graphic Showcase) */}
+          <div className="mb-16">
+            <VisionMissionPromiseAnimated />
           </div>
 
           {/* Scale Metrics & Fleet Strength */}
@@ -403,6 +378,8 @@ export default function HomePage() {
           <div className="mt-16 pt-14 border-t border-slate-200/90">
             <EvolutionRoadmap />
           </div>
+
+
         </div>
       </section>
 
