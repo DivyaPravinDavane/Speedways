@@ -549,11 +549,6 @@ export default function HomePage() {
               {/* Stage 1 */}
               <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                      01
-                    </span>
-                  </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Booking Process</h4>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     Corporate travel desks book in seconds via web portal, WhatsApp bot, email, or direct API integration with employee cost-center tagging.
@@ -567,11 +562,6 @@ export default function HomePage() {
               {/* Stage 2 */}
               <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                      02
-                    </span>
-                  </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Booking Confirmation</h4>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     Automated confirmation sent within seconds to the employee and travel coordinator with unique booking ID, route parameters, and emergency hotline.
@@ -585,11 +575,6 @@ export default function HomePage() {
               {/* Stage 3 */}
               <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                      03
-                    </span>
-                  </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">SLA Commitment</h4>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     Guaranteed 2-hour spot dispatch SLA in Tier-1 metros and 4-hour pan-India guarantee with 99.4% contractual on-time arrival benchmark.
@@ -603,11 +588,6 @@ export default function HomePage() {
               {/* Stage 4 */}
               <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                      04
-                    </span>
-                  </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">No-Show Mitigation</h4>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     Chauffeur reports 15 to 30 minutes in advance. If any transit delay is flagged by automated telemetry, our standby buffer vehicle is instantly dispatched.
@@ -621,11 +601,6 @@ export default function HomePage() {
               {/* Stage 5 */}
               <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                      05
-                    </span>
-                  </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Chauffeur Details in Advance</h4>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     Chauffeur photo, name, police-verified badge ID, direct phone number, vehicle registration, and boarding OTP are dispatched 2 hours before trip time.
@@ -639,11 +614,6 @@ export default function HomePage() {
               {/* Stage 6 */}
               <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                      06
-                    </span>
-                  </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Live Real-Time Tracking</h4>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     Live telemetry link for passenger and transport manager with real-time speed monitoring, geofence deviation detection, and automated arrival alerts.
@@ -657,11 +627,6 @@ export default function HomePage() {
               {/* Stage 7 */}
               <div className="p-5 rounded-2xl bg-gradient-to-b from-[#EBF8EE] via-[#DDF4E2] to-[#D0EFD7] border border-green-300 border-b-[5px] border-b-green-400 shadow-[0_12px_24px_-5px_rgba(22,101,52,0.15),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[7px] hover:border-b-green-500 hover:shadow-[0_18px_32px_-6px_rgba(22,101,52,0.22),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-600 to-emerald-700 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                      07
-                    </span>
-                  </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Automated e-Invoicing</h4>
                   <p className="text-xs text-slate-800 leading-relaxed font-medium">
                     Paperless digital duty slip (e-DTR) with start/end OTP verification, electronic toll sync, and an embedded GPS breadcrumb route map snapshot.
@@ -675,11 +640,6 @@ export default function HomePage() {
               {/* Stage 8 */}
               <div className="p-5 rounded-2xl bg-gradient-to-b from-[#F4FBF6] via-[#EDF9F0] to-[#E3F5E7] border border-green-200/90 border-b-[4px] border-b-green-300 shadow-[0_10px_20px_-5px_rgba(22,101,52,0.1),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:-translate-y-1.5 hover:border-b-[6px] hover:border-b-green-400 hover:shadow-[0_16px_28px_-6px_rgba(22,101,52,0.18),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-gradient-to-b from-green-500 to-green-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-[0_2px_6px_rgba(22,101,52,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                      08
-                    </span>
-                  </div>
                   <h4 className="text-base font-bold text-slate-900 mb-1.5">Corporate MIS &amp; Analytics</h4>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     Consolidated monthly MIS billing broken down by cost center, business unit, city, and vehicle tier, with direct SAP/Oracle export capabilities.
