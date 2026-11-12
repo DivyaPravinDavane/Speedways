@@ -6,10 +6,6 @@ import {
   MapPin,
   Building2,
   CalendarCheck,
-  Radio,
-  Network,
-  Receipt,
-  Leaf,
   type LucideIcon,
 } from "lucide-react";
 
@@ -62,23 +58,6 @@ const PRIMARY: PrimaryMetric[] = [
     progress: 100,
     tag: "Legacy",
   },
-];
-
-type SecondaryMetric = {
-  icon: LucideIcon;
-  value: string;
-  num?: number;
-  suffix?: string;
-  label: string;
-  sub?: string;
-  live?: boolean;
-};
-
-const SECONDARY: SecondaryMetric[] = [
-  { icon: Network, value: "6", num: 6, label: "Direct Metro Hubs", sub: "Mumbai, Bengaluru, Hyderabad, Chennai, Delhi NCR, Pune" },
-  { icon: Radio, value: "24×7", label: "Command Centre", live: true },
-  { icon: Receipt, value: "5%", num: 5, suffix: "%", label: "Statutory 5% GST Billing" },
-  { icon: Leaf, value: "EV Ready", label: "Green Fleet Transition" },
 ];
 
 /** Fires once when the element scrolls into view. */
@@ -169,33 +148,6 @@ function PrimaryCard({ metric, index, inView }: { metric: PrimaryMetric; index: 
   );
 }
 
-function SecondaryItem({ s, inView }: { s: SecondaryMetric; inView: boolean }) {
-  const Icon = s.icon;
-  const count = useCountUp(s.num ?? 0, inView && s.num !== undefined, 0, 1400);
-
-  return (
-    <div className="group flex items-center gap-3.5 px-5 py-4 transition-colors duration-300 hover:bg-green-50/70">
-      <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green-100 text-green-700 transition-all duration-300 group-hover:bg-[#48B83D] group-hover:text-white group-hover:scale-110">
-        <Icon className="h-5 w-5" />
-        {s.live && (
-          <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full border-2 border-white bg-green-500" />
-          </span>
-        )}
-      </div>
-      <div className="min-w-0">
-        <div className="text-lg font-black text-slate-900 leading-tight">
-          {s.num !== undefined ? `${count}${s.suffix ?? ""}` : s.value}
-        </div>
-        <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 truncate">
-          {s.label}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function AnimatedStatsGrid() {
   const { ref, inView } = useInView<HTMLDivElement>();
 
@@ -241,20 +193,6 @@ export default function AnimatedStatsGrid() {
           <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
             {PRIMARY.map((m, i) => (
               <PrimaryCard key={m.label} metric={m} index={i} inView={inView} />
-            ))}
-          </div>
-
-          {/* Secondary metrics strip */}
-          <div
-            className="relative mt-6 grid grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-2xl border border-green-200/80 bg-white/90 backdrop-blur-sm divide-x divide-y lg:divide-y-0 divide-green-100 transition-all duration-700 ease-out"
-            style={{
-              opacity: inView ? 1 : 0,
-              transform: inView ? "translateY(0)" : "translateY(16px)",
-              transitionDelay: "550ms",
-            }}
-          >
-            {SECONDARY.map((s) => (
-              <SecondaryItem key={s.label} s={s} inView={inView} />
             ))}
           </div>
         </div>
