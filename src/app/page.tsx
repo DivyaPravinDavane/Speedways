@@ -487,7 +487,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1 rounded-full inline-block">
-              04. Technology &amp; Enterprise Platform Architecture
+              Technology &amp; Enterprise Platform Architecture
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
               Enterprise Platform &amp; End-to-End Digital Workflow
@@ -728,7 +728,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1 rounded-full inline-block">
-              07. Client Testimonials &amp; Corporate Endorsements
+              Client Testimonials &amp; Corporate Endorsements
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
               Verified Feedback from Enterprise Travel Desks
@@ -788,7 +788,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-100 px-3.5 py-1 rounded-full inline-block">
-              08. Why Speedways — Enterprise Advantage
+              Why Speedways — Enterprise Advantage
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
               Why Corporate Travel Desks Empanel Speedways
@@ -1013,7 +1013,7 @@ export default function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white text-green-700 border border-green-200 text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-3.5 h-3.5 text-green-600" />
-              09. Corporate Mobility Enquiry &amp; RFP Desk
+              Corporate Mobility Enquiry &amp; RFP Desk
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
               Submit Your Query

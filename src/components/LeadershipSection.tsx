@@ -92,7 +92,7 @@ export default function LeadershipSection({
         >
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-green-50 text-green-700 border border-green-200/80 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
             <Building2 className="w-3.5 h-3.5 text-green-600" />
-            06. Executive Leadership Team
+            Executive Leadership Team
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             Decades of Expertise.{" "}
