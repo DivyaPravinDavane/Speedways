@@ -168,9 +168,6 @@ export default function MovingVehicleSegments({
                 <div className="text-xs sm:text-sm text-slate-500 font-medium line-clamp-1 sm:line-clamp-2">
                   {seg.models}
                 </div>
-                <div className="text-xs sm:text-sm text-slate-800 font-semibold leading-relaxed line-clamp-2">
-                  {seg.useCase}
-                </div>
               </div>
             </div>
           ))}
