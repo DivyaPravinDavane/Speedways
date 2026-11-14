@@ -738,7 +738,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "Chauffeur Verification",
     subtitle: "Police-Verified Chauffeurs",
     description: "Every chauffeur undergoes police verification, identity validation and mandatory background screening before being approved for passenger deployment.",
-    badge: "Police-Verified Chauffeurs",
+    badge: "100% Background Screened",
     iconName: "UserCheck",
   },
   {
@@ -746,7 +746,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "SOS & Emergency Alert",
     subtitle: "In-Vehicle SOS & Panic Button",
     description: "A discreet, easily accessible emergency alert system enables passengers to request immediate assistance and trigger a coordinated response whenever a safety concern arises during the journey.",
-    badge: "In-Vehicle SOS & Panic Button",
+    badge: "Instant Distress Trigger",
     iconName: "AlertTriangle",
   },
   {
@@ -754,7 +754,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "GPS Journey Tracking",
     subtitle: "Live GPS Journey Tracking",
     description: "Real-time GPS tracking provides continuous visibility of vehicle location, route progress and journey status, enabling proactive monitoring and timely intervention throughout every Journey.",
-    badge: "Live GPS Journey Tracking",
+    badge: "Real-Time Route Visibility",
     iconName: "Navigation",
   },
   {
@@ -762,7 +762,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "Command Centre",
     subtitle: "24×7 Command Centre Monitoring",
     description: "Our 24×7 Command Centre provides continuous oversight of active journeys, enabling proactive monitoring, rapid intervention and coordinated escalation whenever an operational or safety exception arises.",
-    badge: "24×7 Command Centre Monitoring",
+    badge: "Round-the-Clock Oversight",
     iconName: "Radio",
   },
   {
@@ -770,7 +770,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "Women Traveller Safety",
     subtitle: "Women Safety Protocol",
     description: "A proactive safety framework for women travellers, combining verified chauffeur deployment, continuous journey visibility and defined escalation protocols. Every alert is treated with priority, enabling prompt intervention and coordinated assistance throughout the journey.",
-    badge: "Women Safety Protocol",
+    badge: "Priority Escalation Care",
     iconName: "ShieldAlert",
   },
   {
@@ -778,7 +778,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "Preventive Maintenance",
     subtitle: "Preventive Vehicle Maintenance",
     description: "Our fleet is managed through a proactive preventive-maintenance programme, with scheduled inspections, manufacturer-recommended servicing and safety-critical checks designed to identify and address potential issues before deployment. This helps ensure every vehicle is roadworthy, reliable and ready for safe passenger operations.",
-    badge: "Preventive Vehicle Maintenance",
+    badge: "Scheduled Safety Checks",
     iconName: "Wrench",
   },
   {
@@ -786,7 +786,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "Statutory & Safety Compliance",
     subtitle: "Statutory Compliance-Driven Operations",
     description: "A structured statutory compliance framework governs every vehicle and chauffeur deployment, covering applicable permits, licences, insurance, fitness and safety requirements. Compliance validity is continuously monitored, with defined controls for renewal, exception management and deployment clearance.",
-    badge: "Statutory Compliance-Driven Operations",
+    badge: "Valid Permits & Insurance",
     iconName: "FileCheck",
   },
   {
@@ -794,7 +794,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "Audit Trail",
     subtitle: "Trip & Chauffeur Audit Trail",
     description: "Digital trip records provide visibility into chauffeur allocation, journey details, vehicle movement, and operational events—supporting corporate governance and audits.",
-    badge: "Trip & Chauffeur Audit Trail",
+    badge: "Complete Digital Records",
     iconName: "History",
   },
   {
@@ -802,7 +802,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "Emergency Response & Business Continuity",
     subtitle: "24×7 Emergency Management Framework",
     description: "A proactive 24×7 emergency management framework designed to protect passengers, mobilize the right resources quickly and maintain service continuity through unexpected events. From the first alert to final closure, every critical situation follows a defined process of assessment, escalation, intervention, recovery and review.",
-    badge: "Emergency Response & Business Continuity",
+    badge: "Rapid Standby & Recovery",
     iconName: "Siren",
   },
   {
@@ -810,7 +810,7 @@ export const SAFETY_COMPLIANCE_PILLARS: SafetyPillar[] = [
     title: "Chauffeur Training & Safety Standards",
     subtitle: "Chauffeur Training & Safety Standards",
     description: "Chauffeurs are trained in professional conduct, defensive driving, passenger handling, emergency response, and corporate service standards.",
-    badge: "Chauffeur Training & Safety Standards",
+    badge: "Defensive Driving Certified",
     iconName: "Award",
   },
 ];
