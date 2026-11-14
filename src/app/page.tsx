@@ -14,7 +14,6 @@ import {
   Network,
   Cpu,
   Star,
-  Download,
   Building,
   Radio,
   FileCheck,
@@ -115,17 +114,11 @@ export default function HomePage() {
   const [dailyKms, setDailyKms] = useState<number>(300);
   const [vehicleCount, setVehicleCount] = useState<number>(10);
   const [selectedPhase, setSelectedPhase] = useState<number>(0);
-  const [certDownloaded, setCertDownloaded] = useState<boolean>(false);
 
   const annualKm = dailyKms * 260 * vehicleCount; // 260 working days
   const annualCo2Kg = Math.round((annualKm * 0.12) / 1000); // Metric tons of CO2 saved
   const treesEquivalent = Math.round(annualCo2Kg * 45); // ~45 trees planted per ton of CO2
   const litersDieselSaved = Math.round(annualKm / 14); // ~14 km/L fuel benchmark
-
-  const handleDownloadCert = () => {
-    setCertDownloaded(true);
-    setTimeout(() => setCertDownloaded(false), 2500);
-  };
 
   // Contact Form State
   const [selectedServices, setSelectedServices] = useState<string[]>([
@@ -946,16 +939,6 @@ export default function HomePage() {
                     {litersDieselSaved.toLocaleString()} Liters
                   </div>
                   <div className="text-xs font-bold text-slate-700 mt-0.5">Diesel Consumption Avoided per Year</div>
-                  <div className="mt-3 flex items-center justify-center gap-2">
-                    <button
-                      type="button"
-                      onClick={handleDownloadCert}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-xs transition-all cursor-pointer"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                      <span>{certDownloaded ? "Sample Certificate Generated!" : "Download Sample ESG Certificate"}</span>
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
